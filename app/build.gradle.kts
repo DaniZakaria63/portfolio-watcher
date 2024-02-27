@@ -2,6 +2,7 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinAndroid)
+    alias(libs.plugins.kspSupport)
 }
 
 android {
@@ -51,6 +52,15 @@ android {
 }
 
 dependencies {
+    implementation(project(":remote"))
+    implementation(project(":core"))
+    implementation(project(":presenter"))
+    implementation(project(":ui"))
+    implementation(project(":model"))
+
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
+    implementation(libs.timber.core)
 
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)
