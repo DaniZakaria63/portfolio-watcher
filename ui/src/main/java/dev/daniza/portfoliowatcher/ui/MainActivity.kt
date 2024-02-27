@@ -1,4 +1,4 @@
-package dev.daniza.portfoliowatcher
+package dev.daniza.portfoliowatcher.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
