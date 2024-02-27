@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 rootProject.name = "Portfolio Watcher"
 include(":app")
 include(":core")
+include(":ui")
