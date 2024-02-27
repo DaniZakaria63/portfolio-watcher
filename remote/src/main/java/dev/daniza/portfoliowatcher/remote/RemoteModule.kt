@@ -29,5 +29,6 @@ object RemoteModule {
 
     @Singleton
     @Provides
-    fun provideNetworkService(networkEndpoint: RemoteEndpoint) : RemoteService = DefaultRemoteService(networkEndpoint)
+    fun provideNetworkService(networkEndpoint: RemoteEndpoint): RemoteService =
+        DefaultRemoteService(networkEndpoint)
 }
