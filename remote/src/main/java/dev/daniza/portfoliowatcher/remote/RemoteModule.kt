@@ -5,6 +5,10 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import dev.daniza.portfoliowatcher.remote.endpoint.DEFAULT_REMOTE_BASE_URL
+import dev.daniza.portfoliowatcher.remote.endpoint.RemoteEndpoint
+import dev.daniza.portfoliowatcher.remote.service.DefaultRemoteService
+import dev.daniza.portfoliowatcher.remote.service.RemoteService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
