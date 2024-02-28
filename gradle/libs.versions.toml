@@ -10,7 +10,7 @@ activity-compose = "1.8.2"
 compose-bom = "2024.02.01"
 appcompat = "1.6.1"
 material = "1.11.0"
-hilt = "2.44"
+hilt = "2.50"
 ksp = "1.9.10-1.0.13"
 timber = "5.0.1"
 retrofit = "2.9.0"
@@ -40,7 +40,7 @@ coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutin
 
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
-hilt-navigation-fragment = { group = "androidx.hilt", name = "hilt-navigation-fragment", version = "1.2.0"}
+hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version = "1.2.0" }
 hilt-work = { group = "androidx.hilt", name = "hilt-work", version = "1.2.0" }
 timber-core = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
 
