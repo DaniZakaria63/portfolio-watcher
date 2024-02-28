@@ -1,5 +1,3 @@
-import org.gradle.api.JavaVersion
-
 @Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
     alias(libs.plugins.androidLibrary)
@@ -9,7 +7,7 @@ plugins {
 }
 
 android {
-    namespace = "dev.daniza.portfoliowatcher.presenter"
+    namespace = "dev.daniza.portfoliowatcher.local"
     compileSdk = 34
 
     defaultConfig {
@@ -33,21 +31,16 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8.toString()
+        jvmTarget = "1.8"
     }
 }
 
 dependencies {
     implementation(project(":model"))
-    implementation(project(":core"))
 
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
-    
-    implementation(libs.coroutines.android)
-    implementation(libs.coroutines.core)
 
-    implementation(libs.lifecycle.viewmodel.ktx)
-    implementation(libs.lifecycle.viewmodel.compose)
-    ksp(libs.lifecycle.compiler)
+    implementation(libs.room.runtime)
+    ksp(libs.room.compiler)
 }
