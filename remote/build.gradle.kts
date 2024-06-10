@@ -17,6 +17,8 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+        buildConfigField("String", "API_KEY", project.properties["API_KEY_TOKENMETRICS"].toString())
+        buildConfigField("String", "API_BASE_URL", project.properties["API_BASE_URL"].toString())
     }
 
     buildTypes {
@@ -35,6 +37,9 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
+    buildFeatures {
+        buildConfig = true
+    }
 }
 
 dependencies {
@@ -47,4 +52,7 @@ dependencies {
     implementation(libs.retrofit.gson)
     implementation(libs.retrofit.logging)
     implementation(libs.gson)
+
+    testImplementation(libs.junit)
+    testImplementation(libs.coroutines.test)
 }

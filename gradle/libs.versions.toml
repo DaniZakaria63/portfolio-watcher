@@ -59,6 +59,7 @@ room-compiler = { group = "androidx.room", name = "room-compiler", version.ref =
 
 #UNIT TEST
 junit = { group = "junit", name = "junit", version.ref = "junit" }
+coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref="coroutines" }
 
 #INSTRUMENTED TEST
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
