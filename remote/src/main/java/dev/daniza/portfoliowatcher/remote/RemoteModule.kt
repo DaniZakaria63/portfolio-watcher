@@ -20,7 +20,7 @@ import javax.inject.Singleton
 object RemoteModule {
     @Singleton
     @Provides
-    fun provideNetworkEndpoint(): RemoteEndpoint = Retrofit.Builder()
+    fun provideRemoteEndpoint(): RemoteEndpoint = Retrofit.Builder()
         .baseUrl(DEFAULT_REMOTE_BASE_URL)
         .client(
             OkHttpClient.Builder()
