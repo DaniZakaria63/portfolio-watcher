@@ -1,0 +1,68 @@
+package dev.daniza.portfoliowatcher.ui.navigation
+
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Favorite
+import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.List
+import androidx.compose.material.icons.filled.MailOutline
+import androidx.compose.material.icons.filled.Search
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.navigation.NavType
+import androidx.navigation.navArgument
+import androidx.navigation.navDeepLink
+import dev.daniza.portfoliowatcher.model.navigation.NavigationTarget
+
+interface BaseDestination {
+    val icon: ImageVector
+    val route: String
+}
+
+object HomeDestination: BaseDestination {
+    override val icon: ImageVector
+        get() = Icons.Filled.Home
+    override val route: String
+        get() = NavigationTarget.HOME.label
+
+}
+
+object FavoriteDestination: BaseDestination {
+    override val icon: ImageVector
+        get() = Icons.Filled.Favorite
+    override val route: String
+        get() = NavigationTarget.FAVORITE.label
+
+}
+
+object ListDestination: BaseDestination {
+    override val icon: ImageVector
+        get() = Icons.Filled.List
+    override val route: String
+        get() = NavigationTarget.LIST.label
+}
+
+object SearchDestination: BaseDestination {
+    override val icon: ImageVector
+        get() = Icons.Filled.Search
+    override val route: String
+        get() = NavigationTarget.SEARCH.label
+}
+
+object DetailDestination: BaseDestination {
+    override val icon: ImageVector
+        get() = Icons.Filled.MailOutline
+    override val route: String
+        get() = NavigationTarget.DETAIL.label
+
+    val detailIdArgs = "pokemon_id"
+    val routeWithArgs ="$route/{$detailIdArgs}"
+
+    val arguments = listOf(
+        navArgument(detailIdArgs) {
+            type = NavType.StringType
+            defaultValue = ""
+        }
+    )
+    val deepLink = listOf(
+        navDeepLink { uriPattern = "pokemon://$route/{$detailIdArgs}" }
+    )
+}
