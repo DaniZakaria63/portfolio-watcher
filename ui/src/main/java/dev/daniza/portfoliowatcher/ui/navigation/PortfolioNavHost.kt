@@ -6,6 +6,11 @@ import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import dev.daniza.portfoliowatcher.ui.detail.DetailScreen
+import dev.daniza.portfoliowatcher.ui.favorite.FavoriteScreen
+import dev.daniza.portfoliowatcher.ui.home.HomeScreen
+import dev.daniza.portfoliowatcher.ui.list.ListScreen
+import dev.daniza.portfoliowatcher.ui.search.SearchScreen
 
 @Composable
 fun PortfolioNavHost(
@@ -18,23 +23,23 @@ fun PortfolioNavHost(
         modifier = modifier,
     ){
         composable(route = HomeDestination.route){
-
+            HomeScreen()
         }
         composable(route = ListDestination.route){
-
+            ListScreen()
         }
         composable(route = FavoriteDestination.route){
-
+            FavoriteScreen()
         }
         composable(route = SearchDestination.route){
-
+            SearchScreen()
         }
         composable(
             route = DetailDestination.routeWithArgs,
             arguments = DetailDestination.arguments,
         ){ navBackStackEntry: NavBackStackEntry ->
             val pokemonId = navBackStackEntry.arguments?.getString(DetailDestination.detailIdArgs)
-
+            DetailScreen()
         }
     }
 }
