@@ -29,7 +29,9 @@ android:
     - platforms;android-$ANDROID_BUILD_TOOLS_VERSION
 
 before_install:
-  - yes | sdkmanager --install "cmdline-tools;latest"
+  - echo y | sudo sdkmanager --install "cmdline-tools;latest"
+  - export PATH=$ANDROID_HOME/cmdline-tools/latest/bin:$PATH
+  - sdkmanager --list | grep cmdline-tools
   - yes | sdkmanager "platforms;android-$ANDROID_API_LEVEL"
   - yes | sdkmanager "build-tools;$ANDROID_BUILD_TOOLS_VERSION"
   - chmod +x ./gradlew
