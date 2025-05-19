@@ -1,0 +1,32 @@
+language: android
+jdk: oraclejdk17
+
+env:
+  global:
+    - ANDROID_API_LEVEL=34
+    - ANDROID_BUILD_TOOLS_VERSION=34.0.0
+    - ADB_INSTALL_TIMEOUT=8
+
+android:
+  components:
+    - tools
+    - platform-tools
+    - build-tools-$ANDROID_BUILD_TOOLS_VERSION
+    - android-$ANDROID_API_LEVEL
+    - extra-android-m2repository
+    - extra-google-m2repository
+
+before_install:
+  - yes | sdkmanager "platforms;android-$ANDROID_API_LEVEL"
+  - yes | sdkmanager "build-tools;$ANDROID_BUILD_TOOLS_VERSION"
+  - chmod +x ./gradlew
+
+script:
+  - ./gradlew lint
+  - ./gradlew testDebugUnitTest
+  - ./gradlew assembleDebug
+
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/

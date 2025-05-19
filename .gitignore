@@ -1,15 +1,44 @@
+# Intellij Files
 *.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+*.ipr
+*.iws
+out/
+.idea/
+
+# Gradle Files
+.gradle/
+build/
+**/build/
+!gradle/wrapper/gradle-wrapper.jar
 local.properties
+
+# Keystore files
+*.jks
+*.keystore
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+
+# Crashlytics/Fabric
+crashlytics-build.properties
+
+# Kotlin/Java
+*.class
+
+# Generated files
+captures/
+output.json
+
+# NDK
+obj/
+.externalNativeBuild/
+
+# Misc
+*.swp
+*.swo
+/captures
+.cxx
