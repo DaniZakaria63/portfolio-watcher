@@ -23,6 +23,7 @@ android:
     - extra-google-m2repository
 
 before_install:
+  - yes | sdkmanager --install "cmdline-tools;latest"
   - yes | sdkmanager "platforms;android-$ANDROID_API_LEVEL"
   - yes | sdkmanager "build-tools;$ANDROID_BUILD_TOOLS_VERSION"
   - chmod +x ./gradlew
