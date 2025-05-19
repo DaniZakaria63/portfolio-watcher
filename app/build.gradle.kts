@@ -1,5 +1,3 @@
-import org.gradle.api.JavaVersion
-
 @Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
     alias(libs.plugins.androidApplication)
@@ -46,6 +44,7 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+    lint.warningsAsErrors = true
 }
 
 dependencies {
