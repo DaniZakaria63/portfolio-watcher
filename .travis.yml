@@ -1,6 +1,12 @@
 language: android
 jdk: oraclejdk17
 
+branches:
+  only:
+    - development
+    - uat
+    - master
+
 env:
   global:
     - ANDROID_API_LEVEL=34
@@ -24,7 +30,14 @@ before_install:
 script:
   - ./gradlew lint
   - ./gradlew testDebugUnitTest
-  - ./gradlew assembleDebug
+  # Build debug on development or uat branch
+  - if [ "$TRAVIS_BRANCH" = "development" ] || [ "$TRAVIS_BRANCH" = "uat" ]; then
+    ./gradlew assembleDebug;
+    fi
+  # Build release on master branch
+  - if [ "$TRAVIS_BRANCH" = "master" ]; then
+    ./gradlew assembleRelease;
+    fi
 
 cache:
   directories:
