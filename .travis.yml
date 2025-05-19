@@ -18,10 +18,15 @@ android:
   components:
     - tools
     - platform-tools
+    - cmdline-tools;latest
     - build-tools-$ANDROID_BUILD_TOOLS_VERSION
     - android-$ANDROID_API_LEVEL
-    - extra-android-m2repository
-    - extra-google-m2repository
+    - extras;google;auto
+    - extras;android;m2repository
+    - extras;google;m2repository
+    - sources;android-$ANDROID_BUILD_TOOLS_VERSION
+    - system-images;android-$ANDROID_API_LEVEL;
+    - platforms;android-$ANDROID_BUILD_TOOLS_VERSION
 
 before_install:
   - yes | sdkmanager --install "cmdline-tools;latest"
