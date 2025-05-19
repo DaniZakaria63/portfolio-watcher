@@ -1,5 +1,10 @@
 package dev.daniza.portfoliowatcher.remote
 
+/**
+ * Created by daniza on 2023/10/01.
+ * Temporary Unavailable
+ *
+ *
 import com.google.gson.GsonBuilder
 import dev.daniza.portfoliowatcher.remote.endpoint.DEFAULT_REMOTE_BASE_URL
 import dev.daniza.portfoliowatcher.remote.endpoint.RemoteEndpoint
@@ -33,7 +38,7 @@ class RequestTokenMetrixTest {
                         val request = chain.request().newBuilder().addHeader("api_key", BuildConfig.API_KEY).build()
                         chain.proceed(request)
                     }
-                    .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BASIC))
+.addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
                     .build()
             )
             .addConverterFactory(GsonConverterFactory.create(GsonBuilder().setLenient().create()))
@@ -74,3 +79,5 @@ data class SelectedTokensStateHolder(
 ){
     val defaultToken get() = tokens.takeIf { it.isNotEmpty() }?.first()
 }
+
+ **/
