@@ -1,0 +1,68 @@
+language: android
+dist: focal
+jdk: oraclejdk17
+
+branches:
+  only:
+    - development
+    - uat
+    - master
+
+env:
+  global:
+    - ANDROID_API_LEVEL=34
+    - ANDROID_BUILD_TOOLS_VERSION=34.0.0
+    - ADB_INSTALL_TIMEOUT=8
+    - ANDROID_HOME=/usr/local/android-sdk
+
+android:
+  components:
+    - tools
+    - platform-tools
+    - cmdline-tools;latest
+    - build-tools-$ANDROID_BUILD_TOOLS_VERSION
+    - android-$ANDROID_API_LEVEL
+    - extras;google;auto
+    - extras;android;m2repository
+    - extras;google;m2repository
+    - sources;android-$ANDROID_BUILD_TOOLS_VERSION
+    - system-images;android-$ANDROID_API_LEVEL;
+    - platforms;android-$ANDROID_BUILD_TOOLS_VERSION
+
+before_install:
+  # Download and unzip the Android command line tools
+  - sudo mkdir -p $ANDROID_HOME/cmdline-tools/bin
+  - sudo mkdir -p $ANDROID_HOME/cmdline-tools/latest/bin
+
+  # Touch a dummy file in the source directory so rsync has something to copy
+  - sudo touch $ANDROID_HOME/cmdline-tools/bin/placeholder
+
+  # Verify directories exist
+  - ls -la /usr/local/android-sdk/cmdline-tools/bin/
+  - ls -la /usr/local/android-sdk/cmdline-tools/latest/bin/
+
+  - chmod +x ./gradlew
+  # Install the new command line tools after the rsync would have run
+  - yes | sdkmanager --install "cmdline-tools;latest" || true
+
+  # Accept licenses and install required components
+  - yes | sdkmanager --licenses
+  - yes | sdkmanager "platforms;android-$ANDROID_API_LEVEL"
+  - yes | sdkmanager "build-tools;$ANDROID_BUILD_TOOLS_VERSION"
+
+script:
+  - ./gradlew lint
+  - ./gradlew testDebugUnitTest
+  # Build debug on development or uat branch
+  - if [ "$TRAVIS_BRANCH" = "development" ] || [ "$TRAVIS_BRANCH" = "uat" ]; then
+    ./gradlew assembleDebug;
+    fi
+  # Build release on master branch
+  - if [ "$TRAVIS_BRANCH" = "master" ]; then
+    ./gradlew assembleRelease;
+    fi
+
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
