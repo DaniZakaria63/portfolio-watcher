@@ -58,6 +58,9 @@ dependencies {
     implementation(libs.lifecycle.runtime.compose)
     ksp(libs.lifecycle.compiler)
 
+    implementation(libs.tradingview)
+    implementation(libs.navigation.compose)
+
     implementation(platform(libs.compose.bom))
     implementation(libs.ui)
     implementation(libs.ui.graphics)
@@ -69,6 +72,7 @@ dependencies {
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(platform(libs.compose.bom))
     androidTestImplementation(libs.ui.test.junit4)
+    androidTestImplementation(libs.navigation.compose.test)
 
     debugImplementation(libs.ui.tooling)
     debugImplementation(libs.ui.test.manifest)

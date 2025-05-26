@@ -53,7 +53,7 @@ object DetailDestination: BaseDestination {
     override val route: String
         get() = NavigationTarget.DETAIL.label
 
-    val detailIdArgs = "pokemon_id"
+    val detailIdArgs = "token_id"
     val routeWithArgs ="$route/{$detailIdArgs}"
 
     val arguments = listOf(
@@ -63,6 +63,6 @@ object DetailDestination: BaseDestination {
         }
     )
     val deepLink = listOf(
-        navDeepLink { uriPattern = "pokemon://$route/{$detailIdArgs}" }
+        navDeepLink { uriPattern = "token://$route/{$detailIdArgs}" }
     )
 }

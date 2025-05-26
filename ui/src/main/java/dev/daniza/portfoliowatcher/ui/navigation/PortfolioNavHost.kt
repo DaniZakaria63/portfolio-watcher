@@ -23,7 +23,9 @@ fun PortfolioNavHost(
         modifier = modifier,
     ){
         composable(route = HomeDestination.route){
-            HomeScreen()
+            HomeScreen(onNavigateToDetail = { tokenId ->
+                navController.navigateToDetail(tokenId)
+            })
         }
         composable(route = ListDestination.route){
             ListScreen()
@@ -38,7 +40,7 @@ fun PortfolioNavHost(
             route = DetailDestination.routeWithArgs,
             arguments = DetailDestination.arguments,
         ){ navBackStackEntry: NavBackStackEntry ->
-            val pokemonId = navBackStackEntry.arguments?.getString(DetailDestination.detailIdArgs)
+            val tokenId = navBackStackEntry.arguments?.getString(DetailDestination.detailIdArgs)
             DetailScreen()
         }
     }
