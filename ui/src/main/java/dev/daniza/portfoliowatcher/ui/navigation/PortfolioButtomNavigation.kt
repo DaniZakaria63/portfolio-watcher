@@ -12,8 +12,8 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 
 val navigationItems = listOf<BaseDestination>(
     HomeDestination,
+    NewsDestination,
     ListDestination,
-    FavoriteDestination
 )
 
 @Composable
@@ -34,7 +34,6 @@ fun PortfolioBottomNavigation(
                             popUpTo(navHostController.graph.startDestinationId) {
                                 saveState = true
                             }
-                            launchSingleTop = true
                             restoreState = true
                         }
                     }

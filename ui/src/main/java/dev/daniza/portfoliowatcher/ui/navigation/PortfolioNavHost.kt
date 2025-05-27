@@ -7,9 +7,9 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import dev.daniza.portfoliowatcher.ui.detail.DetailScreen
-import dev.daniza.portfoliowatcher.ui.favorite.FavoriteScreen
 import dev.daniza.portfoliowatcher.ui.home.HomeScreen
 import dev.daniza.portfoliowatcher.ui.list.ListScreen
+import dev.daniza.portfoliowatcher.ui.news.FavoriteScreen
 import dev.daniza.portfoliowatcher.ui.search.SearchScreen
 
 @Composable
@@ -30,7 +30,7 @@ fun PortfolioNavHost(
         composable(route = ListDestination.route){
             ListScreen()
         }
-        composable(route = FavoriteDestination.route){
+        composable(route = NewsDestination.route) {
             FavoriteScreen()
         }
         composable(route = SearchDestination.route){

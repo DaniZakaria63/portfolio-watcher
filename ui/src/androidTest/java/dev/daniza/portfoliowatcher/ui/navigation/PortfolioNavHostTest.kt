@@ -46,11 +46,11 @@ class PortfolioNavHostTest {
     }
 
     @Test
-    fun navHost_verifyNavigationToFavorite() {
-        composeTestRule.onNodeWithContentDescription("Navigate to Favorites")
+    fun navHost_verifyNavigationToNews() {
+        composeTestRule.onNodeWithContentDescription("Navigate to News")
             .performClick()
 
-        assertEquals(FavoriteDestination.route, navController.currentBackStackEntry?.destination?.route)
+        assertEquals(NewsDestination.route, navController.currentBackStackEntry?.destination?.route)
     }
     /*
         @Test

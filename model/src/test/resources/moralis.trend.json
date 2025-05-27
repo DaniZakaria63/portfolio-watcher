@@ -1,0 +1,7170 @@
+[
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x00148d918311aa2c363f752d45b57cff9200cff0",
+    "name": "Brown",
+    "uniqueName": "brown-4",
+    "symbol": "BROWN",
+    "decimals": 18,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x00148d918311aa2c363f752d45b57cff9200cff0",
+    "usdPrice": 0.00191785946777,
+    "createdAt": 1748287451,
+    "marketCap": 1917859,
+    "liquidityUsd": 74252,
+    "holders": 791,
+    "pricePercentChange": {
+      "1h": -0.10146204661566391,
+      "4h": 0.5639482208023211,
+      "12h": 753.5043807978037,
+      "24h": 753.5043807978037
+    },
+    "totalVolume": {
+      "1h": 39991,
+      "4h": 379750,
+      "12h": 1403102,
+      "24h": 1403102
+    },
+    "transactions": {
+      "1h": 75,
+      "4h": 727,
+      "12h": 2041,
+      "24h": 2041
+    },
+    "buyTransactions": {
+      "1h": 41,
+      "4h": 468,
+      "12h": 1404,
+      "24h": 1404
+    },
+    "sellTransactions": {
+      "1h": 34,
+      "4h": 259,
+      "12h": 637,
+      "24h": 637
+    },
+    "buyers": {
+      "1h": 36,
+      "4h": 333,
+      "12h": 947,
+      "24h": 947
+    },
+    "sellers": {
+      "1h": 32,
+      "4h": 201,
+      "12h": 410,
+      "24h": 410
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xe778fd9a8d074e4a808092896b33fe3d3452c125",
+    "name": "FROGGER",
+    "uniqueName": "frogger-14",
+    "symbol": "FROGGER",
+    "decimals": 18,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0xe778fd9a8d074e4a808092896b33fe3d3452c125",
+    "usdPrice": 0.00183563129542,
+    "createdAt": 1746010343,
+    "marketCap": 1835631,
+    "liquidityUsd": 83440,
+    "holders": 2136,
+    "pricePercentChange": {
+      "1h": -0.07414998780142011,
+      "4h": -0.33060184875611814,
+      "12h": -0.39519821669818533,
+      "24h": -0.4355024892618121
+    },
+    "totalVolume": {
+      "1h": 33055,
+      "4h": 349834,
+      "12h": 423823,
+      "24h": 713625
+    },
+    "transactions": {
+      "1h": 105,
+      "4h": 580,
+      "12h": 753,
+      "24h": 1321
+    },
+    "buyTransactions": {
+      "1h": 50,
+      "4h": 334,
+      "12h": 427,
+      "24h": 737
+    },
+    "sellTransactions": {
+      "1h": 55,
+      "4h": 246,
+      "12h": 326,
+      "24h": 584
+    },
+    "buyers": {
+      "1h": 44,
+      "4h": 197,
+      "12h": 258,
+      "24h": 389
+    },
+    "sellers": {
+      "1h": 52,
+      "4h": 172,
+      "12h": 229,
+      "24h": 395
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x9ac9468e7e3e1d194080827226b45d0b892c77fd",
+    "name": "Yee Token",
+    "uniqueName": "yee-token-2",
+    "symbol": "Yee",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x9ac9468e7e3e1d194080827226b45d0b892c77fd",
+    "usdPrice": 0.00921306141841,
+    "createdAt": 1682679359,
+    "marketCap": 9213061,
+    "liquidityUsd": 201942,
+    "holders": 2406,
+    "pricePercentChange": {
+      "1h": 0.0037998005183832967,
+      "4h": -0.1374430618183001,
+      "12h": -0.18497218254562756,
+      "24h": 0.020343118424995713
+    },
+    "totalVolume": {
+      "1h": 44974,
+      "4h": 391880,
+      "12h": 709912,
+      "24h": 2393998
+    },
+    "transactions": {
+      "1h": 66,
+      "4h": 540,
+      "12h": 1019,
+      "24h": 2992
+    },
+    "buyTransactions": {
+      "1h": 42,
+      "4h": 335,
+      "12h": 577,
+      "24h": 1734
+    },
+    "sellTransactions": {
+      "1h": 24,
+      "4h": 205,
+      "12h": 442,
+      "24h": 1258
+    },
+    "buyers": {
+      "1h": 39,
+      "4h": 207,
+      "12h": 352,
+      "24h": 913
+    },
+    "sellers": {
+      "1h": 19,
+      "4h": 145,
+      "12h": 313,
+      "24h": 728
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x4e9623b7e5b6438542458f5ee828d65c24d3af8c",
+    "name": "Jerry The Turtle By Matt Furie",
+    "uniqueName": "jerry-the-turtle-by-matt-furie-1",
+    "symbol": "JYAI",
+    "decimals": 18,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x4e9623b7e5b6438542458f5ee828d65c24d3af8c",
+    "usdPrice": 0.000244109330154,
+    "createdAt": 1732821071,
+    "marketCap": 16843544,
+    "liquidityUsd": 216284,
+    "holders": 3818,
+    "pricePercentChange": {
+      "1h": 0.10206881381487706,
+      "4h": 0.10189628584190767,
+      "12h": 0.3653500482220277,
+      "24h": 0.6904015460776578
+    },
+    "totalVolume": {
+      "1h": 24592,
+      "4h": 296227,
+      "12h": 793506,
+      "24h": 1044410
+    },
+    "transactions": {
+      "1h": 62,
+      "4h": 451,
+      "12h": 1345,
+      "24h": 1858
+    },
+    "buyTransactions": {
+      "1h": 40,
+      "4h": 292,
+      "12h": 881,
+      "24h": 1225
+    },
+    "sellTransactions": {
+      "1h": 22,
+      "4h": 159,
+      "12h": 464,
+      "24h": 633
+    },
+    "buyers": {
+      "1h": 31,
+      "4h": 164,
+      "12h": 428,
+      "24h": 550
+    },
+    "sellers": {
+      "1h": 17,
+      "4h": 86,
+      "12h": 205,
+      "24h": 273
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xcbde0453d4e7d748077c1b0ac2216c011dd2f406",
+    "name": "First City in Mars",
+    "uniqueName": "first-cityin-mars-1",
+    "symbol": "TERMINUS",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0xcbde0453d4e7d748077c1b0ac2216c011dd2f406",
+    "usdPrice": 0.0447689467542,
+    "createdAt": 1723670123,
+    "marketCap": 4476895,
+    "liquidityUsd": 266650,
+    "holders": 5147,
+    "pricePercentChange": {
+      "1h": 0.062196049859394704,
+      "4h": 0.4224530901074068,
+      "12h": 0.4285829764258799,
+      "24h": 0.4159883634282142
+    },
+    "totalVolume": {
+      "1h": 37707,
+      "4h": 164710,
+      "12h": 184224,
+      "24h": 223148
+    },
+    "transactions": {
+      "1h": 70,
+      "4h": 266,
+      "12h": 307,
+      "24h": 390
+    },
+    "buyTransactions": {
+      "1h": 36,
+      "4h": 128,
+      "12h": 154,
+      "24h": 194
+    },
+    "sellTransactions": {
+      "1h": 34,
+      "4h": 138,
+      "12h": 153,
+      "24h": 196
+    },
+    "buyers": {
+      "1h": 30,
+      "4h": 104,
+      "12h": 120,
+      "24h": 140
+    },
+    "sellers": {
+      "1h": 31,
+      "4h": 102,
+      "12h": 110,
+      "24h": 140
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xf816507e690f5aa4e29d164885eb5fa7a5627860",
+    "name": "Rato The Rat",
+    "uniqueName": "rato-the-rat-1",
+    "symbol": "RATO",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0xf816507e690f5aa4e29d164885eb5fa7a5627860",
+    "usdPrice": 0.00000727050869806,
+    "createdAt": 1746712823,
+    "marketCap": 3058630,
+    "liquidityUsd": 159423,
+    "holders": 7398,
+    "pricePercentChange": {
+      "1h": -0.02916800200418405,
+      "4h": -0.08755664287358365,
+      "12h": -0.18512868503124283,
+      "24h": -0.23768480957051194
+    },
+    "totalVolume": {
+      "1h": 56464,
+      "4h": 198046,
+      "12h": 487018,
+      "24h": 1202032
+    },
+    "transactions": {
+      "1h": 99,
+      "4h": 350,
+      "12h": 829,
+      "24h": 1975
+    },
+    "buyTransactions": {
+      "1h": 55,
+      "4h": 187,
+      "12h": 458,
+      "24h": 1072
+    },
+    "sellTransactions": {
+      "1h": 44,
+      "4h": 163,
+      "12h": 371,
+      "24h": 903
+    },
+    "buyers": {
+      "1h": 47,
+      "4h": 121,
+      "12h": 268,
+      "24h": 565
+    },
+    "sellers": {
+      "1h": 40,
+      "4h": 137,
+      "12h": 272,
+      "24h": 565
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xc56c7a0eaa804f854b536a5f3d5f49d2ec4b12b8",
+    "name": "GameStop",
+    "uniqueName": "game-stop-21",
+    "symbol": "GME",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0xc56c7a0eaa804f854b536a5f3d5f49d2ec4b12b8",
+    "usdPrice": 0.000112027177096,
+    "createdAt": 1715571923,
+    "marketCap": 47128713,
+    "liquidityUsd": 1293310,
+    "holders": 10881,
+    "pricePercentChange": {
+      "1h": 0.03242275674590002,
+      "4h": 0.05701806401625875,
+      "12h": 0.16414194083617906,
+      "24h": 0.30497540108033205
+    },
+    "totalVolume": {
+      "1h": 29940,
+      "4h": 201983,
+      "12h": 479976,
+      "24h": 726128
+    },
+    "transactions": {
+      "1h": 30,
+      "4h": 140,
+      "12h": 381,
+      "24h": 600
+    },
+    "buyTransactions": {
+      "1h": 22,
+      "4h": 82,
+      "12h": 206,
+      "24h": 333
+    },
+    "sellTransactions": {
+      "1h": 8,
+      "4h": 58,
+      "12h": 175,
+      "24h": 267
+    },
+    "buyers": {
+      "1h": 17,
+      "4h": 54,
+      "12h": 133,
+      "24h": 194
+    },
+    "sellers": {
+      "1h": 7,
+      "4h": 48,
+      "12h": 124,
+      "24h": 166
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xbf2b7abd91c93aec565e2eb2c9bb852b00edf7cc",
+    "name": "Ark",
+    "uniqueName": "ark-6",
+    "symbol": "ARK",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0xbf2b7abd91c93aec565e2eb2c9bb852b00edf7cc",
+    "usdPrice": 0.0030808012665,
+    "createdAt": 1748278079,
+    "marketCap": 308080,
+    "liquidityUsd": 23806,
+    "holders": 393,
+    "pricePercentChange": {
+      "1h": -0.0692821164879117,
+      "4h": 1.3825979739192966,
+      "12h": 80.23310461321404,
+      "24h": 80.23310461321404
+    },
+    "totalVolume": {
+      "1h": 14394,
+      "4h": 92453,
+      "12h": 376026,
+      "24h": 376026
+    },
+    "transactions": {
+      "1h": 73,
+      "4h": 319,
+      "12h": 1367,
+      "24h": 1367
+    },
+    "buyTransactions": {
+      "1h": 44,
+      "4h": 201,
+      "12h": 835,
+      "24h": 835
+    },
+    "sellTransactions": {
+      "1h": 29,
+      "4h": 118,
+      "12h": 532,
+      "24h": 532
+    },
+    "buyers": {
+      "1h": 40,
+      "4h": 148,
+      "12h": 514,
+      "24h": 514
+    },
+    "sellers": {
+      "1h": 28,
+      "4h": 98,
+      "12h": 298,
+      "24h": 298
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x774eaf7a53471628768dc679da945847d34b9a55",
+    "name": "Gasspas",
+    "uniqueName": "gasspas-2",
+    "symbol": "GASS",
+    "decimals": 18,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x774eaf7a53471628768dc679da945847d34b9a55",
+    "usdPrice": 7.66879359917e-9,
+    "createdAt": 1747163699,
+    "marketCap": 3226185,
+    "liquidityUsd": 135901,
+    "holders": 4600,
+    "pricePercentChange": {
+      "1h": 0.042445316703018335,
+      "4h": 0.1020492281977693,
+      "12h": 0.14829348069489834,
+      "24h": 0.1019365209539895
+    },
+    "totalVolume": {
+      "1h": 41389,
+      "4h": 135510,
+      "12h": 441759,
+      "24h": 1175693
+    },
+    "transactions": {
+      "1h": 90,
+      "4h": 313,
+      "12h": 985,
+      "24h": 2389
+    },
+    "buyTransactions": {
+      "1h": 48,
+      "4h": 163,
+      "12h": 565,
+      "24h": 1401
+    },
+    "sellTransactions": {
+      "1h": 42,
+      "4h": 150,
+      "12h": 420,
+      "24h": 988
+    },
+    "buyers": {
+      "1h": 31,
+      "4h": 111,
+      "12h": 352,
+      "24h": 722
+    },
+    "sellers": {
+      "1h": 34,
+      "4h": 108,
+      "12h": 274,
+      "24h": 536
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xb2b8256e08ee46496ccf7ea545b2303acaa1b3cb",
+    "name": "Moon",
+    "uniqueName": "moon-73",
+    "symbol": "MOON",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0xb2b8256e08ee46496ccf7ea545b2303acaa1b3cb",
+    "usdPrice": 0.0000358684294995,
+    "createdAt": 1748304887,
+    "marketCap": 35868,
+    "liquidityUsd": 8826,
+    "holders": 170,
+    "pricePercentChange": {
+      "1h": 0.04669558943931005,
+      "4h": 10.544125122239784,
+      "12h": 10.544125122239784,
+      "24h": 10.544125122239784
+    },
+    "totalVolume": {
+      "1h": 38986,
+      "4h": 85767,
+      "12h": 85767,
+      "24h": 85767
+    },
+    "transactions": {
+      "1h": 228,
+      "4h": 540,
+      "12h": 540,
+      "24h": 540
+    },
+    "buyTransactions": {
+      "1h": 130,
+      "4h": 328,
+      "12h": 328,
+      "24h": 328
+    },
+    "sellTransactions": {
+      "1h": 98,
+      "4h": 212,
+      "12h": 212,
+      "24h": 212
+    },
+    "buyers": {
+      "1h": 89,
+      "4h": 226,
+      "12h": 226,
+      "24h": 226
+    },
+    "sellers": {
+      "1h": 72,
+      "4h": 136,
+      "12h": 136,
+      "24h": 136
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x0f7dc5d02cc1e1f5ee47854d534d332a1081ccc8",
+    "name": "Pepes Dog",
+    "uniqueName": "pepes-dog-21",
+    "symbol": "ZEUS",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x0f7dc5d02cc1e1f5ee47854d534d332a1081ccc8",
+    "usdPrice": 2.45930789428e-8,
+    "createdAt": 1747863815,
+    "marketCap": 10346062,
+    "liquidityUsd": 192932,
+    "holders": 1880,
+    "pricePercentChange": {
+      "1h": 0.1489194527536863,
+      "4h": -0.0676617426372116,
+      "12h": 0.14068590483609417,
+      "24h": 0.2999053297622239
+    },
+    "totalVolume": {
+      "1h": 40524,
+      "4h": 125293,
+      "12h": 568770,
+      "24h": 942720
+    },
+    "transactions": {
+      "1h": 49,
+      "4h": 210,
+      "12h": 929,
+      "24h": 1461
+    },
+    "buyTransactions": {
+      "1h": 31,
+      "4h": 125,
+      "12h": 498,
+      "24h": 785
+    },
+    "sellTransactions": {
+      "1h": 18,
+      "4h": 85,
+      "12h": 431,
+      "24h": 676
+    },
+    "buyers": {
+      "1h": 24,
+      "4h": 87,
+      "12h": 306,
+      "24h": 445
+    },
+    "sellers": {
+      "1h": 13,
+      "4h": 55,
+      "12h": 212,
+      "24h": 323
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x0f81001ef0a83ecce5ccebf63eb302c70a39a654",
+    "name": "Dolomite",
+    "uniqueName": "dolomite-1",
+    "symbol": "DOLO",
+    "decimals": 18,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x0f81001ef0a83ecce5ccebf63eb302c70a39a654",
+    "usdPrice": 0.0439297175926,
+    "createdAt": 1748276015,
+    "marketCap": 2779788,
+    "liquidityUsd": 475405,
+    "holders": 921,
+    "pricePercentChange": {
+      "1h": 0.028297037738972627,
+      "4h": -0.009636864521080082,
+      "12h": 0.18715280112961638,
+      "24h": 0.18715280112961638
+    },
+    "totalVolume": {
+      "1h": 65859,
+      "4h": 125302,
+      "12h": 655731,
+      "24h": 655731
+    },
+    "transactions": {
+      "1h": 44,
+      "4h": 123,
+      "12h": 739,
+      "24h": 739
+    },
+    "buyTransactions": {
+      "1h": 26,
+      "4h": 59,
+      "12h": 475,
+      "24h": 475
+    },
+    "sellTransactions": {
+      "1h": 18,
+      "4h": 64,
+      "12h": 264,
+      "24h": 264
+    },
+    "buyers": {
+      "1h": 22,
+      "4h": 49,
+      "12h": 176,
+      "24h": 176
+    },
+    "sellers": {
+      "1h": 18,
+      "4h": 52,
+      "12h": 175,
+      "24h": 175
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xaaee1a9723aadb7afa2810263653a34ba2c21c7a",
+    "name": "Mog Coin",
+    "uniqueName": "mog-coin",
+    "symbol": "Mog",
+    "decimals": 18,
+    "logo": "https://adds-token-info-29a861f.s3.eu-central-1.amazonaws.com/marketing/evm/0xaaee1a9723aadb7afa2810263653a34ba2c21c7a_icon.png",
+    "usdPrice": 0.00000114159048373,
+    "createdAt": 1689822407,
+    "marketCap": 445871178,
+    "liquidityUsd": 7761637,
+    "holders": 53955,
+    "pricePercentChange": {
+      "1h": 0.013279139587319225,
+      "4h": -0.016999559577111547,
+      "12h": -0.0005511716974400829,
+      "24h": -0.04883032608438903
+    },
+    "totalVolume": {
+      "1h": 27138,
+      "4h": 143760,
+      "12h": 1226243,
+      "24h": 2041370
+    },
+    "transactions": {
+      "1h": 22,
+      "4h": 97,
+      "12h": 400,
+      "24h": 814
+    },
+    "buyTransactions": {
+      "1h": 21,
+      "4h": 55,
+      "12h": 235,
+      "24h": 476
+    },
+    "sellTransactions": {
+      "1h": 1,
+      "4h": 42,
+      "12h": 165,
+      "24h": 338
+    },
+    "buyers": {
+      "1h": 20,
+      "4h": 46,
+      "12h": 152,
+      "24h": 264
+    },
+    "sellers": {
+      "1h": 1,
+      "4h": 33,
+      "12h": 89,
+      "24h": 168
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xe0f63a424a4439cbe457d80e4f4b51ad25b2c56c",
+    "name": "SPX6900",
+    "uniqueName": "spx-6900",
+    "symbol": "SPX",
+    "decimals": 8,
+    "logo": "https://adds-token-info-29a861f.s3.eu-central-1.amazonaws.com/marketing/evm/0xe0f63a424a4439cbe457d80e4f4b51ad25b2c56c_icon.png",
+    "usdPrice": 0.841027104623,
+    "createdAt": 1692154331,
+    "marketCap": 841027105,
+    "liquidityUsd": 7039341,
+    "holders": 39881,
+    "pricePercentChange": {
+      "1h": 0.010699895864537765,
+      "4h": -0.0087583251637539,
+      "12h": -0.009488056784592486,
+      "24h": -0.05138312975816108
+    },
+    "totalVolume": {
+      "1h": 31493,
+      "4h": 217074,
+      "12h": 604937,
+      "24h": 1365107
+    },
+    "transactions": {
+      "1h": 16,
+      "4h": 94,
+      "12h": 282,
+      "24h": 593
+    },
+    "buyTransactions": {
+      "1h": 10,
+      "4h": 52,
+      "12h": 151,
+      "24h": 287
+    },
+    "sellTransactions": {
+      "1h": 6,
+      "4h": 42,
+      "12h": 131,
+      "24h": 306
+    },
+    "buyers": {
+      "1h": 8,
+      "4h": 32,
+      "12h": 97,
+      "24h": 167
+    },
+    "sellers": {
+      "1h": 6,
+      "4h": 30,
+      "12h": 82,
+      "24h": 148
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x5417994ae69e6ccb283bb6dbdba3006b3d3f9f95",
+    "name": "ETH Chan",
+    "uniqueName": "eth-chan-2",
+    "symbol": "ETHCHAN",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x5417994ae69e6ccb283bb6dbdba3006b3d3f9f95",
+    "usdPrice": 0.000346253791917,
+    "createdAt": 1747549367,
+    "marketCap": 1456655,
+    "liquidityUsd": 73349,
+    "holders": 1308,
+    "pricePercentChange": {
+      "1h": -0.11976970015358887,
+      "4h": -0.11207647285643495,
+      "12h": -0.2276203383569781,
+      "24h": -0.19454232682307043
+    },
+    "totalVolume": {
+      "1h": 32546,
+      "4h": 74135,
+      "12h": 274557,
+      "24h": 1010888
+    },
+    "transactions": {
+      "1h": 58,
+      "4h": 126,
+      "12h": 402,
+      "24h": 1450
+    },
+    "buyTransactions": {
+      "1h": 33,
+      "4h": 63,
+      "12h": 205,
+      "24h": 810
+    },
+    "sellTransactions": {
+      "1h": 25,
+      "4h": 63,
+      "12h": 197,
+      "24h": 640
+    },
+    "buyers": {
+      "1h": 29,
+      "4h": 54,
+      "12h": 149,
+      "24h": 490
+    },
+    "sellers": {
+      "1h": 25,
+      "4h": 60,
+      "12h": 153,
+      "24h": 420
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xd86830e9c56785e2b703eb0029ae71a943e4d442",
+    "name": "Kobushi",
+    "uniqueName": "kobushi-720265073",
+    "symbol": "KOBUSHI",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0xd86830e9c56785e2b703eb0029ae71a943e4d442",
+    "usdPrice": 0.00000347219530143,
+    "createdAt": 1746194291,
+    "marketCap": 1460718,
+    "liquidityUsd": 67946,
+    "holders": 1084,
+    "pricePercentChange": {
+      "1h": 0.18397140634821252,
+      "4h": 0.40635155418969987,
+      "12h": 1.0691553291141542,
+      "24h": 1.094798503080368
+    },
+    "totalVolume": {
+      "1h": 14599,
+      "4h": 61567,
+      "12h": 260842,
+      "24h": 322963
+    },
+    "transactions": {
+      "1h": 38,
+      "4h": 115,
+      "12h": 462,
+      "24h": 617
+    },
+    "buyTransactions": {
+      "1h": 25,
+      "4h": 68,
+      "12h": 269,
+      "24h": 350
+    },
+    "sellTransactions": {
+      "1h": 13,
+      "4h": 47,
+      "12h": 193,
+      "24h": 267
+    },
+    "buyers": {
+      "1h": 12,
+      "4h": 42,
+      "12h": 168,
+      "24h": 208
+    },
+    "sellers": {
+      "1h": 12,
+      "4h": 34,
+      "12h": 129,
+      "24h": 152
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x242ecdfd9e7b6532c3c0cb7451ca8ffc9920a4ca",
+    "name": "Komugi Kun",
+    "uniqueName": "komugi-kun-1",
+    "symbol": "KOMUGI",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x242ecdfd9e7b6532c3c0cb7451ca8ffc9920a4ca",
+    "usdPrice": 0.00000192794004504,
+    "createdAt": 1747906991,
+    "marketCap": 811065,
+    "liquidityUsd": 43796,
+    "holders": 1313,
+    "pricePercentChange": {
+      "1h": -0.027712175098842433,
+      "4h": 0.10473560126061768,
+      "12h": 0.5346192894486081,
+      "24h": 1.961990519160509
+    },
+    "totalVolume": {
+      "1h": 20094,
+      "4h": 85390,
+      "12h": 186713,
+      "24h": 393214
+    },
+    "transactions": {
+      "1h": 69,
+      "4h": 240,
+      "12h": 529,
+      "24h": 1158
+    },
+    "buyTransactions": {
+      "1h": 40,
+      "4h": 126,
+      "12h": 279,
+      "24h": 641
+    },
+    "sellTransactions": {
+      "1h": 29,
+      "4h": 114,
+      "12h": 250,
+      "24h": 517
+    },
+    "buyers": {
+      "1h": 31,
+      "4h": 92,
+      "12h": 180,
+      "24h": 352
+    },
+    "sellers": {
+      "1h": 23,
+      "4h": 80,
+      "12h": 158,
+      "24h": 288
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x336543840b64ae7326a94bc48a503d20786e4750",
+    "name": "PepeLore",
+    "uniqueName": "pepe-lore-13",
+    "symbol": "LORE",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x336543840b64ae7326a94bc48a503d20786e4750",
+    "usdPrice": 0.000313783988908,
+    "createdAt": 1748288711,
+    "marketCap": 313784,
+    "liquidityUsd": 26554,
+    "holders": 307,
+    "pricePercentChange": {
+      "1h": -0.128272465120486,
+      "4h": -0.11556671293983752,
+      "12h": 104.34633506705418,
+      "24h": 104.34633506705418
+    },
+    "totalVolume": {
+      "1h": 7922,
+      "4h": 80267,
+      "12h": 276713,
+      "24h": 276713
+    },
+    "transactions": {
+      "1h": 30,
+      "4h": 237,
+      "12h": 866,
+      "24h": 866
+    },
+    "buyTransactions": {
+      "1h": 16,
+      "4h": 144,
+      "12h": 515,
+      "24h": 515
+    },
+    "sellTransactions": {
+      "1h": 14,
+      "4h": 93,
+      "12h": 351,
+      "24h": 351
+    },
+    "buyers": {
+      "1h": 14,
+      "4h": 109,
+      "12h": 375,
+      "24h": 375
+    },
+    "sellers": {
+      "1h": 13,
+      "4h": 69,
+      "12h": 156,
+      "24h": 156
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x9cdf242ef7975d8c68d5c1f5b6905801699b1940",
+    "name": "WhiteRock",
+    "uniqueName": "white-rock-4",
+    "symbol": "WHITE",
+    "decimals": 18,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x9cdf242ef7975d8c68d5c1f5b6905801699b1940",
+    "usdPrice": 0.000649710354694,
+    "createdAt": 1732141331,
+    "marketCap": 649710355,
+    "liquidityUsd": 642739,
+    "holders": 19128,
+    "pricePercentChange": {
+      "1h": 0.011416698586786258,
+      "4h": -0.03714636988341741,
+      "12h": -0.09505982388080463,
+      "24h": -0.05062988995918075
+    },
+    "totalVolume": {
+      "1h": 12754,
+      "4h": 66395,
+      "12h": 204796,
+      "24h": 342808
+    },
+    "transactions": {
+      "1h": 36,
+      "4h": 122,
+      "12h": 393,
+      "24h": 725
+    },
+    "buyTransactions": {
+      "1h": 28,
+      "4h": 83,
+      "12h": 254,
+      "24h": 453
+    },
+    "sellTransactions": {
+      "1h": 8,
+      "4h": 39,
+      "12h": 139,
+      "24h": 272
+    },
+    "buyers": {
+      "1h": 24,
+      "4h": 60,
+      "12h": 172,
+      "24h": 304
+    },
+    "sellers": {
+      "1h": 5,
+      "4h": 30,
+      "12h": 99,
+      "24h": 170
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xcf75cac03ec419b230574c48a9dd007d058c410a",
+    "name": "Leonard",
+    "uniqueName": "leonard-5",
+    "symbol": "LEONARD",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0xcf75cac03ec419b230574c48a9dd007d058c410a",
+    "usdPrice": 5.72536663334e-8,
+    "createdAt": 1748297219,
+    "marketCap": 24086,
+    "liquidityUsd": 5477,
+    "holders": 167,
+    "pricePercentChange": {
+      "1h": -0.13123655844642337,
+      "4h": 1.2062459973065338,
+      "12h": 7.980918726266519,
+      "24h": 7.980918726266519
+    },
+    "totalVolume": {
+      "1h": 9987,
+      "4h": 64811,
+      "12h": 78197,
+      "24h": 78197
+    },
+    "transactions": {
+      "1h": 68,
+      "4h": 451,
+      "12h": 596,
+      "24h": 596
+    },
+    "buyTransactions": {
+      "1h": 37,
+      "4h": 265,
+      "12h": 347,
+      "24h": 347
+    },
+    "sellTransactions": {
+      "1h": 31,
+      "4h": 186,
+      "12h": 249,
+      "24h": 249
+    },
+    "buyers": {
+      "1h": 31,
+      "4h": 178,
+      "12h": 233,
+      "24h": 233
+    },
+    "sellers": {
+      "1h": 31,
+      "4h": 123,
+      "12h": 149,
+      "24h": 149
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x4a220e6096b25eadb88358cb44068a3248254675",
+    "name": "Quant",
+    "uniqueName": "quant-2",
+    "symbol": "QNT",
+    "decimals": 18,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x4a220e6096b25eadb88358cb44068a3248254675",
+    "usdPrice": 105.191516412,
+    "createdAt": 1620261082,
+    "marketCap": 4782742677,
+    "liquidityUsd": 363911,
+    "holders": 156484,
+    "pricePercentChange": {
+      "1h": 0.016487363930881713,
+      "4h": 0.006855129950766239,
+      "12h": 0.11312623769706716,
+      "24h": 0.10673400472648976
+    },
+    "totalVolume": {
+      "1h": 44864,
+      "4h": 96697,
+      "12h": 287418,
+      "24h": 314356
+    },
+    "transactions": {
+      "1h": 21,
+      "4h": 94,
+      "12h": 286,
+      "24h": 327
+    },
+    "buyTransactions": {
+      "1h": 9,
+      "4h": 40,
+      "12h": 146,
+      "24h": 167
+    },
+    "sellTransactions": {
+      "1h": 12,
+      "4h": 54,
+      "12h": 140,
+      "24h": 160
+    },
+    "buyers": {
+      "1h": 8,
+      "4h": 35,
+      "12h": 88,
+      "24h": 101
+    },
+    "sellers": {
+      "1h": 11,
+      "4h": 37,
+      "12h": 70,
+      "24h": 85
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x67466be17df832165f8c80a5a120ccc652bd7e69",
+    "name": "Landwolf",
+    "uniqueName": "landwolf-45",
+    "symbol": "WOLF",
+    "decimals": 18,
+    "logo": "https://adds-token-info-29a861f.s3.amazonaws.com/0x1/0x67466be17df832165f8c80a5a120ccc652bd7e69/65c97da9-eae0-4880-ad56-e1b0bbdebc46.jpeg",
+    "usdPrice": 0.0000498099982621,
+    "createdAt": 1713673727,
+    "marketCap": 49809998,
+    "liquidityUsd": 1167750,
+    "holders": 16245,
+    "pricePercentChange": {
+      "1h": -0.000006106353208354022,
+      "4h": -0.05895237652674667,
+      "12h": 0.012826453298182942,
+      "24h": -0.06509587233163588
+    },
+    "totalVolume": {
+      "1h": 10533,
+      "4h": 198736,
+      "12h": 343985,
+      "24h": 515060
+    },
+    "transactions": {
+      "1h": 9,
+      "4h": 63,
+      "12h": 150,
+      "24h": 224
+    },
+    "buyTransactions": {
+      "1h": 6,
+      "4h": 39,
+      "12h": 80,
+      "24h": 121
+    },
+    "sellTransactions": {
+      "1h": 3,
+      "4h": 24,
+      "12h": 70,
+      "24h": 103
+    },
+    "buyers": {
+      "1h": 6,
+      "4h": 33,
+      "12h": 60,
+      "24h": 91
+    },
+    "sellers": {
+      "1h": 3,
+      "4h": 21,
+      "12h": 46,
+      "24h": 70
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xa93d86af16fe83f064e3c0e2f3d129f7b7b002b0",
+    "name": "COCORO",
+    "uniqueName": "cocoro-10",
+    "symbol": "COCORO",
+    "decimals": 9,
+    "logo": "https://adds-token-info-29a861f.s3.amazonaws.com/0x1/0xa93d86af16fe83f064e3c0e2f3d129f7b7b002b0/b004e323-a7bf-4ef6-a803-59f2c611a81c.jpeg",
+    "usdPrice": 0.0000596534838945,
+    "createdAt": 1741434287,
+    "marketCap": 25095624,
+    "liquidityUsd": 473145,
+    "holders": 5779,
+    "pricePercentChange": {
+      "1h": 0.05436100454554461,
+      "4h": -0.007166392130479942,
+      "12h": -0.1011941699569468,
+      "24h": 0.06113779151729131
+    },
+    "totalVolume": {
+      "1h": 13035,
+      "4h": 70773,
+      "12h": 282835,
+      "24h": 799655
+    },
+    "transactions": {
+      "1h": 29,
+      "4h": 109,
+      "12h": 419,
+      "24h": 1022
+    },
+    "buyTransactions": {
+      "1h": 23,
+      "4h": 63,
+      "12h": 220,
+      "24h": 514
+    },
+    "sellTransactions": {
+      "1h": 6,
+      "4h": 46,
+      "12h": 199,
+      "24h": 508
+    },
+    "buyers": {
+      "1h": 19,
+      "4h": 56,
+      "12h": 184,
+      "24h": 369
+    },
+    "sellers": {
+      "1h": 6,
+      "4h": 33,
+      "12h": 148,
+      "24h": 327
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xf8ea18ca502de3ffaa9b8ed95a21878ee41a2f4a",
+    "name": "Boochie by Matt Furie",
+    "uniqueName": "boochieby-matt-furie-1",
+    "symbol": "BOOCHIE",
+    "decimals": 18,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0xf8ea18ca502de3ffaa9b8ed95a21878ee41a2f4a",
+    "usdPrice": 2.73062205392e-9,
+    "createdAt": 1747688915,
+    "marketCap": 1148745,
+    "liquidityUsd": 75276,
+    "holders": 4395,
+    "pricePercentChange": {
+      "1h": 0.003260733529887971,
+      "4h": -0.2105452333386986,
+      "12h": -0.003917693933379467,
+      "24h": -0.22606606747292354
+    },
+    "totalVolume": {
+      "1h": 9779,
+      "4h": 121848,
+      "12h": 357590,
+      "24h": 780988
+    },
+    "transactions": {
+      "1h": 43,
+      "4h": 331,
+      "12h": 929,
+      "24h": 1974
+    },
+    "buyTransactions": {
+      "1h": 24,
+      "4h": 197,
+      "12h": 540,
+      "24h": 1171
+    },
+    "sellTransactions": {
+      "1h": 19,
+      "4h": 134,
+      "12h": 389,
+      "24h": 803
+    },
+    "buyers": {
+      "1h": 23,
+      "4h": 108,
+      "12h": 313,
+      "24h": 574
+    },
+    "sellers": {
+      "1h": 17,
+      "4h": 90,
+      "12h": 245,
+      "24h": 462
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xfca88920ca5639ad5e954ea776e73dec54fdc065",
+    "name": "WORLDS GREATEST ETHEREUM PRINTER",
+    "uniqueName": "worldsgreatestethereumprinter-796375922",
+    "symbol": "🖨️",
+    "decimals": 18,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0xfca88920ca5639ad5e954ea776e73dec54fdc065",
+    "usdPrice": 0.00274806081771,
+    "createdAt": 1746419567,
+    "marketCap": 27480608,
+    "liquidityUsd": 339363,
+    "holders": 982,
+    "pricePercentChange": {
+      "1h": 0.003280845453857959,
+      "4h": 0.048923475741663454,
+      "12h": 0.0441048285985422,
+      "24h": -0.0817116265659657
+    },
+    "totalVolume": {
+      "1h": 86450,
+      "4h": 347455,
+      "12h": 1135567,
+      "24h": 2216988
+    },
+    "transactions": {
+      "1h": 57,
+      "4h": 238,
+      "12h": 798,
+      "24h": 1583
+    },
+    "buyTransactions": {
+      "1h": 27,
+      "4h": 119,
+      "12h": 443,
+      "24h": 885
+    },
+    "sellTransactions": {
+      "1h": 30,
+      "4h": 119,
+      "12h": 355,
+      "24h": 698
+    },
+    "buyers": {
+      "1h": 3,
+      "4h": 21,
+      "12h": 119,
+      "24h": 231
+    },
+    "sellers": {
+      "1h": 3,
+      "4h": 8,
+      "12h": 28,
+      "24h": 38
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x68bbed6a47194eff1cf514b50ea91895597fc91e",
+    "name": "Andy",
+    "uniqueName": "andy-52",
+    "symbol": "ANDY",
+    "decimals": 18,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x68bbed6a47194eff1cf514b50ea91895597fc91e",
+    "usdPrice": 0.0000644323692633,
+    "createdAt": 1709948819,
+    "marketCap": 64432369,
+    "liquidityUsd": 1603587,
+    "holders": 26029,
+    "pricePercentChange": {
+      "1h": -0.03191873868862089,
+      "4h": -0.0740355524443858,
+      "12h": -0.05081059712313776,
+      "24h": -0.10514011669301483
+    },
+    "totalVolume": {
+      "1h": 47595,
+      "4h": 100774,
+      "12h": 170899,
+      "24h": 526729
+    },
+    "transactions": {
+      "1h": 15,
+      "4h": 42,
+      "12h": 118,
+      "24h": 252
+    },
+    "buyTransactions": {
+      "1h": 12,
+      "4h": 19,
+      "12h": 51,
+      "24h": 134
+    },
+    "sellTransactions": {
+      "1h": 3,
+      "4h": 23,
+      "12h": 67,
+      "24h": 118
+    },
+    "buyers": {
+      "1h": 10,
+      "4h": 16,
+      "12h": 38,
+      "24h": 93
+    },
+    "sellers": {
+      "1h": 3,
+      "4h": 19,
+      "12h": 46,
+      "24h": 84
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x28d38df637db75533bd3f71426f3410a82041544",
+    "name": "Prompt",
+    "uniqueName": "prompt-568776144",
+    "symbol": "PROMPT",
+    "decimals": 18,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x28d38df637db75533bd3f71426f3410a82041544",
+    "usdPrice": 0.215347531475,
+    "createdAt": 1744287035,
+    "marketCap": 200046261,
+    "liquidityUsd": 2128910,
+    "holders": 6974,
+    "pricePercentChange": {
+      "1h": 0.012296549041492391,
+      "4h": -0.01844873711306943,
+      "12h": -0.033615816650632964,
+      "24h": -0.05771673181179349
+    },
+    "totalVolume": {
+      "1h": 30753,
+      "4h": 181631,
+      "12h": 399759,
+      "24h": 677514
+    },
+    "transactions": {
+      "1h": 17,
+      "4h": 72,
+      "12h": 163,
+      "24h": 320
+    },
+    "buyTransactions": {
+      "1h": 14,
+      "4h": 31,
+      "12h": 72,
+      "24h": 138
+    },
+    "sellTransactions": {
+      "1h": 3,
+      "4h": 41,
+      "12h": 91,
+      "24h": 182
+    },
+    "buyers": {
+      "1h": 7,
+      "4h": 11,
+      "12h": 26,
+      "24h": 48
+    },
+    "sellers": {
+      "1h": 2,
+      "4h": 26,
+      "12h": 41,
+      "24h": 59
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xec53bf9167f50cdeb3ae105f56099aaab9061f83",
+    "name": "Eigen",
+    "uniqueName": "eigen-2",
+    "symbol": "EIGEN",
+    "decimals": 18,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0xec53bf9167f50cdeb3ae105f56099aaab9061f83",
+    "usdPrice": 1.43376522963,
+    "createdAt": 1716644975,
+    "marketCap": 2475296609,
+    "liquidityUsd": 4541619,
+    "holders": 220028,
+    "pricePercentChange": {
+      "1h": 0.021543189071158448,
+      "4h": -0.005966007666955205,
+      "12h": -0.012737677957081365,
+      "24h": -0.04055080089265357
+    },
+    "totalVolume": {
+      "1h": 67940,
+      "4h": 128670,
+      "12h": 443207,
+      "24h": 1353604
+    },
+    "transactions": {
+      "1h": 24,
+      "4h": 43,
+      "12h": 136,
+      "24h": 396
+    },
+    "buyTransactions": {
+      "1h": 21,
+      "4h": 22,
+      "12h": 59,
+      "24h": 157
+    },
+    "sellTransactions": {
+      "1h": 3,
+      "4h": 21,
+      "12h": 77,
+      "24h": 239
+    },
+    "buyers": {
+      "1h": 13,
+      "4h": 13,
+      "12h": 29,
+      "24h": 55
+    },
+    "sellers": {
+      "1h": 3,
+      "4h": 18,
+      "12h": 48,
+      "24h": 111
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x76887cb94cf29ec539b3219ba62104be04f26a5c",
+    "name": "Nitro",
+    "uniqueName": "nitro-19",
+    "symbol": "NITRO",
+    "decimals": 18,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x76887cb94cf29ec539b3219ba62104be04f26a5c",
+    "usdPrice": 0.0000121824303987,
+    "createdAt": 1735932863,
+    "marketCap": 5116621,
+    "liquidityUsd": 123856,
+    "holders": 3898,
+    "pricePercentChange": {
+      "1h": 0.0425628988479686,
+      "4h": -0.10494604916921901,
+      "12h": -0.1086720612385049,
+      "24h": -0.16854010109128126
+    },
+    "totalVolume": {
+      "1h": 18128,
+      "4h": 38915,
+      "12h": 86717,
+      "24h": 131507
+    },
+    "transactions": {
+      "1h": 43,
+      "4h": 93,
+      "12h": 249,
+      "24h": 423
+    },
+    "buyTransactions": {
+      "1h": 22,
+      "4h": 43,
+      "12h": 112,
+      "24h": 195
+    },
+    "sellTransactions": {
+      "1h": 21,
+      "4h": 50,
+      "12h": 137,
+      "24h": 228
+    },
+    "buyers": {
+      "1h": 18,
+      "4h": 35,
+      "12h": 87,
+      "24h": 136
+    },
+    "sellers": {
+      "1h": 15,
+      "4h": 42,
+      "12h": 99,
+      "24h": 161
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x8cf5f383fd3a5a730813c61371f90b6ecddf2d3e",
+    "name": "QU3ai",
+    "uniqueName": "erc20-token-990325383",
+    "symbol": "QU3",
+    "decimals": 18,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x8cf5f383fd3a5a730813c61371f90b6ecddf2d3e",
+    "usdPrice": 0.0932652843034,
+    "createdAt": 1747610159,
+    "marketCap": 9326528,
+    "liquidityUsd": 232137,
+    "holders": 2880,
+    "pricePercentChange": {
+      "1h": -0.07429590868294994,
+      "4h": 0.04436287352752912,
+      "12h": 0.027751394446475036,
+      "24h": -0.08856427494611886
+    },
+    "totalVolume": {
+      "1h": 26395,
+      "4h": 119502,
+      "12h": 288322,
+      "24h": 470463
+    },
+    "transactions": {
+      "1h": 22,
+      "4h": 87,
+      "12h": 295,
+      "24h": 544
+    },
+    "buyTransactions": {
+      "1h": 14,
+      "4h": 45,
+      "12h": 160,
+      "24h": 329
+    },
+    "sellTransactions": {
+      "1h": 8,
+      "4h": 42,
+      "12h": 135,
+      "24h": 215
+    },
+    "buyers": {
+      "1h": 10,
+      "4h": 31,
+      "12h": 119,
+      "24h": 225
+    },
+    "sellers": {
+      "1h": 7,
+      "4h": 36,
+      "12h": 98,
+      "24h": 154
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x6e79b51959cf968d87826592f46f819f92466615",
+    "name": "Hoppy",
+    "uniqueName": "hoppy-26",
+    "symbol": "HOPPY",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x6e79b51959cf968d87826592f46f819f92466615",
+    "usdPrice": 0.000028773868191,
+    "createdAt": 1710059567,
+    "marketCap": 12104879,
+    "liquidityUsd": 574282,
+    "holders": 19887,
+    "pricePercentChange": {
+      "1h": 0.0012651514406406494,
+      "4h": -0.08942862059108872,
+      "12h": -0.07386442936662685,
+      "24h": -0.0811045190086794
+    },
+    "totalVolume": {
+      "1h": 5520,
+      "4h": 58769,
+      "12h": 108827,
+      "24h": 197143
+    },
+    "transactions": {
+      "1h": 12,
+      "4h": 60,
+      "12h": 113,
+      "24h": 216
+    },
+    "buyTransactions": {
+      "1h": 5,
+      "4h": 24,
+      "12h": 48,
+      "24h": 98
+    },
+    "sellTransactions": {
+      "1h": 7,
+      "4h": 36,
+      "12h": 65,
+      "24h": 118
+    },
+    "buyers": {
+      "1h": 5,
+      "4h": 19,
+      "12h": 40,
+      "24h": 69
+    },
+    "sellers": {
+      "1h": 6,
+      "4h": 30,
+      "12h": 51,
+      "24h": 89
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xbe0ed4138121ecfc5c0e56b40517da27e6c5226b",
+    "name": "Aethir Token",
+    "uniqueName": "aethir-token-1",
+    "symbol": "ATH",
+    "decimals": 18,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0xbe0ed4138121ecfc5c0e56b40517da27e6c5226b",
+    "usdPrice": 0.0536237450047,
+    "createdAt": 1718187875,
+    "marketCap": 2252197290,
+    "liquidityUsd": 1721727,
+    "holders": 48958,
+    "pricePercentChange": {
+      "1h": 0.03101446362244749,
+      "4h": 0.009686792652695274,
+      "12h": 0.0534149771552945,
+      "24h": 0.08867582694068754
+    },
+    "totalVolume": {
+      "1h": 28446,
+      "4h": 62845,
+      "12h": 158621,
+      "24h": 653194
+    },
+    "transactions": {
+      "1h": 25,
+      "4h": 69,
+      "12h": 185,
+      "24h": 427
+    },
+    "buyTransactions": {
+      "1h": 24,
+      "4h": 43,
+      "12h": 111,
+      "24h": 227
+    },
+    "sellTransactions": {
+      "1h": 1,
+      "4h": 26,
+      "12h": 74,
+      "24h": 200
+    },
+    "buyers": {
+      "1h": 12,
+      "4h": 19,
+      "12h": 56,
+      "24h": 97
+    },
+    "sellers": {
+      "1h": 1,
+      "4h": 20,
+      "12h": 53,
+      "24h": 116
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xaea46a60368a7bd060eec7df8cba43b7ef41ad85",
+    "name": "Fetch",
+    "uniqueName": "fetch",
+    "symbol": "FET",
+    "decimals": 18,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0xaea46a60368a7bd060eec7df8cba43b7ef41ad85",
+    "usdPrice": 0.86773106628,
+    "createdAt": 1738959179,
+    "marketCap": 2355450683,
+    "liquidityUsd": 75214949,
+    "holders": 148320,
+    "pricePercentChange": {
+      "1h": 0.016463142013748218,
+      "4h": -0.012159486928950244,
+      "12h": -0.0460499710896732,
+      "24h": -0.007093221133664826
+    },
+    "totalVolume": {
+      "1h": 6903,
+      "4h": 24033,
+      "12h": 93165,
+      "24h": 297829
+    },
+    "transactions": {
+      "1h": 7,
+      "4h": 19,
+      "12h": 57,
+      "24h": 283
+    },
+    "buyTransactions": {
+      "1h": 7,
+      "4h": 11,
+      "12h": 23,
+      "24h": 107
+    },
+    "sellTransactions": {
+      "1h": 0,
+      "4h": 8,
+      "12h": 34,
+      "24h": 176
+    },
+    "buyers": {
+      "1h": 7,
+      "4h": 11,
+      "12h": 21,
+      "24h": 48
+    },
+    "sellers": {
+      "1h": 0,
+      "4h": 8,
+      "12h": 21,
+      "24h": 51
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xd7efb00d12c2c13131fd319336fdf952525da2af",
+    "name": "Proton",
+    "uniqueName": "proton",
+    "symbol": "XPR",
+    "decimals": 4,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0xd7efb00d12c2c13131fd319336fdf952525da2af",
+    "usdPrice": 0.00378622093727,
+    "createdAt": 1721978375,
+    "marketCap": 37862209,
+    "liquidityUsd": 133597,
+    "holders": 9111,
+    "pricePercentChange": {
+      "1h": 0.011831308465490449,
+      "4h": 0.0007000764533458655,
+      "12h": 0.03472426658536009,
+      "24h": 0.07509277528173974
+    },
+    "totalVolume": {
+      "1h": 3526,
+      "4h": 42215,
+      "12h": 234280,
+      "24h": 482328
+    },
+    "transactions": {
+      "1h": 10,
+      "4h": 75,
+      "12h": 226,
+      "24h": 480
+    },
+    "buyTransactions": {
+      "1h": 9,
+      "4h": 45,
+      "12h": 147,
+      "24h": 267
+    },
+    "sellTransactions": {
+      "1h": 1,
+      "4h": 30,
+      "12h": 79,
+      "24h": 213
+    },
+    "buyers": {
+      "1h": 8,
+      "4h": 31,
+      "12h": 98,
+      "24h": 156
+    },
+    "sellers": {
+      "1h": 1,
+      "4h": 15,
+      "12h": 46,
+      "24h": 77
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x28aa5f417f396e7ac24e0c8facdd159106310538",
+    "name": "Yama",
+    "uniqueName": "yama-10",
+    "symbol": "YAMA",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x28aa5f417f396e7ac24e0c8facdd159106310538",
+    "usdPrice": 0.0000145806273752,
+    "createdAt": 1748291927,
+    "marketCap": 14581,
+    "liquidityUsd": 5454,
+    "holders": 211,
+    "pricePercentChange": {
+      "1h": -0.05113518324112908,
+      "4h": -0.41890115321273325,
+      "12h": 3.2929602683904498,
+      "24h": 3.2929602683904498
+    },
+    "totalVolume": {
+      "1h": 7033,
+      "4h": 18139,
+      "12h": 187428,
+      "24h": 187428
+    },
+    "transactions": {
+      "1h": 54,
+      "4h": 156,
+      "12h": 925,
+      "24h": 925
+    },
+    "buyTransactions": {
+      "1h": 30,
+      "4h": 73,
+      "12h": 537,
+      "24h": 537
+    },
+    "sellTransactions": {
+      "1h": 24,
+      "4h": 83,
+      "12h": 388,
+      "24h": 388
+    },
+    "buyers": {
+      "1h": 25,
+      "4h": 54,
+      "12h": 373,
+      "24h": 373
+    },
+    "sellers": {
+      "1h": 23,
+      "4h": 75,
+      "12h": 269,
+      "24h": 269
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x594daad7d77592a2b97b725a7ad59d7e188b5bfa",
+    "name": "Apu Apustaja",
+    "uniqueName": "apu-apustaja-13",
+    "symbol": "APU",
+    "decimals": 18,
+    "logo": "https://adds-token-info-29a861f.s3.eu-central-1.amazonaws.com/marketing/evm/0x594daad7d77592a2b97b725a7ad59d7e188b5bfa_icon.png",
+    "usdPrice": 0.000217606372781,
+    "createdAt": 1710143147,
+    "marketCap": 91544825,
+    "liquidityUsd": 1412801,
+    "holders": 32997,
+    "pricePercentChange": {
+      "1h": 0.010866047444511934,
+      "4h": -0.02914691642779297,
+      "12h": -0.03743246303632268,
+      "24h": -0.04358235094913213
+    },
+    "totalVolume": {
+      "1h": 5991,
+      "4h": 57048,
+      "12h": 233791,
+      "24h": 308800
+    },
+    "transactions": {
+      "1h": 5,
+      "4h": 57,
+      "12h": 156,
+      "24h": 282
+    },
+    "buyTransactions": {
+      "1h": 3,
+      "4h": 32,
+      "12h": 75,
+      "24h": 137
+    },
+    "sellTransactions": {
+      "1h": 2,
+      "4h": 25,
+      "12h": 81,
+      "24h": 145
+    },
+    "buyers": {
+      "1h": 3,
+      "4h": 21,
+      "12h": 51,
+      "24h": 96
+    },
+    "sellers": {
+      "1h": 2,
+      "4h": 16,
+      "12h": 48,
+      "24h": 88
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x9ce84f6a69986a83d92c324df10bc8e64771030f",
+    "name": "Chintai Exchange Token",
+    "uniqueName": "chintai-exchange-token",
+    "symbol": "CHEX",
+    "decimals": 18,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x9ce84f6a69986a83d92c324df10bc8e64771030f",
+    "usdPrice": 0.22453962012,
+    "createdAt": 1701733763,
+    "marketCap": 136669732,
+    "liquidityUsd": 1506793,
+    "holders": 9614,
+    "pricePercentChange": {
+      "1h": 0.005392455067481491,
+      "4h": -0.023484365792568157,
+      "12h": 0.0037035452015903923,
+      "24h": 0.16448461529827282
+    },
+    "totalVolume": {
+      "1h": 3950,
+      "4h": 54360,
+      "12h": 389582,
+      "24h": 921193
+    },
+    "transactions": {
+      "1h": 7,
+      "4h": 26,
+      "12h": 142,
+      "24h": 270
+    },
+    "buyTransactions": {
+      "1h": 5,
+      "4h": 10,
+      "12h": 88,
+      "24h": 173
+    },
+    "sellTransactions": {
+      "1h": 2,
+      "4h": 16,
+      "12h": 54,
+      "24h": 97
+    },
+    "buyers": {
+      "1h": 5,
+      "4h": 10,
+      "12h": 56,
+      "24h": 84
+    },
+    "sellers": {
+      "1h": 2,
+      "4h": 15,
+      "12h": 39,
+      "24h": 54
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xc575bd129848ce06a460a19466c30e1d0328f52c",
+    "name": "Reploy",
+    "uniqueName": "reploy-1",
+    "symbol": "RAI",
+    "decimals": 18,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0xc575bd129848ce06a460a19466c30e1d0328f52c",
+    "usdPrice": 0.944668703055,
+    "createdAt": 1734700775,
+    "marketCap": 9446687,
+    "liquidityUsd": 565441,
+    "holders": 13635,
+    "pricePercentChange": {
+      "1h": -0.009584730526803304,
+      "4h": -0.08518600901447544,
+      "12h": -0.08942812216964796,
+      "24h": -0.07627612013880262
+    },
+    "totalVolume": {
+      "1h": 8275,
+      "4h": 44552,
+      "12h": 239006,
+      "24h": 380984
+    },
+    "transactions": {
+      "1h": 10,
+      "4h": 44,
+      "12h": 222,
+      "24h": 389
+    },
+    "buyTransactions": {
+      "1h": 6,
+      "4h": 23,
+      "12h": 136,
+      "24h": 235
+    },
+    "sellTransactions": {
+      "1h": 4,
+      "4h": 21,
+      "12h": 86,
+      "24h": 154
+    },
+    "buyers": {
+      "1h": 4,
+      "4h": 12,
+      "12h": 69,
+      "24h": 125
+    },
+    "sellers": {
+      "1h": 4,
+      "4h": 21,
+      "12h": 64,
+      "24h": 100
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x968dc061290f76f90b3b939cc9380d47d79a54c5",
+    "name": "Moonkin",
+    "uniqueName": "moonkin-1",
+    "symbol": "MOONKIN",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x968dc061290f76f90b3b939cc9380d47d79a54c5",
+    "usdPrice": 0.00000738433762528,
+    "createdAt": 1740846167,
+    "marketCap": 3106517,
+    "liquidityUsd": 154198,
+    "holders": 2664,
+    "pricePercentChange": {
+      "1h": 0.10935444101560392,
+      "4h": -0.039808423010523425,
+      "12h": 0.06140655000848473,
+      "24h": -0.0805601924349005
+    },
+    "totalVolume": {
+      "1h": 9458,
+      "4h": 29324,
+      "12h": 96338,
+      "24h": 235805
+    },
+    "transactions": {
+      "1h": 14,
+      "4h": 60,
+      "12h": 144,
+      "24h": 387
+    },
+    "buyTransactions": {
+      "1h": 11,
+      "4h": 32,
+      "12h": 66,
+      "24h": 169
+    },
+    "sellTransactions": {
+      "1h": 3,
+      "4h": 28,
+      "12h": 78,
+      "24h": 218
+    },
+    "buyers": {
+      "1h": 11,
+      "4h": 29,
+      "12h": 58,
+      "24h": 120
+    },
+    "sellers": {
+      "1h": 2,
+      "4h": 19,
+      "12h": 56,
+      "24h": 154
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x467bccd9d29f223bce8043b84e8c8b282827790f",
+    "name": "Telcoin",
+    "uniqueName": "telcoin",
+    "symbol": "TEL",
+    "decimals": 2,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x467bccd9d29f223bce8043b84e8c8b282827790f",
+    "usdPrice": 0.00446592643859,
+    "createdAt": 1630454949,
+    "marketCap": 446592644,
+    "liquidityUsd": 263303,
+    "holders": 54669,
+    "pricePercentChange": {
+      "1h": -0.009444133677110103,
+      "4h": -0.024556869982698126,
+      "12h": -0.033072145082680325,
+      "24h": -0.04729673067327
+    },
+    "totalVolume": {
+      "1h": 14490,
+      "4h": 47488,
+      "12h": 248343,
+      "24h": 320579
+    },
+    "transactions": {
+      "1h": 11,
+      "4h": 39,
+      "12h": 154,
+      "24h": 204
+    },
+    "buyTransactions": {
+      "1h": 3,
+      "4h": 21,
+      "12h": 83,
+      "24h": 103
+    },
+    "sellTransactions": {
+      "1h": 8,
+      "4h": 18,
+      "12h": 71,
+      "24h": 101
+    },
+    "buyers": {
+      "1h": 3,
+      "4h": 9,
+      "12h": 34,
+      "24h": 44
+    },
+    "sellers": {
+      "1h": 7,
+      "4h": 17,
+      "12h": 48,
+      "24h": 63
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x3432b6a60d23ca0dfca7761b7ab56459d9c964d0",
+    "name": "Frax Share",
+    "uniqueName": "frax-share",
+    "symbol": "FXS",
+    "decimals": 18,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x3432b6a60d23ca0dfca7761b7ab56459d9c964d0",
+    "usdPrice": 3.43154270655,
+    "createdAt": 1660947906,
+    "marketCap": 342061309,
+    "liquidityUsd": 6049964,
+    "holders": 17798,
+    "pricePercentChange": {
+      "1h": 0.0035453580454217768,
+      "4h": 0.00713642997051547,
+      "12h": 0.09804796662917642,
+      "24h": 0.09344075839625349
+    },
+    "totalVolume": {
+      "1h": 84763,
+      "4h": 407140,
+      "12h": 1243133,
+      "24h": 1668558
+    },
+    "transactions": {
+      "1h": 7,
+      "4h": 46,
+      "12h": 151,
+      "24h": 218
+    },
+    "buyTransactions": {
+      "1h": 4,
+      "4h": 22,
+      "12h": 104,
+      "24h": 142
+    },
+    "sellTransactions": {
+      "1h": 3,
+      "4h": 24,
+      "12h": 47,
+      "24h": 76
+    },
+    "buyers": {
+      "1h": 2,
+      "4h": 5,
+      "12h": 42,
+      "24h": 49
+    },
+    "sellers": {
+      "1h": 2,
+      "4h": 8,
+      "12h": 10,
+      "24h": 13
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x962c8a85f500519266269f77dffba4cea0b46da1",
+    "name": "Strawberry In Bloom",
+    "uniqueName": "strawberry-in-bloom-1",
+    "symbol": "BERRY",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x962c8a85f500519266269f77dffba4cea0b46da1",
+    "usdPrice": 0.00369310678662,
+    "createdAt": 1746935411,
+    "marketCap": 1553653,
+    "liquidityUsd": 117890,
+    "holders": 3627,
+    "pricePercentChange": {
+      "1h": 0.09273489842994975,
+      "4h": 0.025172279690906837,
+      "12h": -0.132715348184311,
+      "24h": -0.2821152381074536
+    },
+    "totalVolume": {
+      "1h": 9022,
+      "4h": 29764,
+      "12h": 162360,
+      "24h": 370064
+    },
+    "transactions": {
+      "1h": 26,
+      "4h": 75,
+      "12h": 333,
+      "24h": 753
+    },
+    "buyTransactions": {
+      "1h": 15,
+      "4h": 38,
+      "12h": 178,
+      "24h": 405
+    },
+    "sellTransactions": {
+      "1h": 11,
+      "4h": 37,
+      "12h": 155,
+      "24h": 348
+    },
+    "buyers": {
+      "1h": 12,
+      "4h": 28,
+      "12h": 113,
+      "24h": 220
+    },
+    "sellers": {
+      "1h": 7,
+      "4h": 29,
+      "12h": 107,
+      "24h": 220
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xa4b855f6713d1a04a2331149db995476dc3e694b",
+    "name": "BabyDog",
+    "uniqueName": "baby-dog-12",
+    "symbol": "BABYDOG",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0xa4b855f6713d1a04a2331149db995476dc3e694b",
+    "usdPrice": 1.89706360926e-9,
+    "createdAt": 1747055711,
+    "marketCap": 798076,
+    "liquidityUsd": 49222,
+    "holders": 1671,
+    "pricePercentChange": {
+      "1h": 0.1015659590089031,
+      "4h": -0.06691990921450165,
+      "12h": -0.18079727163570186,
+      "24h": 0.371975808434616
+    },
+    "totalVolume": {
+      "1h": 3449,
+      "4h": 17643,
+      "12h": 78260,
+      "24h": 546695
+    },
+    "transactions": {
+      "1h": 17,
+      "4h": 73,
+      "12h": 282,
+      "24h": 1250
+    },
+    "buyTransactions": {
+      "1h": 14,
+      "4h": 43,
+      "12h": 170,
+      "24h": 697
+    },
+    "sellTransactions": {
+      "1h": 3,
+      "4h": 30,
+      "12h": 112,
+      "24h": 553
+    },
+    "buyers": {
+      "1h": 12,
+      "4h": 37,
+      "12h": 130,
+      "24h": 422
+    },
+    "sellers": {
+      "1h": 3,
+      "4h": 29,
+      "12h": 93,
+      "24h": 339
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x666acd390fa42d5bf86e9c42dc2fa6f6b4b2d8ab",
+    "name": "Gorth",
+    "uniqueName": "gorth-3",
+    "symbol": "GORTH",
+    "decimals": 18,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x666acd390fa42d5bf86e9c42dc2fa6f6b4b2d8ab",
+    "usdPrice": 1.16616944412e-9,
+    "createdAt": 1746990011,
+    "marketCap": 490596,
+    "liquidityUsd": 47408,
+    "holders": 2270,
+    "pricePercentChange": {
+      "1h": -0.022746214563659096,
+      "4h": -0.07914963194494101,
+      "12h": -0.01453676401562122,
+      "24h": -0.2345896617381685
+    },
+    "totalVolume": {
+      "1h": 7494,
+      "4h": 53371,
+      "12h": 129650,
+      "24h": 233841
+    },
+    "transactions": {
+      "1h": 20,
+      "4h": 113,
+      "12h": 365,
+      "24h": 659
+    },
+    "buyTransactions": {
+      "1h": 14,
+      "4h": 66,
+      "12h": 221,
+      "24h": 375
+    },
+    "sellTransactions": {
+      "1h": 6,
+      "4h": 47,
+      "12h": 144,
+      "24h": 284
+    },
+    "buyers": {
+      "1h": 12,
+      "4h": 49,
+      "12h": 142,
+      "24h": 226
+    },
+    "sellers": {
+      "1h": 6,
+      "4h": 38,
+      "12h": 106,
+      "24h": 197
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x255494b830bd4fe7220b3ec4842cba75600b6c80",
+    "name": "Beast Seller",
+    "uniqueName": "beast-seller-1",
+    "symbol": "BEAST",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x255494b830bd4fe7220b3ec4842cba75600b6c80",
+    "usdPrice": 0.00284535722436,
+    "createdAt": 1747217351,
+    "marketCap": 197525,
+    "liquidityUsd": 16709,
+    "holders": 485,
+    "pricePercentChange": {
+      "1h": -0.004981848126019719,
+      "4h": -0.2760636995979255,
+      "12h": -0.19555298682275202,
+      "24h": -0.40747274427995894
+    },
+    "totalVolume": {
+      "1h": 4104,
+      "4h": 27634,
+      "12h": 91279,
+      "24h": 128728
+    },
+    "transactions": {
+      "1h": 17,
+      "4h": 105,
+      "12h": 295,
+      "24h": 443
+    },
+    "buyTransactions": {
+      "1h": 11,
+      "4h": 69,
+      "12h": 170,
+      "24h": 255
+    },
+    "sellTransactions": {
+      "1h": 6,
+      "4h": 36,
+      "12h": 125,
+      "24h": 188
+    },
+    "buyers": {
+      "1h": 10,
+      "4h": 50,
+      "12h": 106,
+      "24h": 137
+    },
+    "sellers": {
+      "1h": 6,
+      "4h": 25,
+      "12h": 77,
+      "24h": 106
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x6b4472d6047aae634e90a8cfebb34f4ed430eda7",
+    "name": "REGEN",
+    "uniqueName": "regen-860288427",
+    "symbol": "REGEN",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x6b4472d6047aae634e90a8cfebb34f4ed430eda7",
+    "usdPrice": 5.14457569551e-7,
+    "createdAt": 1747978271,
+    "marketCap": 216427,
+    "liquidityUsd": 24448,
+    "holders": 934,
+    "pricePercentChange": {
+      "1h": 0.12127406517087405,
+      "4h": 0.09533651569474401,
+      "12h": -0.2337689038755545,
+      "24h": 0.3139794805212495
+    },
+    "totalVolume": {
+      "1h": 6676,
+      "4h": 17448,
+      "12h": 50041,
+      "24h": 187973
+    },
+    "transactions": {
+      "1h": 32,
+      "4h": 98,
+      "12h": 247,
+      "24h": 784
+    },
+    "buyTransactions": {
+      "1h": 19,
+      "4h": 58,
+      "12h": 138,
+      "24h": 423
+    },
+    "sellTransactions": {
+      "1h": 13,
+      "4h": 40,
+      "12h": 109,
+      "24h": 361
+    },
+    "buyers": {
+      "1h": 17,
+      "4h": 44,
+      "12h": 100,
+      "24h": 253
+    },
+    "sellers": {
+      "1h": 13,
+      "4h": 33,
+      "12h": 88,
+      "24h": 226
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xfe625bb2d2a0f24ace72adc3365f203771495e39",
+    "name": "KERMIT",
+    "uniqueName": "kermit-4",
+    "symbol": "KERMIT",
+    "decimals": 18,
+    "logo": null,
+    "usdPrice": 0.00703253628623,
+    "createdAt": 1683911099,
+    "marketCap": 70325,
+    "liquidityUsd": 13030,
+    "holders": 88,
+    "pricePercentChange": {
+      "1h": 0.4088022417486364,
+      "4h": 1.58025773742976,
+      "12h": 0.337559405734803,
+      "24h": 3.9714882091847055
+    },
+    "totalVolume": {
+      "1h": 9377,
+      "4h": 18448,
+      "12h": 24126,
+      "24h": 68151
+    },
+    "transactions": {
+      "1h": 27,
+      "4h": 75,
+      "12h": 98,
+      "24h": 258
+    },
+    "buyTransactions": {
+      "1h": 18,
+      "4h": 52,
+      "12h": 57,
+      "24h": 156
+    },
+    "sellTransactions": {
+      "1h": 9,
+      "4h": 23,
+      "12h": 41,
+      "24h": 102
+    },
+    "buyers": {
+      "1h": 16,
+      "4h": 45,
+      "12h": 50,
+      "24h": 114
+    },
+    "sellers": {
+      "1h": 9,
+      "4h": 21,
+      "12h": 39,
+      "24h": 81
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x643c4e15d7d62ad0abec4a9bd4b001aa3ef52d66",
+    "name": "Syrup Token",
+    "uniqueName": "syrup-token-1",
+    "symbol": "SYRUP",
+    "decimals": 18,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x643c4e15d7d62ad0abec4a9bd4b001aa3ef52d66",
+    "usdPrice": 0.418698822287,
+    "createdAt": 1730913887,
+    "marketCap": 498097936,
+    "liquidityUsd": 2593573,
+    "holders": 7493,
+    "pricePercentChange": {
+      "1h": 0.0016292425345259525,
+      "4h": -0.01271778919061531,
+      "12h": -0.025623223204287282,
+      "24h": -0.07475708289915736
+    },
+    "totalVolume": {
+      "1h": 6213,
+      "4h": 114087,
+      "12h": 723011,
+      "24h": 1246566
+    },
+    "transactions": {
+      "1h": 3,
+      "4h": 29,
+      "12h": 136,
+      "24h": 245
+    },
+    "buyTransactions": {
+      "1h": 3,
+      "4h": 14,
+      "12h": 46,
+      "24h": 66
+    },
+    "sellTransactions": {
+      "1h": 0,
+      "4h": 15,
+      "12h": 90,
+      "24h": 179
+    },
+    "buyers": {
+      "1h": 3,
+      "4h": 7,
+      "12h": 19,
+      "24h": 32
+    },
+    "sellers": {
+      "1h": 0,
+      "4h": 9,
+      "12h": 31,
+      "24h": 52
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xbc2ecbe2195114b82f03680ed4270fa7008f3be0",
+    "name": "Bitcoin 2.0",
+    "uniqueName": "bitcoin-20-46",
+    "symbol": "BTC2",
+    "decimals": 18,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0xbc2ecbe2195114b82f03680ed4270fa7008f3be0",
+    "usdPrice": 0.019118245419,
+    "createdAt": 1747879283,
+    "marketCap": 401483,
+    "liquidityUsd": 35524,
+    "holders": 684,
+    "pricePercentChange": {
+      "1h": 0.07063167383315243,
+      "4h": 0.4825659351827023,
+      "12h": 0.14649575242368743,
+      "24h": 0.3633463776564173
+    },
+    "totalVolume": {
+      "1h": 4182,
+      "4h": 28741,
+      "12h": 130338,
+      "24h": 244484
+    },
+    "transactions": {
+      "1h": 11,
+      "4h": 62,
+      "12h": 231,
+      "24h": 527
+    },
+    "buyTransactions": {
+      "1h": 8,
+      "4h": 43,
+      "12h": 149,
+      "24h": 337
+    },
+    "sellTransactions": {
+      "1h": 3,
+      "4h": 19,
+      "12h": 82,
+      "24h": 190
+    },
+    "buyers": {
+      "1h": 7,
+      "4h": 30,
+      "12h": 88,
+      "24h": 176
+    },
+    "sellers": {
+      "1h": 3,
+      "4h": 17,
+      "12h": 65,
+      "24h": 126
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xbf46dcd9bc421a044449f42c6beeb372ca7f2f44",
+    "name": "A Full Bitcoin Alternative",
+    "uniqueName": "a-full-bitcoin-alternative-1",
+    "symbol": "BTCD",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0xbf46dcd9bc421a044449f42c6beeb372ca7f2f44",
+    "usdPrice": 4.27801243652e-8,
+    "createdAt": 1748306075,
+    "marketCap": 4278,
+    "liquidityUsd": 2993,
+    "holders": 50,
+    "pricePercentChange": {
+      "1h": -0.1636113808443527,
+      "4h": 0.33744326712118994,
+      "12h": 0.33744326712118994,
+      "24h": 0.33744326712118994
+    },
+    "totalVolume": {
+      "1h": 819,
+      "4h": 78230,
+      "12h": 78230,
+      "24h": 78230
+    },
+    "transactions": {
+      "1h": 8,
+      "4h": 346,
+      "12h": 346,
+      "24h": 346
+    },
+    "buyTransactions": {
+      "1h": 3,
+      "4h": 188,
+      "12h": 188,
+      "24h": 188
+    },
+    "sellTransactions": {
+      "1h": 5,
+      "4h": 158,
+      "12h": 158,
+      "24h": 158
+    },
+    "buyers": {
+      "1h": 3,
+      "4h": 140,
+      "12h": 140,
+      "24h": 140
+    },
+    "sellers": {
+      "1h": 5,
+      "4h": 108,
+      "12h": 108,
+      "24h": 108
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xa0ef786bf476fe0810408caba05e536ac800ff86",
+    "name": "Myria",
+    "uniqueName": "myria",
+    "symbol": "MYRIA",
+    "decimals": 18,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0xa0ef786bf476fe0810408caba05e536ac800ff86",
+    "usdPrice": 0.00106398150332,
+    "createdAt": 1680765371,
+    "marketCap": 53199075,
+    "liquidityUsd": 74258,
+    "holders": 36050,
+    "pricePercentChange": {
+      "1h": 0.032931860744951844,
+      "4h": 0.018219627192815592,
+      "12h": 0.1309680606880291,
+      "24h": 0.05142965872444585
+    },
+    "totalVolume": {
+      "1h": 17812,
+      "4h": 32897,
+      "12h": 119560,
+      "24h": 300038
+    },
+    "transactions": {
+      "1h": 18,
+      "4h": 55,
+      "12h": 201,
+      "24h": 333
+    },
+    "buyTransactions": {
+      "1h": 12,
+      "4h": 28,
+      "12h": 106,
+      "24h": 172
+    },
+    "sellTransactions": {
+      "1h": 6,
+      "4h": 27,
+      "12h": 95,
+      "24h": 161
+    },
+    "buyers": {
+      "1h": 9,
+      "4h": 21,
+      "12h": 56,
+      "24h": 82
+    },
+    "sellers": {
+      "1h": 5,
+      "4h": 21,
+      "12h": 49,
+      "24h": 72
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x8b74770b3195497cda77f80eb4e89016691b5d59",
+    "name": "BabyYee",
+    "uniqueName": "baby-yee-1",
+    "symbol": "BABYYEE",
+    "decimals": 9,
+    "logo": null,
+    "usdPrice": 6.67557710514e-8,
+    "createdAt": 1748221211,
+    "marketCap": 28083,
+    "liquidityUsd": 2708,
+    "holders": 175,
+    "pricePercentChange": {
+      "1h": -0.26868847169037813,
+      "4h": -0.41100926767663243,
+      "12h": 3.2097295072000196,
+      "24h": 2.5603189479033035
+    },
+    "totalVolume": {
+      "1h": 5411,
+      "4h": 20961,
+      "12h": 87590,
+      "24h": 104535
+    },
+    "transactions": {
+      "1h": 41,
+      "4h": 139,
+      "12h": 587,
+      "24h": 772
+    },
+    "buyTransactions": {
+      "1h": 24,
+      "4h": 79,
+      "12h": 335,
+      "24h": 436
+    },
+    "sellTransactions": {
+      "1h": 17,
+      "4h": 60,
+      "12h": 252,
+      "24h": 336
+    },
+    "buyers": {
+      "1h": 17,
+      "4h": 47,
+      "12h": 160,
+      "24h": 205
+    },
+    "sellers": {
+      "1h": 17,
+      "4h": 44,
+      "12h": 136,
+      "24h": 178
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x7f3b4b68ca0238f387d8b1a8fbc002d0e6d4cd5b",
+    "name": "Kermit",
+    "uniqueName": "kermit-31",
+    "symbol": "KERMIT",
+    "decimals": 18,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x7f3b4b68ca0238f387d8b1a8fbc002d0e6d4cd5b",
+    "usdPrice": 0.000200938811116,
+    "createdAt": 1709534243,
+    "marketCap": 200939,
+    "liquidityUsd": 26541,
+    "holders": 70,
+    "pricePercentChange": {
+      "1h": -0.12346186286976539,
+      "4h": -0.3306649178711355,
+      "12h": -0.13890365312962444,
+      "24h": 7.470499928771152
+    },
+    "totalVolume": {
+      "1h": 3497,
+      "4h": 23930,
+      "12h": 81589,
+      "24h": 135976
+    },
+    "transactions": {
+      "1h": 12,
+      "4h": 55,
+      "12h": 182,
+      "24h": 327
+    },
+    "buyTransactions": {
+      "1h": 4,
+      "4h": 27,
+      "12h": 105,
+      "24h": 192
+    },
+    "sellTransactions": {
+      "1h": 8,
+      "4h": 28,
+      "12h": 77,
+      "24h": 135
+    },
+    "buyers": {
+      "1h": 3,
+      "4h": 23,
+      "12h": 78,
+      "24h": 138
+    },
+    "sellers": {
+      "1h": 8,
+      "4h": 28,
+      "12h": 61,
+      "24h": 89
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x09a0a447b27ad4fa63016d423affc6a373ba16f4",
+    "name": "NyraOS",
+    "uniqueName": "nyra-os-1",
+    "symbol": "NYRA",
+    "decimals": 18,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x09a0a447b27ad4fa63016d423affc6a373ba16f4",
+    "usdPrice": 0.000611806679011,
+    "createdAt": 1748283347,
+    "marketCap": 61181,
+    "liquidityUsd": 11955,
+    "holders": 179,
+    "pricePercentChange": {
+      "1h": 0.0676115133983697,
+      "4h": -0.09168816271209404,
+      "12h": 20.168975507703678,
+      "24h": 20.168975507703678
+    },
+    "totalVolume": {
+      "1h": 3094,
+      "4h": 16706,
+      "12h": 132023,
+      "24h": 132016
+    },
+    "transactions": {
+      "1h": 10,
+      "4h": 82,
+      "12h": 660,
+      "24h": 660
+    },
+    "buyTransactions": {
+      "1h": 5,
+      "4h": 44,
+      "12h": 366,
+      "24h": 366
+    },
+    "sellTransactions": {
+      "1h": 5,
+      "4h": 38,
+      "12h": 294,
+      "24h": 294
+    },
+    "buyers": {
+      "1h": 4,
+      "4h": 34,
+      "12h": 243,
+      "24h": 243
+    },
+    "sellers": {
+      "1h": 4,
+      "4h": 25,
+      "12h": 160,
+      "24h": 160
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xaca8dc895e73d2728a4e081aa5170e5af7517821",
+    "name": "Naked Crab Man",
+    "uniqueName": "naked-crab-man-1",
+    "symbol": "NCM",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0xaca8dc895e73d2728a4e081aa5170e5af7517821",
+    "usdPrice": 0.000418411583737,
+    "createdAt": 1744938239,
+    "marketCap": 418412,
+    "liquidityUsd": 34594,
+    "holders": 676,
+    "pricePercentChange": {
+      "1h": -0.05713471407442153,
+      "4h": -0.10978492559492266,
+      "12h": -0.13050049701359495,
+      "24h": -0.11534794858038118
+    },
+    "totalVolume": {
+      "1h": 6632,
+      "4h": 25387,
+      "12h": 39214,
+      "24h": 138730
+    },
+    "transactions": {
+      "1h": 15,
+      "4h": 53,
+      "12h": 100,
+      "24h": 338
+    },
+    "buyTransactions": {
+      "1h": 7,
+      "4h": 24,
+      "12h": 52,
+      "24h": 189
+    },
+    "sellTransactions": {
+      "1h": 8,
+      "4h": 29,
+      "12h": 48,
+      "24h": 149
+    },
+    "buyers": {
+      "1h": 6,
+      "4h": 21,
+      "12h": 44,
+      "24h": 127
+    },
+    "sellers": {
+      "1h": 6,
+      "4h": 25,
+      "12h": 42,
+      "24h": 99
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x667102bd3413bfeaa3dffb48fa8288819e480a88",
+    "name": "Tokenize Emblem",
+    "uniqueName": "tokenize-emblem",
+    "symbol": "TKX",
+    "decimals": 8,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x667102bd3413bfeaa3dffb48fa8288819e480a88",
+    "usdPrice": 31.8902236164,
+    "createdAt": 1630478096,
+    "marketCap": 3189022362,
+    "liquidityUsd": 567783,
+    "holders": 54030,
+    "pricePercentChange": {
+      "1h": 0.013287776249447025,
+      "4h": 0.0035768282471973665,
+      "12h": 0.07217709830481438,
+      "24h": 0.038792791451768095
+    },
+    "totalVolume": {
+      "1h": 25861,
+      "4h": 104665,
+      "12h": 323476,
+      "24h": 699402
+    },
+    "transactions": {
+      "1h": 23,
+      "4h": 87,
+      "12h": 267,
+      "24h": 561
+    },
+    "buyTransactions": {
+      "1h": 12,
+      "4h": 47,
+      "12h": 149,
+      "24h": 306
+    },
+    "sellTransactions": {
+      "1h": 11,
+      "4h": 40,
+      "12h": 118,
+      "24h": 255
+    },
+    "buyers": {
+      "1h": 3,
+      "4h": 11,
+      "12h": 28,
+      "24h": 60
+    },
+    "sellers": {
+      "1h": 5,
+      "4h": 9,
+      "12h": 21,
+      "24h": 42
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x168168db04def453b7e8bfaff1e0102a3e810485",
+    "name": "Labubu",
+    "uniqueName": "labubu-11",
+    "symbol": "LABUBU",
+    "decimals": 10,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x168168db04def453b7e8bfaff1e0102a3e810485",
+    "usdPrice": 0.000283222066753,
+    "createdAt": 1728856247,
+    "marketCap": 283222,
+    "liquidityUsd": 31716,
+    "holders": 1517,
+    "pricePercentChange": {
+      "1h": -0.06309618536608683,
+      "4h": 0.2448018602125096,
+      "12h": -0.10174718091265271,
+      "24h": 0.14625924283623495
+    },
+    "totalVolume": {
+      "1h": 2153,
+      "4h": 23106,
+      "12h": 130264,
+      "24h": 177505
+    },
+    "transactions": {
+      "1h": 3,
+      "4h": 63,
+      "12h": 280,
+      "24h": 379
+    },
+    "buyTransactions": {
+      "1h": 1,
+      "4h": 35,
+      "12h": 162,
+      "24h": 224
+    },
+    "sellTransactions": {
+      "1h": 2,
+      "4h": 28,
+      "12h": 118,
+      "24h": 155
+    },
+    "buyers": {
+      "1h": 1,
+      "4h": 26,
+      "12h": 107,
+      "24h": 147
+    },
+    "sellers": {
+      "1h": 2,
+      "4h": 23,
+      "12h": 85,
+      "24h": 105
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x49fb8ad7578148e17c3ef0c344ce23a66ed372c4",
+    "name": "tao.bot",
+    "uniqueName": "taobot-1",
+    "symbol": "TAOBOT",
+    "decimals": 18,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x49fb8ad7578148e17c3ef0c344ce23a66ed372c4",
+    "usdPrice": 0.580969043461,
+    "createdAt": 1709755631,
+    "marketCap": 58096904,
+    "liquidityUsd": 642829,
+    "holders": 8846,
+    "pricePercentChange": {
+      "1h": 0.0034003994680233724,
+      "4h": -0.016317946632988797,
+      "12h": 0.026275020557292354,
+      "24h": -0.04210905389517028
+    },
+    "totalVolume": {
+      "1h": 3951,
+      "4h": 19938,
+      "12h": 75947,
+      "24h": 175506
+    },
+    "transactions": {
+      "1h": 8,
+      "4h": 33,
+      "12h": 107,
+      "24h": 242
+    },
+    "buyTransactions": {
+      "1h": 4,
+      "4h": 21,
+      "12h": 64,
+      "24h": 154
+    },
+    "sellTransactions": {
+      "1h": 4,
+      "4h": 12,
+      "12h": 43,
+      "24h": 88
+    },
+    "buyers": {
+      "1h": 2,
+      "4h": 16,
+      "12h": 50,
+      "24h": 124
+    },
+    "sellers": {
+      "1h": 4,
+      "4h": 11,
+      "12h": 40,
+      "24h": 81
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x68b36248477277865c64dfc78884ef80577078f3",
+    "name": "Everybody",
+    "uniqueName": "everybody-2",
+    "symbol": "Hold",
+    "decimals": 18,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x68b36248477277865c64dfc78884ef80577078f3",
+    "usdPrice": 0.000482642348165,
+    "createdAt": 1695702419,
+    "marketCap": 48264235,
+    "liquidityUsd": 271557,
+    "holders": 2627,
+    "pricePercentChange": {
+      "1h": 0.01041587933977736,
+      "4h": -0.009375824473863219,
+      "12h": -0.09494590741065716,
+      "24h": -0.028406321636975037
+    },
+    "totalVolume": {
+      "1h": 1374,
+      "4h": 21173,
+      "12h": 215732,
+      "24h": 278747
+    },
+    "transactions": {
+      "1h": 3,
+      "4h": 27,
+      "12h": 168,
+      "24h": 224
+    },
+    "buyTransactions": {
+      "1h": 3,
+      "4h": 23,
+      "12h": 115,
+      "24h": 147
+    },
+    "sellTransactions": {
+      "1h": 0,
+      "4h": 4,
+      "12h": 53,
+      "24h": 77
+    },
+    "buyers": {
+      "1h": 3,
+      "4h": 21,
+      "12h": 78,
+      "24h": 93
+    },
+    "sellers": {
+      "1h": 0,
+      "4h": 3,
+      "12h": 43,
+      "24h": 63
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xf19308f923582a6f7c465e5ce7a9dc1bec6665b1",
+    "name": "TITAN X",
+    "uniqueName": "titanx",
+    "symbol": "TITANX",
+    "decimals": 18,
+    "logo": "https://adds-token-info-29a861f.s3.amazonaws.com/0x1/0xf19308f923582a6f7c465e5ce7a9dc1bec6665b1/80c67300-9828-4155-b0a6-b9f5856adaa1.PNG",
+    "usdPrice": 1.61736225308e-7,
+    "createdAt": 1698478103,
+    "marketCap": 17108824,
+    "liquidityUsd": 355374,
+    "holders": 20063,
+    "pricePercentChange": {
+      "1h": 0.01824473565053229,
+      "4h": 0.00948372952300854,
+      "12h": -0.03012698499202796,
+      "24h": -0.07535944510474593
+    },
+    "totalVolume": {
+      "1h": 5691,
+      "4h": 14373,
+      "12h": 62102,
+      "24h": 162435
+    },
+    "transactions": {
+      "1h": 6,
+      "4h": 45,
+      "12h": 144,
+      "24h": 335
+    },
+    "buyTransactions": {
+      "1h": 4,
+      "4h": 26,
+      "12h": 75,
+      "24h": 162
+    },
+    "sellTransactions": {
+      "1h": 2,
+      "4h": 19,
+      "12h": 69,
+      "24h": 173
+    },
+    "buyers": {
+      "1h": 4,
+      "4h": 20,
+      "12h": 51,
+      "24h": 83
+    },
+    "sellers": {
+      "1h": 2,
+      "4h": 15,
+      "12h": 44,
+      "24h": 90
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xb6d369faf21cda1b281013ea83badf6bb26b884d",
+    "name": "Mu-Chan",
+    "uniqueName": "mu-chan-1",
+    "symbol": "MU",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0xb6d369faf21cda1b281013ea83badf6bb26b884d",
+    "usdPrice": 4.32383499934e-7,
+    "createdAt": 1747922675,
+    "marketCap": 181899,
+    "liquidityUsd": 20485,
+    "holders": 445,
+    "pricePercentChange": {
+      "1h": 0.03199902373757065,
+      "4h": 0.10146452719312576,
+      "12h": -0.04437219469645016,
+      "24h": 0.24803332844525852
+    },
+    "totalVolume": {
+      "1h": 5462,
+      "4h": 27053,
+      "12h": 48503,
+      "24h": 148444
+    },
+    "transactions": {
+      "1h": 18,
+      "4h": 83,
+      "12h": 166,
+      "24h": 446
+    },
+    "buyTransactions": {
+      "1h": 9,
+      "4h": 48,
+      "12h": 83,
+      "24h": 241
+    },
+    "sellTransactions": {
+      "1h": 9,
+      "4h": 35,
+      "12h": 83,
+      "24h": 205
+    },
+    "buyers": {
+      "1h": 8,
+      "4h": 36,
+      "12h": 60,
+      "24h": 154
+    },
+    "sellers": {
+      "1h": 8,
+      "4h": 28,
+      "12h": 69,
+      "24h": 141
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x69af81e73a73b40adf4f3d4223cd9b1ece623074",
+    "name": "Mask Network",
+    "uniqueName": "mask-network",
+    "symbol": "MASK",
+    "decimals": 18,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x69af81e73a73b40adf4f3d4223cd9b1ece623074",
+    "usdPrice": 1.81832243411,
+    "createdAt": 1630454859,
+    "marketCap": 181832243,
+    "liquidityUsd": 519342,
+    "holders": 13495,
+    "pricePercentChange": {
+      "1h": -0.009615507802727028,
+      "4h": -0.01786830666764004,
+      "12h": 0.014785112472032428,
+      "24h": 0.07554558686307958
+    },
+    "totalVolume": {
+      "1h": 5787,
+      "4h": 29516,
+      "12h": 101648,
+      "24h": 149377
+    },
+    "transactions": {
+      "1h": 12,
+      "4h": 43,
+      "12h": 146,
+      "24h": 229
+    },
+    "buyTransactions": {
+      "1h": 3,
+      "4h": 17,
+      "12h": 71,
+      "24h": 122
+    },
+    "sellTransactions": {
+      "1h": 9,
+      "4h": 26,
+      "12h": 75,
+      "24h": 107
+    },
+    "buyers": {
+      "1h": 3,
+      "4h": 9,
+      "12h": 25,
+      "24h": 29
+    },
+    "sellers": {
+      "1h": 8,
+      "4h": 21,
+      "12h": 36,
+      "24h": 38
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x1121acc14c63f3c872bfca497d10926a6098aac5",
+    "name": "Department Of Government Efficiency",
+    "uniqueName": "department-of-government-efficiency-4",
+    "symbol": "DOGE",
+    "decimals": 18,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x1121acc14c63f3c872bfca497d10926a6098aac5",
+    "usdPrice": 0.0218076245137,
+    "createdAt": 1724119115,
+    "marketCap": 21807625,
+    "liquidityUsd": 1161237,
+    "holders": 33495,
+    "pricePercentChange": {
+      "1h": 0.0022903689749761776,
+      "4h": 0.0015653158099389422,
+      "12h": 0.002672692378465653,
+      "24h": -0.06784527524812764
+    },
+    "totalVolume": {
+      "1h": 2491,
+      "4h": 33703,
+      "12h": 146499,
+      "24h": 435954
+    },
+    "transactions": {
+      "1h": 5,
+      "4h": 40,
+      "12h": 108,
+      "24h": 304
+    },
+    "buyTransactions": {
+      "1h": 2,
+      "4h": 23,
+      "12h": 50,
+      "24h": 164
+    },
+    "sellTransactions": {
+      "1h": 3,
+      "4h": 17,
+      "12h": 58,
+      "24h": 140
+    },
+    "buyers": {
+      "1h": 2,
+      "4h": 9,
+      "12h": 29,
+      "24h": 81
+    },
+    "sellers": {
+      "1h": 2,
+      "4h": 16,
+      "12h": 45,
+      "24h": 95
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xa9e8acf069c58aec8825542845fd754e41a9489a",
+    "name": "pepeCoin",
+    "uniqueName": "pepe-coin-7",
+    "symbol": "pepecoin",
+    "decimals": 18,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0xa9e8acf069c58aec8825542845fd754e41a9489a",
+    "usdPrice": 0.419519442019,
+    "createdAt": 1682720159,
+    "marketCap": 56118830,
+    "liquidityUsd": 1499704,
+    "holders": 18985,
+    "pricePercentChange": {
+      "1h": 0.004451739766755435,
+      "4h": -0.012747646452947386,
+      "12h": -0.037161539635260116,
+      "24h": -0.09005172853425517
+    },
+    "totalVolume": {
+      "1h": 1846,
+      "4h": 10240,
+      "12h": 79561,
+      "24h": 251048
+    },
+    "transactions": {
+      "1h": 9,
+      "4h": 25,
+      "12h": 113,
+      "24h": 252
+    },
+    "buyTransactions": {
+      "1h": 4,
+      "4h": 12,
+      "12h": 58,
+      "24h": 111
+    },
+    "sellTransactions": {
+      "1h": 5,
+      "4h": 13,
+      "12h": 55,
+      "24h": 141
+    },
+    "buyers": {
+      "1h": 4,
+      "4h": 11,
+      "12h": 42,
+      "24h": 75
+    },
+    "sellers": {
+      "1h": 3,
+      "4h": 9,
+      "12h": 32,
+      "24h": 56
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x8de5b80a0c1b02fe4976851d030b36122dbb8624",
+    "name": "VANRY",
+    "uniqueName": "vanry-1",
+    "symbol": "VANRY",
+    "decimals": 18,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x8de5b80a0c1b02fe4976851d030b36122dbb8624",
+    "usdPrice": 0.0394264263255,
+    "createdAt": 1701417707,
+    "marketCap": 78506719,
+    "liquidityUsd": 635544,
+    "holders": 7674,
+    "pricePercentChange": {
+      "1h": 0.017823939625105135,
+      "4h": -0.01443266396216756,
+      "12h": -0.057634858096813214,
+      "24h": -0.05182864999501517
+    },
+    "totalVolume": {
+      "1h": 4036,
+      "4h": 12953,
+      "12h": 185701,
+      "24h": 518671
+    },
+    "transactions": {
+      "1h": 8,
+      "4h": 24,
+      "12h": 98,
+      "24h": 296
+    },
+    "buyTransactions": {
+      "1h": 8,
+      "4h": 11,
+      "12h": 48,
+      "24h": 135
+    },
+    "sellTransactions": {
+      "1h": 0,
+      "4h": 13,
+      "12h": 50,
+      "24h": 161
+    },
+    "buyers": {
+      "1h": 7,
+      "4h": 10,
+      "12h": 34,
+      "24h": 77
+    },
+    "sellers": {
+      "1h": 0,
+      "4h": 10,
+      "12h": 32,
+      "24h": 68
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x967da4048cd07ab37855c090aaf366e4ce1b9f48",
+    "name": "Ocean Token",
+    "uniqueName": "ocean-token",
+    "symbol": "OCEAN",
+    "decimals": 18,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x967da4048cd07ab37855c090aaf366e4ce1b9f48",
+    "usdPrice": 0.389613360153,
+    "createdAt": 1630455765,
+    "marketCap": 549354838,
+    "liquidityUsd": 591800,
+    "holders": 37891,
+    "pricePercentChange": {
+      "1h": -0.016191979980692994,
+      "4h": -0.021837672987176572,
+      "12h": -0.09031588393164501,
+      "24h": 0.03541570550892804
+    },
+    "totalVolume": {
+      "1h": 7862,
+      "4h": 21249,
+      "12h": 166850,
+      "24h": 290942
+    },
+    "transactions": {
+      "1h": 7,
+      "4h": 18,
+      "12h": 130,
+      "24h": 271
+    },
+    "buyTransactions": {
+      "1h": 3,
+      "4h": 9,
+      "12h": 69,
+      "24h": 155
+    },
+    "sellTransactions": {
+      "1h": 4,
+      "4h": 9,
+      "12h": 61,
+      "24h": 116
+    },
+    "buyers": {
+      "1h": 3,
+      "4h": 6,
+      "12h": 23,
+      "24h": 31
+    },
+    "sellers": {
+      "1h": 4,
+      "4h": 7,
+      "12h": 27,
+      "24h": 50
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x02908491d2f145bb906bfa0ea922b73e33899491",
+    "name": "Duck Narrator",
+    "uniqueName": "duck-narrator-1",
+    "symbol": "DUCK",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x02908491d2f145bb906bfa0ea922b73e33899491",
+    "usdPrice": 2.10630367028e-8,
+    "createdAt": 1748272691,
+    "marketCap": 8861,
+    "liquidityUsd": 3076,
+    "holders": 97,
+    "pricePercentChange": {
+      "1h": -0.24950048710188813,
+      "4h": -0.6034267225584846,
+      "12h": 2.876392550969841,
+      "24h": 2.876392550969841
+    },
+    "totalVolume": {
+      "1h": 1385,
+      "4h": 8662,
+      "12h": 53720,
+      "24h": 53712
+    },
+    "transactions": {
+      "1h": 11,
+      "4h": 50,
+      "12h": 416,
+      "24h": 416
+    },
+    "buyTransactions": {
+      "1h": 5,
+      "4h": 24,
+      "12h": 223,
+      "24h": 223
+    },
+    "sellTransactions": {
+      "1h": 6,
+      "4h": 26,
+      "12h": 193,
+      "24h": 193
+    },
+    "buyers": {
+      "1h": 5,
+      "4h": 15,
+      "12h": 152,
+      "24h": 152
+    },
+    "sellers": {
+      "1h": 6,
+      "4h": 24,
+      "12h": 116,
+      "24h": 116
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x7137e8a3b069c3f787c4ffbb901b91e4ba47d082",
+    "name": "Zeus",
+    "uniqueName": "zeus-24",
+    "symbol": "Zeus",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x7137e8a3b069c3f787c4ffbb901b91e4ba47d082",
+    "usdPrice": 0.0772998569836,
+    "createdAt": 1694826587,
+    "marketCap": 772999,
+    "liquidityUsd": 64230,
+    "holders": 1451,
+    "pricePercentChange": {
+      "1h": 0.02306188236752437,
+      "4h": 0.2566902434786222,
+      "12h": -0.19050113524367274,
+      "24h": -0.2756409831071943
+    },
+    "totalVolume": {
+      "1h": 2001,
+      "4h": 12431,
+      "12h": 70080,
+      "24h": 148356
+    },
+    "transactions": {
+      "1h": 9,
+      "4h": 37,
+      "12h": 143,
+      "24h": 298
+    },
+    "buyTransactions": {
+      "1h": 5,
+      "4h": 26,
+      "12h": 77,
+      "24h": 168
+    },
+    "sellTransactions": {
+      "1h": 4,
+      "4h": 11,
+      "12h": 66,
+      "24h": 130
+    },
+    "buyers": {
+      "1h": 4,
+      "4h": 16,
+      "12h": 52,
+      "24h": 111
+    },
+    "sellers": {
+      "1h": 4,
+      "4h": 9,
+      "12h": 50,
+      "24h": 103
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x44010973375d320be6ec899d1ff5f99871bb1a19",
+    "name": "Tio",
+    "uniqueName": "tio-1",
+    "symbol": "TIO",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x44010973375d320be6ec899d1ff5f99871bb1a19",
+    "usdPrice": 1.22508100668e-10,
+    "createdAt": 1745340563,
+    "marketCap": 51538,
+    "liquidityUsd": 10936,
+    "holders": 374,
+    "pricePercentChange": {
+      "1h": -0.09541174238921588,
+      "4h": -0.12433347503767044,
+      "12h": -0.44474575414073764,
+      "24h": -0.4154661201267408
+    },
+    "totalVolume": {
+      "1h": 3185,
+      "4h": 12048,
+      "12h": 43858,
+      "24h": 202000
+    },
+    "transactions": {
+      "1h": 20,
+      "4h": 64,
+      "12h": 207,
+      "24h": 836
+    },
+    "buyTransactions": {
+      "1h": 10,
+      "4h": 29,
+      "12h": 109,
+      "24h": 482
+    },
+    "sellTransactions": {
+      "1h": 10,
+      "4h": 35,
+      "12h": 98,
+      "24h": 354
+    },
+    "buyers": {
+      "1h": 9,
+      "4h": 21,
+      "12h": 74,
+      "24h": 238
+    },
+    "sellers": {
+      "1h": 9,
+      "4h": 26,
+      "12h": 75,
+      "24h": 203
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x8390a1da07e376ef7add4be859ba74fb83aa02d5",
+    "name": "GROK",
+    "uniqueName": "grok-6",
+    "symbol": "GROK",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x8390a1da07e376ef7add4be859ba74fb83aa02d5",
+    "usdPrice": 0.00310752780253,
+    "createdAt": 1699071695,
+    "marketCap": 21441942,
+    "liquidityUsd": 1070129,
+    "holders": 21361,
+    "pricePercentChange": {
+      "1h": 0.011382501325212171,
+      "4h": -0.005282053564974473,
+      "12h": 0.019655197019132844,
+      "24h": 0.11003151385854217
+    },
+    "totalVolume": {
+      "1h": 268,
+      "4h": 14375,
+      "12h": 141559,
+      "24h": 231685
+    },
+    "transactions": {
+      "1h": 5,
+      "4h": 23,
+      "12h": 108,
+      "24h": 214
+    },
+    "buyTransactions": {
+      "1h": 4,
+      "4h": 11,
+      "12h": 49,
+      "24h": 117
+    },
+    "sellTransactions": {
+      "1h": 1,
+      "4h": 12,
+      "12h": 59,
+      "24h": 97
+    },
+    "buyers": {
+      "1h": 4,
+      "4h": 9,
+      "12h": 25,
+      "24h": 44
+    },
+    "sellers": {
+      "1h": 1,
+      "4h": 10,
+      "12h": 27,
+      "24h": 40
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xc7f380530c789f61dff8b022874e5185076cc1fb",
+    "name": "Pectra Giraffe",
+    "uniqueName": "pectra-giraffe-2",
+    "symbol": "GPECTRA",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0xc7f380530c789f61dff8b022874e5185076cc1fb",
+    "usdPrice": 0.00000265411584189,
+    "createdAt": 1746616115,
+    "marketCap": 1116560,
+    "liquidityUsd": 65732,
+    "holders": 1497,
+    "pricePercentChange": {
+      "1h": -0.0284567655640065,
+      "4h": -0.04116538998816108,
+      "12h": -0.10332591937896143,
+      "24h": 0.17390433842561118
+    },
+    "totalVolume": {
+      "1h": 3673,
+      "4h": 10577,
+      "12h": 63920,
+      "24h": 191149
+    },
+    "transactions": {
+      "1h": 8,
+      "4h": 31,
+      "12h": 144,
+      "24h": 423
+    },
+    "buyTransactions": {
+      "1h": 5,
+      "4h": 15,
+      "12h": 73,
+      "24h": 222
+    },
+    "sellTransactions": {
+      "1h": 3,
+      "4h": 16,
+      "12h": 71,
+      "24h": 201
+    },
+    "buyers": {
+      "1h": 5,
+      "4h": 13,
+      "12h": 59,
+      "24h": 143
+    },
+    "sellers": {
+      "1h": 2,
+      "4h": 14,
+      "12h": 52,
+      "24h": 119
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x1930411152437a3a85d76d6d0720618b31a555e4",
+    "name": "Encryptum",
+    "uniqueName": "encryptum-2",
+    "symbol": "ENCT",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x1930411152437a3a85d76d6d0720618b31a555e4",
+    "usdPrice": 0.000996281570266,
+    "createdAt": 1747670483,
+    "marketCap": 996282,
+    "liquidityUsd": 45879,
+    "holders": 730,
+    "pricePercentChange": {
+      "1h": 0.058414059832837956,
+      "4h": 0.14014046936399427,
+      "12h": -0.2086050088639737,
+      "24h": -0.14691885687537498
+    },
+    "totalVolume": {
+      "1h": 1128,
+      "4h": 17669,
+      "12h": 71350,
+      "24h": 113792
+    },
+    "transactions": {
+      "1h": 3,
+      "4h": 27,
+      "12h": 133,
+      "24h": 219
+    },
+    "buyTransactions": {
+      "1h": 3,
+      "4h": 20,
+      "12h": 75,
+      "24h": 120
+    },
+    "sellTransactions": {
+      "1h": 0,
+      "4h": 7,
+      "12h": 58,
+      "24h": 99
+    },
+    "buyers": {
+      "1h": 3,
+      "4h": 20,
+      "12h": 60,
+      "24h": 90
+    },
+    "sellers": {
+      "1h": 0,
+      "4h": 5,
+      "12h": 37,
+      "24h": 60
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x223342e18166118169bf13dff82ac93d4e00783f",
+    "name": "Peek",
+    "uniqueName": "peek-4",
+    "symbol": "PEEK",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x223342e18166118169bf13dff82ac93d4e00783f",
+    "usdPrice": 5.86043682946e-10,
+    "createdAt": 1744828955,
+    "marketCap": 246543,
+    "liquidityUsd": 25793,
+    "holders": 657,
+    "pricePercentChange": {
+      "1h": -0.07513147158686906,
+      "4h": 0.007356985313304372,
+      "12h": -0.3048458889651286,
+      "24h": -0.28992980491064985
+    },
+    "totalVolume": {
+      "1h": 3381,
+      "4h": 31885,
+      "12h": 98393,
+      "24h": 357579
+    },
+    "transactions": {
+      "1h": 14,
+      "4h": 117,
+      "12h": 363,
+      "24h": 1086
+    },
+    "buyTransactions": {
+      "1h": 8,
+      "4h": 61,
+      "12h": 179,
+      "24h": 589
+    },
+    "sellTransactions": {
+      "1h": 6,
+      "4h": 56,
+      "12h": 184,
+      "24h": 497
+    },
+    "buyers": {
+      "1h": 7,
+      "4h": 52,
+      "12h": 130,
+      "24h": 339
+    },
+    "sellers": {
+      "1h": 6,
+      "4h": 47,
+      "12h": 145,
+      "24h": 296
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xe6d07e1a7c9f8f9826aa82e6faf7feab698dd4fe",
+    "name": "Project Rocket",
+    "uniqueName": "project-rocket-1",
+    "symbol": "ROCKET",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0xe6d07e1a7c9f8f9826aa82e6faf7feab698dd4fe",
+    "usdPrice": 0.00000107553079179,
+    "createdAt": 1743543011,
+    "marketCap": 452465,
+    "liquidityUsd": 36648,
+    "holders": 600,
+    "pricePercentChange": {
+      "1h": -0.007841038886177355,
+      "4h": 0.09944028259299785,
+      "12h": -0.1385299983928558,
+      "24h": 0.66948878103084
+    },
+    "totalVolume": {
+      "1h": 6357,
+      "4h": 15827,
+      "12h": 54750,
+      "24h": 263683
+    },
+    "transactions": {
+      "1h": 12,
+      "4h": 31,
+      "12h": 137,
+      "24h": 592
+    },
+    "buyTransactions": {
+      "1h": 8,
+      "4h": 19,
+      "12h": 80,
+      "24h": 356
+    },
+    "sellTransactions": {
+      "1h": 4,
+      "4h": 12,
+      "12h": 57,
+      "24h": 236
+    },
+    "buyers": {
+      "1h": 8,
+      "4h": 17,
+      "12h": 61,
+      "24h": 229
+    },
+    "sellers": {
+      "1h": 4,
+      "4h": 12,
+      "12h": 52,
+      "24h": 178
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xed61d3e74e0dcd2d73dbd46ebb1bb19ba93bc482",
+    "name": "Arbion AI",
+    "uniqueName": "arbion-ai-1",
+    "symbol": "ARAI",
+    "decimals": 18,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0xed61d3e74e0dcd2d73dbd46ebb1bb19ba93bc482",
+    "usdPrice": 0.00511587909936,
+    "createdAt": 1747824851,
+    "marketCap": 511588,
+    "liquidityUsd": 69750,
+    "holders": 546,
+    "pricePercentChange": {
+      "1h": 0.01575754578322365,
+      "4h": -0.02956123413763492,
+      "12h": -0.23416943191962042,
+      "24h": -0.4001456385899252
+    },
+    "totalVolume": {
+      "1h": 1183,
+      "4h": 8913,
+      "12h": 71275,
+      "24h": 110132
+    },
+    "transactions": {
+      "1h": 10,
+      "4h": 32,
+      "12h": 195,
+      "24h": 304
+    },
+    "buyTransactions": {
+      "1h": 4,
+      "4h": 10,
+      "12h": 65,
+      "24h": 102
+    },
+    "sellTransactions": {
+      "1h": 6,
+      "4h": 22,
+      "12h": 130,
+      "24h": 202
+    },
+    "buyers": {
+      "1h": 4,
+      "4h": 10,
+      "12h": 52,
+      "24h": 76
+    },
+    "sellers": {
+      "1h": 3,
+      "4h": 11,
+      "12h": 58,
+      "24h": 77
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x39903a1a6f289a67e0de94096915c4ccd506ab2a",
+    "name": "MAIV",
+    "uniqueName": "maiv-1",
+    "symbol": "MAIV",
+    "decimals": 18,
+    "logo": "https://adds-token-info-29a861f.s3.amazonaws.com/0x1/0x39903a1a6f289a67e0de94096915c4ccd506ab2a/8b91f7b3-a6f0-427d-a9be-42d8e472e333.jpg",
+    "usdPrice": 0.00155187782037,
+    "createdAt": 1733929367,
+    "marketCap": 15518778,
+    "liquidityUsd": 41986,
+    "holders": 507,
+    "pricePercentChange": {
+      "1h": -0.06933679629258375,
+      "4h": 0.09038410748911391,
+      "12h": 0.24762043906118159,
+      "24h": 0.3572529103791075
+    },
+    "totalVolume": {
+      "1h": 1967,
+      "4h": 10376,
+      "12h": 100519,
+      "24h": 149646
+    },
+    "transactions": {
+      "1h": 6,
+      "4h": 42,
+      "12h": 181,
+      "24h": 289
+    },
+    "buyTransactions": {
+      "1h": 2,
+      "4h": 31,
+      "12h": 103,
+      "24h": 159
+    },
+    "sellTransactions": {
+      "1h": 4,
+      "4h": 11,
+      "12h": 78,
+      "24h": 130
+    },
+    "buyers": {
+      "1h": 2,
+      "4h": 12,
+      "12h": 49,
+      "24h": 69
+    },
+    "sellers": {
+      "1h": 4,
+      "4h": 11,
+      "12h": 33,
+      "24h": 41
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x77b55e0388a1997cf91313f13697c9b7de487e5a",
+    "name": "Moose",
+    "uniqueName": "moose-2",
+    "symbol": "MOOSE",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x77b55e0388a1997cf91313f13697c9b7de487e5a",
+    "usdPrice": 0.000227766548884,
+    "createdAt": 1727429771,
+    "marketCap": 227767,
+    "liquidityUsd": 26948,
+    "holders": 951,
+    "pricePercentChange": {
+      "1h": 0.11470635595394066,
+      "4h": 0.07450648403642415,
+      "12h": -0.09021904901845273,
+      "24h": 0.1713885510915408
+    },
+    "totalVolume": {
+      "1h": 1780,
+      "4h": 10205,
+      "12h": 36238,
+      "24h": 160077
+    },
+    "transactions": {
+      "1h": 8,
+      "4h": 42,
+      "12h": 121,
+      "24h": 504
+    },
+    "buyTransactions": {
+      "1h": 5,
+      "4h": 20,
+      "12h": 70,
+      "24h": 290
+    },
+    "sellTransactions": {
+      "1h": 3,
+      "4h": 22,
+      "12h": 51,
+      "24h": 214
+    },
+    "buyers": {
+      "1h": 5,
+      "4h": 13,
+      "12h": 55,
+      "24h": 196
+    },
+    "sellers": {
+      "1h": 3,
+      "4h": 18,
+      "12h": 43,
+      "24h": 150
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xe6705367880b4d5d1aeae948fd620f55ef7413e4",
+    "name": "Dogei",
+    "uniqueName": "dogei-5",
+    "symbol": "DOGEI",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0xe6705367880b4d5d1aeae948fd620f55ef7413e4",
+    "usdPrice": 8.39081650605e-7,
+    "createdAt": 1719794243,
+    "marketCap": 352993,
+    "liquidityUsd": 33691,
+    "holders": 450,
+    "pricePercentChange": {
+      "1h": 0.020884449357700674,
+      "4h": 0.12529161438913322,
+      "12h": 0.01185100365332668,
+      "24h": -0.03750623876506703
+    },
+    "totalVolume": {
+      "1h": 1834,
+      "4h": 18520,
+      "12h": 77782,
+      "24h": 289712
+    },
+    "transactions": {
+      "1h": 10,
+      "4h": 69,
+      "12h": 259,
+      "24h": 786
+    },
+    "buyTransactions": {
+      "1h": 6,
+      "4h": 43,
+      "12h": 159,
+      "24h": 477
+    },
+    "sellTransactions": {
+      "1h": 4,
+      "4h": 26,
+      "12h": 100,
+      "24h": 309
+    },
+    "buyers": {
+      "1h": 5,
+      "4h": 23,
+      "12h": 85,
+      "24h": 183
+    },
+    "sellers": {
+      "1h": 4,
+      "4h": 21,
+      "12h": 66,
+      "24h": 143
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x8a7e247b77ff6d8043121b682229c2a032bf79ce",
+    "name": "Decontext",
+    "uniqueName": "decontext-101314387",
+    "symbol": "DCTX",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x8a7e247b77ff6d8043121b682229c2a032bf79ce",
+    "usdPrice": 0.00105013629356,
+    "createdAt": 1748275679,
+    "marketCap": 105014,
+    "liquidityUsd": 18740,
+    "holders": 199,
+    "pricePercentChange": {
+      "1h": -0.0827873397945406,
+      "4h": -0.0780030547600965,
+      "12h": 12.075571578782819,
+      "24h": 12.075571578782819
+    },
+    "totalVolume": {
+      "1h": 1582,
+      "4h": 6106,
+      "12h": 148869,
+      "24h": 148869
+    },
+    "transactions": {
+      "1h": 6,
+      "4h": 14,
+      "12h": 534,
+      "24h": 534
+    },
+    "buyTransactions": {
+      "1h": 3,
+      "4h": 6,
+      "12h": 320,
+      "24h": 320
+    },
+    "sellTransactions": {
+      "1h": 3,
+      "4h": 8,
+      "12h": 214,
+      "24h": 214
+    },
+    "buyers": {
+      "1h": 3,
+      "4h": 6,
+      "12h": 225,
+      "24h": 225
+    },
+    "sellers": {
+      "1h": 2,
+      "4h": 6,
+      "12h": 110,
+      "24h": 110
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xcd8509aff12061ec648f274da915047d8c2d3af8",
+    "name": "JuaiJuai Cat",
+    "uniqueName": "juai-juai-cat-1",
+    "symbol": "JUAIJUAI",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0xcd8509aff12061ec648f274da915047d8c2d3af8",
+    "usdPrice": 0.0000166606000879,
+    "createdAt": 1747760543,
+    "marketCap": 148094,
+    "liquidityUsd": 18145,
+    "holders": 507,
+    "pricePercentChange": {
+      "1h": -0.04388858858518474,
+      "4h": -0.08114213941262557,
+      "12h": 0.23653461627670413,
+      "24h": 0.2489793560290705
+    },
+    "totalVolume": {
+      "1h": 2036,
+      "4h": 8699,
+      "12h": 80761,
+      "24h": 113457
+    },
+    "transactions": {
+      "1h": 10,
+      "4h": 38,
+      "12h": 230,
+      "24h": 361
+    },
+    "buyTransactions": {
+      "1h": 4,
+      "4h": 14,
+      "12h": 125,
+      "24h": 206
+    },
+    "sellTransactions": {
+      "1h": 6,
+      "4h": 24,
+      "12h": 105,
+      "24h": 155
+    },
+    "buyers": {
+      "1h": 4,
+      "4h": 11,
+      "12h": 82,
+      "24h": 127
+    },
+    "sellers": {
+      "1h": 5,
+      "4h": 15,
+      "12h": 68,
+      "24h": 100
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x6a76a004f3bda1447b7d8bbea8355866420b8cb5",
+    "name": "Charlie",
+    "uniqueName": "charlie-8",
+    "symbol": "CHARLIE",
+    "decimals": 8,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x6a76a004f3bda1447b7d8bbea8355866420b8cb5",
+    "usdPrice": 0.000783791488647,
+    "createdAt": 1743451151,
+    "marketCap": 783791,
+    "liquidityUsd": 55644,
+    "holders": 1064,
+    "pricePercentChange": {
+      "1h": -0.06485411972022412,
+      "4h": -0.1434195716140723,
+      "12h": -0.12957580938842128,
+      "24h": 0.0026734015366798153
+    },
+    "totalVolume": {
+      "1h": 2136,
+      "4h": 5638,
+      "12h": 75601,
+      "24h": 150796
+    },
+    "transactions": {
+      "1h": 5,
+      "4h": 20,
+      "12h": 138,
+      "24h": 305
+    },
+    "buyTransactions": {
+      "1h": 1,
+      "4h": 6,
+      "12h": 76,
+      "24h": 167
+    },
+    "sellTransactions": {
+      "1h": 4,
+      "4h": 14,
+      "12h": 62,
+      "24h": 138
+    },
+    "buyers": {
+      "1h": 1,
+      "4h": 5,
+      "12h": 64,
+      "24h": 131
+    },
+    "sellers": {
+      "1h": 4,
+      "4h": 14,
+      "12h": 53,
+      "24h": 112
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x30cbdfdaab4bc15e26caf11e1a4703323d77cd3e",
+    "name": "CMX Agent",
+    "uniqueName": "cmx-agent-1",
+    "symbol": "CMX",
+    "decimals": 18,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x30cbdfdaab4bc15e26caf11e1a4703323d77cd3e",
+    "usdPrice": 0.000541642555065,
+    "createdAt": 1747404863,
+    "marketCap": 541643,
+    "liquidityUsd": 58677,
+    "holders": 815,
+    "pricePercentChange": {
+      "1h": 0.02451927454240734,
+      "4h": 0.043709462683194596,
+      "12h": -0.14691820555753024,
+      "24h": -0.17339560790701258
+    },
+    "totalVolume": {
+      "1h": 2648,
+      "4h": 14725,
+      "12h": 65127,
+      "24h": 129805
+    },
+    "transactions": {
+      "1h": 11,
+      "4h": 51,
+      "12h": 187,
+      "24h": 369
+    },
+    "buyTransactions": {
+      "1h": 5,
+      "4h": 24,
+      "12h": 90,
+      "24h": 179
+    },
+    "sellTransactions": {
+      "1h": 6,
+      "4h": 27,
+      "12h": 97,
+      "24h": 190
+    },
+    "buyers": {
+      "1h": 2,
+      "4h": 12,
+      "12h": 38,
+      "24h": 52
+    },
+    "sellers": {
+      "1h": 5,
+      "4h": 10,
+      "12h": 30,
+      "24h": 44
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x95ed629b028cf6aadd1408bb988c6d1daabe4767",
+    "name": "Dork Lord",
+    "uniqueName": "dork-lord-14",
+    "symbol": "DORKY",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x95ed629b028cf6aadd1408bb988c6d1daabe4767",
+    "usdPrice": 0.0268967989541,
+    "createdAt": 1717457627,
+    "marketCap": 1867176,
+    "liquidityUsd": 48117,
+    "holders": 1941,
+    "pricePercentChange": {
+      "1h": 0.016173323706990116,
+      "4h": -0.07913577514371706,
+      "12h": -0.06333892948154055,
+      "24h": -0.10145160066532255
+    },
+    "totalVolume": {
+      "1h": 585,
+      "4h": 15252,
+      "12h": 45246,
+      "24h": 84943
+    },
+    "transactions": {
+      "1h": 5,
+      "4h": 37,
+      "12h": 124,
+      "24h": 218
+    },
+    "buyTransactions": {
+      "1h": 4,
+      "4h": 22,
+      "12h": 77,
+      "24h": 136
+    },
+    "sellTransactions": {
+      "1h": 1,
+      "4h": 15,
+      "12h": 47,
+      "24h": 82
+    },
+    "buyers": {
+      "1h": 4,
+      "4h": 16,
+      "12h": 43,
+      "24h": 61
+    },
+    "sellers": {
+      "1h": 1,
+      "4h": 12,
+      "12h": 24,
+      "24h": 36
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xfee067d64e25745f06bfb62d5af1a7b8cc7e236b",
+    "name": "Hororo",
+    "uniqueName": "hororo-1",
+    "symbol": "Hororo",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0xfee067d64e25745f06bfb62d5af1a7b8cc7e236b",
+    "usdPrice": 0.00000155529907803,
+    "createdAt": 1746814583,
+    "marketCap": 654299,
+    "liquidityUsd": 44814,
+    "holders": 754,
+    "pricePercentChange": {
+      "1h": -0.01598586394638281,
+      "4h": -0.1507503993154073,
+      "12h": -0.02080107533934107,
+      "24h": 0.33279859702614834
+    },
+    "totalVolume": {
+      "1h": 1498,
+      "4h": 8554,
+      "12h": 44468,
+      "24h": 133493
+    },
+    "transactions": {
+      "1h": 4,
+      "4h": 32,
+      "12h": 112,
+      "24h": 325
+    },
+    "buyTransactions": {
+      "1h": 1,
+      "4h": 11,
+      "12h": 64,
+      "24h": 175
+    },
+    "sellTransactions": {
+      "1h": 3,
+      "4h": 21,
+      "12h": 48,
+      "24h": 150
+    },
+    "buyers": {
+      "1h": 1,
+      "4h": 10,
+      "12h": 56,
+      "24h": 127
+    },
+    "sellers": {
+      "1h": 3,
+      "4h": 17,
+      "12h": 40,
+      "24h": 110
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xd8213956452dcb73e6085a6189f38e60a5e065f0",
+    "name": "HALO AI",
+    "uniqueName": "haloai-2",
+    "symbol": "HALO",
+    "decimals": 18,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0xd8213956452dcb73e6085a6189f38e60a5e065f0",
+    "usdPrice": 0.113445155776,
+    "createdAt": 1748279255,
+    "marketCap": 113445,
+    "liquidityUsd": 13832,
+    "holders": 138,
+    "pricePercentChange": {
+      "1h": 0.3445567403582054,
+      "4h": 0.16749521011004684,
+      "12h": 27.96696372400762,
+      "24h": 27.96696372400762
+    },
+    "totalVolume": {
+      "1h": 2498,
+      "4h": 4718,
+      "12h": 60919,
+      "24h": 60919
+    },
+    "transactions": {
+      "1h": 5,
+      "4h": 14,
+      "12h": 250,
+      "24h": 250
+    },
+    "buyTransactions": {
+      "1h": 3,
+      "4h": 6,
+      "12h": 139,
+      "24h": 139
+    },
+    "sellTransactions": {
+      "1h": 2,
+      "4h": 8,
+      "12h": 111,
+      "24h": 111
+    },
+    "buyers": {
+      "1h": 3,
+      "4h": 6,
+      "12h": 107,
+      "24h": 107
+    },
+    "sellers": {
+      "1h": 1,
+      "4h": 4,
+      "12h": 46,
+      "24h": 46
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xaa7a9ca87d3694b5755f213b5d04094b8d0f0a6f",
+    "name": "Trace Token",
+    "uniqueName": "trace-token",
+    "symbol": "TRAC",
+    "decimals": 18,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0xaa7a9ca87d3694b5755f213b5d04094b8d0f0a6f",
+    "usdPrice": 0.482187875302,
+    "createdAt": 1630461815,
+    "marketCap": 241093938,
+    "liquidityUsd": 147307,
+    "holders": 22149,
+    "pricePercentChange": {
+      "1h": 0.0024056226917666466,
+      "4h": -0.007717026241157264,
+      "12h": 0.00010975440595401233,
+      "24h": 0.052600300113661624
+    },
+    "totalVolume": {
+      "1h": 10518,
+      "4h": 95442,
+      "12h": 154995,
+      "24h": 317476
+    },
+    "transactions": {
+      "1h": 11,
+      "4h": 76,
+      "12h": 123,
+      "24h": 258
+    },
+    "buyTransactions": {
+      "1h": 7,
+      "4h": 40,
+      "12h": 64,
+      "24h": 153
+    },
+    "sellTransactions": {
+      "1h": 4,
+      "4h": 36,
+      "12h": 59,
+      "24h": 105
+    },
+    "buyers": {
+      "1h": 3,
+      "4h": 10,
+      "12h": 10,
+      "24h": 23
+    },
+    "sellers": {
+      "1h": 2,
+      "4h": 9,
+      "12h": 19,
+      "24h": 31
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x783709dc72486e2cf74ee3ee3766a3e4db082e26",
+    "name": "Cree Token",
+    "uniqueName": "cree-token-1",
+    "symbol": "Cree",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x783709dc72486e2cf74ee3ee3766a3e4db082e26",
+    "usdPrice": 6.7574244346e-8,
+    "createdAt": 1748217179,
+    "marketCap": 28428,
+    "liquidityUsd": 5253,
+    "holders": 224,
+    "pricePercentChange": {
+      "1h": 0.1084382675935471,
+      "4h": 0.5646390443356271,
+      "12h": 0.06270173676185463,
+      "24h": -0.19867077056759955
+    },
+    "totalVolume": {
+      "1h": 1267,
+      "4h": 5776,
+      "12h": 19277,
+      "24h": 115638
+    },
+    "transactions": {
+      "1h": 9,
+      "4h": 44,
+      "12h": 159,
+      "24h": 738
+    },
+    "buyTransactions": {
+      "1h": 4,
+      "4h": 27,
+      "12h": 86,
+      "24h": 417
+    },
+    "sellTransactions": {
+      "1h": 5,
+      "4h": 17,
+      "12h": 73,
+      "24h": 321
+    },
+    "buyers": {
+      "1h": 4,
+      "4h": 23,
+      "12h": 60,
+      "24h": 248
+    },
+    "sellers": {
+      "1h": 5,
+      "4h": 12,
+      "12h": 53,
+      "24h": 202
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xb8c35e66b4faafdccace27e8b5062f45cb381e31",
+    "name": "Moaner by Matt Furie",
+    "uniqueName": "moanerby-matt-furie-1",
+    "symbol": "MOANER",
+    "decimals": 18,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0xb8c35e66b4faafdccace27e8b5062f45cb381e31",
+    "usdPrice": 0.0000694024494419,
+    "createdAt": 1747773935,
+    "marketCap": 69402,
+    "liquidityUsd": 13599,
+    "holders": 559,
+    "pricePercentChange": {
+      "1h": -0.18487676064476957,
+      "4h": -0.1696814137280543,
+      "12h": -0.223460342320785,
+      "24h": -0.3440234154917747
+    },
+    "totalVolume": {
+      "1h": 1719,
+      "4h": 4141,
+      "12h": 22689,
+      "24h": 38724
+    },
+    "transactions": {
+      "1h": 8,
+      "4h": 26,
+      "12h": 110,
+      "24h": 207
+    },
+    "buyTransactions": {
+      "1h": 2,
+      "4h": 11,
+      "12h": 58,
+      "24h": 104
+    },
+    "sellTransactions": {
+      "1h": 6,
+      "4h": 15,
+      "12h": 52,
+      "24h": 103
+    },
+    "buyers": {
+      "1h": 2,
+      "4h": 8,
+      "12h": 41,
+      "24h": 76
+    },
+    "sellers": {
+      "1h": 6,
+      "4h": 14,
+      "12h": 45,
+      "24h": 83
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x4cf1eab71128afbc29c3d76d63e19cc77ce1d5cd",
+    "name": "Nova Protocol",
+    "uniqueName": "nova-protocol-720451381",
+    "symbol": "NOVA",
+    "decimals": 18,
+    "logo": null,
+    "usdPrice": 0.000369428678753,
+    "createdAt": 1748279495,
+    "marketCap": 36943,
+    "liquidityUsd": 9140,
+    "holders": 149,
+    "pricePercentChange": {
+      "1h": 0.07543466212615535,
+      "4h": 0.13900097300847736,
+      "12h": 11.356289021222647,
+      "24h": 11.356289021222647
+    },
+    "totalVolume": {
+      "1h": 807,
+      "4h": 2398,
+      "12h": 138842,
+      "24h": 138842
+    },
+    "transactions": {
+      "1h": 4,
+      "4h": 17,
+      "12h": 700,
+      "24h": 700
+    },
+    "buyTransactions": {
+      "1h": 3,
+      "4h": 12,
+      "12h": 395,
+      "24h": 395
+    },
+    "sellTransactions": {
+      "1h": 1,
+      "4h": 5,
+      "12h": 305,
+      "24h": 305
+    },
+    "buyers": {
+      "1h": 3,
+      "4h": 11,
+      "12h": 260,
+      "24h": 260
+    },
+    "sellers": {
+      "1h": 1,
+      "4h": 5,
+      "12h": 185,
+      "24h": 185
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xa21afd52d8ac6d5ff485100cd5fc104b89c125fc",
+    "name": "Raja",
+    "uniqueName": "raja-1",
+    "symbol": "RAJA",
+    "decimals": 9,
+    "logo": null,
+    "usdPrice": 3.21392386963e-8,
+    "createdAt": 1748241539,
+    "marketCap": 13521,
+    "liquidityUsd": 4704,
+    "holders": 169,
+    "pricePercentChange": {
+      "1h": 0.19346827633666003,
+      "4h": -0.08206479357642495,
+      "12h": -0.3187290983233009,
+      "24h": 3.9130075736907175
+    },
+    "totalVolume": {
+      "1h": 1494,
+      "4h": 3730,
+      "12h": 5545,
+      "24h": 129851
+    },
+    "transactions": {
+      "1h": 17,
+      "4h": 38,
+      "12h": 67,
+      "24h": 994
+    },
+    "buyTransactions": {
+      "1h": 11,
+      "4h": 18,
+      "12h": 26,
+      "24h": 546
+    },
+    "sellTransactions": {
+      "1h": 6,
+      "4h": 20,
+      "12h": 41,
+      "24h": 448
+    },
+    "buyers": {
+      "1h": 7,
+      "4h": 14,
+      "12h": 21,
+      "24h": 371
+    },
+    "sellers": {
+      "1h": 6,
+      "4h": 20,
+      "12h": 38,
+      "24h": 286
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xb7c76fda7eef072ed171ea2473e6f9294705dfb0",
+    "name": "Pingu",
+    "uniqueName": "pingu-17",
+    "symbol": "NOOT",
+    "decimals": 18,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0xb7c76fda7eef072ed171ea2473e6f9294705dfb0",
+    "usdPrice": 0.0000128499572861,
+    "createdAt": 1698839159,
+    "marketCap": 128500,
+    "liquidityUsd": 23575,
+    "holders": 142,
+    "pricePercentChange": {
+      "1h": 0.09700574068621776,
+      "4h": -0.12458598448517945,
+      "12h": 0.3594896101553726,
+      "24h": 25.792323107122947
+    },
+    "totalVolume": {
+      "1h": 1537,
+      "4h": 5987,
+      "12h": 24050,
+      "24h": 109597
+    },
+    "transactions": {
+      "1h": 3,
+      "4h": 18,
+      "12h": 84,
+      "24h": 355
+    },
+    "buyTransactions": {
+      "1h": 2,
+      "4h": 6,
+      "12h": 48,
+      "24h": 222
+    },
+    "sellTransactions": {
+      "1h": 1,
+      "4h": 12,
+      "12h": 36,
+      "24h": 133
+    },
+    "buyers": {
+      "1h": 2,
+      "4h": 6,
+      "12h": 42,
+      "24h": 176
+    },
+    "sellers": {
+      "1h": 1,
+      "4h": 11,
+      "12h": 31,
+      "24h": 97
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xdbb7a34bf10169d6d2d0d02a6cbb436cf4381bfa",
+    "name": "Zentry",
+    "uniqueName": "zentry-1",
+    "symbol": "ZENT",
+    "decimals": 18,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0xdbb7a34bf10169d6d2d0d02a6cbb436cf4381bfa",
+    "usdPrice": 0.00968941061246,
+    "createdAt": 1716300299,
+    "marketCap": 94055039,
+    "liquidityUsd": 300420,
+    "holders": 4039,
+    "pricePercentChange": {
+      "1h": 0.005209843965402789,
+      "4h": -0.00021532423196552093,
+      "12h": -0.023018907796462772,
+      "24h": -0.059709749284524265
+    },
+    "totalVolume": {
+      "1h": 333,
+      "4h": 31629,
+      "12h": 166040,
+      "24h": 172284
+    },
+    "transactions": {
+      "1h": 1,
+      "4h": 50,
+      "12h": 216,
+      "24h": 239
+    },
+    "buyTransactions": {
+      "1h": 0,
+      "4h": 27,
+      "12h": 110,
+      "24h": 112
+    },
+    "sellTransactions": {
+      "1h": 1,
+      "4h": 23,
+      "12h": 106,
+      "24h": 127
+    },
+    "buyers": {
+      "1h": 0,
+      "4h": 6,
+      "12h": 13,
+      "24h": 15
+    },
+    "sellers": {
+      "1h": 1,
+      "4h": 8,
+      "12h": 13,
+      "24h": 15
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x21cd589a989615a9e901328d3c089bbca16d00b2",
+    "name": "X Money",
+    "uniqueName": "x-money-1",
+    "symbol": "XMONEY",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x21cd589a989615a9e901328d3c089bbca16d00b2",
+    "usdPrice": 0.085108270943,
+    "createdAt": 1734157787,
+    "marketCap": 851083,
+    "liquidityUsd": 63380,
+    "holders": 2312,
+    "pricePercentChange": {
+      "1h": -0.005651665324213774,
+      "4h": -0.06853549682435632,
+      "12h": -0.22710033514436448,
+      "24h": -0.2646361844607923
+    },
+    "totalVolume": {
+      "1h": 511,
+      "4h": 11837,
+      "12h": 47922,
+      "24h": 127902
+    },
+    "transactions": {
+      "1h": 4,
+      "4h": 21,
+      "12h": 76,
+      "24h": 213
+    },
+    "buyTransactions": {
+      "1h": 2,
+      "4h": 11,
+      "12h": 40,
+      "24h": 110
+    },
+    "sellTransactions": {
+      "1h": 2,
+      "4h": 10,
+      "12h": 36,
+      "24h": 103
+    },
+    "buyers": {
+      "1h": 2,
+      "4h": 9,
+      "12h": 32,
+      "24h": 80
+    },
+    "sellers": {
+      "1h": 2,
+      "4h": 8,
+      "12h": 30,
+      "24h": 83
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x40fd72257597aa14c7231a7b1aaa29fce868f677",
+    "name": "Sora Token",
+    "uniqueName": "sora-token",
+    "symbol": "XOR",
+    "decimals": 18,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x40fd72257597aa14c7231a7b1aaa29fce868f677",
+    "usdPrice": 2.37282840358e-15,
+    "createdAt": 1638924025,
+    "marketCap": 668139,
+    "liquidityUsd": 2782,
+    "holders": 5609,
+    "pricePercentChange": {
+      "1h": 0.0162229274878249,
+      "4h": -0.1022839036146581,
+      "12h": -0.11117579808998214,
+      "24h": -0.10927549277412281
+    },
+    "totalVolume": {
+      "1h": 3277,
+      "4h": 5334,
+      "12h": 18943,
+      "24h": 40767
+    },
+    "transactions": {
+      "1h": 12,
+      "4h": 43,
+      "12h": 172,
+      "24h": 338
+    },
+    "buyTransactions": {
+      "1h": 8,
+      "4h": 29,
+      "12h": 112,
+      "24h": 221
+    },
+    "sellTransactions": {
+      "1h": 4,
+      "4h": 14,
+      "12h": 60,
+      "24h": 117
+    },
+    "buyers": {
+      "1h": 7,
+      "4h": 19,
+      "12h": 74,
+      "24h": 122
+    },
+    "sellers": {
+      "1h": 4,
+      "4h": 12,
+      "12h": 42,
+      "24h": 67
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xc7789cab3a882a15c63929bcf3436fa8d669c14b",
+    "name": "Faa",
+    "uniqueName": "faa-2",
+    "symbol": "FAA",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0xc7789cab3a882a15c63929bcf3436fa8d669c14b",
+    "usdPrice": 8.70543245745e-8,
+    "createdAt": 1748195171,
+    "marketCap": 36623,
+    "liquidityUsd": 8760,
+    "holders": 317,
+    "pricePercentChange": {
+      "1h": -0.003628517348671966,
+      "4h": 0.12128394420015047,
+      "12h": -0.5538920984152739,
+      "24h": -0.24408676509626057
+    },
+    "totalVolume": {
+      "1h": 333,
+      "4h": 4993,
+      "12h": 44113,
+      "24h": 139257
+    },
+    "transactions": {
+      "1h": 5,
+      "4h": 33,
+      "12h": 315,
+      "24h": 790
+    },
+    "buyTransactions": {
+      "1h": 3,
+      "4h": 20,
+      "12h": 189,
+      "24h": 476
+    },
+    "sellTransactions": {
+      "1h": 2,
+      "4h": 13,
+      "12h": 126,
+      "24h": 314
+    },
+    "buyers": {
+      "1h": 3,
+      "4h": 18,
+      "12h": 155,
+      "24h": 301
+    },
+    "sellers": {
+      "1h": 2,
+      "4h": 13,
+      "12h": 98,
+      "24h": 191
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x6bfdb6f4e65ead27118592a41eb927cea6956198",
+    "name": "Fame AI",
+    "uniqueName": "fame-ai-2",
+    "symbol": "FMC",
+    "decimals": 18,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x6bfdb6f4e65ead27118592a41eb927cea6956198",
+    "usdPrice": 0.000838175990003,
+    "createdAt": 1702472267,
+    "marketCap": 8381760,
+    "liquidityUsd": 70420,
+    "holders": 4698,
+    "pricePercentChange": {
+      "1h": -0.007537937214128944,
+      "4h": -0.026387716547168226,
+      "12h": -0.04406382247838408,
+      "24h": 0.0826541626864934
+    },
+    "totalVolume": {
+      "1h": 1320,
+      "4h": 13009,
+      "12h": 33357,
+      "24h": 117720
+    },
+    "transactions": {
+      "1h": 3,
+      "4h": 32,
+      "12h": 83,
+      "24h": 255
+    },
+    "buyTransactions": {
+      "1h": 2,
+      "4h": 17,
+      "12h": 46,
+      "24h": 142
+    },
+    "sellTransactions": {
+      "1h": 1,
+      "4h": 15,
+      "12h": 37,
+      "24h": 113
+    },
+    "buyers": {
+      "1h": 2,
+      "4h": 12,
+      "12h": 22,
+      "24h": 51
+    },
+    "sellers": {
+      "1h": 1,
+      "4h": 11,
+      "12h": 22,
+      "24h": 40
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xadd39272e83895e7d3f244f696b7a25635f34234",
+    "name": "Pepe Unchained",
+    "uniqueName": "pepe-unchained-19",
+    "symbol": "PEPU",
+    "decimals": 18,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0xadd39272e83895e7d3f244f696b7a25635f34234",
+    "usdPrice": 0.0022933604353,
+    "createdAt": 1733839223,
+    "marketCap": 18346654,
+    "liquidityUsd": 535387,
+    "holders": 74636,
+    "pricePercentChange": {
+      "1h": 0.005312949891713171,
+      "4h": 0.005866692056294593,
+      "12h": 0.00391546711267137,
+      "24h": 0.06388671601362773
+    },
+    "totalVolume": {
+      "1h": 625,
+      "4h": 12786,
+      "12h": 50037,
+      "24h": 113293
+    },
+    "transactions": {
+      "1h": 2,
+      "4h": 21,
+      "12h": 101,
+      "24h": 220
+    },
+    "buyTransactions": {
+      "1h": 2,
+      "4h": 10,
+      "12h": 52,
+      "24h": 113
+    },
+    "sellTransactions": {
+      "1h": 0,
+      "4h": 11,
+      "12h": 49,
+      "24h": 107
+    },
+    "buyers": {
+      "1h": 1,
+      "4h": 8,
+      "12h": 45,
+      "24h": 90
+    },
+    "sellers": {
+      "1h": 0,
+      "4h": 10,
+      "12h": 45,
+      "24h": 94
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x44de1c3ed0119e1b13f7a06befbf746af47ecea6",
+    "name": "Oro",
+    "uniqueName": "oro-56813703",
+    "symbol": "ORO",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x44de1c3ed0119e1b13f7a06befbf746af47ecea6",
+    "usdPrice": 4.38373393219e-11,
+    "createdAt": 1744655111,
+    "marketCap": 18442,
+    "liquidityUsd": 6239,
+    "holders": 226,
+    "pricePercentChange": {
+      "1h": -0.12687126733822965,
+      "4h": -0.30246770194963807,
+      "12h": -0.48444312987501004,
+      "24h": -0.2138715302757246
+    },
+    "totalVolume": {
+      "1h": 511,
+      "4h": 1704,
+      "12h": 5288,
+      "24h": 50645
+    },
+    "transactions": {
+      "1h": 8,
+      "4h": 22,
+      "12h": 56,
+      "24h": 384
+    },
+    "buyTransactions": {
+      "1h": 1,
+      "4h": 5,
+      "12h": 21,
+      "24h": 222
+    },
+    "sellTransactions": {
+      "1h": 7,
+      "4h": 17,
+      "12h": 35,
+      "24h": 162
+    },
+    "buyers": {
+      "1h": 1,
+      "4h": 5,
+      "12h": 17,
+      "24h": 165
+    },
+    "sellers": {
+      "1h": 7,
+      "4h": 17,
+      "12h": 33,
+      "24h": 130
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xa1d67ffe35b01c51672e7ae7f6abebd5d9d8423a",
+    "name": "Magic money machine",
+    "uniqueName": "magicmoneymachine-1",
+    "symbol": "MMM",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0xa1d67ffe35b01c51672e7ae7f6abebd5d9d8423a",
+    "usdPrice": 0.0000762622258738,
+    "createdAt": 1748285795,
+    "marketCap": 7626,
+    "liquidityUsd": 3967,
+    "holders": 189,
+    "pricePercentChange": {
+      "1h": 0.024974838764786515,
+      "4h": -0.272526761768059,
+      "12h": 1.3409123028191874,
+      "24h": 1.3409123028191874
+    },
+    "totalVolume": {
+      "1h": 46,
+      "4h": 1453,
+      "12h": 117091,
+      "24h": 117091
+    },
+    "transactions": {
+      "1h": 6,
+      "4h": 26,
+      "12h": 640,
+      "24h": 640
+    },
+    "buyTransactions": {
+      "1h": 5,
+      "4h": 15,
+      "12h": 385,
+      "24h": 385
+    },
+    "sellTransactions": {
+      "1h": 1,
+      "4h": 11,
+      "12h": 255,
+      "24h": 255
+    },
+    "buyers": {
+      "1h": 4,
+      "4h": 14,
+      "12h": 277,
+      "24h": 277
+    },
+    "sellers": {
+      "1h": 1,
+      "4h": 11,
+      "12h": 184,
+      "24h": 184
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xb3c22eb9a7675fce555d826bff06544c2c4f1ded",
+    "name": "Kri",
+    "uniqueName": "kri-1",
+    "symbol": "KRI",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0xb3c22eb9a7675fce555d826bff06544c2c4f1ded",
+    "usdPrice": 6.17245654476e-8,
+    "createdAt": 1748191775,
+    "marketCap": 25967,
+    "liquidityUsd": 7325,
+    "holders": 192,
+    "pricePercentChange": {
+      "1h": 0.28610814353211367,
+      "4h": 0.24952541087953808,
+      "12h": 0.11240288488773584,
+      "24h": 0.5018416604843502
+    },
+    "totalVolume": {
+      "1h": 1049,
+      "4h": 5584,
+      "12h": 23159,
+      "24h": 102626
+    },
+    "transactions": {
+      "1h": 5,
+      "4h": 24,
+      "12h": 123,
+      "24h": 454
+    },
+    "buyTransactions": {
+      "1h": 3,
+      "4h": 11,
+      "12h": 59,
+      "24h": 236
+    },
+    "sellTransactions": {
+      "1h": 2,
+      "4h": 13,
+      "12h": 64,
+      "24h": 218
+    },
+    "buyers": {
+      "1h": 3,
+      "4h": 11,
+      "12h": 49,
+      "24h": 144
+    },
+    "sellers": {
+      "1h": 2,
+      "4h": 13,
+      "12h": 46,
+      "24h": 142
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x67d9c7daecc5b87c3e68ac89f33ee924fac88c05",
+    "name": "Moo Cow",
+    "uniqueName": "moo-cow-716066463",
+    "symbol": "MOOCOW",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x67d9c7daecc5b87c3e68ac89f33ee924fac88c05",
+    "usdPrice": 8.20652490328e-7,
+    "createdAt": 1745545463,
+    "marketCap": 345240,
+    "liquidityUsd": 39941,
+    "holders": 1445,
+    "pricePercentChange": {
+      "1h": 0.027336132339367724,
+      "4h": 0.01099658698181723,
+      "12h": -0.01897191511486745,
+      "24h": 0.048389943609852985
+    },
+    "totalVolume": {
+      "1h": 1691,
+      "4h": 11407,
+      "12h": 27692,
+      "24h": 116053
+    },
+    "transactions": {
+      "1h": 8,
+      "4h": 40,
+      "12h": 78,
+      "24h": 332
+    },
+    "buyTransactions": {
+      "1h": 6,
+      "4h": 22,
+      "12h": 41,
+      "24h": 184
+    },
+    "sellTransactions": {
+      "1h": 2,
+      "4h": 18,
+      "12h": 37,
+      "24h": 148
+    },
+    "buyers": {
+      "1h": 5,
+      "4h": 13,
+      "12h": 28,
+      "24h": 100
+    },
+    "sellers": {
+      "1h": 2,
+      "4h": 14,
+      "12h": 26,
+      "24h": 93
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x8c78af642a37b4b3ca4e12bc91be9dee9105686b",
+    "name": "Ark",
+    "uniqueName": "ark-4",
+    "symbol": "ARK",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x8c78af642a37b4b3ca4e12bc91be9dee9105686b",
+    "usdPrice": 4.2867637297e-11,
+    "createdAt": 1748245223,
+    "marketCap": 18034,
+    "liquidityUsd": 5981,
+    "holders": 152,
+    "pricePercentChange": {
+      "1h": 0.05628028404220733,
+      "4h": -0.07718292281372482,
+      "12h": 0.4200909084632309,
+      "24h": 4.210913794620744
+    },
+    "totalVolume": {
+      "1h": 645,
+      "4h": 4246,
+      "12h": 20533,
+      "24h": 87584
+    },
+    "transactions": {
+      "1h": 7,
+      "4h": 33,
+      "12h": 138,
+      "24h": 704
+    },
+    "buyTransactions": {
+      "1h": 5,
+      "4h": 20,
+      "12h": 80,
+      "24h": 421
+    },
+    "sellTransactions": {
+      "1h": 2,
+      "4h": 13,
+      "12h": 58,
+      "24h": 283
+    },
+    "buyers": {
+      "1h": 5,
+      "4h": 15,
+      "12h": 56,
+      "24h": 276
+    },
+    "sellers": {
+      "1h": 2,
+      "4h": 12,
+      "12h": 48,
+      "24h": 184
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xc8e92440815ef4b6358a9f3abe85dc9e9ca8e8fb",
+    "name": "CREE",
+    "uniqueName": "cree-5",
+    "symbol": "CREE",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0xc8e92440815ef4b6358a9f3abe85dc9e9ca8e8fb",
+    "usdPrice": 0.0000388728230263,
+    "createdAt": 1748207843,
+    "marketCap": 38873,
+    "liquidityUsd": 9860,
+    "holders": 111,
+    "pricePercentChange": {
+      "1h": -0.11201642881633006,
+      "4h": -0.1580832424672199,
+      "12h": 0.3088435553716664,
+      "24h": 2.167260877477069
+    },
+    "totalVolume": {
+      "1h": 1121,
+      "4h": 3247,
+      "12h": 26563,
+      "24h": 63227
+    },
+    "transactions": {
+      "1h": 6,
+      "4h": 15,
+      "12h": 107,
+      "24h": 285
+    },
+    "buyTransactions": {
+      "1h": 3,
+      "4h": 7,
+      "12h": 55,
+      "24h": 156
+    },
+    "sellTransactions": {
+      "1h": 3,
+      "4h": 8,
+      "12h": 52,
+      "24h": 129
+    },
+    "buyers": {
+      "1h": 3,
+      "4h": 6,
+      "12h": 47,
+      "24h": 116
+    },
+    "sellers": {
+      "1h": 3,
+      "4h": 8,
+      "12h": 46,
+      "24h": 93
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x2e2e7a1f05946ecb2b43b99e3fc2984fa7d7e3bc",
+    "name": "Chinese Andy",
+    "uniqueName": "chinese-andy-4",
+    "symbol": "ANDWU",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x2e2e7a1f05946ecb2b43b99e3fc2984fa7d7e3bc",
+    "usdPrice": 1.39281723883e-9,
+    "createdAt": 1718229719,
+    "marketCap": 585944,
+    "liquidityUsd": 46261,
+    "holders": 1942,
+    "pricePercentChange": {
+      "1h": 0.05112650912734118,
+      "4h": -0.0762046841470276,
+      "12h": 0.0007712964960837871,
+      "24h": -0.14562582544826036
+    },
+    "totalVolume": {
+      "1h": 1609,
+      "4h": 6341,
+      "12h": 34155,
+      "24h": 96584
+    },
+    "transactions": {
+      "1h": 3,
+      "4h": 29,
+      "12h": 188,
+      "24h": 423
+    },
+    "buyTransactions": {
+      "1h": 2,
+      "4h": 19,
+      "12h": 146,
+      "24h": 350
+    },
+    "sellTransactions": {
+      "1h": 1,
+      "4h": 10,
+      "12h": 42,
+      "24h": 73
+    },
+    "buyers": {
+      "1h": 1,
+      "4h": 16,
+      "12h": 116,
+      "24h": 250
+    },
+    "sellers": {
+      "1h": 1,
+      "4h": 5,
+      "12h": 33,
+      "24h": 54
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x060e0fb53f5b31d8acd088eab2c8175a59c9a534",
+    "name": "DOGDRAGON By Matt Furie",
+    "uniqueName": "dogdragon-by-matt-furie-1",
+    "symbol": "DOGDRAGON",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x060e0fb53f5b31d8acd088eab2c8175a59c9a534",
+    "usdPrice": 0.0000627090709416,
+    "createdAt": 1747838147,
+    "marketCap": 62709,
+    "liquidityUsd": 9013,
+    "holders": 211,
+    "pricePercentChange": {
+      "1h": 0.06495100907739353,
+      "4h": -0.33978632905380707,
+      "12h": -0.31620834047673885,
+      "24h": 1.0064397155961093
+    },
+    "totalVolume": {
+      "1h": 266,
+      "4h": 2662,
+      "12h": 20693,
+      "24h": 50402
+    },
+    "transactions": {
+      "1h": 2,
+      "4h": 18,
+      "12h": 110,
+      "24h": 238
+    },
+    "buyTransactions": {
+      "1h": 2,
+      "4h": 3,
+      "12h": 56,
+      "24h": 135
+    },
+    "sellTransactions": {
+      "1h": 0,
+      "4h": 15,
+      "12h": 54,
+      "24h": 103
+    },
+    "buyers": {
+      "1h": 2,
+      "4h": 3,
+      "12h": 35,
+      "24h": 89
+    },
+    "sellers": {
+      "1h": 0,
+      "4h": 13,
+      "12h": 39,
+      "24h": 68
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x4bb3a3e6713af9159c857dca803be7178216f84e",
+    "name": "KIRO",
+    "uniqueName": "kiro-4",
+    "symbol": "KIRO",
+    "decimals": 9,
+    "logo": null,
+    "usdPrice": 0.00000453749577608,
+    "createdAt": 1748295851,
+    "marketCap": 4537,
+    "liquidityUsd": 2993,
+    "holders": 44,
+    "pricePercentChange": {
+      "1h": -0.09208940348346888,
+      "4h": 0.2002002704318641,
+      "12h": 0.3492635697430567,
+      "24h": 0.3492635697430567
+    },
+    "totalVolume": {
+      "1h": 149,
+      "4h": 3951,
+      "12h": 42688,
+      "24h": 42688
+    },
+    "transactions": {
+      "1h": 1,
+      "4h": 38,
+      "12h": 233,
+      "24h": 233
+    },
+    "buyTransactions": {
+      "1h": 0,
+      "4h": 19,
+      "12h": 113,
+      "24h": 113
+    },
+    "sellTransactions": {
+      "1h": 1,
+      "4h": 19,
+      "12h": 120,
+      "24h": 120
+    },
+    "buyers": {
+      "1h": 0,
+      "4h": 18,
+      "12h": 91,
+      "24h": 91
+    },
+    "sellers": {
+      "1h": 1,
+      "4h": 18,
+      "12h": 72,
+      "24h": 72
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x590e6a815ede14bcc3e09149354f854f9e4ade8b",
+    "name": "Electrogle",
+    "uniqueName": "electrogle-1",
+    "symbol": "ELECTROGLE",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x590e6a815ede14bcc3e09149354f854f9e4ade8b",
+    "usdPrice": 0.0000577983420738,
+    "createdAt": 1747834871,
+    "marketCap": 57798,
+    "liquidityUsd": 8541,
+    "holders": 138,
+    "pricePercentChange": {
+      "1h": 0.010881913248539944,
+      "4h": -0.19714317336109302,
+      "12h": -0.46707209374615727,
+      "24h": 18.82391772780332
+    },
+    "totalVolume": {
+      "1h": 178,
+      "4h": 4666,
+      "12h": 17189,
+      "24h": 61387
+    },
+    "transactions": {
+      "1h": 2,
+      "4h": 31,
+      "12h": 114,
+      "24h": 350
+    },
+    "buyTransactions": {
+      "1h": 1,
+      "4h": 19,
+      "12h": 59,
+      "24h": 199
+    },
+    "sellTransactions": {
+      "1h": 1,
+      "4h": 12,
+      "12h": 55,
+      "24h": 151
+    },
+    "buyers": {
+      "1h": 1,
+      "4h": 5,
+      "12h": 26,
+      "24h": 111
+    },
+    "sellers": {
+      "1h": 1,
+      "4h": 12,
+      "12h": 39,
+      "24h": 88
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x2220b4b3db4043cc374ac41ef8de29a3a1642cb9",
+    "name": "Pepes Dog",
+    "uniqueName": "pepes-dog-23",
+    "symbol": "SPUDS",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x2220b4b3db4043cc374ac41ef8de29a3a1642cb9",
+    "usdPrice": 0.0000214213674947,
+    "createdAt": 1748180747,
+    "marketCap": 21421,
+    "liquidityUsd": 7178,
+    "holders": 304,
+    "pricePercentChange": {
+      "1h": -0.11227713120502306,
+      "4h": -0.17032366458355036,
+      "12h": -0.1219837377397512,
+      "24h": 0.9699896271991812
+    },
+    "totalVolume": {
+      "1h": 464,
+      "4h": 2291,
+      "12h": 18153,
+      "24h": 170272
+    },
+    "transactions": {
+      "1h": 4,
+      "4h": 15,
+      "12h": 84,
+      "24h": 632
+    },
+    "buyTransactions": {
+      "1h": 0,
+      "4h": 6,
+      "12h": 42,
+      "24h": 338
+    },
+    "sellTransactions": {
+      "1h": 4,
+      "4h": 9,
+      "12h": 42,
+      "24h": 294
+    },
+    "buyers": {
+      "1h": 0,
+      "4h": 5,
+      "12h": 31,
+      "24h": 213
+    },
+    "sellers": {
+      "1h": 4,
+      "4h": 9,
+      "12h": 36,
+      "24h": 193
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x9297a1fc603d231fe24bbb2ac8e8ff75de2c52ef",
+    "name": "PIEK",
+    "uniqueName": "piek-1",
+    "symbol": "PIEK",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x9297a1fc603d231fe24bbb2ac8e8ff75de2c52ef",
+    "usdPrice": 0.0000984850159055,
+    "createdAt": 1748191007,
+    "marketCap": 9849,
+    "liquidityUsd": 3709,
+    "holders": 115,
+    "pricePercentChange": {
+      "1h": -0.3167156589186666,
+      "4h": 0.13231305369278726,
+      "12h": -0.34777017975170976,
+      "24h": 0.1679014555422667
+    },
+    "totalVolume": {
+      "1h": 1062,
+      "4h": 2135,
+      "12h": 6383,
+      "24h": 43575
+    },
+    "transactions": {
+      "1h": 10,
+      "4h": 27,
+      "12h": 61,
+      "24h": 283
+    },
+    "buyTransactions": {
+      "1h": 3,
+      "4h": 19,
+      "12h": 34,
+      "24h": 158
+    },
+    "sellTransactions": {
+      "1h": 7,
+      "4h": 8,
+      "12h": 27,
+      "24h": 125
+    },
+    "buyers": {
+      "1h": 3,
+      "4h": 14,
+      "12h": 25,
+      "24h": 115
+    },
+    "sellers": {
+      "1h": 5,
+      "4h": 6,
+      "12h": 25,
+      "24h": 104
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x17b63baf648b2ceff2731e18eb87515943e12ce2",
+    "name": "Killer Pepe",
+    "uniqueName": "killer-pepe-5",
+    "symbol": "KILLER",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x17b63baf648b2ceff2731e18eb87515943e12ce2",
+    "usdPrice": 1.08715110246e-8,
+    "createdAt": 1748286023,
+    "marketCap": 4574,
+    "liquidityUsd": 2616,
+    "holders": 116,
+    "pricePercentChange": {
+      "1h": -0.07412730020162496,
+      "4h": -0.06753971400189153,
+      "12h": 1.0621180097680247,
+      "24h": 1.0621180097680247
+    },
+    "totalVolume": {
+      "1h": 108,
+      "4h": 1471,
+      "12h": 107695,
+      "24h": 107695
+    },
+    "transactions": {
+      "1h": 2,
+      "4h": 27,
+      "12h": 633,
+      "24h": 633
+    },
+    "buyTransactions": {
+      "1h": 0,
+      "4h": 13,
+      "12h": 336,
+      "24h": 336
+    },
+    "sellTransactions": {
+      "1h": 2,
+      "4h": 14,
+      "12h": 297,
+      "24h": 297
+    },
+    "buyers": {
+      "1h": 0,
+      "4h": 11,
+      "12h": 258,
+      "24h": 258
+    },
+    "sellers": {
+      "1h": 2,
+      "4h": 13,
+      "12h": 212,
+      "24h": 212
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xf7f3e16f1f44a7b05f830c9e1a88dec69da44e02",
+    "name": "Retardo",
+    "uniqueName": "retardo-1",
+    "symbol": "TARDO",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0xf7f3e16f1f44a7b05f830c9e1a88dec69da44e02",
+    "usdPrice": 1.05575182869e-10,
+    "createdAt": 1729585655,
+    "marketCap": 44414,
+    "liquidityUsd": 10747,
+    "holders": 500,
+    "pricePercentChange": {
+      "1h": 0.00041651709281553427,
+      "4h": -0.08787285151268301,
+      "12h": -0.40139375073530303,
+      "24h": 0.5612812237060739
+    },
+    "totalVolume": {
+      "1h": 53,
+      "4h": 2886,
+      "12h": 18825,
+      "24h": 64713
+    },
+    "transactions": {
+      "1h": 6,
+      "4h": 34,
+      "12h": 120,
+      "24h": 317
+    },
+    "buyTransactions": {
+      "1h": 2,
+      "4h": 14,
+      "12h": 51,
+      "24h": 158
+    },
+    "sellTransactions": {
+      "1h": 4,
+      "4h": 20,
+      "12h": 69,
+      "24h": 159
+    },
+    "buyers": {
+      "1h": 2,
+      "4h": 8,
+      "12h": 26,
+      "24h": 76
+    },
+    "sellers": {
+      "1h": 4,
+      "4h": 12,
+      "12h": 36,
+      "24h": 79
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x8a8d9faa888cd6e3a1b95f7d0a0cb9d97f4b77e3",
+    "name": "Quantum Agent AI",
+    "uniqueName": "quantum-agent-ai-1",
+    "symbol": "QAAI",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x8a8d9faa888cd6e3a1b95f7d0a0cb9d97f4b77e3",
+    "usdPrice": 0.000650869682496,
+    "createdAt": 1747234763,
+    "marketCap": 78104,
+    "liquidityUsd": 11920,
+    "holders": 251,
+    "pricePercentChange": {
+      "1h": -0.023091809622954162,
+      "4h": -0.10946845246842489,
+      "12h": -0.42615872334593186,
+      "24h": -0.1525120621979267
+    },
+    "totalVolume": {
+      "1h": 89,
+      "4h": 2184,
+      "12h": 38158,
+      "24h": 55058
+    },
+    "transactions": {
+      "1h": 1,
+      "4h": 13,
+      "12h": 147,
+      "24h": 205
+    },
+    "buyTransactions": {
+      "1h": 0,
+      "4h": 4,
+      "12h": 69,
+      "24h": 93
+    },
+    "sellTransactions": {
+      "1h": 1,
+      "4h": 9,
+      "12h": 78,
+      "24h": 112
+    },
+    "buyers": {
+      "1h": 0,
+      "4h": 3,
+      "12h": 48,
+      "24h": 68
+    },
+    "sellers": {
+      "1h": 1,
+      "4h": 7,
+      "12h": 42,
+      "24h": 61
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x0e26d48b0fc1f21a8d81da77e983de293bcff604",
+    "name": "DOGECOIN CASH",
+    "uniqueName": "dogecoincash-1",
+    "symbol": "DOGECASH",
+    "decimals": 9,
+    "logo": null,
+    "usdPrice": 1.07777697977e-8,
+    "createdAt": 1731704495,
+    "marketCap": 4534,
+    "liquidityUsd": 3087,
+    "holders": 64,
+    "pricePercentChange": {
+      "1h": 0.15193339678540135,
+      "4h": 0.2324242357528242,
+      "12h": 0.18754427545368668,
+      "24h": 1.5156755783138893
+    },
+    "totalVolume": {
+      "1h": 215,
+      "4h": 3356,
+      "12h": 5313,
+      "24h": 36663
+    },
+    "transactions": {
+      "1h": 2,
+      "4h": 21,
+      "12h": 36,
+      "24h": 271
+    },
+    "buyTransactions": {
+      "1h": 2,
+      "4h": 13,
+      "12h": 20,
+      "24h": 153
+    },
+    "sellTransactions": {
+      "1h": 0,
+      "4h": 8,
+      "12h": 16,
+      "24h": 118
+    },
+    "buyers": {
+      "1h": 2,
+      "4h": 11,
+      "12h": 18,
+      "24h": 94
+    },
+    "sellers": {
+      "1h": 0,
+      "4h": 8,
+      "12h": 16,
+      "24h": 79
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xb5d730d442e1d5b119fb4e5c843c48a64202ef92",
+    "name": "Sabai Ecoverse Token",
+    "uniqueName": "sabai-ecoverse-token",
+    "symbol": "SABAI",
+    "decimals": 18,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0xb5d730d442e1d5b119fb4e5c843c48a64202ef92",
+    "usdPrice": 0.0119811903917,
+    "createdAt": 1689670091,
+    "marketCap": 31750155,
+    "liquidityUsd": 89400,
+    "holders": 2588,
+    "pricePercentChange": {
+      "1h": 0.00805757877704852,
+      "4h": 0.011722099785228443,
+      "12h": 0.0283079619404133,
+      "24h": 0.13812628569082042
+    },
+    "totalVolume": {
+      "1h": 366,
+      "4h": 1599,
+      "12h": 4685,
+      "24h": 17864
+    },
+    "transactions": {
+      "1h": 14,
+      "4h": 52,
+      "12h": 151,
+      "24h": 317
+    },
+    "buyTransactions": {
+      "1h": 8,
+      "4h": 33,
+      "12h": 82,
+      "24h": 148
+    },
+    "sellTransactions": {
+      "1h": 6,
+      "4h": 19,
+      "12h": 69,
+      "24h": 169
+    },
+    "buyers": {
+      "1h": 5,
+      "4h": 8,
+      "12h": 9,
+      "24h": 12
+    },
+    "sellers": {
+      "1h": 4,
+      "4h": 8,
+      "12h": 8,
+      "24h": 13
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x756ab68c9abda470e16b88069befaa1f28b49e52",
+    "name": "Faa Token",
+    "uniqueName": "faa-token-1",
+    "symbol": "Faa",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x756ab68c9abda470e16b88069befaa1f28b49e52",
+    "usdPrice": 1.0603647441e-8,
+    "createdAt": 1748253143,
+    "marketCap": 4461,
+    "liquidityUsd": 2334,
+    "holders": 80,
+    "pricePercentChange": {
+      "1h": -0.11381156206873788,
+      "4h": 0.2795850485296355,
+      "12h": -0.03081460167937079,
+      "24h": 0.6773277978676066
+    },
+    "totalVolume": {
+      "1h": 307,
+      "4h": 1037,
+      "12h": 6583,
+      "24h": 33558
+    },
+    "transactions": {
+      "1h": 5,
+      "4h": 15,
+      "12h": 80,
+      "24h": 398
+    },
+    "buyTransactions": {
+      "1h": 2,
+      "4h": 9,
+      "12h": 45,
+      "24h": 213
+    },
+    "sellTransactions": {
+      "1h": 3,
+      "4h": 6,
+      "12h": 35,
+      "24h": 185
+    },
+    "buyers": {
+      "1h": 2,
+      "4h": 7,
+      "12h": 29,
+      "24h": 125
+    },
+    "sellers": {
+      "1h": 3,
+      "4h": 6,
+      "12h": 28,
+      "24h": 104
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x34ea190b204860063c5199b3f7b6f8245db91d3e",
+    "name": "SobSobSob Cat",
+    "uniqueName": "sob-sob-sob-cat-1",
+    "symbol": "SOBSOB",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x34ea190b204860063c5199b3f7b6f8245db91d3e",
+    "usdPrice": 0.00000214975464465,
+    "createdAt": 1748260079,
+    "marketCap": 2150,
+    "liquidityUsd": 1648,
+    "holders": 68,
+    "pricePercentChange": {
+      "1h": 0.19328839888531174,
+      "4h": 0.19328839888531174,
+      "12h": -0.3789567005390301,
+      "24h": 0.11646578111381077
+    },
+    "totalVolume": {
+      "1h": 320,
+      "4h": 320,
+      "12h": 1320,
+      "24h": 37984
+    },
+    "transactions": {
+      "1h": 6,
+      "4h": 6,
+      "12h": 40,
+      "24h": 390
+    },
+    "buyTransactions": {
+      "1h": 4,
+      "4h": 4,
+      "12h": 10,
+      "24h": 212
+    },
+    "sellTransactions": {
+      "1h": 2,
+      "4h": 2,
+      "12h": 30,
+      "24h": 178
+    },
+    "buyers": {
+      "1h": 4,
+      "4h": 4,
+      "12h": 10,
+      "24h": 151
+    },
+    "sellers": {
+      "1h": 2,
+      "4h": 2,
+      "12h": 30,
+      "24h": 118
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x48da195f3082a609da8bf815abf2a4666ef226de",
+    "name": "Poo Poo Pee Pee",
+    "uniqueName": "poo-poo-pee-pee-7",
+    "symbol": "PPPP",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x48da195f3082a609da8bf815abf2a4666ef226de",
+    "usdPrice": 0.00000392796045559,
+    "createdAt": 1748225819,
+    "marketCap": 3928,
+    "liquidityUsd": 2258,
+    "holders": 115,
+    "pricePercentChange": {
+      "1h": -0.11086001901027281,
+      "4h": 0.09198451707826914,
+      "12h": -0.29332382661122924,
+      "24h": -0.3455147491998889
+    },
+    "totalVolume": {
+      "1h": 150,
+      "4h": 808,
+      "12h": 1917,
+      "24h": 30910
+    },
+    "transactions": {
+      "1h": 1,
+      "4h": 14,
+      "12h": 34,
+      "24h": 360
+    },
+    "buyTransactions": {
+      "1h": 0,
+      "4h": 7,
+      "12h": 12,
+      "24h": 185
+    },
+    "sellTransactions": {
+      "1h": 1,
+      "4h": 7,
+      "12h": 22,
+      "24h": 175
+    },
+    "buyers": {
+      "1h": 0,
+      "4h": 6,
+      "12h": 10,
+      "24h": 110
+    },
+    "sellers": {
+      "1h": 1,
+      "4h": 6,
+      "12h": 19,
+      "24h": 122
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x81e3484af8130bad458740a202016ca5d06d5b62",
+    "name": "Bloop",
+    "uniqueName": "bloop-7",
+    "symbol": "BLOOP",
+    "decimals": 9,
+    "logo": null,
+    "usdPrice": 0.0000561116951697,
+    "createdAt": 1748282567,
+    "marketCap": 3895,
+    "liquidityUsd": 2793,
+    "holders": 64,
+    "pricePercentChange": {
+      "1h": 0.045546789192400565,
+      "4h": -0.032249705769397556,
+      "12h": 0.19826468485521895,
+      "24h": 0.19826468485521895
+    },
+    "totalVolume": {
+      "1h": 75,
+      "4h": 180,
+      "12h": 25234,
+      "24h": 25235
+    },
+    "transactions": {
+      "1h": 1,
+      "4h": 4,
+      "12h": 206,
+      "24h": 206
+    },
+    "buyTransactions": {
+      "1h": 1,
+      "4h": 1,
+      "12h": 90,
+      "24h": 90
+    },
+    "sellTransactions": {
+      "1h": 0,
+      "4h": 3,
+      "12h": 116,
+      "24h": 116
+    },
+    "buyers": {
+      "1h": 1,
+      "4h": 1,
+      "12h": 81,
+      "24h": 81
+    },
+    "sellers": {
+      "1h": 0,
+      "4h": 3,
+      "12h": 63,
+      "24h": 63
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xf47c34472b69d99f382f06eef381a2e1d043f188",
+    "name": "Tio The Dinosaur",
+    "uniqueName": "tio-the-dinosaur-1",
+    "symbol": "TIO",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0xf47c34472b69d99f382f06eef381a2e1d043f188",
+    "usdPrice": 0.000091111075609,
+    "createdAt": 1748190359,
+    "marketCap": 9111,
+    "liquidityUsd": 4001,
+    "holders": 214,
+    "pricePercentChange": {
+      "1h": 0.002488678479922972,
+      "4h": -0.08998767432410758,
+      "12h": -0.21188644974720766,
+      "24h": -0.31416855593547205
+    },
+    "totalVolume": {
+      "1h": 4,
+      "4h": 353,
+      "12h": 2435,
+      "24h": 26883
+    },
+    "transactions": {
+      "1h": 1,
+      "4h": 10,
+      "12h": 31,
+      "24h": 216
+    },
+    "buyTransactions": {
+      "1h": 0,
+      "4h": 2,
+      "12h": 11,
+      "24h": 105
+    },
+    "sellTransactions": {
+      "1h": 1,
+      "4h": 8,
+      "12h": 20,
+      "24h": 111
+    },
+    "buyers": {
+      "1h": 0,
+      "4h": 2,
+      "12h": 9,
+      "24h": 74
+    },
+    "sellers": {
+      "1h": 1,
+      "4h": 8,
+      "12h": 20,
+      "24h": 90
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xada2b4422952bf2d979ea5b81b59e068605670f6",
+    "name": "Tunedeep AI",
+    "uniqueName": "tunedeep-ai-1",
+    "symbol": "TUNED",
+    "decimals": 18,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0xada2b4422952bf2d979ea5b81b59e068605670f6",
+    "usdPrice": 0.0195852741004,
+    "createdAt": 1748263019,
+    "marketCap": 195853,
+    "liquidityUsd": 44179,
+    "holders": 97,
+    "pricePercentChange": {
+      "1h": 0,
+      "4h": -0.04765107977545469,
+      "12h": 0.8527267631827296,
+      "24h": 17.326642726310165
+    },
+    "totalVolume": {
+      "1h": 0,
+      "4h": 1285,
+      "12h": 76491,
+      "24h": 169450
+    },
+    "transactions": {
+      "1h": 0,
+      "4h": 6,
+      "12h": 145,
+      "24h": 392
+    },
+    "buyTransactions": {
+      "1h": 0,
+      "4h": 1,
+      "12h": 68,
+      "24h": 193
+    },
+    "sellTransactions": {
+      "1h": 0,
+      "4h": 5,
+      "12h": 77,
+      "24h": 199
+    },
+    "buyers": {
+      "1h": 0,
+      "4h": 1,
+      "12h": 60,
+      "24h": 153
+    },
+    "sellers": {
+      "1h": 0,
+      "4h": 4,
+      "12h": 47,
+      "24h": 91
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xac81fb4e3844eade9b8fe5e202647dd78476e764",
+    "name": "Homer Pepe",
+    "uniqueName": "homer-pepe-13",
+    "symbol": "HOMPEPE",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0xac81fb4e3844eade9b8fe5e202647dd78476e764",
+    "usdPrice": 0.00000290433898159,
+    "createdAt": 1748243999,
+    "marketCap": 2904,
+    "liquidityUsd": 1910,
+    "holders": 93,
+    "pricePercentChange": {
+      "1h": -0.053458710322721724,
+      "4h": -0.07856336432273682,
+      "12h": -0.2693937864259532,
+      "24h": 0.4854208193525213
+    },
+    "totalVolume": {
+      "1h": 48,
+      "4h": 72,
+      "12h": 920,
+      "24h": 39527
+    },
+    "transactions": {
+      "1h": 2,
+      "4h": 3,
+      "12h": 15,
+      "24h": 578
+    },
+    "buyTransactions": {
+      "1h": 0,
+      "4h": 0,
+      "12h": 3,
+      "24h": 364
+    },
+    "sellTransactions": {
+      "1h": 2,
+      "4h": 3,
+      "12h": 12,
+      "24h": 214
+    },
+    "buyers": {
+      "1h": 0,
+      "4h": 0,
+      "12h": 3,
+      "24h": 186
+    },
+    "sellers": {
+      "1h": 2,
+      "4h": 3,
+      "12h": 11,
+      "24h": 141
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x50f7517029c505933cb5d6e9c897245226f4317b",
+    "name": "Global Currency Restart",
+    "uniqueName": "global-currency-restart-1",
+    "symbol": "GCR",
+    "decimals": 18,
+    "logo": null,
+    "usdPrice": 0.00140913942475,
+    "createdAt": 1748042099,
+    "marketCap": 21982575,
+    "liquidityUsd": 80,
+    "holders": 198,
+    "pricePercentChange": {
+      "1h": 0.0031644843910972756,
+      "4h": 0.3913646854200489,
+      "12h": -0.047026527939369796,
+      "24h": 0.12184219470850174
+    },
+    "totalVolume": {
+      "1h": 138,
+      "4h": 425,
+      "12h": 966,
+      "24h": 2016
+    },
+    "transactions": {
+      "1h": 9,
+      "4h": 33,
+      "12h": 90,
+      "24h": 224
+    },
+    "buyTransactions": {
+      "1h": 6,
+      "4h": 21,
+      "12h": 54,
+      "24h": 148
+    },
+    "sellTransactions": {
+      "1h": 3,
+      "4h": 12,
+      "12h": 36,
+      "24h": 76
+    },
+    "buyers": {
+      "1h": 5,
+      "4h": 14,
+      "12h": 25,
+      "24h": 33
+    },
+    "sellers": {
+      "1h": 1,
+      "4h": 4,
+      "12h": 5,
+      "24h": 10
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x96b381a1c87b4aa005d100b64c2bc2e6997eb2cc",
+    "name": "Strategy Coin",
+    "uniqueName": "strategy-coin-1",
+    "symbol": "STRATEGY",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x96b381a1c87b4aa005d100b64c2bc2e6997eb2cc",
+    "usdPrice": 0.0000152045307122,
+    "createdAt": 1748266079,
+    "marketCap": 1520,
+    "liquidityUsd": 1367,
+    "holders": 50,
+    "pricePercentChange": {
+      "1h": 0,
+      "4h": -0.05603098917644102,
+      "12h": -0.17318912023469749,
+      "24h": -0.23004217215490116
+    },
+    "totalVolume": {
+      "1h": 0,
+      "4h": 1668,
+      "12h": 1790,
+      "24h": 32045
+    },
+    "transactions": {
+      "1h": 0,
+      "4h": 8,
+      "12h": 13,
+      "24h": 266
+    },
+    "buyTransactions": {
+      "1h": 0,
+      "4h": 3,
+      "12h": 4,
+      "24h": 132
+    },
+    "sellTransactions": {
+      "1h": 0,
+      "4h": 5,
+      "12h": 9,
+      "24h": 134
+    },
+    "buyers": {
+      "1h": 0,
+      "4h": 3,
+      "12h": 4,
+      "24h": 105
+    },
+    "sellers": {
+      "1h": 0,
+      "4h": 5,
+      "12h": 9,
+      "24h": 89
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x0c17f13ab9ac19d7cd2045d1c9489747b50714de",
+    "name": "KING CHARLES",
+    "uniqueName": "kingcharles-2",
+    "symbol": "KING",
+    "decimals": 9,
+    "logo": null,
+    "usdPrice": 6.47802690306e-9,
+    "createdAt": 1748228963,
+    "marketCap": 2725,
+    "liquidityUsd": 2338,
+    "holders": 61,
+    "pricePercentChange": {
+      "1h": -0.046858227876695635,
+      "4h": -0.046858227876695635,
+      "12h": -0.08127102788109569,
+      "24h": -0.17760685215890049
+    },
+    "totalVolume": {
+      "1h": 56,
+      "4h": 56,
+      "12h": 89,
+      "24h": 33654
+    },
+    "transactions": {
+      "1h": 1,
+      "4h": 1,
+      "12h": 3,
+      "24h": 325
+    },
+    "buyTransactions": {
+      "1h": 0,
+      "4h": 0,
+      "12h": 0,
+      "24h": 188
+    },
+    "sellTransactions": {
+      "1h": 1,
+      "4h": 1,
+      "12h": 3,
+      "24h": 137
+    },
+    "buyers": {
+      "1h": 0,
+      "4h": 0,
+      "12h": 0,
+      "24h": 112
+    },
+    "sellers": {
+      "1h": 1,
+      "4h": 1,
+      "12h": 3,
+      "24h": 95
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x57392bf757639c45492866f4e24d92fd963feae9",
+    "name": "Baby Pepe",
+    "uniqueName": "baby-pepe-132",
+    "symbol": "PEPER",
+    "decimals": 9,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0x57392bf757639c45492866f4e24d92fd963feae9",
+    "usdPrice": 3.95914685757e-9,
+    "createdAt": 1748292227,
+    "marketCap": 1666,
+    "liquidityUsd": 1332,
+    "holders": 43,
+    "pricePercentChange": {
+      "1h": 0,
+      "4h": -0.12913208543868787,
+      "12h": -0.12185624803208754,
+      "24h": -0.12185624803208754
+    },
+    "totalVolume": {
+      "1h": 0,
+      "4h": 91,
+      "12h": 19066,
+      "24h": 19066
+    },
+    "transactions": {
+      "1h": 0,
+      "4h": 2,
+      "12h": 203,
+      "24h": 203
+    },
+    "buyTransactions": {
+      "1h": 0,
+      "4h": 0,
+      "12h": 108,
+      "24h": 108
+    },
+    "sellTransactions": {
+      "1h": 0,
+      "4h": 2,
+      "12h": 95,
+      "24h": 95
+    },
+    "buyers": {
+      "1h": 0,
+      "4h": 0,
+      "12h": 86,
+      "24h": 86
+    },
+    "sellers": {
+      "1h": 0,
+      "4h": 2,
+      "12h": 61,
+      "24h": 61
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xbb9c691841ba1380594b380472d270c95707346d",
+    "name": "Doggy Dog",
+    "uniqueName": "doggy-dog-5",
+    "symbol": "DOG",
+    "decimals": 9,
+    "logo": null,
+    "usdPrice": 0.00000268224284027,
+    "createdAt": 1748269391,
+    "marketCap": 2682,
+    "liquidityUsd": 2391,
+    "holders": 78,
+    "pricePercentChange": {
+      "1h": 0,
+      "4h": 0.0001902085208334478,
+      "12h": -0.15832352864537777,
+      "24h": -0.15832352864537777
+    },
+    "totalVolume": {
+      "1h": 0,
+      "4h": 1,
+      "12h": 95216,
+      "24h": 95212
+    },
+    "transactions": {
+      "1h": 0,
+      "4h": 1,
+      "12h": 431,
+      "24h": 431
+    },
+    "buyTransactions": {
+      "1h": 0,
+      "4h": 0,
+      "12h": 212,
+      "24h": 212
+    },
+    "sellTransactions": {
+      "1h": 0,
+      "4h": 1,
+      "12h": 219,
+      "24h": 219
+    },
+    "buyers": {
+      "1h": 0,
+      "4h": 0,
+      "12h": 174,
+      "24h": 174
+    },
+    "sellers": {
+      "1h": 0,
+      "4h": 1,
+      "12h": 112,
+      "24h": 112
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0x6b505714bec2b1d7d6add150099b571296850f07",
+    "name": "No Utility Token",
+    "uniqueName": "no-utility-token-1",
+    "symbol": "NUT",
+    "decimals": 18,
+    "logo": null,
+    "usdPrice": 0.00109825729082,
+    "createdAt": 1748288195,
+    "marketCap": 132889,
+    "liquidityUsd": 18494,
+    "holders": 408,
+    "pricePercentChange": {
+      "1h": 0,
+      "4h": 0,
+      "12h": 51.26761202937942,
+      "24h": 51.26761202937942
+    },
+    "totalVolume": {
+      "1h": 0,
+      "4h": 0,
+      "12h": 16139,
+      "24h": 16139
+    },
+    "transactions": {
+      "1h": 0,
+      "4h": 0,
+      "12h": 420,
+      "24h": 420
+    },
+    "buyTransactions": {
+      "1h": 0,
+      "4h": 0,
+      "12h": 419,
+      "24h": 419
+    },
+    "sellTransactions": {
+      "1h": 0,
+      "4h": 0,
+      "12h": 1,
+      "24h": 1
+    },
+    "buyers": {
+      "1h": 0,
+      "4h": 0,
+      "12h": 4,
+      "24h": 4
+    },
+    "sellers": {
+      "1h": 0,
+      "4h": 0,
+      "12h": 1,
+      "24h": 1
+    }
+  },
+  {
+    "chainId": "0x1",
+    "tokenAddress": "0xd7404f52ea7a2709dfef0994db3f26700705eaf4",
+    "name": "Not Gonna Make It",
+    "uniqueName": "not-gonna-make-it-6",
+    "symbol": "NGMI",
+    "decimals": 18,
+    "logo": "https://d23exngyjlavgo.cloudfront.net/0x1_0xd7404f52ea7a2709dfef0994db3f26700705eaf4",
+    "usdPrice": 0.000179891444776,
+    "createdAt": 1748243015,
+    "marketCap": 179891,
+    "liquidityUsd": 26606,
+    "holders": 144,
+    "pricePercentChange": {
+      "1h": 0,
+      "4h": 0,
+      "12h": 0,
+      "24h": 48.73969516639921
+    },
+    "totalVolume": {
+      "1h": 0,
+      "4h": 0,
+      "12h": 0,
+      "24h": 121025
+    },
+    "transactions": {
+      "1h": 0,
+      "4h": 0,
+      "12h": 0,
+      "24h": 261
+    },
+    "buyTransactions": {
+      "1h": 0,
+      "4h": 0,
+      "12h": 0,
+      "24h": 183
+    },
+    "sellTransactions": {
+      "1h": 0,
+      "4h": 0,
+      "12h": 0,
+      "24h": 78
+    },
+    "buyers": {
+      "1h": 0,
+      "4h": 0,
+      "12h": 0,
+      "24h": 175
+    },
+    "sellers": {
+      "1h": 0,
+      "4h": 0,
+      "12h": 0,
+      "24h": 66
+    }
+  }
+]

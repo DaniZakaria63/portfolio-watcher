@@ -4,6 +4,6 @@ enum class NavigationTarget(val label: String) {
     SEARCH("Search"),
     DETAIL("Detail"),
     LIST("List"),
-    FAVORITE("Favorite"),
+    NEWS("News"),
     HOME("Home"),
 }
