@@ -7,9 +7,9 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import dev.daniza.portfoliowatcher.ui.detail.DetailScreen
-import dev.daniza.portfoliowatcher.ui.favorite.FavoriteScreen
 import dev.daniza.portfoliowatcher.ui.home.HomeScreen
 import dev.daniza.portfoliowatcher.ui.list.ListScreen
+import dev.daniza.portfoliowatcher.ui.news.FavoriteScreen
 import dev.daniza.portfoliowatcher.ui.search.SearchScreen
 
 @Composable
@@ -23,12 +23,14 @@ fun PortfolioNavHost(
         modifier = modifier,
     ){
         composable(route = HomeDestination.route){
-            HomeScreen()
+            HomeScreen(onNavigateToDetail = { tokenId ->
+                navController.navigateToDetail(tokenId)
+            })
         }
         composable(route = ListDestination.route){
             ListScreen()
         }
-        composable(route = FavoriteDestination.route){
+        composable(route = NewsDestination.route) {
             FavoriteScreen()
         }
         composable(route = SearchDestination.route){
@@ -38,7 +40,7 @@ fun PortfolioNavHost(
             route = DetailDestination.routeWithArgs,
             arguments = DetailDestination.arguments,
         ){ navBackStackEntry: NavBackStackEntry ->
-            val pokemonId = navBackStackEntry.arguments?.getString(DetailDestination.detailIdArgs)
+            val tokenId = navBackStackEntry.arguments?.getString(DetailDestination.detailIdArgs)
             DetailScreen()
         }
     }

@@ -2,7 +2,6 @@ package dev.daniza.portfoliowatcher.ui.navigation
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.List
-import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.MailOutline
 import androidx.compose.material.icons.filled.Search
@@ -25,11 +24,11 @@ object HomeDestination: BaseDestination {
 
 }
 
-object FavoriteDestination: BaseDestination {
+object NewsDestination : BaseDestination {
     override val icon: ImageVector
-        get() = Icons.Filled.Favorite
+        get() = Icons.Filled.MailOutline
     override val route: String
-        get() = NavigationTarget.FAVORITE.label
+        get() = NavigationTarget.NEWS.label
 
 }
 
@@ -53,7 +52,7 @@ object DetailDestination: BaseDestination {
     override val route: String
         get() = NavigationTarget.DETAIL.label
 
-    val detailIdArgs = "pokemon_id"
+    val detailIdArgs = "token_id"
     val routeWithArgs ="$route/{$detailIdArgs}"
 
     val arguments = listOf(
@@ -63,6 +62,6 @@ object DetailDestination: BaseDestination {
         }
     )
     val deepLink = listOf(
-        navDeepLink { uriPattern = "pokemon://$route/{$detailIdArgs}" }
+        navDeepLink { uriPattern = "token://$route/{$detailIdArgs}" }
     )
 }
