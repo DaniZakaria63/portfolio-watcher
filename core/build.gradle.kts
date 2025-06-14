@@ -38,12 +38,15 @@ android {
 dependencies {
     implementation(project(":model"))
     implementation(project(":remote"))
+    implementation(project(":local"))
 
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
 
     implementation(libs.coroutines.android)
     implementation(libs.coroutines.core)
+
+    implementation(libs.paging.runtime)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)

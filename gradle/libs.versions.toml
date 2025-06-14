@@ -21,6 +21,8 @@ ui-text-google-fonts = "1.6.7"
 tradingview = "4.0.0"
 chart-compose = "0.1.7"
 mockk = "1.13.10"
+paging = "3.2.0"
+paging-compose = "1.0.0-alpha20"
 
 [libraries]
 
@@ -66,6 +68,10 @@ gson = { module = "com.google.code.gson:gson", version.ref = "retrofit" }
 room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
 room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
 room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+
+#PAGING
+paging-runtime = { group = "androidx.paging", name = "paging-runtime-ktx", version.ref = "paging" }
+paging-compose = { group = "androidx.paging", name = "paging-compose", version.ref = "paging-compose" }
 
 #UNIT TEST
 junit = { group = "junit", name = "junit", version.ref = "junit" }
