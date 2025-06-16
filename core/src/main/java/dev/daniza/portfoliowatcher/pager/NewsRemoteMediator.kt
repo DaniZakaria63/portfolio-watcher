@@ -44,7 +44,10 @@ class NewsRemoteMediator(
                 return MediatorResult.Error(IOException("No internet connection"))
             }
 
-            val newsHeadlines = newsRemoteService.getNewsHeadline() // TODO: CHANGE BASED ON THE PAGE STATE
+            val newsHeadlines = newsRemoteService.getNewsHeadline(
+                page = loadKey.toInt(),
+                pageSize = state.config.pageSize
+            )
 
             newsDao.insertAll(newsHeadlines.map { it.toEntity() })
 

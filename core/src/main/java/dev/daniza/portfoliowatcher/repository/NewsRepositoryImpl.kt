@@ -28,7 +28,8 @@ class NewsRepositoryImpl @Inject constructor(
             ),
             remoteMediator = NewsRemoteMediator(
                 newsDao = newsDao,
-                newsRemoteService = newsRemoteService
+                newsRemoteService = newsRemoteService,
+                connectivityChecker = connectivityChecker
             ),
             pagingSourceFactory = { newsDao.getAllNews() }
         ).flow

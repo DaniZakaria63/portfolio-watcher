@@ -23,6 +23,7 @@ chart-compose = "0.1.7"
 mockk = "1.13.10"
 paging = "3.2.0"
 paging-compose = "1.0.0-alpha20"
+coil = "2.4.0"
 
 [libraries]
 
@@ -38,6 +39,7 @@ tradingview = { group = "com.tradingview", name = "lightweightcharts", version.r
 navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigation-compose" }
 navigation-compose-test = { group = "androidx.navigation", name = "navigation-testing", version.ref = "navigation-compose" }
 compose-charts = { group = "io.github.ehsannarmani", name = "compose-charts", version.ref = "chart-compose" }
+coil-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
 
 #JETPACK COMPOSE COMPONENT
 compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
@@ -68,6 +70,7 @@ gson = { module = "com.google.code.gson:gson", version.ref = "retrofit" }
 room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
 room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
 room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+room-paging = { group = "androidx.room", name = "room-paging", version.ref = "room" }
 
 #PAGING
 paging-runtime = { group = "androidx.paging", name = "paging-runtime-ktx", version.ref = "paging" }

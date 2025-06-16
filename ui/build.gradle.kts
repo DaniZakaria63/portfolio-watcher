@@ -60,6 +60,8 @@ dependencies {
 
     implementation(libs.tradingview)
     implementation(libs.navigation.compose)
+    implementation(libs.paging.compose)
+    implementation(libs.coil.compose)
 
     implementation(platform(libs.compose.bom))
     implementation(libs.ui)
