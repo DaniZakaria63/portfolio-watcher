@@ -1,14 +1,17 @@
 package dev.daniza.portfoliowatcher.remote
 
+import android.content.Context
 import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import dev.daniza.portfoliowatcher.remote.news.DEFAULT_REMOTE_BASE_URL
 import dev.daniza.portfoliowatcher.remote.news.NewsRemote
 import dev.daniza.portfoliowatcher.remote.news.NewsRemoteService
 import dev.daniza.portfoliowatcher.remote.news.RemoteEndpoint
+import dev.daniza.portfoliowatcher.remote.service.ConnectivityChecker
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -35,4 +38,8 @@ object RemoteModule {
     fun provideNewsRemoteService(retrofit: Retrofit): NewsRemote =
         NewsRemoteService(retrofit.create(RemoteEndpoint::class.java))
 
+    @Singleton
+    @Provides
+    fun provideConnectivityChecker(@ApplicationContext context: Context): ConnectivityChecker =
+        ConnectivityChecker(context)
 }

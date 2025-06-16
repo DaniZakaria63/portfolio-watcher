@@ -43,5 +43,7 @@ dependencies {
 
     implementation(libs.room.ktx)
     implementation(libs.room.runtime)
+
+    implementation(libs.paging.runtime)
     ksp(libs.room.compiler)
 }
