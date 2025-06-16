@@ -6,11 +6,15 @@ import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.paging.PagingData
+import androidx.paging.compose.collectAsLazyPagingItems
+import dev.daniza.portfoliowatcher.model.news.NewsHeadline
 import dev.daniza.portfoliowatcher.ui.detail.DetailScreen
 import dev.daniza.portfoliowatcher.ui.home.HomeScreen
 import dev.daniza.portfoliowatcher.ui.list.ListScreen
-import dev.daniza.portfoliowatcher.ui.news.FavoriteScreen
+import dev.daniza.portfoliowatcher.ui.news.NewsScreen
 import dev.daniza.portfoliowatcher.ui.search.SearchScreen
+import kotlinx.coroutines.flow.flowOf
 
 @Composable
 fun PortfolioNavHost(
@@ -31,7 +35,9 @@ fun PortfolioNavHost(
             ListScreen()
         }
         composable(route = NewsDestination.route) {
-            FavoriteScreen()
+            val emptyNewsFlow = flowOf(PagingData.empty<NewsHeadline>())
+            val news = emptyNewsFlow.collectAsLazyPagingItems()
+            NewsScreen(news = news)
         }
         composable(route = SearchDestination.route){
             SearchScreen()

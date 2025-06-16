@@ -7,6 +7,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import dev.daniza.portfoliowatcher.local.dao.NewsDao
 import javax.inject.Singleton
 
 @Module
@@ -17,4 +18,9 @@ object LocalModule {
     @Provides
     fun providePortfolioDatabase(@ApplicationContext context: Context) : PortfolioDatabase =
         Room.databaseBuilder(context, PortfolioDatabase::class.java, PORTFOLIO_DATABASE_NAME).build()
+
+    @Singleton
+    @Provides
+    fun provideNewsDao(portfolioDatabase: PortfolioDatabase): NewsDao =
+        portfolioDatabase.newsDao()
 }

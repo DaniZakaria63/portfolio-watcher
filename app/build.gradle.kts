@@ -63,12 +63,6 @@ android {
 }
 
 dependencies {
-    implementation(project(":remote"))
-    implementation(project(":core"))
-    implementation(project(":presenter"))
-    implementation(project(":ui"))
-    implementation(project(":model"))
-
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
     implementation(libs.timber.core)

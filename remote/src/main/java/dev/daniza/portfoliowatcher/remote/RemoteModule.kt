@@ -1,14 +1,17 @@
 package dev.daniza.portfoliowatcher.remote
 
+import android.content.Context
 import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import dev.daniza.portfoliowatcher.remote.endpoint.DEFAULT_REMOTE_BASE_URL
-import dev.daniza.portfoliowatcher.remote.endpoint.RemoteEndpoint
-import dev.daniza.portfoliowatcher.remote.service.DefaultRemoteService
-import dev.daniza.portfoliowatcher.remote.service.RemoteService
+import dev.daniza.portfoliowatcher.remote.news.DEFAULT_NEWS_REMOTE_BASE_URL
+import dev.daniza.portfoliowatcher.remote.news.NewsRemote
+import dev.daniza.portfoliowatcher.remote.news.NewsRemoteService
+import dev.daniza.portfoliowatcher.remote.news.RemoteEndpoint
+import dev.daniza.portfoliowatcher.remote.service.ConnectivityChecker
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -20,8 +23,8 @@ import javax.inject.Singleton
 object RemoteModule {
     @Singleton
     @Provides
-    fun provideRemoteEndpoint(): RemoteEndpoint = Retrofit.Builder()
-        .baseUrl(DEFAULT_REMOTE_BASE_URL)
+    fun provideRetrofit(): Retrofit = Retrofit.Builder()
+        .baseUrl(DEFAULT_NEWS_REMOTE_BASE_URL)
         .client(
             OkHttpClient.Builder()
                 .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BASIC))
@@ -29,10 +32,14 @@ object RemoteModule {
         )
         .addConverterFactory(GsonConverterFactory.create(GsonBuilder().setLenient().create()))
         .build()
-        .create(RemoteEndpoint::class.java)
 
     @Singleton
     @Provides
-    fun provideNetworkService(networkEndpoint: RemoteEndpoint): RemoteService =
-        DefaultRemoteService(networkEndpoint)
+    fun provideNewsRemoteService(retrofit: Retrofit): NewsRemote =
+        NewsRemoteService(retrofit.create(RemoteEndpoint::class.java))
+
+    @Singleton
+    @Provides
+    fun provideConnectivityChecker(@ApplicationContext context: Context): ConnectivityChecker =
+        ConnectivityChecker(context)
 }
