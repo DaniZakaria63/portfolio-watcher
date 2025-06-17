@@ -6,7 +6,8 @@ import retrofit2.http.Query
 import retrofit2.http.Url
 
 const val DEFAULT_NEWS_REMOTE_BASE_URL = "https://newsapi.org/v2/"
-interface RemoteEndpoint {
+
+interface NewsRemoteEndpoint {
 
     @GET
     suspend fun getTopHeadlines(

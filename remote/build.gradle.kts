@@ -14,8 +14,12 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
-        buildConfigField("String", "API_KEY", project.properties["API_KEY_TOKENMETRICS"].toString())
-        buildConfigField("String", "API_BASE_URL", project.properties["API_BASE_URL"].toString())
+        buildConfigField("String", "API_KEY_TOKENMETRICS", project.properties["API_KEY_TOKENMETRICS"].toString())
+        buildConfigField("String", "API_URL_TOKENMETRICS", project.properties["API_BASE_URL"].toString())
+        buildConfigField("String", "API_KEY_MORALIS", project.properties["API_KEY_MORALIS"].toString())
+        buildConfigField("String", "API_URL_MORALIS", project.properties["API_BASE_URL_MORALIS"].toString())
+        buildConfigField("String", "API_KEY_NEWSAPI", project.properties["API_KEY_NEWSAPI"].toString())
+        buildConfigField("String", "API_URL_NEWSAPI", project.properties["API_BASE_URL_NEWSAPI"].toString())
     }
 
     buildTypes {
