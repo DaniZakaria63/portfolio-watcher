@@ -47,7 +47,7 @@ object RemoteModule {
     fun provideTokenMetricsRemote(retrofit: Retrofit): TokenMetricsRemote {
         val newsInterceptor = Interceptor { chain ->
             val request = chain.request().newBuilder()
-                .addHeader("api_key", BuildConfig.API_KEY_TOKENMETRICS)
+                .addHeader("x-api-key", BuildConfig.API_KEY_TOKENMETRICS)
                 .build()
             chain.proceed(request)
         }
