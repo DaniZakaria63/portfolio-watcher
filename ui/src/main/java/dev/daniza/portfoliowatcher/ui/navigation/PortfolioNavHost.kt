@@ -9,6 +9,7 @@ import androidx.navigation.compose.composable
 import androidx.paging.PagingData
 import androidx.paging.compose.collectAsLazyPagingItems
 import dev.daniza.portfoliowatcher.model.news.NewsHeadline
+import dev.daniza.portfoliowatcher.model.tokenmetrics.TokenSearchModel
 import dev.daniza.portfoliowatcher.ui.detail.DetailScreen
 import dev.daniza.portfoliowatcher.ui.home.HomeScreen
 import dev.daniza.portfoliowatcher.ui.list.ListScreen
@@ -40,7 +41,8 @@ fun PortfolioNavHost(
             NewsScreen(news = news)
         }
         composable(route = SearchDestination.route){
-            SearchScreen()
+            val emptyTokenItems = flowOf(PagingData.empty<TokenSearchModel>())
+            SearchScreen(emptyTokenItems.collectAsLazyPagingItems())
         }
         composable(
             route = DetailDestination.routeWithArgs,
