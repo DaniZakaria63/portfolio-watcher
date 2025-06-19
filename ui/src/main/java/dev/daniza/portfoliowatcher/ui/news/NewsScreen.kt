@@ -4,7 +4,6 @@ import android.widget.Toast
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.material3.Card
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Surface
@@ -18,19 +17,27 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.paging.LoadState
 import androidx.paging.compose.LazyPagingItems
+import androidx.paging.compose.collectAsLazyPagingItems
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import dev.daniza.portfoliowatcher.model.news.NewsHeadline
+import dev.daniza.portfoliowatcher.presenter.NewsViewModel
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun NewsScreen(
-    news: LazyPagingItems<NewsHeadline>
+    viewModel: NewsViewModel = hiltViewModel()
 ) {
-    val pagerState = rememberPagerState { 10 }
     val context = LocalContext.current
+    val news: LazyPagingItems<NewsHeadline> = viewModel.newsHeadline.collectAsLazyPagingItems()
+
+    LaunchedEffect(Unit) {
+        viewModel.getNewsHeadline()
+    }
+
     LaunchedEffect(key1 = news.loadState) {
         if (news.loadState.refresh is LoadState.Error) {
             Toast.makeText(

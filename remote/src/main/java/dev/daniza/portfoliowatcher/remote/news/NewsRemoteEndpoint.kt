@@ -18,5 +18,6 @@ interface NewsRemoteEndpoint {
         @Query("pageSize") pageSize: Int,
         @Query("category") category: String = "finance",
         @Query("q") query: String = "cryptocurrency",
+        @Query("sources") sources: String = "crypto-coins-news",
     ): NewsResponse
 }

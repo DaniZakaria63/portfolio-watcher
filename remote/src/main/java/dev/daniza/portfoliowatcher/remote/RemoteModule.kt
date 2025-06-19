@@ -7,6 +7,9 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import dev.daniza.portfoliowatcher.remote.moralis.MoralisRemote
+import dev.daniza.portfoliowatcher.remote.moralis.MoralisRemoteEndpoint
+import dev.daniza.portfoliowatcher.remote.moralis.MoralisRemoteService
 import dev.daniza.portfoliowatcher.remote.news.DEFAULT_NEWS_REMOTE_BASE_URL
 import dev.daniza.portfoliowatcher.remote.news.NewsRemote
 import dev.daniza.portfoliowatcher.remote.news.NewsRemoteEndpoint
@@ -60,6 +63,26 @@ object RemoteModule {
             )
             .build()
         return TokenMetricsService(retrofit.create(TokenMetricsRemoteEndpoint::class.java))
+    }
+
+    @Singleton
+    @Provides
+    fun provideMoralisRemote(retrofit: Retrofit): MoralisRemote {
+        val moralisInterceptor = Interceptor { chain ->
+            val request = chain.request().newBuilder()
+                .addHeader("X-API-Key", BuildConfig.API_KEY_MORALIS)
+                .build()
+            chain.proceed(request)
+        }
+        retrofit.newBuilder()
+            .client(
+                OkHttpClient.Builder()
+                    .addInterceptor(moralisInterceptor)
+                    .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BASIC))
+                    .build()
+            )
+            .build()
+        return MoralisRemoteService(retrofit.create(MoralisRemoteEndpoint::class.java))
     }
 
     @Singleton

@@ -61,8 +61,9 @@ class RequestNewsRemoteTest {
             url = DEFAULT_NEWS_REMOTE_BASE_URL + "top-headlines",
             page = 1,
             pageSize = 10,
-            category = "business",
-            query = "cryptocurrency"
+            category = "",
+            query = "",
+            sources = "crypto-coins-news"
         )
 
         advanceUntilIdle()

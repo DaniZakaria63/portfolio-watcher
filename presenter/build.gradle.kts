@@ -38,12 +38,14 @@ android {
 dependencies {
     implementation(project(":model"))
     implementation(project(":core"))
+    implementation(project(":local"))
 
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
     
     implementation(libs.coroutines.android)
     implementation(libs.coroutines.core)
+    implementation(libs.paging.runtime)
 
     implementation(libs.lifecycle.viewmodel.ktx)
     implementation(libs.lifecycle.viewmodel.compose)

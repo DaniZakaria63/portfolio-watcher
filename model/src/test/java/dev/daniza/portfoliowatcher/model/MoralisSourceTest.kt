@@ -2,7 +2,7 @@ package dev.daniza.portfoliowatcher.model
 
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import dev.daniza.portfoliowatcher.model.moralis.CryptoTrendToken
+import dev.daniza.portfoliowatcher.model.moralis.MoralisTokenTrend
 import io.mockk.coEvery
 import io.mockk.mockk
 import kotlinx.coroutines.runBlocking
@@ -24,8 +24,8 @@ class MoralisSourceTest {
         requireNotNull(inputStream) { "Could not find moralis.trend.json in test resources" }
 
         val reader = InputStreamReader(inputStream)
-        val listType = object : TypeToken<List<CryptoTrendToken>>() {}.type
-        val trendingTokens: List<CryptoTrendToken> = Gson().fromJson(reader, listType)
+        val listType = object : TypeToken<List<MoralisTokenTrend>>() {}.type
+        val trendingTokens: List<MoralisTokenTrend> = Gson().fromJson(reader, listType)
 
         // Set up mock provider
         mockJsonProvider = mockk()

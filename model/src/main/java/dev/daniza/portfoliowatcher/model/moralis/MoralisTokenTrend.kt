@@ -1,6 +1,6 @@
 package dev.daniza.portfoliowatcher.model.moralis
 
-data class CryptoTrendToken(
+data class MoralisTokenTrend(
     val chainId: String,
     val tokenAddress: String,
     val name: String,
