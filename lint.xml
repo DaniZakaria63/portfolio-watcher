@@ -9,6 +9,7 @@
     <issue id="ExportedPreferenceActivity" severity="error"/>
     <issue id="AllowBackup" severity="error"/>
     <issue id="Security" severity="error"/>
+    <issue id="Deprecated" severity="error"/>
 
     <!-- Treat as warnings -->
     <issue id="OldTargetApi" severity="warning"/>
@@ -17,7 +18,6 @@
     <issue id="LogConditional" severity="warning"/>
     <issue id="ViewConstructor" severity="warning"/>
     <issue id="RtlHardcoded" severity="warning"/>
-    <issue id="Deprecated" severity="warning"/>
 
     <!-- Treat as informational -->
     <issue id="ObsoleteSdkInt" severity="informational"/>

@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinAndroid)
@@ -8,7 +10,7 @@ plugins {
 android {
     namespace = "dev.daniza.portfoliowatcher"
     //noinspection GradleDependency
-    compileSdk = 34
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "dev.daniza.portfoliowatcher"
@@ -47,8 +49,11 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17.toString()
+    kotlin {
+        compilerOptions{
+            optIn.add("kotlin.RequiresOptIn")
+            jvmTarget.set(JvmTarget.JVM_17)
+        }
     }
     packaging {
         resources {
