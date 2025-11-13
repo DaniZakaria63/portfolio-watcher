@@ -8,6 +8,8 @@ import dev.daniza.portfoliowatcher.repository.NewsRepository
 import dev.daniza.portfoliowatcher.repository.NewsRepositoryImpl
 import dev.daniza.portfoliowatcher.repository.TokenSearchRepository
 import dev.daniza.portfoliowatcher.repository.TokenSearchRepositoryImpl
+import dev.daniza.portfoliowatcher.repository.UserSessionRepository
+import dev.daniza.portfoliowatcher.repository.UserSessionRepositoryImpl
 
 @Module
 @InstallIn(ViewModelComponent::class)
@@ -21,4 +23,9 @@ abstract class CoreModule {
     abstract fun bindTokenSearchRepository(
         tokenSearchRepositoryImpl: TokenSearchRepositoryImpl
     ): TokenSearchRepository
+
+    @Binds
+    abstract fun bindUserSessionRepository(
+        userSessionRepositoryImpl: UserSessionRepositoryImpl
+    ): UserSessionRepository
 }

@@ -1,6 +1,7 @@
 package dev.daniza.portfoliowatcher.remote
 
 import com.google.gson.GsonBuilder
+import com.google.gson.Strictness
 import dev.daniza.portfoliowatcher.remote.news.DEFAULT_NEWS_REMOTE_BASE_URL
 import dev.daniza.portfoliowatcher.remote.news.NewsRemoteEndpoint
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -32,7 +33,7 @@ class RequestNewsRemoteTest {
             )
             .addConverterFactory(
                 GsonConverterFactory.create(
-                    GsonBuilder().setLenient().create()
+                    GsonBuilder().setStrictness(Strictness.LENIENT).create()
                 )
             ).build()
 

@@ -52,6 +52,7 @@ dependencies {
     implementation(libs.coroutines.core)
 
     implementation(libs.paging.runtime)
+    implementation(libs.datastore.preferences)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)

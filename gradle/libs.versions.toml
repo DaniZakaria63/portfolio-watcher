@@ -25,6 +25,7 @@ mockk = "1.14.6"
 paging = "3.3.6"
 paging-compose = "3.3.6"
 coil = "2.7.0"
+datastore = "1.1.7"
 
 [libraries]
 
@@ -73,6 +74,7 @@ room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
 room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
 room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
 room-paging = { group = "androidx.room", name = "room-paging", version.ref = "room" }
+datastore-preferences = { group="androidx.datastore", name="datastore-preferences", version.ref="datastore" }
 
 #PAGING
 paging-runtime = { group = "androidx.paging", name = "paging-runtime-ktx", version.ref = "paging" }
