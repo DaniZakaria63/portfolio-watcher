@@ -17,7 +17,7 @@ workmanager = "2.11.0"
 retrofit = "3.0.0"
 gson = "2.13.2"
 coroutines = "1.10.2"
-logging-interceptor = "5.3.0"
+logging-interceptor = "5.3.1"
 ui-text-google-fonts = "1.9.4"
 tradingview = "4.0.0"
 chart-compose = "0.2.0"
@@ -49,6 +49,7 @@ ui = { group = "androidx.compose.ui", name = "ui" }
 ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
 ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+ui-animation = { group = "androidx.compose.animation", name= "animation" }
 material3 = { group = "androidx.compose.material3", name = "material3" }
 material-icons-core = { group = "androidx.compose.material", name="material-icons-core" }
 material-icons-extended = { group = "androidx.compose.material", name="material-icons-extended" }

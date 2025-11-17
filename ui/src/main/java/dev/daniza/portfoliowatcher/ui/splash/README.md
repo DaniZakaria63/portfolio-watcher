@@ -14,9 +14,7 @@
 
 ## Overview
 
-The **Splash Screen** is the **first touchpoint** of your app — but it's more than just a logo.
-
-It performs **critical startup tasks** silently and decides where the user should land:  
+Splash Screen performs **critical startup tasks** silently and decides where the user should land:  
 **Welcome Screen** (first-time) or **Home Screen** (returning user).
 
 ---

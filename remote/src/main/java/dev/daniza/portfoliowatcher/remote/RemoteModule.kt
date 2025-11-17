@@ -15,6 +15,7 @@ import dev.daniza.portfoliowatcher.remote.news.DEFAULT_NEWS_REMOTE_BASE_URL
 import dev.daniza.portfoliowatcher.remote.news.NewsRemote
 import dev.daniza.portfoliowatcher.remote.news.NewsRemoteEndpoint
 import dev.daniza.portfoliowatcher.remote.news.NewsRemoteService
+import dev.daniza.portfoliowatcher.remote.selfhost.SELFHOST_BASE_URL
 import dev.daniza.portfoliowatcher.remote.selfhost.SelfHostRemote
 import dev.daniza.portfoliowatcher.remote.selfhost.SelfHostRemoteEndpoint
 import dev.daniza.portfoliowatcher.remote.selfhost.SelfHostService
@@ -117,6 +118,7 @@ object RemoteModule {
     fun provideSelfHostRemote(
         retrofit: Retrofit,
     ): SelfHostRemote {
+        retrofit.newBuilder().baseUrl(SELFHOST_BASE_URL).build()
         return SelfHostService(retrofit.create(SelfHostRemoteEndpoint::class.java))
     }
 

@@ -14,6 +14,7 @@ import dev.daniza.portfoliowatcher.ui.home.HomeScreen
 import dev.daniza.portfoliowatcher.ui.list.ListScreen
 import dev.daniza.portfoliowatcher.ui.news.NewsScreen
 import dev.daniza.portfoliowatcher.ui.search.SearchScreen
+import dev.daniza.portfoliowatcher.ui.splash.SplashScreen
 import kotlinx.coroutines.flow.flowOf
 
 @Composable
@@ -23,9 +24,14 @@ fun PortfolioNavHost(
 ) {
     NavHost(
         navController = navController,
-        startDestination = HomeDestination.route,
+        startDestination = SplashDestination.route,
         modifier = modifier,
     ){
+        composable(route = SplashDestination.route){
+            SplashScreen(onNavigateToHome = {
+                navController.navigateSingleTopTo(HomeDestination.route)
+            })
+        }
         composable(route = HomeDestination.route){
             HomeScreen(onNavigateToDetail = { tokenId ->
                 navController.navigateToDetail(tokenId)

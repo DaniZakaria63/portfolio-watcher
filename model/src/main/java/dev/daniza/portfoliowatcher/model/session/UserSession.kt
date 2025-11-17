@@ -4,6 +4,7 @@ data class UserSession(
     val token: String = "",
     val created_at: Long? = null, /*FROM API*/
     val updated_at: Long? = null, /*FROM CLIENT*/
+    val isNewUpdate: Boolean? = false /*FROM API*/
 ){
     companion object{
         const val NAME :String = "USER_SESSION"

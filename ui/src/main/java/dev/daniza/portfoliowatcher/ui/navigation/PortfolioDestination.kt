@@ -16,6 +16,14 @@ interface BaseDestination {
     val route: String
 }
 
+object SplashDestination: BaseDestination {
+    override val icon: ImageVector
+        get() = Icons.Filled.MailOutline
+    override val route: String
+        get() = NavigationTarget.SPLASH.label
+
+}
+
 object HomeDestination: BaseDestination {
     override val icon: ImageVector
         get() = Icons.Filled.Home
