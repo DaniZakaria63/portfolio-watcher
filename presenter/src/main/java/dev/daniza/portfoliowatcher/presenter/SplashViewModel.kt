@@ -4,9 +4,11 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dev.daniza.portfoliowatcher.interactor.get_session_token.GetSessionTokenInteractor
+import dev.daniza.portfoliowatcher.interactor.set_session_token.SetSessionTokenInteractor
 import dev.daniza.portfoliowatcher.interactor.validate_session_token.ValidateSessionTokenInteractor
 import dev.daniza.portfoliowatcher.model.parser.isTrue
 import dev.daniza.portfoliowatcher.model.session.UserSession
+import dev.daniza.portfoliowatcher.model.state.StateUI
 import dev.daniza.portfoliowatcher.network.ConnectivityObserver
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableSharedFlow
@@ -23,24 +25,30 @@ import javax.inject.Inject
 class SplashViewModel @Inject constructor(
     private val getSessionTokenInteractor: GetSessionTokenInteractor,
     private val validateSessionTokenInteractor: ValidateSessionTokenInteractor,
+    private val setSessionTokenInteractor: SetSessionTokenInteractor,
     private val connectivityObserver: ConnectivityObserver,
 ): ViewModel(){
     val connectionStatus get() = connectivityObserver.isConnected.shareIn(viewModelScope, started = SharingStarted.Lazily)
 
-    private val _isShowWelcome: MutableSharedFlow<Boolean> = MutableSharedFlow()
-    val isShowWelcome: SharedFlow<Boolean> = _isShowWelcome.asSharedFlow()
+    private val _isShowWelcome: MutableSharedFlow<StateUI<Boolean>> = MutableSharedFlow()
+    val isShowWelcome: SharedFlow<StateUI<Boolean>> = _isShowWelcome.asSharedFlow()
         .shareIn(viewModelScope, started = SharingStarted.WhileSubscribed())
 
     fun getCurrentSession(){
-        viewModelScope.launch (Dispatchers.IO){
-            getSessionTokenInteractor().catch { it ->
-                withContext(Dispatchers.Main){
-                    _isShowWelcome.emit(false)
-                }
+        viewModelScope.launch (Dispatchers.Main){
+            getSessionTokenInteractor().catch { throwable ->
+                throwable.printStackTrace()
+                pushTokenServer(throwable.message.orEmpty().ifEmpty { "newbie" })
             }.collect { value ->
-                pushTokenServer(
-                    value.getOrDefault(UserSession()).token
-                )
+                value.onSuccess {
+                    _isShowWelcome.emit(
+                        StateUI(
+                            data = value.getOrDefault(UserSession()).token.isNotEmpty()
+                        )
+                    )
+                }.onFailure {
+                    pushTokenServer(it.message.orEmpty().ifEmpty { "newbie" })
+                }
             }
         }
     }
@@ -49,9 +57,14 @@ class SplashViewModel @Inject constructor(
         viewModelScope.launch(Dispatchers.Main){
             validateSessionTokenInteractor(token).onFailure { exception ->
                 exception.printStackTrace()
-                _isShowWelcome.emit(false)
+                _isShowWelcome.emit(
+                    StateUI(error = exception.message.orEmpty().ifEmpty { token })
+                )
             }.onSuccess { value ->
-                _isShowWelcome.emit(value.isNewUpdate.isTrue())
+                withContext(Dispatchers.IO) { setSessionTokenInteractor(value.token) }
+                _isShowWelcome.emit(
+                    StateUI(data = value.isNewUpdate.isTrue())
+                    )
             }
 
         }

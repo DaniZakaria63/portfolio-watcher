@@ -113,12 +113,24 @@ object RemoteModule {
         return MoralisRemoteService(retrofit.create(MoralisRemoteEndpoint::class.java))
     }
 
+    @Provides
+    @SelfHostOkHttpClient
+    fun provideSelfHostOkHttpClient(): OkHttpClient {
+        return OkHttpClient.Builder()
+            .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BASIC))
+            .build()
+    }
+
+
     @Singleton
     @Provides
     fun provideSelfHostRemote(
         retrofit: Retrofit,
+        @SelfHostOkHttpClient okHttpClient: OkHttpClient
     ): SelfHostRemote {
-        retrofit.newBuilder().baseUrl(SELFHOST_BASE_URL).build()
+        retrofit.newBuilder()
+            .baseUrl(SELFHOST_BASE_URL)
+            .client(okHttpClient).build()
         return SelfHostService(retrofit.create(SelfHostRemoteEndpoint::class.java))
     }
 

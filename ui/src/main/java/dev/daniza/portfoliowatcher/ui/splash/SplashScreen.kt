@@ -10,11 +10,21 @@ import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Close
+import androidx.compose.material.icons.filled.Error
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -30,8 +40,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import androidx.compose.ui.window.Dialog
+import androidx.compose.ui.window.DialogProperties
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
+import dev.daniza.portfoliowatcher.model.parser.isTrue
+import dev.daniza.portfoliowatcher.model.state.StateUI
 import dev.daniza.portfoliowatcher.presenter.SplashViewModel
 import dev.daniza.portfoliowatcher.ui.R
 import kotlinx.coroutines.launch
@@ -43,10 +60,12 @@ fun SplashScreen(
 ) {
     val coroutineScope = rememberCoroutineScope()
     val isConnected by viewModel.connectionStatus.collectAsState(initial = false)
-    val showWelcome by viewModel.isShowWelcome.collectAsState(initial = null)
 
-    // Infinite pulsing animation
-    var visible by remember { mutableStateOf(false) }
+    val showWelcomeState by viewModel.isShowWelcome
+        .collectAsState(initial = StateUI<Boolean>(loading = true))
+    var apiCallAttempt by remember { mutableStateOf(0) }
+    var showErrorDialog by remember { mutableStateOf(false) }
+
     val infiniteTransition = rememberInfiniteTransition()
     val pulseAlpha by infiniteTransition.animateFloat(
         initialValue = 0.8f,
@@ -57,10 +76,13 @@ fun SplashScreen(
         )
     )
 
-    LaunchedEffect(Unit) {
-        viewModel.getCurrentSession()
+    LaunchedEffect(apiCallAttempt) {
+        coroutineScope.launch { viewModel.getCurrentSession() }
     }
 
+    LaunchedEffect(showWelcomeState.error) {
+        showErrorDialog = showWelcomeState.error.isNullOrEmpty()
+    }
 
     Box(
         modifier = Modifier
@@ -76,54 +98,148 @@ fun SplashScreen(
             ),
         contentAlignment = Alignment.Center
     ) {
-
-        if (!isConnected) {
-            Text(
-                text = "No internet connection",
-                style = MaterialTheme.typography.headlineSmall,
-                modifier = Modifier.padding(bottom = 16.dp)
-            )
-            Button(onClick = {
-                coroutineScope.launch {
-                    viewModel.getCurrentSession()
+        when {
+            !isConnected -> {
+                Text(
+                    text = "No internet connection",
+                    style = MaterialTheme.typography.headlineSmall,
+                    modifier = Modifier.padding(bottom = 16.dp)
+                )
+                Button(onClick = {
+                    coroutineScope.launch {
+                        viewModel.getCurrentSession()
+                    }
+                }) {
+                    Text("Retry")
                 }
-            }) {
-                Text("Retry")
             }
-        } else {
-            when (showWelcome) {
-                null -> {
-                    // Loading
-                    AnimatedVisibility(
-                        visible = visible,
-                        enter = fadeIn(
-                            animationSpec = tween(
-                                1000
-                            )
+            showWelcomeState.loading -> {
+                AnimatedVisibility(
+                    visible = true,
+                    enter = fadeIn(
+                        animationSpec = tween(
+                            1000
                         )
+                    )
+                ) {
+                    Icon(
+                        painter = painterResource(id = R.drawable.ic_launcher_background),
+                        contentDescription = "App Icon",
+                        modifier = Modifier
+                            .size(120.dp)
+                            .graphicsLayer(alpha = pulseAlpha),
+                        tint = Color.White
+                    )
+                }
+            }
+
+            showWelcomeState.data.isTrue() -> {
+                WelcomeScreen(onContinue = { onNavigateToHome(1) })
+            }
+
+            !showWelcomeState.data.isTrue() -> {
+                LaunchedEffect(Unit) { onNavigateToHome(1) }
+            }
+        }
+    }
+
+    // Beautiful Error Dialog Card
+    if (showErrorDialog) {
+        Dialog(
+            onDismissRequest = { showErrorDialog = false },
+            properties = DialogProperties(
+                dismissOnBackPress = true,
+                dismissOnClickOutside = false
+            )
+        ) {
+            Card(
+                modifier = Modifier
+                    .padding(16.dp)
+                    .size(width = 340.dp, height = 280.dp),
+                shape = RoundedCornerShape(16.dp),
+                colors = CardDefaults.cardColors(
+                    containerColor = MaterialTheme.colorScheme.surface,
+                    contentColor = MaterialTheme.colorScheme.onSurface
+                ),
+                elevation = CardDefaults.cardElevation(
+                    defaultElevation = 12.dp
+                )
+            ) {
+                Column(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(24.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = androidx.compose.foundation.layout.Arrangement.spacedBy(16.dp)
+                ) {
+                    // Header with close button
+                    Box(
+                        modifier = Modifier.fillMaxWidth(),
+                        contentAlignment = Alignment.TopEnd
                     ) {
-                        Icon(
-                            painter = painterResource(id = R.drawable.ic_launcher_background),
-                            contentDescription = "App Icon",
-                            modifier = Modifier
-                                .size(120.dp)
-                                .graphicsLayer(alpha = pulseAlpha),
-                            tint = Color.White
+                        IconButton(
+                            onClick = { showErrorDialog = false },
+                            modifier = Modifier.size(32.dp)
+                        ) {
+                            Icon(
+                                imageVector = Icons.Filled.Close,
+                                contentDescription = "Close",
+                                tint = MaterialTheme.colorScheme.onSurface
+                            )
+                        }
+                    }
+
+                    // Error Icon
+                    Icon(
+                        imageVector = Icons.Filled.Error,
+                        contentDescription = "Error",
+                        modifier = Modifier.size(48.dp),
+                        tint = MaterialTheme.colorScheme.error
+                    )
+
+                    // Error Title
+                    Text(
+                        text = "Oops! Something went wrong",
+                        fontSize = 18.sp,
+                        fontWeight = FontWeight.Bold,
+                        textAlign = TextAlign.Center,
+                        color = MaterialTheme.colorScheme.onSurface
+                    )
+
+                    // Error Message
+                    Text(
+                        text = showWelcomeState.error.orEmpty().ifEmpty { "Terjadi Kesalahan" },
+                        fontSize = 14.sp,
+                        textAlign = TextAlign.Center,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        modifier = Modifier.weight(1f)
+                    )
+
+                    // Retry Button
+                    Button(
+                        onClick = {
+                            showErrorDialog = false
+                            coroutineScope.launch {
+                                ++apiCallAttempt
+                            }
+                        },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(top = 8.dp),
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = MaterialTheme.colorScheme.primary
+                        ),
+                        shape = RoundedCornerShape(8.dp)
+                    ) {
+                        Text(
+                            "Retry",
+                            modifier = Modifier.padding(8.dp),
+                            fontSize = 14.sp,
+                            fontWeight = FontWeight.SemiBold
                         )
                     }
                 }
-
-                true -> {
-                    // Show Welcome Screen
-                    WelcomeScreen(onContinue = { onNavigateToHome(1) })
-                }
-
-                false -> {
-                    // Navigate to Home (assuming 1 is Home)
-                    LaunchedEffect(Unit) { onNavigateToHome(1) }
-                }
             }
         }
-
     }
 }

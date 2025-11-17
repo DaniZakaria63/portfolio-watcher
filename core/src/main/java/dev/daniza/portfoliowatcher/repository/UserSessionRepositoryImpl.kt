@@ -20,15 +20,14 @@ class UserSessionRepositoryImpl @Inject constructor(
     private val selfHostRemote: SelfHostRemote,
 ): UserSessionRepository {
     override suspend fun getToken(): Flow<Result<UserSession>> = withContext(Dispatchers.IO) {
-        dataStore.data.catch{
+        dataStore.data.catch {
             exception ->
             if (exception is IOException) {
                 emit(emptyPreferences())
             } else {
                 throw exception
             }
-        }.map{
-            preferences ->
+        }.map{ preferences ->
             val userToken = preferences[stringPreferencesKey(UserSession.NAME)].orEmpty()
             if (userToken.isBlank()) {
                 Result.failure(Exception("You has no token"))
@@ -40,14 +39,12 @@ class UserSessionRepositoryImpl @Inject constructor(
         }
     }
 
-    override suspend fun updateToken(user: UserSession): Result<Unit> {
-        try{
+    override suspend fun updateToken(token: String): Result<Unit> = withContext(Dispatchers.IO) {
+        Result.runCatching {
             dataStore.edit { preferences ->
-                preferences[stringPreferencesKey(UserSession.NAME)] = user.token
+                preferences[stringPreferencesKey(UserSession.NAME)] = token
             }
-            return Result.success(Unit)
-        }catch (e: Exception){
-            return Result.failure(e)
+            Unit
         }
     }
 
@@ -57,6 +54,10 @@ class UserSessionRepositoryImpl @Inject constructor(
                 selfHostRemote.checkTokenUserSession(token)
             }
         }
+        if(response.isFailure) return Result.failure(
+            response.exceptionOrNull()?: Exception("Failed to check token from server")
+        )
+
         return response.map {
             UserSession(
                 token = it.data?.token.orEmpty(),
