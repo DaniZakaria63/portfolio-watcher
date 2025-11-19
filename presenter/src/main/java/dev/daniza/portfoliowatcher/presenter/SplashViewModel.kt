@@ -26,7 +26,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.SharingStarted
-import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.shareIn
 import kotlinx.coroutines.launch
@@ -51,9 +50,9 @@ class SplashViewModel @Inject constructor(
     private val _tokenState: MutableSharedFlow<StateUI<Boolean>> = MutableSharedFlow()
     /**
      * Publicly exposed flow for observing the token validation state.
-     * The data indicates whether showThe Welcome screen (true) or not (false).
+     * The data indicates whether to show the Welcome screen (true) or not (false).
      */
-    val tokenState: SharedFlow<StateUI<Boolean>> = _tokenState.asSharedFlow()
+    val tokenState: SharedFlow<StateUI<Boolean>> = _tokenState
         .shareIn(viewModelScope, started = SharingStarted.WhileSubscribed())
 
     /**
@@ -63,7 +62,7 @@ class SplashViewModel @Inject constructor(
     fun getCurrentSession(){
         viewModelScope.launch (Dispatchers.Main){
             getSessionTokenInteractor().catch { throwable ->
-                Log.e("ASD", "getCurrentSession: getSessionTokenInteractor: ", throwable)
+                Log.e("SplashViewModel", "getCurrentSession: getSessionTokenInteractor: ", throwable)
                 pushTokenServer(throwable.message.orEmpty().ifEmpty { "newbie" })
             }.collect { value ->
                 value.onSuccess {
@@ -90,7 +89,7 @@ class SplashViewModel @Inject constructor(
     fun pushTokenServer(token:String){
         viewModelScope.launch(Dispatchers.Main){
             validateSessionTokenInteractor(token).onFailure { exception ->
-                Log.e("ASD", "pushTokenServer: validateSessionTokenInteractor: ", exception)
+                Log.e("SplashViewModel", "pushTokenServer: validateSessionTokenInteractor: ", exception)
                 val errorMessage = when {
                     exception.message?.contains("HTTP 404") == true -> "Server endpoint not found. Please check the API URL."
                     exception.message?.contains("timeout") == true -> "Request timed out. Please check your internet connection."

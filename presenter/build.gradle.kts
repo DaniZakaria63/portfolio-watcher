@@ -16,6 +16,7 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+        buildConfigField("String", "TAG", "\"ViewModel\"")
     }
 
     buildTypes {
@@ -36,6 +37,9 @@ android {
             optIn.add("kotlin.RequiresOptIn")
             jvmTarget.set(JvmTarget.JVM_17)
         }
+    }
+    buildFeatures {
+        buildConfig = true
     }
 }
 

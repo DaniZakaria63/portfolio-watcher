@@ -83,7 +83,7 @@ fun SplashScreen(
 
     LaunchedEffect(tokenStateUI) {
         showErrorDialog =
-            tokenStateUI.loading == StateUI.Loading.ERROR && tokenStateUI.error != null
+            tokenStateUI.loading == StateUI.Loading.ERROR
     }
 
     Box(

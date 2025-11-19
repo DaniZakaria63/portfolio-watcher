@@ -16,7 +16,7 @@ import androidx.compose.animation.scaleOut
 import androidx.compose.animation.slideInHorizontally
 import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
-import androidx.compose.animation.with
+import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -76,7 +76,7 @@ fun WelcomeScreen(
             AnimatedVisibility(
                 visible = pagerState.currentPage == page,
                 enter = slideInHorizontally(
-                    initialOffsetX = { if (page > pagerState.currentPage) 500 else -500 },
+                    initialOffsetX = { if (page < pagerState.currentPage) 500 else -500 },
                     animationSpec = tween(durationMillis = 500, easing = FastOutSlowInEasing)
                 ) + fadeIn(animationSpec = tween(durationMillis = 300)),
                 exit = fadeOut(animationSpec = tween(durationMillis = 150))
@@ -203,7 +203,7 @@ fun WelcomePage(
         AnimatedContent(
             targetState = title,
             transitionSpec = {
-                slideInVertically(initialOffsetY = { it }) + fadeIn() with
+                slideInVertically(initialOffsetY = { it }) + fadeIn() togetherWith
                         slideOutVertically(targetOffsetY = { -it }) + fadeOut()
             }
         ) { targetTitle ->
@@ -219,7 +219,7 @@ fun WelcomePage(
         AnimatedContent(
             targetState = description,
             transitionSpec = {
-                fadeIn(animationSpec = tween(durationMillis = 300)) with
+                fadeIn(animationSpec = tween(durationMillis = 300)) togetherWith
                         fadeOut(animationSpec = tween(durationMillis = 150))
             }
         ) { targetDescription ->

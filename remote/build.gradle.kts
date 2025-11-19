@@ -16,7 +16,7 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
-        buildConfigField("String", "TAG", "\"ASD\"")
+        buildConfigField("String", "TAG", "\"Remote\"")
         buildConfigField("String", "API_KEY_TOKENMETRICS", project.properties["API_KEY_TOKENMETRICS"].toString())
         buildConfigField("String", "API_URL_TOKENMETRICS", project.properties["API_BASE_URL"].toString())
         buildConfigField("String", "API_KEY_MORALIS", project.properties["API_KEY_MORALIS"].toString())

@@ -13,6 +13,7 @@
 package dev.daniza.portfoliowatcher.remote
 
 import android.content.Context
+import android.util.Log
 import com.google.gson.GsonBuilder
 import com.google.gson.Strictness
 import dagger.Module
@@ -20,6 +21,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import dev.daniza.portfoliowatcher.remote.BuildConfig.TAG
 import dev.daniza.portfoliowatcher.remote.moralis.MoralisRemote
 import dev.daniza.portfoliowatcher.remote.moralis.MoralisRemoteEndpoint
 import dev.daniza.portfoliowatcher.remote.moralis.MoralisRemoteService
@@ -68,8 +70,8 @@ object RemoteModule {
         retrofit: Retrofit,
         @NewsRemoteOkHttpClient okHttpClient: OkHttpClient,
     ): NewsRemote {
-        retrofit.newBuilder().client(okHttpClient).build()
-        return NewsRemoteService(retrofit.create(NewsRemoteEndpoint::class.java))
+        val newsRetrofit = retrofit.newBuilder().client(okHttpClient).build()
+        return NewsRemoteService(newsRetrofit.create(NewsRemoteEndpoint::class.java))
     }
 
     @TokenMetricsOkHttpClient
@@ -137,21 +139,21 @@ object RemoteModule {
                 .build()
 
             // Log the request details
-            println("SelfHost Request: ${request.method} ${request.url}")
-            println("SelfHost Request Headers: ${request.headers}")
+            Log.d(TAG, "SelfHost Request: ${request.method} ${request.url}")
+            Log.d(TAG, "SelfHost Request Headers: ${request.headers}")
             request.body?.let { body ->
                 val bodyString = body.toString()
-                println("SelfHost Request Body: $bodyString")
+                Log.d(TAG, "SelfHost Request Body: $bodyString")
             }
 
             val response = chain.proceed(request)
 
             // Log the response details
-            println("SelfHost Response Code: ${response.code}")
-            println("SelfHost Response Headers: ${response.headers}")
+            Log.d(TAG, "SelfHost Response Code: ${response.code}")
+            Log.d(TAG, "SelfHost Response Headers: ${response.headers}")
             response.body.let { responseBody ->
                 val responseString = responseBody.string()
-                println("SelfHost Response Body: $responseString")
+                Log.d(TAG, "SelfHost Response Body: $responseString")
                 return@Interceptor response.newBuilder()
                     .body(responseString.toResponseBody(responseBody.contentType()))
                     .build()
