@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlinAndroid)
@@ -7,13 +9,14 @@ plugins {
 
 android {
     namespace = "dev.daniza.portfoliowatcher.remote"
-    compileSdk = 34
+    compileSdk = 36
 
     defaultConfig {
         minSdk = 24
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+        buildConfigField("String", "TAG", "\"Remote\"")
         buildConfigField("String", "API_KEY_TOKENMETRICS", project.properties["API_KEY_TOKENMETRICS"].toString())
         buildConfigField("String", "API_URL_TOKENMETRICS", project.properties["API_BASE_URL"].toString())
         buildConfigField("String", "API_KEY_MORALIS", project.properties["API_KEY_MORALIS"].toString())
@@ -35,8 +38,11 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17.toString()
+    kotlin {
+        compilerOptions{
+            optIn.add("kotlin.RequiresOptIn")
+            jvmTarget.set(JvmTarget.JVM_17)
+        }
     }
     buildFeatures {
         buildConfig = true
@@ -48,6 +54,8 @@ dependencies {
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
 
+    implementation(libs.coroutines.core)
+    implementation(libs.coroutines.android)
     implementation(libs.workmanager)
     implementation(libs.retrofit.core)
     implementation(libs.retrofit.gson)
@@ -56,4 +64,6 @@ dependencies {
 
     testImplementation(libs.junit)
     testImplementation(libs.coroutines.test)
+    testImplementation(libs.truth)
+    testImplementation(libs.retrofit.mockwebserver)
 }

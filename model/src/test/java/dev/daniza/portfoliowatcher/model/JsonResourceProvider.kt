@@ -1,7 +1,7 @@
 package dev.daniza.portfoliowatcher.model
 
-import dev.daniza.portfoliowatcher.model.moralis.CryptoTrendToken
+import dev.daniza.portfoliowatcher.model.moralis.MoralisTokenTrend
 
 interface JsonResourceProvider {
-    fun getTrendingTokensJson(): List<CryptoTrendToken>
+    fun getTrendingTokensJson(): List<MoralisTokenTrend>
 }

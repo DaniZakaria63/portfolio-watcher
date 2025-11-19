@@ -1,3 +1,15 @@
+/*
+ * Portfolio Watcher - PortfolioNavHost.kt
+ *
+ * Main Author: Dani Zakaria
+ * Email: dani.zakaria@proton.me
+ * GitHub: @danizakaria63
+ * Created: November 2025
+ * Last Modified: November 19, 2025
+ *
+ * Description: Navigation host component managing screen routing and deep linking for the portfolio application
+ */
+
 package dev.daniza.portfoliowatcher.ui.navigation
 
 import androidx.compose.runtime.Composable
@@ -8,7 +20,6 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.paging.PagingData
 import androidx.paging.compose.collectAsLazyPagingItems
-import dev.daniza.portfoliowatcher.model.news.NewsHeadline
 import dev.daniza.portfoliowatcher.model.tokenmetrics.TokenSearchModel
 import dev.daniza.portfoliowatcher.ui.detail.DetailScreen
 import dev.daniza.portfoliowatcher.ui.home.HomeScreen
@@ -36,9 +47,7 @@ fun PortfolioNavHost(
             ListScreen()
         }
         composable(route = NewsDestination.route) {
-            val emptyNewsFlow = flowOf(PagingData.empty<NewsHeadline>())
-            val news = emptyNewsFlow.collectAsLazyPagingItems()
-            NewsScreen(news = news)
+            NewsScreen()
         }
         composable(route = SearchDestination.route){
             val emptyTokenItems = flowOf(PagingData.empty<TokenSearchModel>())

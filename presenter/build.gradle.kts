@@ -1,4 +1,5 @@
-@Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlinAndroid)
@@ -8,13 +9,14 @@ plugins {
 
 android {
     namespace = "dev.daniza.portfoliowatcher.presenter"
-    compileSdk = 34
+    compileSdk = 36
 
     defaultConfig {
         minSdk = 24
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+        buildConfigField("String", "TAG", "\"ViewModel\"")
     }
 
     buildTypes {
@@ -30,20 +32,28 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17.toString()
+    kotlin {
+        compilerOptions{
+            optIn.add("kotlin.RequiresOptIn")
+            jvmTarget.set(JvmTarget.JVM_17)
+        }
+    }
+    buildFeatures {
+        buildConfig = true
     }
 }
 
 dependencies {
     implementation(project(":model"))
     implementation(project(":core"))
+    implementation(project(":local"))
 
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
     
     implementation(libs.coroutines.android)
     implementation(libs.coroutines.core)
+    implementation(libs.paging.runtime)
 
     implementation(libs.lifecycle.viewmodel.ktx)
     implementation(libs.lifecycle.viewmodel.compose)
