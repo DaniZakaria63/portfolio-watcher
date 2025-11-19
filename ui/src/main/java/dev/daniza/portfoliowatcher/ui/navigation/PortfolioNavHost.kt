@@ -22,7 +22,7 @@ import androidx.paging.PagingData
 import androidx.paging.compose.collectAsLazyPagingItems
 import dev.daniza.portfoliowatcher.model.tokenmetrics.TokenSearchModel
 import dev.daniza.portfoliowatcher.ui.detail.DetailScreen
-import dev.daniza.portfoliowatcher.ui.home.HomeScreen
+import dev.daniza.portfoliowatcher.ui.home.HomeScreen2
 import dev.daniza.portfoliowatcher.ui.list.ListScreen
 import dev.daniza.portfoliowatcher.ui.news.NewsScreen
 import dev.daniza.portfoliowatcher.ui.search.SearchScreen
@@ -39,7 +39,7 @@ fun PortfolioNavHost(
         modifier = modifier,
     ){
         composable(route = HomeDestination.route){
-            HomeScreen(onNavigateToDetail = { tokenId ->
+            HomeScreen2(onNavigateToDetail = { tokenId ->
                 navController.navigateToDetail(tokenId)
             })
         }
