@@ -9,8 +9,8 @@ data class UserSession(
     val created_at: Long? = null, /*FROM API*/
     @SerializedName("updated_at")
     val updated_at: Long? = null, /*FROM CLIENT*/
-    @SerializedName("isNewUpdate")
-    val isNewUpdate: Boolean? = false /*FROM API*/
+    @SerializedName("isActive")
+    val isActive: Boolean? = false /*FROM API->actually means IsNewSession*/
 ){
     companion object{
         const val NAME :String = "USER_SESSION"

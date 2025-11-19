@@ -15,9 +15,10 @@ timber = "5.0.1"
 room = "2.8.3"
 workmanager = "2.11.0"
 retrofit = "3.0.0"
+retrofit-mockwebserver = "5.3.2"
 gson = "2.13.2"
 coroutines = "1.10.2"
-logging-interceptor = "5.3.1"
+logging-interceptor = "5.3.2"
 ui-text-google-fonts = "1.9.4"
 tradingview = "4.0.0"
 chart-compose = "0.2.0"
@@ -26,6 +27,7 @@ paging = "3.3.6"
 paging-compose = "3.3.6"
 coil = "2.7.0"
 datastore = "1.1.7"
+truth = "1.4.5"
 
 [libraries]
 
@@ -85,6 +87,8 @@ paging-compose = { group = "androidx.paging", name = "paging-compose", version.r
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref="coroutines" }
 mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
+retrofit-mockwebserver = { group = "com.squareup.okhttp3", name = "mockwebserver", version.ref = "retrofit-mockwebserver" }
+truth = { group = "com.google.truth", name = "truth", version.ref = "truth" }
 
 #INSTRUMENTED TEST
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }

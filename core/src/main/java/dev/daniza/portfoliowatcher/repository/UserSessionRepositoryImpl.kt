@@ -63,7 +63,7 @@ class UserSessionRepositoryImpl @Inject constructor(
                 token = it.data?.token.orEmpty(),
                 created_at = it.data?.created_at,
                 updated_at = System.currentTimeMillis(),
-                isNewUpdate = it.data?.isNewUpdate,
+                isActive = it.data?.isActive,
             )
         }
     }

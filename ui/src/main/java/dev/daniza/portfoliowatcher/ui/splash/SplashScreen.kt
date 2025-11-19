@@ -31,6 +31,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -56,14 +57,14 @@ import kotlinx.coroutines.launch
 @Composable
 fun SplashScreen(
     viewModel: SplashViewModel = hiltViewModel(),
-    onNavigateToHome: (Int) -> Unit
+    onNavigateToHome: () -> Unit
 ) {
     val coroutineScope = rememberCoroutineScope()
     val isConnected by viewModel.connectionStatus.collectAsState(initial = false)
 
-    val showWelcomeState by viewModel.isShowWelcome
-        .collectAsState(initial = StateUI<Boolean>(loading = true))
-    var apiCallAttempt by remember { mutableStateOf(0) }
+    val tokenStateUI by viewModel.tokenState
+        .collectAsState(initial = StateUI())
+    var apiCallAttempt by remember { mutableIntStateOf(0) }
     var showErrorDialog by remember { mutableStateOf(false) }
 
     val infiniteTransition = rememberInfiniteTransition()
@@ -80,8 +81,9 @@ fun SplashScreen(
         coroutineScope.launch { viewModel.getCurrentSession() }
     }
 
-    LaunchedEffect(showWelcomeState.error) {
-        showErrorDialog = showWelcomeState.error.isNullOrEmpty()
+    LaunchedEffect(tokenStateUI) {
+        showErrorDialog =
+            tokenStateUI.loading == StateUI.Loading.ERROR && tokenStateUI.error != null
     }
 
     Box(
@@ -106,14 +108,24 @@ fun SplashScreen(
                     modifier = Modifier.padding(bottom = 16.dp)
                 )
                 Button(onClick = {
-                    coroutineScope.launch {
-                        viewModel.getCurrentSession()
-                    }
+                    coroutineScope.launch { ++apiCallAttempt }
                 }) {
                     Text("Retry")
                 }
             }
-            showWelcomeState.loading -> {
+
+            showErrorDialog -> {
+                SplashErrorDialog(
+                    errorMessage = tokenStateUI.error.orEmpty().ifEmpty { "An unexpected error occurred." },
+                    onDismiss = { showErrorDialog = false },
+                    onRetry = {
+                        showErrorDialog = false
+                        coroutineScope.launch { ++apiCallAttempt }
+                    }
+                )
+            }
+
+            tokenStateUI.loading == StateUI.Loading.LOADING -> {
                 AnimatedVisibility(
                     visible = true,
                     enter = fadeIn(
@@ -133,111 +145,110 @@ fun SplashScreen(
                 }
             }
 
-            showWelcomeState.data.isTrue() -> {
-                WelcomeScreen(onContinue = { onNavigateToHome(1) })
+            tokenStateUI.loading == StateUI.Loading.DONE && tokenStateUI.data.isTrue() -> {
+                WelcomeScreen(onContinue = { onNavigateToHome() })
             }
 
-            !showWelcomeState.data.isTrue() -> {
-                LaunchedEffect(Unit) { onNavigateToHome(1) }
+            tokenStateUI.loading == StateUI.Loading.DONE && !tokenStateUI.data.isTrue()  -> {
+                LaunchedEffect(Unit) { onNavigateToHome() }
             }
         }
     }
+}
 
-    // Beautiful Error Dialog Card
-    if (showErrorDialog) {
-        Dialog(
-            onDismissRequest = { showErrorDialog = false },
-            properties = DialogProperties(
-                dismissOnBackPress = true,
-                dismissOnClickOutside = false
+@Composable
+fun SplashErrorDialog(
+    errorMessage: String,
+    onDismiss: () -> Unit,
+    onRetry: () -> Unit,
+) {
+    Dialog(
+        onDismissRequest = onDismiss,
+        properties = DialogProperties(
+            dismissOnBackPress = true,
+            dismissOnClickOutside = false
+        )
+    ) {
+        Card(
+            modifier = Modifier
+                .padding(16.dp)
+                .size(width = 340.dp, height = 280.dp),
+            shape = RoundedCornerShape(16.dp),
+            colors = CardDefaults.cardColors(
+                containerColor = MaterialTheme.colorScheme.surface,
+                contentColor = MaterialTheme.colorScheme.onSurface
+            ),
+            elevation = CardDefaults.cardElevation(
+                defaultElevation = 12.dp
             )
         ) {
-            Card(
+            Column(
                 modifier = Modifier
-                    .padding(16.dp)
-                    .size(width = 340.dp, height = 280.dp),
-                shape = RoundedCornerShape(16.dp),
-                colors = CardDefaults.cardColors(
-                    containerColor = MaterialTheme.colorScheme.surface,
-                    contentColor = MaterialTheme.colorScheme.onSurface
-                ),
-                elevation = CardDefaults.cardElevation(
-                    defaultElevation = 12.dp
-                )
+                    .fillMaxSize()
+                    .padding(24.dp),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = androidx.compose.foundation.layout.Arrangement.spacedBy(16.dp)
             ) {
-                Column(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .padding(24.dp),
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                    verticalArrangement = androidx.compose.foundation.layout.Arrangement.spacedBy(16.dp)
+                // Header with close button
+                Box(
+                    modifier = Modifier.fillMaxWidth(),
+                    contentAlignment = Alignment.TopEnd
                 ) {
-                    // Header with close button
-                    Box(
-                        modifier = Modifier.fillMaxWidth(),
-                        contentAlignment = Alignment.TopEnd
+                    IconButton(
+                        onClick = onDismiss,
+                        modifier = Modifier.size(32.dp)
                     ) {
-                        IconButton(
-                            onClick = { showErrorDialog = false },
-                            modifier = Modifier.size(32.dp)
-                        ) {
-                            Icon(
-                                imageVector = Icons.Filled.Close,
-                                contentDescription = "Close",
-                                tint = MaterialTheme.colorScheme.onSurface
-                            )
-                        }
-                    }
-
-                    // Error Icon
-                    Icon(
-                        imageVector = Icons.Filled.Error,
-                        contentDescription = "Error",
-                        modifier = Modifier.size(48.dp),
-                        tint = MaterialTheme.colorScheme.error
-                    )
-
-                    // Error Title
-                    Text(
-                        text = "Oops! Something went wrong",
-                        fontSize = 18.sp,
-                        fontWeight = FontWeight.Bold,
-                        textAlign = TextAlign.Center,
-                        color = MaterialTheme.colorScheme.onSurface
-                    )
-
-                    // Error Message
-                    Text(
-                        text = showWelcomeState.error.orEmpty().ifEmpty { "Terjadi Kesalahan" },
-                        fontSize = 14.sp,
-                        textAlign = TextAlign.Center,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                        modifier = Modifier.weight(1f)
-                    )
-
-                    // Retry Button
-                    Button(
-                        onClick = {
-                            showErrorDialog = false
-                            coroutineScope.launch {
-                                ++apiCallAttempt
-                            }
-                        },
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(top = 8.dp),
-                        colors = ButtonDefaults.buttonColors(
-                            containerColor = MaterialTheme.colorScheme.primary
-                        ),
-                        shape = RoundedCornerShape(8.dp)
-                    ) {
-                        Text(
-                            "Retry",
-                            modifier = Modifier.padding(8.dp),
-                            fontSize = 14.sp,
-                            fontWeight = FontWeight.SemiBold
+                        Icon(
+                            imageVector = Icons.Filled.Close,
+                            contentDescription = "Close",
+                            tint = MaterialTheme.colorScheme.onSurface
                         )
                     }
+                }
+
+                // Error Icon
+                Icon(
+                    imageVector = Icons.Filled.Error,
+                    contentDescription = "Error",
+                    modifier = Modifier.size(48.dp),
+                    tint = MaterialTheme.colorScheme.error
+                )
+
+                // Error Title
+                Text(
+                    text = "Oops! Something went wrong",
+                    fontSize = 18.sp,
+                    fontWeight = FontWeight.Bold,
+                    textAlign = TextAlign.Center,
+                    color = MaterialTheme.colorScheme.onSurface
+                )
+
+                // Error Message
+                Text(
+                    text = errorMessage,
+                    fontSize = 14.sp,
+                    textAlign = TextAlign.Center,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier.weight(1f)
+                )
+
+                // Retry Button
+                Button(
+                    onClick = onRetry,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = 8.dp),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = MaterialTheme.colorScheme.primary
+                    ),
+                    shape = RoundedCornerShape(8.dp)
+                ) {
+                    Text(
+                        "Retry",
+                        modifier = Modifier.padding(8.dp),
+                        fontSize = 14.sp,
+                        fontWeight = FontWeight.SemiBold
+                    )
                 }
             }
         }

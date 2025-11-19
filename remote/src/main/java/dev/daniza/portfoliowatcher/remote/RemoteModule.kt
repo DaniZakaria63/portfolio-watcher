@@ -25,9 +25,11 @@ import dev.daniza.portfoliowatcher.remote.tokenmetrics.TokenMetricsRemoteEndpoin
 import dev.daniza.portfoliowatcher.remote.tokenmetrics.TokenMetricsService
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
+import okhttp3.ResponseBody.Companion.toResponseBody
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
 @Module
@@ -116,8 +118,41 @@ object RemoteModule {
     @Provides
     @SelfHostOkHttpClient
     fun provideSelfHostOkHttpClient(): OkHttpClient {
+        val selfHostInterceptor = Interceptor { chain ->
+            val request = chain.request().newBuilder()
+                .addHeader("Content-Type", "application/json")
+                .addHeader("Accept", "application/json")
+                .build()
+
+            // Log the request details
+            println("SelfHost Request: ${request.method} ${request.url}")
+            println("SelfHost Request Headers: ${request.headers}")
+            request.body?.let { body ->
+                val bodyString = body.toString()
+                println("SelfHost Request Body: $bodyString")
+            }
+
+            val response = chain.proceed(request)
+
+            // Log the response details
+            println("SelfHost Response Code: ${response.code}")
+            println("SelfHost Response Headers: ${response.headers}")
+            response.body.let { responseBody ->
+                val responseString = responseBody.string()
+                println("SelfHost Response Body: $responseString")
+                return@Interceptor response.newBuilder()
+                    .body(responseString.toResponseBody(responseBody.contentType()))
+                    .build()
+            }
+
+            response
+        }
         return OkHttpClient.Builder()
-            .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BASIC))
+            .connectTimeout(2, TimeUnit.MINUTES)
+            .readTimeout(2, TimeUnit.MINUTES)
+            .writeTimeout(2, TimeUnit.MINUTES)
+            .addInterceptor(selfHostInterceptor)
+            .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
             .build()
     }
 
@@ -128,10 +163,12 @@ object RemoteModule {
         retrofit: Retrofit,
         @SelfHostOkHttpClient okHttpClient: OkHttpClient
     ): SelfHostRemote {
-        retrofit.newBuilder()
+        val selfHostRetrofit = retrofit.newBuilder()
             .baseUrl(SELFHOST_BASE_URL)
-            .client(okHttpClient).build()
-        return SelfHostService(retrofit.create(SelfHostRemoteEndpoint::class.java))
+            .client(okHttpClient)
+            .addConverterFactory(GsonConverterFactory.create(GsonBuilder().setStrictness(Strictness.LENIENT).create()))
+            .build()
+        return SelfHostService(selfHostRetrofit.create(SelfHostRemoteEndpoint::class.java))
     }
 
     @Singleton
