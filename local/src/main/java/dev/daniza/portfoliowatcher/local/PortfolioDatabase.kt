@@ -1,3 +1,15 @@
+/*
+ * Portfolio Watcher - PortfolioDatabase.kt
+ *
+ * Main Author: Dani Zakaria
+ * Email: dani.zakaria@proton.me
+ * GitHub: @danizakaria63
+ * Created: November 2025
+ * Last Modified: November 19, 2025
+ *
+ * Description: Room database configuration defining entities and DAO access points for local data persistence
+ */
+
 package dev.daniza.portfoliowatcher.local
 
 import androidx.room.Database

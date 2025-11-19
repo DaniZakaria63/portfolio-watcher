@@ -107,11 +107,6 @@ fun SplashScreen(
                     style = MaterialTheme.typography.headlineSmall,
                     modifier = Modifier.padding(bottom = 16.dp)
                 )
-                Button(onClick = {
-                    coroutineScope.launch { ++apiCallAttempt }
-                }) {
-                    Text("Retry")
-                }
             }
 
             showErrorDialog -> {
@@ -135,7 +130,7 @@ fun SplashScreen(
                     )
                 ) {
                     Icon(
-                        painter = painterResource(id = R.drawable.ic_launcher_background),
+                        painter = painterResource(id = R.drawable.img_app),
                         contentDescription = "App Icon",
                         modifier = Modifier
                             .size(120.dp)

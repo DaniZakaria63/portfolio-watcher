@@ -1,3 +1,15 @@
+/*
+ * Portfolio Watcher - RemoteModule.kt
+ *
+ * Main Author: Dani Zakaria
+ * Email: dani.zakaria@proton.me
+ * GitHub: @danizakaria63
+ * Created: November 2025
+ * Last Modified: November 19, 2025
+ *
+ * Description: Dagger Hilt module providing Retrofit instances and HTTP clients for remote API communication
+ */
+
 package dev.daniza.portfoliowatcher.remote
 
 import android.content.Context

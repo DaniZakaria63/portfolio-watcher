@@ -1,3 +1,15 @@
+/*
+ * Portfolio Watcher - PortfolioNavHost.kt
+ *
+ * Main Author: Dani Zakaria
+ * Email: dani.zakaria@proton.me
+ * GitHub: @danizakaria63
+ * Created: November 2025
+ * Last Modified: November 19, 2025
+ *
+ * Description: Navigation host component managing screen routing and deep linking for the portfolio application
+ */
+
 package dev.daniza.portfoliowatcher.ui.navigation
 
 import androidx.compose.runtime.Composable
