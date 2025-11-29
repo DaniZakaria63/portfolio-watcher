@@ -13,7 +13,6 @@
 package dev.daniza.portfoliowatcher.remote
 
 import android.content.Context
-import android.util.Log
 import com.google.gson.GsonBuilder
 import com.google.gson.Strictness
 import dagger.Module
@@ -21,7 +20,6 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import dev.daniza.portfoliowatcher.remote.BuildConfig.TAG
 import dev.daniza.portfoliowatcher.remote.moralis.MoralisRemote
 import dev.daniza.portfoliowatcher.remote.moralis.MoralisRemoteEndpoint
 import dev.daniza.portfoliowatcher.remote.moralis.MoralisRemoteService
@@ -39,7 +37,6 @@ import dev.daniza.portfoliowatcher.remote.tokenmetrics.TokenMetricsRemoteEndpoin
 import dev.daniza.portfoliowatcher.remote.tokenmetrics.TokenMetricsService
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
-import okhttp3.ResponseBody.Companion.toResponseBody
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -135,31 +132,10 @@ object RemoteModule {
         val selfHostInterceptor = Interceptor { chain ->
             val request = chain.request().newBuilder()
                 .addHeader("Content-Type", "application/json")
-                .addHeader("Accept", "application/json")
+                .addHeader("User-Agent", "PortfolioWatcher-App")
+                .addHeader("Authorization", BuildConfig.AUTHORIZATION_SELFHOST)
                 .build()
-
-            // Log the request details
-            Log.d(TAG, "SelfHost Request: ${request.method} ${request.url}")
-            Log.d(TAG, "SelfHost Request Headers: ${request.headers}")
-            request.body?.let { body ->
-                val bodyString = body.toString()
-                Log.d(TAG, "SelfHost Request Body: $bodyString")
-            }
-
-            val response = chain.proceed(request)
-
-            // Log the response details
-            Log.d(TAG, "SelfHost Response Code: ${response.code}")
-            Log.d(TAG, "SelfHost Response Headers: ${response.headers}")
-            response.body.let { responseBody ->
-                val responseString = responseBody.string()
-                Log.d(TAG, "SelfHost Response Body: $responseString")
-                return@Interceptor response.newBuilder()
-                    .body(responseString.toResponseBody(responseBody.contentType()))
-                    .build()
-            }
-
-            response
+            chain.proceed(request)
         }
         return OkHttpClient.Builder()
             .connectTimeout(2, TimeUnit.MINUTES)

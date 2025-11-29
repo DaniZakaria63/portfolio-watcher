@@ -23,6 +23,8 @@ android {
         buildConfigField("String", "API_URL_MORALIS", project.properties["API_BASE_URL_MORALIS"].toString())
         buildConfigField("String", "API_KEY_NEWSAPI", project.properties["API_KEY_NEWSAPI"].toString())
         buildConfigField("String", "API_URL_NEWSAPI", project.properties["API_BASE_URL_NEWSAPI"].toString())
+        buildConfigField("String", "AUTHORIZATION_SELFHOST", project.properties["AUTHORIZATION_SELFHOST"].toString())
+        buildConfigField("String", "API_URL_SELFHOST", project.properties["API_BASE_URL_SELFHOST"].toString())
     }
 
     buildTypes {

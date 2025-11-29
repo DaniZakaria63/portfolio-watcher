@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -35,8 +36,16 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.drawBehind
+import androidx.compose.ui.geometry.CornerRadius
+import androidx.compose.ui.geometry.RoundRect
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Path
+import androidx.compose.ui.graphics.PathEffect
+import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import dev.daniza.portfoliowatcher.ui.component.GoldLabel
 import dev.daniza.portfoliowatcher.ui.component.Instrument
@@ -45,12 +54,22 @@ import dev.daniza.portfoliowatcher.ui.component.MarketTickerRow
 import dev.daniza.portfoliowatcher.ui.component.SearchBar
 import dev.daniza.portfoliowatcher.ui.component.SearchDialog
 import dev.daniza.portfoliowatcher.ui.component.dummyTickerItems
+import dev.daniza.portfoliowatcher.ui.model.FavoriteHomeUIModel
 
 @Composable
 fun HomeScreen2(
     onNavigateToDetail: (String) -> Unit
 ) {
     var showSearchDialog by remember { mutableStateOf(false) }
+    val sampleSelectedChartData = remember {
+        FavoriteHomeUIModel(
+            id = "sample",
+            name = "Sample",
+            price = "$1000",
+            changePercent = "+5%",
+            fullChartData = listOf<Double>(30.0, 100.0, 148.0, 155.0, 74.0, 120.0, 74.0, 50.0, 10.0, 40.0)
+        )
+    }
 
     Column(
         modifier = Modifier
@@ -65,6 +84,16 @@ fun HomeScreen2(
         MarketTickerRow(tickerItems = dummyTickerItems)
 
         PortfolioSummary()
+
+        HomeChartSection(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(200.dp)
+                .padding(10.dp),
+            model = sampleSelectedChartData
+        )
+
+        CreateFirstWatchlistCard()
 
         ListsSection()
     }
@@ -396,6 +425,99 @@ fun ListsSection() {
                     currentPrice = "139.15",
                     dailyChangePercent = -1.33f // Negative for loss
                 )
+            }
+        }
+    }
+}
+
+@Composable
+fun CreateFirstWatchlistCard() {
+    // Use Box with a dotted border for the container
+    Box(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(16.dp)
+            .background(Color.Transparent),
+        contentAlignment = Alignment.Center,
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .clip(RoundedCornerShape(12.dp)) // Clip to rounded corners
+                .drawBehind {
+                    // Draw a rounded dotted border
+                    val cornerRadius = 12.dp.toPx()
+                    val path = Path().apply {
+                        addRoundRect(
+                            roundRect = RoundRect(
+                                left = 0f,
+                                top = 0f,
+                                right = size.width,
+                                bottom = size.height,
+                                cornerRadius = CornerRadius(cornerRadius)
+                            ),
+                            direction = Path.Direction.CounterClockwise
+                        )
+                    }
+                    drawPath(
+                        path = path,
+                        color = Color.Gray.copy(alpha = 0.7f),
+                        style = Stroke(
+                            width = 1.dp.toPx(),
+                            pathEffect = PathEffect.dashPathEffect(
+                                intervals = floatArrayOf(5f, 5f),
+                                phase = 0f,
+                            )
+                        )
+                    )
+                }
+                .padding(16.dp),
+            verticalArrangement = Arrangement.SpaceBetween,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            // Header Text
+            Text(
+                text = "Create Your First Watchlist",
+                style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold), // Smaller than headlineMedium
+                textAlign = TextAlign.Center,
+                modifier = Modifier.padding(bottom = 8.dp)
+            )
+
+            // Subtext
+            Text(
+                text = "Follow companies to receive relevant news, price alerts, and insights.",
+                style = MaterialTheme.typography.bodySmall,
+                textAlign = TextAlign.Center,
+                modifier = Modifier.padding(bottom = 16.dp)
+            )
+
+            // Add Symbols Button
+            Button(
+                onClick = { /* Handle add symbols */ },
+                shape = RoundedCornerShape(24.dp), // Rounded button
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = Color.DarkGray, // Dark gray background
+                    contentColor = Color.White // White text
+                ),
+                modifier = Modifier
+                    .height(32.dp)
+                    .padding(horizontal = 32.dp)
+            ) {
+                Row(verticalAlignment = Alignment.CenterVertically) {
+
+                    Icon(
+                        imageVector = Icons.Default.Add,
+                        contentDescription = "Add",
+                        tint = Color.White,
+                        modifier = Modifier.size(18.dp)
+                    )
+                    Spacer(modifier = Modifier.width(8.dp))
+                    Text(
+                        text = "Add Symbols",
+                        style = MaterialTheme.typography.bodyMedium,
+                        fontWeight = FontWeight.Medium
+                    )
+                }
             }
         }
     }
