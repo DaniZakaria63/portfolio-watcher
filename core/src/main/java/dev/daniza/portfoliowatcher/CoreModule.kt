@@ -4,6 +4,8 @@ import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ViewModelComponent
+import dev.daniza.portfoliowatcher.repository.HomeSummaryRepository
+import dev.daniza.portfoliowatcher.repository.HomeSummaryRepositoryImpl
 import dev.daniza.portfoliowatcher.repository.NewsRepository
 import dev.daniza.portfoliowatcher.repository.NewsRepositoryImpl
 import dev.daniza.portfoliowatcher.repository.TokenSearchRepository
@@ -28,4 +30,9 @@ abstract class CoreModule {
     abstract fun bindUserSessionRepository(
         userSessionRepositoryImpl: UserSessionRepositoryImpl
     ): UserSessionRepository
+
+    @Binds
+    abstract fun bindHomeSummaryRepository(
+        homeSummaryRepositoryImpl: HomeSummaryRepositoryImpl
+    ): HomeSummaryRepository
 }

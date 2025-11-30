@@ -16,7 +16,6 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.Divider
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Edit
@@ -26,10 +25,12 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -47,19 +48,23 @@ import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import dev.daniza.portfoliowatcher.presenter.HomeViewModel
 import dev.daniza.portfoliowatcher.ui.component.GoldLabel
 import dev.daniza.portfoliowatcher.ui.component.Instrument
 import dev.daniza.portfoliowatcher.ui.component.InstrumentListItem
 import dev.daniza.portfoliowatcher.ui.component.MarketTickerRow
 import dev.daniza.portfoliowatcher.ui.component.SearchBar
 import dev.daniza.portfoliowatcher.ui.component.SearchDialog
-import dev.daniza.portfoliowatcher.ui.component.dummyTickerItems
 import dev.daniza.portfoliowatcher.ui.model.FavoriteHomeUIModel
 
 @Composable
 fun HomeScreen2(
-    onNavigateToDetail: (String) -> Unit
+    viewModel: HomeViewModel = hiltViewModel(),
+    onNavigateToDetail: (String) -> Unit,
 ) {
+    val dailySummaryChart by viewModel.currentDailySummaryState.collectAsStateWithLifecycle()
     var showSearchDialog by remember { mutableStateOf(false) }
     val sampleSelectedChartData = remember {
         FavoriteHomeUIModel(
@@ -67,8 +72,12 @@ fun HomeScreen2(
             name = "Sample",
             price = "$1000",
             changePercent = "+5%",
-            fullChartData = listOf<Double>(30.0, 100.0, 148.0, 155.0, 74.0, 120.0, 74.0, 50.0, 10.0, 40.0)
+            fullChartData = listOf(30.0, 100.0, 148.0, 155.0, 74.0, 120.0, 74.0, 50.0, 10.0, 40.0)
         )
+    }
+
+    LaunchedEffect(Unit) {
+        viewModel.getHomeDailySummaryData()
     }
 
     Column(
@@ -81,7 +90,9 @@ fun HomeScreen2(
             activeInstrument = "GOLD",
         )
 
-        MarketTickerRow(tickerItems = dummyTickerItems)
+        /*WE WORK ON THIS FUNCTION*/
+        MarketTickerRow(tickerItems = dailySummaryChart)
+        /*==========================*/
 
         PortfolioSummary()
 
@@ -100,10 +111,9 @@ fun HomeScreen2(
 
     if(showSearchDialog) {
         SearchDialog(
-            onDismiss = { showSearchDialog = false },
-            onInstrumentSelected = { instrument ->
+            onDismiss = { },
+            onInstrumentSelected = { _ ->
                 // Handle selection, e.g., update active instrument
-                showSearchDialog = false
             },
             initialInstruments = listOf(
                 Instrument("CRWD", "CrowdStrike Holdings", "Equity", 390.16, 1.94),
@@ -386,7 +396,7 @@ fun ListsSection() {
                 }
 
                 // 2.3 Divider
-                Divider(
+                HorizontalDivider(
                     color = Color.LightGray.copy(alpha = 0.5f),
                     modifier = Modifier.padding(vertical = 8.dp)
                 )
@@ -395,12 +405,12 @@ fun ListsSection() {
                 InstrumentListItem(
                     symbol = "AAPL",
                     companyName = "Apple Inc.",
-                    chartData = listOf(235.0f, 234.8f, 234.6f, 234.5f, 234.4f, 234.3f, 234.65f),
+                    chartData = listOf(235.0, 234.8, 234.6, 234.5, 234.4, 234.3, 234.65),
                     currentPrice = "234.65",
                     dailyChangePercent = -0.46f // Negative for loss
                 )
 
-                Divider(
+                HorizontalDivider(
                     color = Color.LightGray.copy(alpha = 0.5f),
                     modifier = Modifier.padding(vertical = 8.dp)
                 )
@@ -408,12 +418,12 @@ fun ListsSection() {
                 InstrumentListItem(
                     symbol = "CRWD",
                     companyName = "CrowdStrike Hol...",
-                    chartData = listOf(361.0f, 360.8f, 360.6f, 360.5f, 360.4f, 360.3f, 360.56f),
+                    chartData = listOf(361.0, 360.8, 360.6, 360.5, 360.4, 360.3, 360.56),
                     currentPrice = "360.56",
                     dailyChangePercent = -1.34f // Negative for loss
                 )
 
-                Divider(
+                HorizontalDivider(
                     color = Color.LightGray.copy(alpha = 0.5f),
                     modifier = Modifier.padding(vertical = 8.dp)
                 )
@@ -421,7 +431,7 @@ fun ListsSection() {
                 InstrumentListItem(
                     symbol = "BABA",
                     companyName = "Alibaba Group H...",
-                    chartData = listOf(140.0f, 139.8f, 139.6f, 139.5f, 139.4f, 139.3f, 139.15f),
+                    chartData = listOf(140.0, 139.8, 139.6, 139.5, 139.4, 139.3, 139.15),
                     currentPrice = "139.15",
                     dailyChangePercent = -1.33f // Negative for loss
                 )
