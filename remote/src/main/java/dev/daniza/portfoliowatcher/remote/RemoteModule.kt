@@ -20,6 +20,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import dev.daniza.portfoliowatcher.remote.BuildConfig.API_URL_SELFHOST
 import dev.daniza.portfoliowatcher.remote.moralis.MoralisRemote
 import dev.daniza.portfoliowatcher.remote.moralis.MoralisRemoteEndpoint
 import dev.daniza.portfoliowatcher.remote.moralis.MoralisRemoteService
@@ -27,7 +28,6 @@ import dev.daniza.portfoliowatcher.remote.news.DEFAULT_NEWS_REMOTE_BASE_URL
 import dev.daniza.portfoliowatcher.remote.news.NewsRemote
 import dev.daniza.portfoliowatcher.remote.news.NewsRemoteEndpoint
 import dev.daniza.portfoliowatcher.remote.news.NewsRemoteService
-import dev.daniza.portfoliowatcher.remote.selfhost.SELFHOST_BASE_URL
 import dev.daniza.portfoliowatcher.remote.selfhost.SelfHostRemote
 import dev.daniza.portfoliowatcher.remote.selfhost.SelfHostRemoteEndpoint
 import dev.daniza.portfoliowatcher.remote.selfhost.SelfHostService
@@ -154,7 +154,7 @@ object RemoteModule {
         @SelfHostOkHttpClient okHttpClient: OkHttpClient
     ): SelfHostRemote {
         val selfHostRetrofit = retrofit.newBuilder()
-            .baseUrl(SELFHOST_BASE_URL)
+            .baseUrl(API_URL_SELFHOST)
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create(GsonBuilder().setStrictness(Strictness.LENIENT).create()))
             .build()

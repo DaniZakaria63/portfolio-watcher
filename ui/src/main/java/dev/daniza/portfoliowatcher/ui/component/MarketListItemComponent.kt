@@ -18,12 +18,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import java.math.BigDecimal
 
 @Composable
 fun InstrumentListItem(
     symbol: String,
     companyName: String,
-    chartData: List<Float>,
+    chartData: List<Double>,
     currentPrice: String,
     dailyChangePercent: Float
 ) {
@@ -60,7 +61,6 @@ fun InstrumentListItem(
         ) {
             SmallLineChart(
                 data = chartData,
-                isPositive = false, // For this example, assume loss (red)
                 lineColor = Color.Red,
                 baselineColor = Color.Gray
             )
