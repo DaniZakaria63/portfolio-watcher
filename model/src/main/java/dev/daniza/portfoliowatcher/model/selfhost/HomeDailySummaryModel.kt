@@ -4,24 +4,25 @@ import com.google.gson.annotations.SerializedName
 
 data class HomeDailySummaryModel(
     @SerializedName("candles")
-    val candles: List<HomeDailySummaryCandleModel>,
+    val candles: List<HomeDailySummaryCandleModel>? = null,
 
     @SerializedName("name")
-    val name: String,
+    val name: String? = null,
 
     @SerializedName("price_opening")
-    val priceOpening: Double,
+    val priceOpening: Double? = null,
 
     @SerializedName("symbol")
     val symbol: String,
 
     @SerializedName("gain")
-    val gain: Float,
+    val gain: Float? = null,
+
     @SerializedName("current_price")
-    val currentPrice: Double,
+    val currentPrice: Double? = null,
 ) {
     data class HomeDailySummaryCandleModel(
         @SerializedName("close_price")
-        val closePrice: Double,
+        val closePrice: Double? = null,
     )
 }

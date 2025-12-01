@@ -23,7 +23,7 @@ class SelfHostService(
     ): SelfHostResponse<List<HomeDailySummaryModel>> {
         val jsonBody = JSONObject().apply {
             put("token", token)
-            put("symbols", symbols)
+            put("symbol", JSONArray(symbols))
         }.toString()
         return selfHostRemoteEndpoint.getHomeDailySummaryData(jsonBody.toRequestBody())
     }
