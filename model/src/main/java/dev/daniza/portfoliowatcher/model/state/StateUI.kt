@@ -3,14 +3,8 @@ package dev.daniza.portfoliowatcher.model.state
 /**
  * Simple UI state holder used to represent loading / data / error states in Compose screens.
  */
-data class StateUI<T>(
-    val loading: Loading = Loading.LOADING,
-    val data: T? = null,
-    val error: String? = null
-){
-    enum class Loading {
-        LOADING,
-        DONE,
-        ERROR
-    }
+sealed interface StateUI<out T> {
+    object Loading : StateUI<Nothing>
+    data class Data<T>(val value: T) : StateUI<T>
+    data class Error(val throwable: Throwable) : StateUI<Nothing>
 }

@@ -1,5 +1,6 @@
 package dev.daniza.portfoliowatcher.remote.selfhost
 
+import dev.daniza.portfoliowatcher.model.selfhost.HomeDailyChartModel
 import dev.daniza.portfoliowatcher.model.selfhost.HomeDailySummaryModel
 import dev.daniza.portfoliowatcher.model.session.UserSession
 import dev.daniza.portfoliowatcher.remote.parser.SelfHostResponse
@@ -18,4 +19,9 @@ interface SelfHostRemoteEndpoint {
     suspend fun getHomeDailySummaryData(
         @Body body: RequestBody
     ) : SelfHostResponse<List<HomeDailySummaryModel>>
+
+    @POST("/api/home-chart-daily")
+    suspend fun getHomeDailyChartData(
+        @Body body: RequestBody
+    ) : SelfHostResponse<HomeDailyChartModel>
 }

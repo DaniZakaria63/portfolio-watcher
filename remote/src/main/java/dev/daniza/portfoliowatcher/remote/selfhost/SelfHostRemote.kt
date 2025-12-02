@@ -1,5 +1,6 @@
 package dev.daniza.portfoliowatcher.remote.selfhost
 
+import dev.daniza.portfoliowatcher.model.selfhost.HomeDailyChartModel
 import dev.daniza.portfoliowatcher.model.selfhost.HomeDailySummaryModel
 import dev.daniza.portfoliowatcher.model.session.UserSession
 import dev.daniza.portfoliowatcher.remote.parser.SelfHostResponse
@@ -11,4 +12,10 @@ interface SelfHostRemote {
         token: String,
         symbols: List<String>
     ) : SelfHostResponse<List<HomeDailySummaryModel>>
+
+    suspend fun getHomeDailyChartData(
+        token: String,
+        symbol: String,
+        range: String
+    ) : SelfHostResponse<HomeDailyChartModel>
 }
