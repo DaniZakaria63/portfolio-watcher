@@ -60,10 +60,10 @@ fun SplashScreen(
     onNavigateToHome: () -> Unit
 ) {
     val coroutineScope = rememberCoroutineScope()
-    val isConnected by viewModel.connectionStatus.collectAsState(initial = false)
+    // val isConnected by viewModel.connectionStatus.collectAsState(initial = false)
 
     val tokenStateUI by viewModel.tokenState
-        .collectAsState(initial = StateUI())
+        .collectAsState(initial = StateUI.Loading)
     var apiCallAttempt by remember { mutableIntStateOf(0) }
     var showErrorDialog by remember { mutableStateOf(false) }
 
@@ -83,7 +83,7 @@ fun SplashScreen(
 
     LaunchedEffect(tokenStateUI) {
         showErrorDialog =
-            tokenStateUI.loading == StateUI.Loading.ERROR
+            tokenStateUI is StateUI.Loading
     }
 
     Box(
@@ -101,17 +101,9 @@ fun SplashScreen(
         contentAlignment = Alignment.Center
     ) {
         when {
-            !isConnected -> {
-                Text(
-                    text = "No internet connection",
-                    style = MaterialTheme.typography.headlineSmall,
-                    modifier = Modifier.padding(bottom = 16.dp)
-                )
-            }
-
             showErrorDialog -> {
                 SplashErrorDialog(
-                    errorMessage = tokenStateUI.error.orEmpty().ifEmpty { "An unexpected error occurred." },
+                    errorMessage = (tokenStateUI as StateUI.Error).throwable.message.orEmpty().ifEmpty { "An unexpected error occurred." },
                     onDismiss = { showErrorDialog = false },
                     onRetry = {
                         showErrorDialog = false
@@ -120,7 +112,7 @@ fun SplashScreen(
                 )
             }
 
-            tokenStateUI.loading == StateUI.Loading.LOADING -> {
+            tokenStateUI is StateUI.Loading -> {
                 AnimatedVisibility(
                     visible = true,
                     enter = fadeIn(
@@ -140,11 +132,11 @@ fun SplashScreen(
                 }
             }
 
-            tokenStateUI.loading == StateUI.Loading.DONE && tokenStateUI.data.isTrue() -> {
+            tokenStateUI is StateUI.Data && (tokenStateUI as StateUI.Data).value.isTrue() -> {
                 WelcomeScreen(onContinue = { onNavigateToHome() })
             }
 
-            tokenStateUI.loading == StateUI.Loading.DONE && !tokenStateUI.data.isTrue()  -> {
+            else  -> {
                 LaunchedEffect(Unit) { onNavigateToHome() }
             }
         }

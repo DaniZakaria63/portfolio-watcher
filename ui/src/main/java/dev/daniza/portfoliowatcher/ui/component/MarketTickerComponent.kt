@@ -27,6 +27,7 @@ import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import dev.daniza.portfoliowatcher.model.parser.orZero
 import dev.daniza.portfoliowatcher.model.selfhost.HomeDailySummaryModel
 
 @Composable
@@ -66,7 +67,7 @@ fun TickerItemColumn(item: HomeDailySummaryModel) {
         verticalArrangement = Arrangement.spacedBy(4.dp)
     ) {
         SmallLineChart(
-            data = item.candles.map { it.closePrice },
+            data = item.candles.orEmpty().map { it.closePrice.orZero() },
             lineColor = Color.Green,
             baselineColor = Color.Gray
         )
@@ -74,7 +75,7 @@ fun TickerItemColumn(item: HomeDailySummaryModel) {
         Spacer(modifier = Modifier.height(4.dp))
 
         Text(
-            text = item.name,
+            text = item.name.orEmpty().ifEmpty { "-" },
             style = MaterialTheme.typography.bodySmall,
             fontWeight = FontWeight.Medium,
             textAlign = TextAlign.Center
@@ -101,7 +102,7 @@ fun TickerItemColumn(item: HomeDailySummaryModel) {
             contentAlignment = Alignment.Center
         ) {
             Text(
-                text = "${if (item.gain >= 0) "+" else ""}${item.gain}%",
+                text = "${if (item.gain.orZero() >= 0) "+" else ""}${item.gain}%",
                 style = MaterialTheme.typography.bodySmall,
                 color = Color.White,
                 fontWeight = FontWeight.SemiBold
