@@ -38,7 +38,6 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Brush.Companion.verticalGradient
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.res.painterResource
@@ -91,7 +90,7 @@ fun SplashScreen(
         modifier = Modifier
             .fillMaxSize()
             .background(
-                brush = verticalGradient(
+                brush = androidx.compose.ui.graphics.Brush.verticalGradient(
                     colors = listOf(
                         MaterialTheme.colorScheme.background,
                         MaterialTheme.colorScheme.background.copy(alpha = 0.8f),
@@ -102,6 +101,18 @@ fun SplashScreen(
         contentAlignment = Alignment.Center
     ) {
         when {
+            showErrorDialog -> {
+                SplashErrorDialog(
+                    errorMessage = (tokenStateUI as StateUI.Error).throwable.message.orEmpty()
+                        .ifEmpty { "An unexpected error occurred." },
+                    onDismiss = { showErrorDialog = false },
+                    onRetry = {
+                        showErrorDialog = false
+                        coroutineScope.launch { ++apiCallAttempt }
+                    }
+                )
+            }
+
             tokenStateUI is StateUI.Loading -> {
                 AnimatedVisibility(
                     visible = true,
@@ -122,22 +133,11 @@ fun SplashScreen(
                 }
             }
 
-            showErrorDialog -> {
-                SplashErrorDialog(
-                    errorMessage = (tokenStateUI as StateUI.Error).throwable.message.orEmpty().ifEmpty { "An unexpected error occurred." },
-                    onDismiss = { showErrorDialog = false },
-                    onRetry = {
-                        showErrorDialog = false
-                        coroutineScope.launch { ++apiCallAttempt }
-                    }
-                )
-            }
-
             tokenStateUI is StateUI.Data && (tokenStateUI as StateUI.Data).value.isTrue() -> {
                 WelcomeScreen(onContinue = { onNavigateToHome() })
             }
 
-            else  -> {
+            else -> {
                 LaunchedEffect(Unit) { onNavigateToHome() }
             }
         }

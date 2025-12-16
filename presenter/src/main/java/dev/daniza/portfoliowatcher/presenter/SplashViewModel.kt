@@ -20,7 +20,6 @@ import dev.daniza.portfoliowatcher.interactor.get_session_token.GetSessionTokenI
 import dev.daniza.portfoliowatcher.interactor.set_session_token.SetSessionTokenInteractor
 import dev.daniza.portfoliowatcher.interactor.validate_session_token.ValidateSessionTokenInteractor
 import dev.daniza.portfoliowatcher.model.state.StateUI
-import dev.daniza.portfoliowatcher.model.state.StateUI.Loading
 import dev.daniza.portfoliowatcher.network.ConnectivityObserver
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableSharedFlow
