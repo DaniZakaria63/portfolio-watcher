@@ -6,6 +6,7 @@ package dev.daniza.portfoliowatcher.remote
  *
  **/
 import com.google.gson.GsonBuilder
+import com.google.gson.Strictness
 import dev.daniza.portfoliowatcher.remote.tokenmetrics.TOKEN_METRICS_SEARCH_URL
 import dev.daniza.portfoliowatcher.remote.tokenmetrics.TokenMetricsRemoteEndpoint
 import junit.framework.TestCase.assertTrue
@@ -39,7 +40,11 @@ class RequestTokenMetricsTest {
                     .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
                     .build()
             )
-            .addConverterFactory(GsonConverterFactory.create(GsonBuilder().setLenient().create()))
+            .addConverterFactory(
+                GsonConverterFactory.create(
+                    GsonBuilder().setStrictness(Strictness.LENIENT).create()
+                )
+            )
             .build()
 
         retrofitClient = retrofit.create(TokenMetricsRemoteEndpoint::class.java)

@@ -78,12 +78,12 @@ fun SplashScreen(
     )
 
     LaunchedEffect(apiCallAttempt) {
-        coroutineScope.launch { viewModel.getCurrentSession() }
+        viewModel.getCurrentSession()
     }
 
     LaunchedEffect(tokenStateUI) {
         showErrorDialog =
-            tokenStateUI is StateUI.Loading
+            tokenStateUI is StateUI.Error
     }
 
     Box(
@@ -103,7 +103,8 @@ fun SplashScreen(
         when {
             showErrorDialog -> {
                 SplashErrorDialog(
-                    errorMessage = (tokenStateUI as StateUI.Error).throwable.message.orEmpty().ifEmpty { "An unexpected error occurred." },
+                    errorMessage = (tokenStateUI as StateUI.Error).throwable.message.orEmpty()
+                        .ifEmpty { "An unexpected error occurred." },
                     onDismiss = { showErrorDialog = false },
                     onRetry = {
                         showErrorDialog = false
@@ -136,7 +137,7 @@ fun SplashScreen(
                 WelcomeScreen(onContinue = { onNavigateToHome() })
             }
 
-            else  -> {
+            else -> {
                 LaunchedEffect(Unit) { onNavigateToHome() }
             }
         }
