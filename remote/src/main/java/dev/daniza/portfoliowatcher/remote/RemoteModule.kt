@@ -20,6 +20,7 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import dev.daniza.portfoliowatcher.remote.BuildConfig.API_MARKET_PORT_SELFHOST
 import dev.daniza.portfoliowatcher.remote.BuildConfig.API_URL_SELFHOST
 import dev.daniza.portfoliowatcher.remote.moralis.MoralisRemote
 import dev.daniza.portfoliowatcher.remote.moralis.MoralisRemoteEndpoint
@@ -133,7 +134,7 @@ object RemoteModule {
             val request = chain.request().newBuilder()
                 .addHeader("Content-Type", "application/json")
                 .addHeader("User-Agent", "PortfolioWatcher-App")
-                .addHeader("Authorization", BuildConfig.AUTHORIZATION_SELFHOST)
+                .addHeader("X-API-Key", BuildConfig.AUTHORIZATION_SELFHOST)
                 .build()
             chain.proceed(request)
         }
@@ -154,7 +155,7 @@ object RemoteModule {
         @SelfHostOkHttpClient okHttpClient: OkHttpClient
     ): SelfHostRemote {
         val selfHostRetrofit = retrofit.newBuilder()
-            .baseUrl(API_URL_SELFHOST)
+            .baseUrl("$API_URL_SELFHOST:$API_MARKET_PORT_SELFHOST")
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create(GsonBuilder().setStrictness(Strictness.LENIENT).create()))
             .build()

@@ -2,6 +2,7 @@ package dev.daniza.portfoliowatcher.repository
 
 import dev.daniza.portfoliowatcher.model.selfhost.HomeDailyChartModel
 import dev.daniza.portfoliowatcher.model.selfhost.HomeDailySummaryModel
+import dev.daniza.portfoliowatcher.model.selfhost.HomeRecommendation
 import dev.daniza.portfoliowatcher.remote.selfhost.SelfHostRemote
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -18,6 +19,8 @@ interface HomeSummaryRepository {
         symbol: String,
         range: String
     ) : Result<HomeDailyChartModel>
+
+    suspend fun getHomeRecommendation(): Result<HomeRecommendation>
 }
 
 class HomeSummaryRepositoryImpl @Inject constructor(
@@ -54,5 +57,23 @@ class HomeSummaryRepositoryImpl @Inject constructor(
             return Result.failure(Exception("No data received from server"))
         }
         return response.map { it.data!!  }
+    }
+
+    override suspend fun getHomeRecommendation(): Result<HomeRecommendation> {
+        val response = withContext(Dispatchers.IO){
+            Result.runCatching {
+                selfHostRemote.getHomeRecommendation()
+            }
+        }
+
+        if (response.isFailure) return Result.failure(
+            response.exceptionOrNull() ?: Exception("Failed to get home daily chart data from server")
+        )
+
+        if(response.getOrNull()==null){
+            return Result.failure(Exception("No data received from server"))
+        }
+
+        return response
     }
 }

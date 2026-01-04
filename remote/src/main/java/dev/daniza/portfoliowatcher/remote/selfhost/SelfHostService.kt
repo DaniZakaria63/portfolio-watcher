@@ -4,6 +4,7 @@ import com.google.gson.Gson
 import dev.daniza.portfoliowatcher.model.parser.fromString
 import dev.daniza.portfoliowatcher.model.selfhost.HomeDailyChartModel
 import dev.daniza.portfoliowatcher.model.selfhost.HomeDailySummaryModel
+import dev.daniza.portfoliowatcher.model.selfhost.HomeRecommendation
 import dev.daniza.portfoliowatcher.model.session.UserSession
 import dev.daniza.portfoliowatcher.remote.parser.SelfHostResponse
 import okhttp3.RequestBody.Companion.toRequestBody
@@ -1288,5 +1289,9 @@ class SelfHostService(
             put("function", range)
         }.toString()
         return selfHostRemoteEndpoint.getHomeDailyChartData(body.toRequestBody())
+    }
+
+    override suspend fun getHomeRecommendation(): HomeRecommendation {
+        return selfHostRemoteEndpoint.getHomeRecommendation()
     }
 }

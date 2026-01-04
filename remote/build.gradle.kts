@@ -25,6 +25,7 @@ android {
         buildConfigField("String", "API_URL_NEWSAPI", project.properties["API_BASE_URL_NEWSAPI"].toString())
         buildConfigField("String", "AUTHORIZATION_SELFHOST", project.properties["AUTHORIZATION_SELFHOST"].toString())
         buildConfigField("String", "API_URL_SELFHOST", project.properties["API_BASE_URL_SELFHOST"].toString())
+        buildConfigField("String", "API_MARKET_PORT_SELFHOST", project.properties["API_MARKET_PORT_SELFHOST"].toString())
     }
 
     buildTypes {

@@ -6,8 +6,11 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dev.daniza.portfoliowatcher.interactor.get_home_daily_chart.GetHomeDailyChartInteractor
 import dev.daniza.portfoliowatcher.interactor.get_home_daily_summary.GetHomeDailySummaryInteractor
+import dev.daniza.portfoliowatcher.interactor.get_home_recommendation.GetHomeRecommendationInteractor
 import dev.daniza.portfoliowatcher.interactor.get_session_token.GetSessionTokenInteractor
 import dev.daniza.portfoliowatcher.model.selfhost.HomeDailySummaryModel
+import dev.daniza.portfoliowatcher.model.selfhost.HomeRecommendation
+import dev.daniza.portfoliowatcher.model.selfhost.Recommendation
 import dev.daniza.portfoliowatcher.model.session.UserSession
 import dev.daniza.portfoliowatcher.model.state.StateUI
 import dev.daniza.portfoliowatcher.presenter.BuildConfig.TAG
@@ -16,8 +19,12 @@ import kotlinx.coroutines.async
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.WhileSubscribed
 import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.firstOrNull
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -27,6 +34,7 @@ class HomeViewModel @Inject constructor(
     private val getHomeDailySummaryInteractor: GetHomeDailySummaryInteractor,
     private val getSessionTokenInteractor: GetSessionTokenInteractor,
     private val getHomeDailyChartInteractor: GetHomeDailyChartInteractor,
+    private val getHomeRecommendationInteractor: GetHomeRecommendationInteractor,
 ) : ViewModel() {
     private val currentSampleSymbols = listOf("AAPL", "GOOGL", "AMZN", "TSLA")
     private var currentTokenSession: UserSession? = null
@@ -42,6 +50,49 @@ class HomeViewModel @Inject constructor(
         _currentDailyChartState.stateIn(
             scope = viewModelScope, started = SharingStarted.Lazily, initialValue = StateUI.Loading
         )
+
+    val _currentDailyGainLoseSelectable: MutableStateFlow<String> = MutableStateFlow("ALL")
+    private val _currentDailyGainLoseState: MutableStateFlow<StateUI<HomeRecommendation>>
+        = MutableStateFlow(StateUI.Loading)
+    val currentDailyDailyGainLoseState: StateFlow<StateUI<List<Recommendation.Quotes>>> get() =
+        combine(
+            _currentDailyGainLoseState,
+            _currentDailyGainLoseSelectable
+        ) { state, filter ->
+            when(state){
+                is StateUI.Data -> {
+                    val gainers = state.value.topGainers?.quotes.orEmpty()
+                    val losers = state.value.topLosers?.quotes.orEmpty()
+
+                    val filteredData = when(filter){
+                        "GAIN" -> gainers
+                        "LOSE" -> losers
+                        "ALL" -> gainers + losers
+                        else -> emptyList<Recommendation.Quotes>()
+                    }
+                    StateUI.Data(filteredData)
+                }
+                is StateUI.Loading -> StateUI.Loading
+                is StateUI.Error -> StateUI.Error(state.throwable)
+            }
+        }.stateIn(
+            scope = viewModelScope, started = SharingStarted.WhileSubscribed(), initialValue = StateUI.Loading
+        )
+
+    init {
+        this.getHomeDailySummaryData()
+        this.getHomeStockRecommendations()
+    }
+
+    fun getHomeStockRecommendations(){
+        viewModelScope.launch {
+            getHomeRecommendationInteractor().onFailure {
+                Log.e(TAG, "getHomeStockRecommendations: ", it)
+            }.onSuccess {
+                _currentDailyGainLoseState.emit(StateUI.Data(it))
+            }
+        }
+    }
 
     fun getHomeDailySummaryData() {
         viewModelScope.launch {
