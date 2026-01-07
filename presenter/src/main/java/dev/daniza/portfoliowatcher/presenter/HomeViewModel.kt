@@ -15,6 +15,7 @@ import dev.daniza.portfoliowatcher.model.session.UserSession
 import dev.daniza.portfoliowatcher.model.state.StateUI
 import dev.daniza.portfoliowatcher.presenter.BuildConfig.TAG
 import dev.daniza.portfoliowatcher.presenter.state.HomeDailyChartDataState
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
@@ -27,6 +28,7 @@ import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 @HiltViewModel
@@ -36,6 +38,7 @@ class HomeViewModel @Inject constructor(
     private val getHomeDailyChartInteractor: GetHomeDailyChartInteractor,
     private val getHomeRecommendationInteractor: GetHomeRecommendationInteractor,
 ) : ViewModel() {
+    val categories = listOf("All", "Gainers", "Losers")
     private val currentSampleSymbols = listOf("AAPL", "GOOGL", "AMZN", "TSLA")
     private var currentTokenSession: UserSession? = null
 
@@ -51,7 +54,7 @@ class HomeViewModel @Inject constructor(
             scope = viewModelScope, started = SharingStarted.Lazily, initialValue = StateUI.Loading
         )
 
-    val _currentDailyGainLoseSelectable: MutableStateFlow<String> = MutableStateFlow("ALL")
+    val _currentDailyGainLoseSelectable: MutableStateFlow<String> = MutableStateFlow(categories[0])
     private val _currentDailyGainLoseState: MutableStateFlow<StateUI<HomeRecommendation>>
         = MutableStateFlow(StateUI.Loading)
     val currentDailyDailyGainLoseState: StateFlow<StateUI<List<Recommendation.Quotes>>> get() =
@@ -65,9 +68,9 @@ class HomeViewModel @Inject constructor(
                     val losers = state.value.topLosers?.quotes.orEmpty()
 
                     val filteredData = when(filter){
-                        "GAIN" -> gainers
-                        "LOSE" -> losers
-                        "ALL" -> gainers + losers
+                        categories[1] -> gainers
+                        categories[2] -> losers
+                        categories[0] -> gainers + losers
                         else -> emptyList<Recommendation.Quotes>()
                     }
                     StateUI.Data(filteredData)
@@ -85,11 +88,15 @@ class HomeViewModel @Inject constructor(
     }
 
     fun getHomeStockRecommendations(){
+        Log.d(TAG, "getHomeStockRecommendations: THIS SHOULD BE EXECUTED!")
         viewModelScope.launch {
             getHomeRecommendationInteractor().onFailure {
                 Log.e(TAG, "getHomeStockRecommendations: ", it)
             }.onSuccess {
-                _currentDailyGainLoseState.emit(StateUI.Data(it))
+                Log.d(TAG, "getHomeStockRecommendations: AND SO THIS ONE!")
+                withContext(Dispatchers.Main) {
+                    _currentDailyGainLoseState.emit(StateUI.Data(it))
+                }
             }
         }
     }

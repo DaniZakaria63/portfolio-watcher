@@ -26,10 +26,10 @@ data class Recommendation (
         @SerializedName("currency"                          ) var currency                          : String?           = null,
         @SerializedName("regularMarketChangePercent"        ) var regularMarketChangePercent        : Double?           = null,
         @SerializedName("hasPrePostMarketData"              ) var hasPrePostMarketData              : Boolean?          = null,
-        @SerializedName("firstTradeDateMilliseconds"        ) var firstTradeDateMilliseconds        : Int?              = null,
+        @SerializedName("firstTradeDateMilliseconds"        ) var firstTradeDateMilliseconds        : Long?              = null,
         @SerializedName("priceHint"                         ) var priceHint                         : Int?              = null,
         @SerializedName("regularMarketChange"               ) var regularMarketChange               : Double?           = null,
-        @SerializedName("regularMarketTime"                 ) var regularMarketTime                 : Int?              = null,
+        @SerializedName("regularMarketTime"                 ) var regularMarketTime                 : Long?              = null,
         @SerializedName("regularMarketPrice"                ) var regularMarketPrice                : Double?           = null,
         @SerializedName("regularMarketDayHigh"              ) var regularMarketDayHigh              : Double?           = null,
         @SerializedName("regularMarketDayRange"             ) var regularMarketDayRange             : String?           = null,
@@ -51,18 +51,18 @@ data class Recommendation (
         @SerializedName("dividendYield"                     ) var dividendYield                     : Double?           = null,
         @SerializedName("financialCurrency"                 ) var financialCurrency                 : String?           = null,
         @SerializedName("shortName"                         ) var shortName                         : String?           = null,
-        @SerializedName("corporateActions"                  ) var corporateActions                  : ArrayList<String> = arrayListOf(),
+        @SerializedName("corporateActions"                  ) var corporateActions                  : List<CorporateActions>? = emptyList(),
         @SerializedName("fiftyTwoWeekLowChange"             ) var fiftyTwoWeekLowChange             : Double?           = null,
         @SerializedName("fiftyTwoWeekLowChangePercent"      ) var fiftyTwoWeekLowChangePercent      : Double?           = null,
         @SerializedName("fiftyTwoWeekRange"                 ) var fiftyTwoWeekRange                 : String?           = null,
-        @SerializedName("fiftyTwoWeekHighChange"            ) var fiftyTwoWeekHighChange            : Int?              = null,
-        @SerializedName("fiftyTwoWeekHighChangePercent"     ) var fiftyTwoWeekHighChangePercent     : Int?              = null,
+        @SerializedName("fiftyTwoWeekHighChange"            ) var fiftyTwoWeekHighChange            : Double?              = null,
+        @SerializedName("fiftyTwoWeekHighChangePercent"     ) var fiftyTwoWeekHighChangePercent     : Double?              = null,
         @SerializedName("fiftyTwoWeekChangePercent"         ) var fiftyTwoWeekChangePercent         : Double?           = null,
-        @SerializedName("dividendDate"                      ) var dividendDate                      : Int?              = null,
-        @SerializedName("earningsTimestampStart"            ) var earningsTimestampStart            : Int?              = null,
-        @SerializedName("earningsTimestampEnd"              ) var earningsTimestampEnd              : Int?              = null,
-        @SerializedName("earningsCallTimestampStart"        ) var earningsCallTimestampStart        : Int?              = null,
-        @SerializedName("earningsCallTimestampEnd"          ) var earningsCallTimestampEnd          : Int?              = null,
+        @SerializedName("dividendDate"                      ) var dividendDate                      : Long?              = null,
+        @SerializedName("earningsTimestampStart"            ) var earningsTimestampStart            : Long?              = null,
+        @SerializedName("earningsTimestampEnd"              ) var earningsTimestampEnd              : Long?              = null,
+        @SerializedName("earningsCallTimestampStart"        ) var earningsCallTimestampStart        : Long?              = null,
+        @SerializedName("earningsCallTimestampEnd"          ) var earningsCallTimestampEnd          : Long?              = null,
         @SerializedName("isEarningsDateEstimate"            ) var isEarningsDateEstimate            : Boolean?          = null,
         @SerializedName("trailingAnnualDividendRate"        ) var trailingAnnualDividendRate        : Double?           = null,
         @SerializedName("trailingPE"                        ) var trailingPE                        : Double?           = null,
@@ -70,7 +70,7 @@ data class Recommendation (
         @SerializedName("trailingAnnualDividendYield"       ) var trailingAnnualDividendYield       : Double?           = null,
         @SerializedName("marketState"                       ) var marketState                       : String?           = null,
         @SerializedName("epsTrailingTwelveMonths"           ) var epsTrailingTwelveMonths           : Double?           = null,
-        @SerializedName("sharesOutstanding"                 ) var sharesOutstanding                 : Int?              = null,
+        @SerializedName("sharesOutstanding"                 ) var sharesOutstanding                 : Long?              = null,
         @SerializedName("bookValue"                         ) var bookValue                         : Double?           = null,
         @SerializedName("fiftyDayAverage"                   ) var fiftyDayAverage                   : Double?           = null,
         @SerializedName("fiftyDayAverageChange"             ) var fiftyDayAverageChange             : Double?           = null,
@@ -83,15 +83,34 @@ data class Recommendation (
         @SerializedName("exchangeDataDelayedBy"             ) var exchangeDataDelayedBy             : Int?              = null,
         @SerializedName("exchangeTimezoneName"              ) var exchangeTimezoneName              : String?           = null,
         @SerializedName("exchangeTimezoneShortName"         ) var exchangeTimezoneShortName         : String?           = null,
-        @SerializedName("gmtOffSetMilliseconds"             ) var gmtOffSetMilliseconds             : Int?              = null,
+        @SerializedName("gmtOffSetMilliseconds"             ) var gmtOffSetMilliseconds             : Double?              = null,
         @SerializedName("esgPopulated"                      ) var esgPopulated                      : Boolean?          = null,
         @SerializedName("tradeable"                         ) var tradeable                         : Boolean?          = null,
         @SerializedName("cryptoTradeable"                   ) var cryptoTradeable                   : Boolean?          = null,
         @SerializedName("ask"                               ) var ask                               : Double?           = null,
-        @SerializedName("marketCap"                         ) var marketCap                         : Int?              = null,
-        @SerializedName("bid"                               ) var bid                               : Int?              = null,
+        @SerializedName("marketCap"                         ) var marketCap                         : Double?              = null,
+        @SerializedName("bid"                               ) var bid                               : Double?              = null,
         @SerializedName("displayName"                       ) var displayName                       : String?           = null,
         @SerializedName("symbol"                            ) var symbol                            : String?           = null
 
-    )
+    ){
+        var isFavorite: Boolean = false
+            private set
+
+        fun setFavorite(isFavorite: Boolean){
+            this.isFavorite = isFavorite
+        }
+
+        data class CorporateActions(
+            @SerializedName("header"  ) var header  : String? = null,
+            @SerializedName("message" ) var message : String? = null,
+            @SerializedName("meta"    ) var meta    : Meta?   = Meta()
+        ){
+            data class Meta(
+                @SerializedName("eventType"   ) var eventType   : String? = null,
+                @SerializedName("dateEpochMs" ) var dateEpochMs : Long?    = null,
+                @SerializedName("amount"      ) var amount      : String? = null
+            )
+        }
+    }
 }
