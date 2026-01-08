@@ -2,22 +2,21 @@ package dev.daniza.portfoliowatcher.ui.component
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
-import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -30,44 +29,24 @@ import androidx.compose.ui.unit.dp
 import dev.daniza.portfoliowatcher.model.parser.orZero
 import dev.daniza.portfoliowatcher.model.selfhost.HomeDailySummaryModel
 
-@Composable
-fun MarketTickerRow(tickerItems: List<HomeDailySummaryModel>) {
-    val scrollState = rememberScrollState()
-
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .horizontalScroll(scrollState)
-            .padding(horizontal = 8.dp),
-        horizontalArrangement = Arrangement.spacedBy(0.dp)
-    ) {
-        tickerItems.forEachIndexed { index, item ->
-            TickerItemColumn(item = item)
-
-            if (index < tickerItems.size - 1) {
-                HorizontalDivider(
-                    color = Color.LightGray,
-                    modifier = Modifier
-                        .width(1.dp)
-                        .height(60.dp)
-                        .padding(vertical = 8.dp)
-                )
-            }
-        }
-    }
-}
 
 @Composable
-fun TickerItemColumn(item: HomeDailySummaryModel) {
+fun TickerItemColumn(
+    item: HomeDailySummaryModel,
+    onTickerClicked:(symbol: HomeDailySummaryModel)-> Unit
+) {
     Column(
         modifier = Modifier
             .width(100.dp)
-            .padding(8.dp),
+            .padding(8.dp)
+            .clickable(interactionSource = remember { MutableInteractionSource() }){
+                onTickerClicked(item)
+            },
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(4.dp)
     ) {
         SmallLineChart(
-            data = item.candles.orEmpty().map { it.closePrice.orZero() },
+            data = item.candles.orEmpty().map { it.orZero() },
             lineColor = Color.Green,
             baselineColor = Color.Gray
         )

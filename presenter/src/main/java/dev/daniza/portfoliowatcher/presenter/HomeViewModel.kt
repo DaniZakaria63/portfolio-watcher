@@ -1,6 +1,9 @@
 package dev.daniza.portfoliowatcher.presenter
 
 import android.util.Log
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -8,6 +11,10 @@ import dev.daniza.portfoliowatcher.interactor.get_home_daily_chart.GetHomeDailyC
 import dev.daniza.portfoliowatcher.interactor.get_home_daily_summary.GetHomeDailySummaryInteractor
 import dev.daniza.portfoliowatcher.interactor.get_home_recommendation.GetHomeRecommendationInteractor
 import dev.daniza.portfoliowatcher.interactor.get_session_token.GetSessionTokenInteractor
+import dev.daniza.portfoliowatcher.interactor.process_small_stock_db.ProcessSmallStockInteractor
+import dev.daniza.portfoliowatcher.local.entity.SmallStockEntity
+import dev.daniza.portfoliowatcher.model.getCurrentTimeEpoch
+import dev.daniza.portfoliowatcher.model.orDash
 import dev.daniza.portfoliowatcher.model.selfhost.HomeDailySummaryModel
 import dev.daniza.portfoliowatcher.model.selfhost.HomeRecommendation
 import dev.daniza.portfoliowatcher.model.selfhost.Recommendation
@@ -23,13 +30,13 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.WhileSubscribed
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.combine
-import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.firstOrNull
-import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
+import kotlin.time.Clock
+import kotlin.time.Instant
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
@@ -37,15 +44,16 @@ class HomeViewModel @Inject constructor(
     private val getSessionTokenInteractor: GetSessionTokenInteractor,
     private val getHomeDailyChartInteractor: GetHomeDailyChartInteractor,
     private val getHomeRecommendationInteractor: GetHomeRecommendationInteractor,
+    private val processSmallStockInteractor: ProcessSmallStockInteractor,
 ) : ViewModel() {
     val categories = listOf("All", "Gainers", "Losers")
-    private val currentSampleSymbols = listOf("AAPL", "GOOGL", "AMZN", "TSLA")
+    private var _currentFavoriteStockSymbols by mutableStateOf(emptyList<String>())
     private var currentTokenSession: UserSession? = null
 
     private val _currentDailySummaryState : MutableStateFlow<List<HomeDailySummaryModel>> = MutableStateFlow(emptyList())
     val currentDailySummaryState: StateFlow<List<HomeDailySummaryModel>> get() =
         _currentDailySummaryState.stateIn(
-            scope = viewModelScope, started = SharingStarted.Lazily, initialValue = emptyList()
+            scope = viewModelScope, started = SharingStarted.WhileSubscribed(), initialValue = emptyList()
         )
 
     private val _currentDailyChartState : MutableStateFlow<StateUI<HomeDailyChartDataState>> = MutableStateFlow(StateUI.Loading)
@@ -83,17 +91,16 @@ class HomeViewModel @Inject constructor(
         )
 
     init {
+        this.getStockCacheList()
         this.getHomeDailySummaryData()
         this.getHomeStockRecommendations()
     }
 
     fun getHomeStockRecommendations(){
-        Log.d(TAG, "getHomeStockRecommendations: THIS SHOULD BE EXECUTED!")
         viewModelScope.launch {
             getHomeRecommendationInteractor().onFailure {
                 Log.e(TAG, "getHomeStockRecommendations: ", it)
             }.onSuccess {
-                Log.d(TAG, "getHomeStockRecommendations: AND SO THIS ONE!")
                 withContext(Dispatchers.Main) {
                     _currentDailyGainLoseState.emit(StateUI.Data(it))
                 }
@@ -105,23 +112,26 @@ class HomeViewModel @Inject constructor(
         viewModelScope.launch {
             currentTokenSession = getSessionToken().await()
             if (currentTokenSession == null) {
+                processSmallStockInteractor(2, null) // Delete saved stocks
                 //TODO: Clean Session and Redirect to Splash Screen
                 Log.e(TAG, "getHomeDailySummaryData: Invalid Session Token")
                 return@launch
             }
 
-
-            getHomeDailySummaryInteractor(token = currentTokenSession?.token.orEmpty(), currentSampleSymbols)
-                .onFailure { exception ->
-                    Log.e(TAG, "getHomeDailySummaryData: ", exception)
-                }.onSuccess {
-                    _currentDailySummaryState.emit(value = it)
+            getHomeDailySummaryInteractor(
+                token = currentTokenSession?.token.orEmpty(),
+                symbols = _currentFavoriteStockSymbols
+            ).onFailure { exception ->
+                Log.e(TAG, "getHomeDailySummaryData: ", exception)
+            }.onSuccess {
+                _currentDailySummaryState.emit(value = it)
+                it.getOrNull(0)?.let { data->
                     getHomeDailyChartData(
-                        symbol = it[0].symbol,
+                        symbol = data.symbol,
                         range = HomeDailyChartDataState.RangeDate.DAILY
                     )
                 }
-
+            }
         }
     }
 
@@ -132,7 +142,7 @@ class HomeViewModel @Inject constructor(
         viewModelScope.launch {
             getHomeDailyChartInteractor(
                 token = currentTokenSession?.token.orEmpty(),
-                symbol = symbol.orEmpty().ifEmpty { currentSampleSymbols[0] },
+                symbol = symbol.orEmpty().ifEmpty { _currentFavoriteStockSymbols[0] },
                 range = range.param
             ).onFailure { exception ->
                 Log.e(TAG, "getHomeDailyChartData: ", exception)
@@ -152,5 +162,36 @@ class HomeViewModel @Inject constructor(
         getSessionTokenInteractor().catch {
             Log.e(TAG, "getSessionToken: ", it)
         }.firstOrNull()?.getOrNull()
+    }
+
+    fun getStockCacheList() {
+        viewModelScope.launch {
+            val cacheStockList = async {
+                processSmallStockInteractor(0, null)
+            }.await().getOrDefault(defaultValue = emptyList())?.map { it ->
+                it.symbol
+            }.orEmpty()
+
+            _currentFavoriteStockSymbols = cacheStockList
+        }
+
+    }
+
+    fun addStockWatchList(symbol: String) {
+        if(symbol in _currentFavoriteStockSymbols) return
+
+        viewModelScope.launch {
+            processSmallStockInteractor(1, SmallStockEntity(
+                name = symbol,
+                symbol = symbol,
+                type = symbol,
+                lastUpdated = getCurrentTimeEpoch()
+            )).onFailure {
+                Log.e(TAG, "addStockWatchList: ", it)
+            }.onSuccess {
+                Log.i(TAG, "addStockWatchList: ADD STOCK SUCCESS $symbol")
+                getStockCacheList()
+            }
+        }
     }
 }

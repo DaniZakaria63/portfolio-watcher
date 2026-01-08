@@ -3,6 +3,7 @@ package dev.daniza.portfoliowatcher.ui.home
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -21,7 +22,6 @@ import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Edit
@@ -63,6 +63,7 @@ import dev.daniza.portfoliowatcher.model.formatCurrency
 import dev.daniza.portfoliowatcher.model.formatPercent
 import dev.daniza.portfoliowatcher.model.orDash
 import dev.daniza.portfoliowatcher.model.orZero
+import dev.daniza.portfoliowatcher.model.selfhost.HomeDailySummaryModel
 import dev.daniza.portfoliowatcher.model.selfhost.Recommendation
 import dev.daniza.portfoliowatcher.model.state.StateUI
 import dev.daniza.portfoliowatcher.presenter.HomeViewModel
@@ -70,9 +71,9 @@ import dev.daniza.portfoliowatcher.ui.component.AvatarCircle
 import dev.daniza.portfoliowatcher.ui.component.GoldLabel
 import dev.daniza.portfoliowatcher.ui.component.Instrument
 import dev.daniza.portfoliowatcher.ui.component.InstrumentListItem
-import dev.daniza.portfoliowatcher.ui.component.MarketTickerRow
 import dev.daniza.portfoliowatcher.ui.component.SearchBar
 import dev.daniza.portfoliowatcher.ui.component.SearchDialog
+import dev.daniza.portfoliowatcher.ui.component.TickerItemColumn
 import dev.daniza.portfoliowatcher.ui.model.FavoriteHomeUIModel
 import kotlinx.coroutines.launch
 
@@ -81,6 +82,7 @@ fun HomeScreen(
     viewModel: HomeViewModel = hiltViewModel(),
     onNavigateToDetail: (String) -> Unit,
 ) {
+    val coroutineScope = rememberCoroutineScope()
     val dailySummaryChart by viewModel.currentDailySummaryState.collectAsStateWithLifecycle()
     var showSearchDialog by remember { mutableStateOf(false) }
     val sampleSelectedChartData = remember {
@@ -108,13 +110,15 @@ fun HomeScreen(
         }
 
         item {
-            /*WE WORK ON THIS FUNCTION*/
-            MarketTickerRow(tickerItems = dailySummaryChart)
-            /*==========================*/
+            MarketTickerRow(tickerItems = dailySummaryChart){ symbol ->
+            }
         }
-        /*
-        PortfolioSummary()
 
+        item {
+            PortfolioSummary()
+        }
+
+        /*
         HomeChartSection(
             modifier = Modifier
                 .fillMaxWidth()
@@ -162,7 +166,9 @@ fun HomeScreen(
                     q.symbol.orEmpty().ifEmpty { i.toString() }
                 }){ index, data ->
                     FinancialListItem(item = data){
-
+                        coroutineScope.launch {
+                            viewModel.addStockWatchList(symbol = it.orDash())
+                        }
                     }
                 }
             }
@@ -363,8 +369,6 @@ fun FinancialListItem(
     item: Recommendation.Quotes,
     onFavoriteToggled: (String) -> Unit,
 ) {
-    val coroutineScope = rememberCoroutineScope()
-
     Row(
         modifier = modifier
             .fillMaxWidth()
@@ -405,9 +409,7 @@ fun FinancialListItem(
 
         IconButton(
             onClick = {
-                coroutineScope.launch {
-                    onFavoriteToggled(item.symbol.orEmpty())
-                }
+                onFavoriteToggled(item.symbol.orEmpty())
             },
             modifier = Modifier.size(24.dp)
         ) {
@@ -416,6 +418,37 @@ fun FinancialListItem(
                 contentDescription = "Favorite",
                 tint = if (item.isFavorite) Color.Yellow else Color.Gray
             )
+        }
+    }
+}
+
+
+@Composable
+fun MarketTickerRow(
+    tickerItems: List<HomeDailySummaryModel>,
+    onTickerClicked:(symbol: HomeDailySummaryModel)-> Unit,
+) {
+    val scrollState = rememberScrollState()
+
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .horizontalScroll(scrollState)
+            .padding(horizontal = 8.dp),
+        horizontalArrangement = Arrangement.spacedBy(0.dp)
+    ) {
+        tickerItems.forEachIndexed { index, item ->
+            TickerItemColumn(item = item, onTickerClicked)
+
+            if (index < tickerItems.size - 1) {
+                HorizontalDivider(
+                    color = Color.LightGray,
+                    modifier = Modifier
+                        .width(1.dp)
+                        .height(60.dp)
+                        .padding(vertical = 8.dp)
+                )
+            }
         }
     }
 }
