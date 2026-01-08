@@ -59,7 +59,7 @@ class HomeViewModel @Inject constructor(
     private val _currentDailyChartState : MutableStateFlow<StateUI<HomeDailyChartDataState>> = MutableStateFlow(StateUI.Loading)
     val currentDailyChartState: StateFlow<StateUI<HomeDailyChartDataState>> get() =
         _currentDailyChartState.stateIn(
-            scope = viewModelScope, started = SharingStarted.Lazily, initialValue = StateUI.Loading
+            scope = viewModelScope, started = SharingStarted.WhileSubscribed(), initialValue = StateUI.Loading
         )
 
     val _currentDailyGainLoseSelectable: MutableStateFlow<String> = MutableStateFlow(categories[0])
@@ -128,7 +128,7 @@ class HomeViewModel @Inject constructor(
                 it.getOrNull(0)?.let { data->
                     getHomeDailyChartData(
                         symbol = data.symbol,
-                        range = HomeDailyChartDataState.RangeDate.DAILY
+                        range = HomeDailyChartDataState.RangeDate.M15
                     )
                 }
             }
@@ -137,11 +137,10 @@ class HomeViewModel @Inject constructor(
 
     fun getHomeDailyChartData(
         symbol: String? = null,
-        range: HomeDailyChartDataState.RangeDate = HomeDailyChartDataState.RangeDate.DAILY
+        range: HomeDailyChartDataState.RangeDate = HomeDailyChartDataState.RangeDate.H1
     ) {
         viewModelScope.launch {
             getHomeDailyChartInteractor(
-                token = currentTokenSession?.token.orEmpty(),
                 symbol = symbol.orEmpty().ifEmpty { _currentFavoriteStockSymbols[0] },
                 range = range.param
             ).onFailure { exception ->
@@ -149,7 +148,7 @@ class HomeViewModel @Inject constructor(
                 _currentDailyChartState.value = StateUI.Error(exception)
             }.onSuccess { chartData ->
                 val updatedState = HomeDailyChartDataState(
-                    symbol = chartData.metadata?.symbol.orEmpty().ifEmpty { symbol },
+                    symbol = chartData.informational.symbol.ifEmpty { symbol },
                     range = range,
                     data = chartData
                 )
@@ -168,7 +167,7 @@ class HomeViewModel @Inject constructor(
         viewModelScope.launch {
             val cacheStockList = async {
                 processSmallStockInteractor(0, null)
-            }.await().getOrDefault(defaultValue = emptyList())?.map { it ->
+            }.await().getOrDefault(defaultValue = emptyList())?.map {
                 it.symbol
             }.orEmpty()
 

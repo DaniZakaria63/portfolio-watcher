@@ -1,5 +1,7 @@
 package dev.daniza.portfoliowatcher.ui.home
 
+import androidx.compose.animation.core.EaseInOutCubic
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -53,10 +55,12 @@ import androidx.compose.ui.geometry.RoundRect
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.PathEffect
+import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import dev.daniza.portfoliowatcher.model.formatCurrency
@@ -67,6 +71,7 @@ import dev.daniza.portfoliowatcher.model.selfhost.HomeDailySummaryModel
 import dev.daniza.portfoliowatcher.model.selfhost.Recommendation
 import dev.daniza.portfoliowatcher.model.state.StateUI
 import dev.daniza.portfoliowatcher.presenter.HomeViewModel
+import dev.daniza.portfoliowatcher.presenter.state.HomeDailyChartDataState
 import dev.daniza.portfoliowatcher.ui.component.AvatarCircle
 import dev.daniza.portfoliowatcher.ui.component.GoldLabel
 import dev.daniza.portfoliowatcher.ui.component.Instrument
@@ -75,6 +80,17 @@ import dev.daniza.portfoliowatcher.ui.component.SearchBar
 import dev.daniza.portfoliowatcher.ui.component.SearchDialog
 import dev.daniza.portfoliowatcher.ui.component.TickerItemColumn
 import dev.daniza.portfoliowatcher.ui.model.FavoriteHomeUIModel
+import ir.ehsannarmani.compose_charts.LineChart
+import ir.ehsannarmani.compose_charts.models.AnimationMode
+import ir.ehsannarmani.compose_charts.models.DividerProperties
+import ir.ehsannarmani.compose_charts.models.DotProperties
+import ir.ehsannarmani.compose_charts.models.DrawStyle
+import ir.ehsannarmani.compose_charts.models.GridProperties
+import ir.ehsannarmani.compose_charts.models.HorizontalIndicatorProperties
+import ir.ehsannarmani.compose_charts.models.LabelHelperProperties
+import ir.ehsannarmani.compose_charts.models.LabelProperties
+import ir.ehsannarmani.compose_charts.models.Line
+import ir.ehsannarmani.compose_charts.models.ZeroLineProperties
 import kotlinx.coroutines.launch
 
 @Composable
@@ -95,6 +111,7 @@ fun HomeScreen(
         )
     }
     val currentDailyDailyGainLoseState by viewModel.currentDailyDailyGainLoseState.collectAsStateWithLifecycle()
+    val currentDailyChartData by viewModel.currentDailyChartState.collectAsStateWithLifecycle()
 
     val rememberLazyListState = rememberLazyListState()
     LazyColumn(
@@ -111,24 +128,36 @@ fun HomeScreen(
 
         item {
             MarketTickerRow(tickerItems = dailySummaryChart){ symbol ->
+                coroutineScope.launch {
+                    viewModel.getHomeDailyChartData(
+                        symbol=symbol.symbol.orDash(),
+                        range= HomeDailyChartDataState.RangeDate.M15
+                    )
+                }
             }
         }
 
         item {
-            PortfolioSummary()
+            when(currentDailyChartData){
+                is StateUI.Data<HomeDailyChartDataState> -> {
+                    PortfolioSummary((currentDailyChartData as StateUI.Data<HomeDailyChartDataState>).value){ symbol, range ->
+                        coroutineScope.launch {
+                            viewModel.getHomeDailyChartData(symbol, range)
+                        }
+                    }
+                }
+                is StateUI.Error -> {
+
+                }
+                else -> {
+
+                }
+            }
         }
 
         /*
-        HomeChartSection(
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(200.dp)
-                .padding(10.dp),
-            model = sampleSelectedChartData
-        )
-
         CreateFirstWatchlistCard()
-*/
+        */
 
 
         item {
@@ -221,117 +250,124 @@ fun TopAppBar(
     }
 }
 
+/*THIS ONLY SHOWN WHEN SINGLE SYMBOL IS ACTIVE/CLICKED*/
 @Composable
-fun PortfolioSummary() {
+fun PortfolioSummary(
+    data: HomeDailyChartDataState,
+    onTimeframeChange: (String, HomeDailyChartDataState.RangeDate) -> Unit
+) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
             .padding(16.dp)
     ) {
-        // 1. Top Row: "All Holdings" Button and "Expand Chart" Text
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(bottom = 8.dp),
-            horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            // "All Holdings" Button (Rounded shape)
-            Button(
-                onClick = { /* Handle dropdown */ },
-                shape = RoundedCornerShape(20.dp), // Rounded edges as seen in image
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = Color.White, // White background
-                    contentColor = Color.Black // Black text
-                ),
-                modifier = Modifier.height(40.dp) // Adjust height if needed
-            ) {
-                Text(text = "All Holdings")
-                Spacer(modifier = Modifier.width(4.dp))
-                Icon(
-                    imageVector = Icons.Default.ExpandMore, // Downward arrow
-                    contentDescription = "Show options"
-                )
-            }
+        Text(text = data.data?.informational?.symbol.orDash())
 
-            // "Expand Chart" Text (Right-aligned)
-            Row(
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Icon(
-                    imageVector = Icons.Default.ExpandLess, // Upward arrow (or ExpandMore for consistency)
-                    contentDescription = "Expand Chart",
-                    tint = Color.Black
-                )
-                Spacer(modifier = Modifier.width(4.dp))
-                Text(
-                    text = "Expand Chart",
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = Color.Black
-                )
-            }
-        }
-
-        // 2. Balance Amount (Large, Bold)
         Text(
-            text = "$5,865.75", // From the image
-            style = MaterialTheme.typography.headlineLarge, // Use largest headline style available
+            text = data.data?.informational?.currentPrice.orZero().formatCurrency(),
+            style = MaterialTheme.typography.headlineLarge,
             fontWeight = FontWeight.Bold,
             modifier = Modifier.padding(vertical = 8.dp)
         )
 
-        // 3. Gains Rows (Day's Gain and Total Gain)
-        // Day's Gain
         Row(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(vertical = 4.dp),
-            horizontalArrangement = Arrangement.Start, // Align text to the left
+            horizontalArrangement = Arrangement.Start,
             verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
-                text = "-27.75 (-0.47%)", // From the image, red for loss
+                text = data.data?.informational?.dayGainPrice.orZero().formatCurrency(),
                 style = MaterialTheme.typography.bodyLarge,
-                color = Color.Red, // Red for negative gain
+                color = if(data.data?.informational?.dayGainPercent.orZero()>0) Color.Green else Color.Red,
                 fontWeight = FontWeight.Medium
             )
-            Spacer(modifier = Modifier.width(8.dp)) // Space between value and label
+            Spacer(modifier = Modifier.width(8.dp))
             Text(
-                text = "Day's Gain", // Label from image
+                text = "Day's Gain",
                 style = MaterialTheme.typography.bodyMedium,
                 color = Color.Black
             )
         }
 
-        // Total Gain
         Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(vertical = 4.dp),
-            horizontalArrangement = Arrangement.Start, // Align text to the left
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Text(
-                text = "-27.75 (-0.47%)", // From the image, red for loss
-                style = MaterialTheme.typography.bodyLarge,
-                color = Color.Red, // Red for negative gain
-                fontWeight = FontWeight.Medium
+            Icon(
+                imageVector = Icons.Default.ExpandLess,
+                contentDescription = "Expand Chart",
+                tint = Color.Black
             )
-            Spacer(modifier = Modifier.width(8.dp)) // Space between value and label
+            Spacer(modifier = Modifier.width(4.dp))
             Text(
-                text = "Total Gain", // Label from image
+                text = "Expand Chart",
                 style = MaterialTheme.typography.bodyMedium,
                 color = Color.Black
             )
         }
 
-        // 4. Last Refreshed (Small text, bottom left)
+
+        val givenChartDataOnly = data.data?.tickers.orEmpty().map {
+            it.price.orZero()
+        }
+        LineChart(
+            gridProperties = GridProperties(
+                enabled = false,
+                GridProperties.AxisProperties(
+                    enabled = false,
+                    thickness = 0.dp,
+                    color = SolidColor(Color.Transparent),
+                ),
+                GridProperties.AxisProperties(
+                    enabled = false,
+                    thickness = 0.dp,
+                    color = SolidColor(Color.Transparent)
+                ),
+            ),
+            dotsProperties = DotProperties(enabled = false),
+            dividerProperties = DividerProperties(enabled = false),
+            labelHelperProperties = LabelHelperProperties(enabled = false),
+            labelHelperPadding = 0.dp,
+            indicatorProperties = HorizontalIndicatorProperties(enabled = false),
+            labelProperties = LabelProperties(enabled = false),
+            zeroLineProperties = ZeroLineProperties(enabled = false, thickness = 0.dp),
+            curvedEdges = false,
+            data = remember {
+                listOf(
+                    Line(
+                        label = data.data?.informational?.symbol.orDash(),
+                        values = givenChartDataOnly,
+                        color = SolidColor(Color.Blue),
+                        firstGradientFillColor = Color.Blue.copy(alpha = 0.3f),
+                        secondGradientFillColor = Color.Transparent,
+                        strokeAnimationSpec = tween(2000, easing = EaseInOutCubic),
+                        gradientAnimationDelay = 1000,
+                        drawStyle = DrawStyle.Stroke(1.dp),
+                        curvedEdges = true
+                    )
+                )
+            },
+            animationMode = AnimationMode.Together(delayBuilder = {
+                it * 500L
+            })
+        )
         Text(
-            text = "Last refresh Mar 7, 2025 at 12:35 AM GMT+7", // From the image
+            text = data.data?.timeframe.orDash(),
+            modifier = Modifier.padding(start = 12.dp, bottom = 8.dp),
+            color = Color.Gray,
+            fontSize = 12.sp,
+            textAlign = TextAlign.Left
+        )
+
+        Text(
+            text = "Last refresh ${data.data?.lastRefreshed}",
             style = MaterialTheme.typography.bodySmall,
-            color = Color.Gray, // Gray for secondary info
+            color = Color.Gray,
             modifier = Modifier.padding(top = 8.dp)
         )
+
+
     }
 }
 
