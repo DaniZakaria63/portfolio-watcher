@@ -3,17 +3,40 @@ package dev.daniza.portfoliowatcher.model.selfhost
 import com.google.gson.annotations.SerializedName
 
 data class HomeDailyChartModel(
-    @SerializedName("metadata") val metadata: Metadata? = null,
-    @SerializedName("data") val data: List<DailyData>? = null
-)
+    @SerializedName("informational")
+    val informational: Informational,
 
-data class Metadata(
-    @SerializedName("information") val information: String? = null,
-    @SerializedName("symbol") val symbol: String? = null,
-    @SerializedName("last_refreshed") val last_refreshed: String? = null,
-    @SerializedName("output_size") val output_size: String? = null,
-    @SerializedName("timezone") val timezone: String? = null
-)
+    @SerializedName("last_refreshed")
+    val lastRefreshed: String,
+
+    @SerializedName("timeframe")
+    val timeframe: String,
+
+    @SerializedName("tickers")
+    val tickers: List<Ticker>
+){
+    data class Informational(
+        @SerializedName("symbol")
+        val symbol: String,
+
+        @SerializedName("current_price")
+        val currentPrice: Double,
+
+        @SerializedName("day_gain_price")
+        val dayGainPrice: Double,
+
+        @SerializedName("day_gain_percent")
+        val dayGainPercent: Double
+    )
+
+    data class Ticker(
+        @SerializedName("date")
+        val date: Long,  // Unix timestamp (seconds)
+
+        @SerializedName("price")
+        val price: Double
+    )
+}
 
 data class DailyData(
     @SerializedName("date") val date: Long? = null,

@@ -7,8 +7,7 @@ class GetHomeDailyChartInteractor @Inject constructor(
     private val homeSummaryRepository: HomeSummaryRepository
 ) {
     suspend operator fun invoke(
-        token: String,
         symbol: String,
         range: String
-    ) =  homeSummaryRepository.getHomeDailyChartData(token, symbol, range)
+    ) =  homeSummaryRepository.getHomeDailyChartData(symbol, range)
 }

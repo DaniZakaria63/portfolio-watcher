@@ -8,8 +8,10 @@ class HomeDailyChartDataState(
     val data: HomeDailyChartModel? = null,
 ) {
     sealed class RangeDate(val param: String) {
-        object DAILY : RangeDate("TIME_SERIES_DAILY")
-        object WEEKLY : RangeDate("TIME_SERIES_WEEKLY")
-        object MONTHLY : RangeDate("TIME_SERIES_MONTHLY")
+        object M15 : RangeDate("15m")
+        object H1 : RangeDate("1h")
+        object D1 : RangeDate("1d")
+        object W1 : RangeDate("1wk")
+        object Mo1 : RangeDate("1mo")
     }
 }

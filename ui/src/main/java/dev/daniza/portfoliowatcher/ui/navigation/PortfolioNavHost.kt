@@ -23,9 +23,8 @@ import androidx.paging.compose.collectAsLazyPagingItems
 import dev.daniza.portfoliowatcher.model.tokenmetrics.TokenSearchModel
 import dev.daniza.portfoliowatcher.ui.detail.DetailScreen
 import dev.daniza.portfoliowatcher.ui.home.HomeScreen
-import dev.daniza.portfoliowatcher.ui.list.ListScreen
 import dev.daniza.portfoliowatcher.ui.news.NewsScreen
-import dev.daniza.portfoliowatcher.ui.search.SearchScreen
+import dev.daniza.portfoliowatcher.ui.market.MarketScreen
 import kotlinx.coroutines.flow.flowOf
 
 @Composable
@@ -43,15 +42,12 @@ fun PortfolioNavHost(
                 navController.navigateToDetail(tokenId)
             })
         }
-        composable(route = ListDestination.route){
-            ListScreen()
-        }
         composable(route = NewsDestination.route) {
             NewsScreen()
         }
         composable(route = SearchDestination.route){
             val emptyTokenItems = flowOf(PagingData.empty<TokenSearchModel>())
-            SearchScreen(emptyTokenItems.collectAsLazyPagingItems())
+            MarketScreen(emptyTokenItems.collectAsLazyPagingItems())
         }
         composable(
             route = DetailDestination.routeWithArgs,

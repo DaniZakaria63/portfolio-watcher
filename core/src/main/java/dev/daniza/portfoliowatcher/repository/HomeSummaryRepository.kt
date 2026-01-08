@@ -18,7 +18,6 @@ interface HomeSummaryRepository {
     ) : Result<List<HomeDailySummaryModel>>
 
     suspend fun getHomeDailyChartData(
-        token: String,
         symbol: String,
         range: String
     ) : Result<HomeDailyChartModel>
@@ -48,13 +47,12 @@ class HomeSummaryRepositoryImpl @Inject constructor(
     }
 
     override suspend fun getHomeDailyChartData(
-        token: String,
         symbol: String,
         range: String
     ): Result<HomeDailyChartModel> {
         val response = withContext(Dispatchers.IO){
             Result.runCatching {
-                selfHostRemote.getHomeDailyChartData(token, symbol, range)
+                selfHostRemote.getHomeDailyChartData(symbol, range)
             }
         }
         if (response.isFailure) return Result.failure(

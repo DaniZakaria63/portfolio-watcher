@@ -14,7 +14,6 @@ interface SelfHostRemote {
     ) : SelfHostResponse<List<HomeDailySummaryModel>>
 
     suspend fun getHomeDailyChartData(
-        token: String,
         symbol: String,
         range: String
     ) : SelfHostResponse<HomeDailyChartModel>

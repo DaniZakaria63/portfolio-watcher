@@ -17,12 +17,12 @@ interface SelfHostRemoteEndpoint {
         @Body token: RequestBody
     ): SelfHostResponse<UserSession>
 
-    @POST("finance/intraday/summary")
+    @POST("/finance/intraday/summary")
     suspend fun getHomeDailySummaryData(
         @Body body: RequestBody
     ) : SelfHostResponse<List<HomeDailySummaryModel>>
 
-    @POST("/api/home-chart-daily")
+    @POST("/finance/intraday/chart")
     suspend fun getHomeDailyChartData(
         @Body body: RequestBody
     ) : SelfHostResponse<HomeDailyChartModel>

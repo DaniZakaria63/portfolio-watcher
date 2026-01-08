@@ -1,7 +1,5 @@
 package dev.daniza.portfoliowatcher.remote.selfhost
 
-import com.google.gson.Gson
-import dev.daniza.portfoliowatcher.model.parser.fromString
 import dev.daniza.portfoliowatcher.model.selfhost.HomeDailyChartModel
 import dev.daniza.portfoliowatcher.model.selfhost.HomeDailySummaryModel
 import dev.daniza.portfoliowatcher.model.selfhost.HomeRecommendation
@@ -29,16 +27,12 @@ class SelfHostService(
     }
 
     override suspend fun getHomeDailyChartData(
-        token: String,
         symbol: String,
         range: String
     ): SelfHostResponse<HomeDailyChartModel> {
         val body = JSONObject().apply {
-            put("token", token)
-            put("symbol", JSONArray().apply {
-                put(0, symbol) }
-            )
-            put("function", range)
+            put("timeframe", range)
+            put("symbol", symbol)
         }.toString()
         return selfHostRemoteEndpoint.getHomeDailyChartData(body.toRequestBody())
     }
