@@ -1,4 +1,4 @@
-package dev.daniza.portfoliowatcher.ui.search
+package dev.daniza.portfoliowatcher.ui.market
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -17,7 +17,7 @@ import androidx.paging.compose.itemKey
 import dev.daniza.portfoliowatcher.model.tokenmetrics.TokenSearchModel
 
 @Composable
-fun SearchScreen(
+fun MarketScreen(
     tokenItems: LazyPagingItems<TokenSearchModel>,
     modifier: Modifier = Modifier
 ) {

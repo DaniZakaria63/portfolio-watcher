@@ -11,6 +11,7 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import dev.daniza.portfoliowatcher.local.dao.NewsDao
+import dev.daniza.portfoliowatcher.local.dao.SmallStockDao
 import dev.daniza.portfoliowatcher.model.session.UserSession
 import javax.inject.Singleton
 
@@ -21,12 +22,19 @@ object LocalModule {
     @Singleton
     @Provides
     fun providePortfolioDatabase(@ApplicationContext context: Context) : PortfolioDatabase =
-        Room.databaseBuilder(context, PortfolioDatabase::class.java, PORTFOLIO_DATABASE_NAME).build()
+        Room.databaseBuilder(context, PortfolioDatabase::class.java, PORTFOLIO_DATABASE_NAME)
+            .fallbackToDestructiveMigration(dropAllTables = true)
+            .build()
 
     @Singleton
     @Provides
     fun provideNewsDao(portfolioDatabase: PortfolioDatabase): NewsDao =
         portfolioDatabase.newsDao()
+
+    @Singleton
+    @Provides
+    fun provideSmallStockDao(portfolioDatabase: PortfolioDatabase): SmallStockDao =
+        portfolioDatabase.smallStockDao()
 
     @Singleton
     @Provides

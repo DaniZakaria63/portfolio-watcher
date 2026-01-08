@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
 
 class ConnectivityObserverImpl(
-    val context: Context
+    private val context: Context
 ): ConnectivityObserver {
     private val connectivityManager = context.getSystemService<ConnectivityManager>()
 
@@ -43,10 +43,10 @@ class ConnectivityObserverImpl(
                     trySend(true)
                 }
             }
-            connectivityManager!!.registerDefaultNetworkCallback(callback)
+            connectivityManager?.registerDefaultNetworkCallback(callback)
 
             awaitClose {
-                connectivityManager.unregisterNetworkCallback(callback)
+                connectivityManager?.unregisterNetworkCallback(callback)
             }
         }
 }

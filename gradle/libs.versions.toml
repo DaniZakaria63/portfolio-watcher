@@ -1,5 +1,5 @@
 [versions]
-agp = "8.13.1"
+agp = "8.13.2"
 kotlin = "2.2.21"
 core-ktx = "1.17.0"
 junit = "4.13.2"
@@ -28,6 +28,8 @@ paging-compose = "3.3.6"
 coil = "2.7.0"
 datastore = "1.1.7"
 truth = "1.4.5"
+ui-text = "1.9.4"
+foundation = "1.9.5"
 
 [libraries]
 
@@ -52,9 +54,13 @@ ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
 ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 ui-animation = { group = "androidx.compose.animation", name= "animation" }
+ui-material = { group = "androidx.compose.material", name = "material" }
 material3 = { group = "androidx.compose.material3", name = "material3" }
 material-icons-core = { group = "androidx.compose.material", name="material-icons-core" }
 material-icons-extended = { group = "androidx.compose.material", name="material-icons-extended" }
+ui-foundation = { group = "androidx.compose.foundation", name = "foundation", version.ref = "foundation" }
+androidx-ui-text = { group = "androidx.compose.ui", name = "ui-text", version.ref = "ui-text" }
+androidx-ui-text-google-fonts = { group = "androidx.compose.ui", name = "ui-text-google-fonts", version.ref = "ui-text-google-fonts" }
 
 #KOTLIN COROUTINES
 coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines" }
@@ -94,7 +100,6 @@ truth = { group = "com.google.truth", name = "truth", version.ref = "truth" }
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
 ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
-androidx-ui-text-google-fonts = { group = "androidx.compose.ui", name = "ui-text-google-fonts", version.ref = "ui-text-google-fonts" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

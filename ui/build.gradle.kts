@@ -57,7 +57,6 @@ dependencies {
 
     implementation(libs.hilt.android)
     implementation(libs.hilt.navigation.compose)
-    implementation(libs.androidx.ui.text.google.fonts)
     ksp(libs.hilt.compiler)
 
     implementation(libs.coroutines.android)
@@ -79,6 +78,10 @@ dependencies {
     implementation(libs.ui.tooling)
     implementation(libs.ui.tooling.preview)
     implementation(libs.ui.animation)
+    implementation(libs.ui.material)
+    implementation(libs.ui.foundation)
+    implementation(libs.androidx.ui.text.google.fonts)
+    implementation(libs.androidx.ui.text)
     implementation(libs.material3)
     implementation(libs.material.icons.core)
     implementation(libs.material.icons.extended)

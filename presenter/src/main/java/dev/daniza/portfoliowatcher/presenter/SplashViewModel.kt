@@ -20,7 +20,6 @@ import dev.daniza.portfoliowatcher.interactor.get_session_token.GetSessionTokenI
 import dev.daniza.portfoliowatcher.interactor.set_session_token.SetSessionTokenInteractor
 import dev.daniza.portfoliowatcher.interactor.validate_session_token.ValidateSessionTokenInteractor
 import dev.daniza.portfoliowatcher.model.state.StateUI
-import dev.daniza.portfoliowatcher.model.state.StateUI.Loading
 import dev.daniza.portfoliowatcher.network.ConnectivityObserver
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableSharedFlow
@@ -45,7 +44,7 @@ class SplashViewModel @Inject constructor(
      * Observes the connectivity status of the device.
      * Shared as a Flow to be consumed by the UI.
      */
-    val connectionStatus get() = connectivityObserver.isConnected.shareIn(viewModelScope, started = SharingStarted.Lazily)
+    // val connectionStatus get() = connectivityObserver.isConnected.shareIn(viewModelScope, started = SharingStarted.Lazily)
 
     private val _tokenState: MutableSharedFlow<StateUI<Boolean>> = MutableSharedFlow()
     /**
@@ -66,12 +65,7 @@ class SplashViewModel @Inject constructor(
                 pushTokenServer(throwable.message.orEmpty().ifEmpty { "newbie" })
             }.collect { value ->
                 value.onSuccess {
-                    _tokenState.emit(
-                        value = StateUI(
-                            loading = Loading.DONE,
-                            data = false,
-                        )
-                    )
+                    _tokenState.emit(value = StateUI.Data(false))
                 }.onFailure {
                     pushTokenServer(it.message.orEmpty().ifEmpty { "newbie" })
                 }
@@ -96,16 +90,10 @@ class SplashViewModel @Inject constructor(
                     exception.message?.contains("HTTP 500") == true -> "Server error. Please try again later."
                     else -> exception.message.orEmpty().ifEmpty { "An unexpected error occurred" }
                 }
-                _tokenState.emit(StateUI(
-                        loading = Loading.ERROR,
-                        error = errorMessage
-                    ))
+                _tokenState.emit(value = StateUI.Error(Throwable(errorMessage)))
             }.onSuccess { value ->
                 withContext(Dispatchers.IO) { setSessionTokenInteractor(value.token) }
-                _tokenState.emit(StateUI(
-                    loading = Loading.DONE,
-                    data = true
-                ))
+                _tokenState.emit(StateUI.Data(value = true))
             }
 
         }

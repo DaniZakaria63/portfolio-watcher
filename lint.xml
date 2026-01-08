@@ -20,6 +20,7 @@
     <issue id="RtlHardcoded" severity="warning"/>
 
     <!-- Treat as informational -->
+    <issue id="NewerVersionAvailable" severity="informational" />
     <issue id="ObsoleteSdkInt" severity="informational"/>
     <issue id="NewApi" severity="informational"/>
     <issue id="GradleDependency" severity="informational"/>
