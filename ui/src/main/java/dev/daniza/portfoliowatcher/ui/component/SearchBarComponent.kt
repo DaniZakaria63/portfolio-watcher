@@ -1,15 +1,15 @@
-// /*
-//  * Portfolio Watcher - SearchBarFixed.kt
-//  *
-//  * Main Author: Dani Zakaria
-//  * Email: dani.zakaria@proton.me
-//  * GitHub: @danizakaria63
-//  * Created: November 2025
-//  * Last Modified: November 19, 2025
-//  *
-//  * Description: Search components for the portfolio watcher app including search bar, search dialog, and instrument items
-//  */
-//
+ /*
+  * Portfolio Watcher - SearchBarFixed.kt
+  *
+  * Main Author: Dani Zakaria
+  * Email: dani.zakaria@proton.me
+  * GitHub: @danizakaria63
+  * Created: November 2025
+  * Last Modified: November 19, 2025
+  *
+  * Description: Search components for the portfolio watcher app including search bar, search dialog, and instrument items
+  */
+
 package dev.daniza.portfoliowatcher.ui.component
 
 import androidx.compose.foundation.background
@@ -66,10 +66,10 @@ import kotlinx.coroutines.launch
 fun SearchBar(onSearchClick: () -> Unit) {
     Box(
         modifier = Modifier
-            .fillMaxWidth() // Take available width instead of weight
-            .clip(RoundedCornerShape(24.dp)) // Highly rounded corners
-            .background(Color.LightGray.copy(alpha = 0.3f)) // Light gray background
-            .clickable { onSearchClick() } // Trigger search dialog
+            .fillMaxWidth()
+            .clip(RoundedCornerShape(24.dp))
+            .background(Color.LightGray.copy(alpha = 0.3f))
+            .clickable { onSearchClick() }
             .padding(horizontal = 16.dp, vertical = 8.dp),
         contentAlignment = Alignment.CenterStart
     ) {
@@ -101,13 +101,13 @@ fun SearchBar(onSearchClick: () -> Unit) {
 fun GoldLabel(activeInstrument: String) {
     Box(
         modifier = Modifier
-            .clip(RoundedCornerShape(8.dp)) // Slightly less rounded than the search bar
-            .background(Color.Yellow) // Bright yellow background
+            .clip(RoundedCornerShape(8.dp))
+            .background(Color.Yellow)
             .padding(horizontal = 12.dp, vertical = 4.dp),
         contentAlignment = Alignment.Center
     ) {
         Text(
-            text = "GOLD", // Uppercase as shown
+            text = activeInstrument,
             style = MaterialTheme.typography.bodySmall,
             fontWeight = FontWeight.Bold,
             color = Color.Black
@@ -136,7 +136,6 @@ fun SearchDialog(
         initialValue = ModalBottomSheetValue.Expanded
     )
 
-    // Use a state to control the dialog visibility
     LaunchedEffect(Unit) {
         bottomSheetState.show()
     }
@@ -188,7 +187,6 @@ fun SearchDialog(
                         style = MaterialTheme.typography.headlineMedium.copy(fontWeight = FontWeight.Bold)
                     )
                     TextButton(onClick = {
-                        // Close the sheet and then dismiss the dialog
                         onDismiss()
                     }) {
                         Text("Done")

@@ -61,7 +61,8 @@ class HomeSummaryRepositoryImpl @Inject constructor(
         if(response.getOrNull()==null){
             return Result.failure(Exception("No data received from server"))
         }
-        return response.map { it.data!!  }
+
+        return response.map { it.data ?: throw Exception("No data received from server")}
     }
 
     override suspend fun getHomeRecommendation(): Result<HomeRecommendation> {

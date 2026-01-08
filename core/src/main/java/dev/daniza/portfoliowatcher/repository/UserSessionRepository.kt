@@ -47,7 +47,7 @@ class UserSessionRepositoryImpl @Inject constructor(
         }.map { preferences ->
             val userToken = preferences[stringPreferencesKey(UserSession.NAME)].orEmpty()
             if (userToken.isBlank()) {
-                Result.failure(Exception("You has no token"))
+                Result.failure(Exception("You have no token"))
             } else {
                 Result.success(
                     UserSession(token = userToken, updated_at = System.currentTimeMillis())

@@ -28,7 +28,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.ExpandLess
-import androidx.compose.material.icons.filled.ExpandMore
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material.icons.filled.StarBorder
 import androidx.compose.material3.Button
@@ -179,9 +178,9 @@ fun HomeScreen(
                 viewModel.categories.forEach { category ->
                     FilterButton(
                         text = category,
-                        isSelected = viewModel._currentDailyGainLoseSelectable.value == category,
+                        isSelected = viewModel.currentDailyGainLoseSelectable.value == category,
                         onClick = {
-                            viewModel._currentDailyGainLoseSelectable.value = category
+                            viewModel.updateTheGainLoseState(state = category)
                         }
                     )
                 }
@@ -217,7 +216,7 @@ fun HomeScreen(
 
     if(showSearchDialog) {
         SearchDialog(
-            onDismiss = { },
+            onDismiss = { showSearchDialog = false },
             onInstrumentSelected = { _ ->
                 // Handle selection, e.g., update active instrument
             },

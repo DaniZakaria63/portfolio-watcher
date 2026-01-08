@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
 
 class ConnectivityObserverImpl(
-    context: Context
+    private val context: Context
 ): ConnectivityObserver {
     private val connectivityManager = context.getSystemService<ConnectivityManager>()
 

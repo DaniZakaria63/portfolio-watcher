@@ -14,7 +14,6 @@ import dev.daniza.portfoliowatcher.interactor.get_session_token.GetSessionTokenI
 import dev.daniza.portfoliowatcher.interactor.process_small_stock_db.ProcessSmallStockInteractor
 import dev.daniza.portfoliowatcher.local.entity.SmallStockEntity
 import dev.daniza.portfoliowatcher.model.getCurrentTimeEpoch
-import dev.daniza.portfoliowatcher.model.orDash
 import dev.daniza.portfoliowatcher.model.selfhost.HomeDailySummaryModel
 import dev.daniza.portfoliowatcher.model.selfhost.HomeRecommendation
 import dev.daniza.portfoliowatcher.model.selfhost.Recommendation
@@ -27,7 +26,6 @@ import kotlinx.coroutines.async
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.WhileSubscribed
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.firstOrNull
@@ -35,8 +33,6 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
-import kotlin.time.Clock
-import kotlin.time.Instant
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
@@ -50,45 +46,57 @@ class HomeViewModel @Inject constructor(
     private var _currentFavoriteStockSymbols by mutableStateOf(emptyList<String>())
     private var currentTokenSession: UserSession? = null
 
-    private val _currentDailySummaryState : MutableStateFlow<List<HomeDailySummaryModel>> = MutableStateFlow(emptyList())
-    val currentDailySummaryState: StateFlow<List<HomeDailySummaryModel>> get() =
-        _currentDailySummaryState.stateIn(
-            scope = viewModelScope, started = SharingStarted.WhileSubscribed(), initialValue = emptyList()
-        )
+    private val _currentDailySummaryState: MutableStateFlow<List<HomeDailySummaryModel>> =
+        MutableStateFlow(emptyList())
+    val currentDailySummaryState: StateFlow<List<HomeDailySummaryModel>>
+        get() =
+            _currentDailySummaryState.stateIn(
+                scope = viewModelScope,
+                started = SharingStarted.WhileSubscribed(),
+                initialValue = emptyList()
+            )
 
-    private val _currentDailyChartState : MutableStateFlow<StateUI<HomeDailyChartDataState>> = MutableStateFlow(StateUI.Loading)
-    val currentDailyChartState: StateFlow<StateUI<HomeDailyChartDataState>> get() =
-        _currentDailyChartState.stateIn(
-            scope = viewModelScope, started = SharingStarted.WhileSubscribed(), initialValue = StateUI.Loading
-        )
+    private val _currentDailyChartState: MutableStateFlow<StateUI<HomeDailyChartDataState>> =
+        MutableStateFlow(StateUI.Loading)
+    val currentDailyChartState: StateFlow<StateUI<HomeDailyChartDataState>>
+        get() =
+            _currentDailyChartState.stateIn(
+                scope = viewModelScope,
+                started = SharingStarted.WhileSubscribed(),
+                initialValue = StateUI.Loading
+            )
 
-    val _currentDailyGainLoseSelectable: MutableStateFlow<String> = MutableStateFlow(categories[0])
-    private val _currentDailyGainLoseState: MutableStateFlow<StateUI<HomeRecommendation>>
-        = MutableStateFlow(StateUI.Loading)
-    val currentDailyDailyGainLoseState: StateFlow<StateUI<List<Recommendation.Quotes>>> get() =
-        combine(
-            _currentDailyGainLoseState,
-            _currentDailyGainLoseSelectable
-        ) { state, filter ->
-            when(state){
-                is StateUI.Data -> {
-                    val gainers = state.value.topGainers?.quotes.orEmpty()
-                    val losers = state.value.topLosers?.quotes.orEmpty()
+    val currentDailyGainLoseSelectable: MutableStateFlow<String> = MutableStateFlow(categories[0])
+    private val _currentDailyGainLoseState: MutableStateFlow<StateUI<HomeRecommendation>> =
+        MutableStateFlow(StateUI.Loading)
+    val currentDailyDailyGainLoseState: StateFlow<StateUI<List<Recommendation.Quotes>>>
+        get() =
+            combine(
+                _currentDailyGainLoseState,
+                currentDailyGainLoseSelectable
+            ) { state, filter ->
+                when (state) {
+                    is StateUI.Data -> {
+                        val gainers = state.value.topGainers?.quotes.orEmpty()
+                        val losers = state.value.topLosers?.quotes.orEmpty()
 
-                    val filteredData = when(filter){
-                        categories[1] -> gainers
-                        categories[2] -> losers
-                        categories[0] -> gainers + losers
-                        else -> emptyList<Recommendation.Quotes>()
+                        val filteredData = when (filter) {
+                            categories[1] -> gainers
+                            categories[2] -> losers
+                            categories[0] -> gainers + losers
+                            else -> emptyList<Recommendation.Quotes>()
+                        }
+                        StateUI.Data(filteredData)
                     }
-                    StateUI.Data(filteredData)
+
+                    is StateUI.Loading -> StateUI.Loading
+                    is StateUI.Error -> StateUI.Error(state.throwable)
                 }
-                is StateUI.Loading -> StateUI.Loading
-                is StateUI.Error -> StateUI.Error(state.throwable)
-            }
-        }.stateIn(
-            scope = viewModelScope, started = SharingStarted.WhileSubscribed(), initialValue = StateUI.Loading
-        )
+            }.stateIn(
+                scope = viewModelScope,
+                started = SharingStarted.WhileSubscribed(),
+                initialValue = StateUI.Loading
+            )
 
     init {
         this.getStockCacheList()
@@ -96,7 +104,7 @@ class HomeViewModel @Inject constructor(
         this.getHomeStockRecommendations()
     }
 
-    fun getHomeStockRecommendations(){
+    fun getHomeStockRecommendations() {
         viewModelScope.launch {
             getHomeRecommendationInteractor().onFailure {
                 Log.e(TAG, "getHomeStockRecommendations: ", it)
@@ -125,7 +133,7 @@ class HomeViewModel @Inject constructor(
                 Log.e(TAG, "getHomeDailySummaryData: ", exception)
             }.onSuccess {
                 _currentDailySummaryState.emit(value = it)
-                it.getOrNull(0)?.let { data->
+                it.getOrNull(0)?.let { data ->
                     getHomeDailyChartData(
                         symbol = data.symbol,
                         range = HomeDailyChartDataState.RangeDate.M15
@@ -141,7 +149,9 @@ class HomeViewModel @Inject constructor(
     ) {
         viewModelScope.launch {
             getHomeDailyChartInteractor(
-                symbol = symbol.orEmpty().ifEmpty { _currentFavoriteStockSymbols[0] },
+                symbol = symbol.orEmpty().ifEmpty {
+                    _currentFavoriteStockSymbols.firstOrNull().orEmpty().ifEmpty { "AAPL" }
+                },
                 range = range.param
             ).onFailure { exception ->
                 Log.e(TAG, "getHomeDailyChartData: ", exception)
@@ -177,20 +187,29 @@ class HomeViewModel @Inject constructor(
     }
 
     fun addStockWatchList(symbol: String) {
-        if(symbol in _currentFavoriteStockSymbols) return
+        if (symbol in _currentFavoriteStockSymbols) return
 
         viewModelScope.launch {
-            processSmallStockInteractor(1, SmallStockEntity(
-                name = symbol,
-                symbol = symbol,
-                type = symbol,
-                lastUpdated = getCurrentTimeEpoch()
-            )).onFailure {
+            processSmallStockInteractor(
+                action = 1,
+                data = SmallStockEntity(
+                    name = symbol,
+                    symbol = symbol,
+                    type = symbol,
+                    lastUpdated = getCurrentTimeEpoch()
+                )
+            ).onFailure {
                 Log.e(TAG, "addStockWatchList: ", it)
             }.onSuccess {
                 Log.i(TAG, "addStockWatchList: ADD STOCK SUCCESS $symbol")
                 getStockCacheList()
             }
+        }
+    }
+
+    fun updateTheGainLoseState(state: String) {
+        viewModelScope.launch {
+            currentDailyGainLoseSelectable.emit(state)
         }
     }
 }
