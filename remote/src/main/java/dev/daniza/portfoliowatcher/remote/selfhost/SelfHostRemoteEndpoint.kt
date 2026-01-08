@@ -17,7 +17,7 @@ interface SelfHostRemoteEndpoint {
         @Body token: RequestBody
     ): SelfHostResponse<UserSession>
 
-    @POST("/api/home-daily")
+    @POST("finance/intraday/summary")
     suspend fun getHomeDailySummaryData(
         @Body body: RequestBody
     ) : SelfHostResponse<List<HomeDailySummaryModel>>

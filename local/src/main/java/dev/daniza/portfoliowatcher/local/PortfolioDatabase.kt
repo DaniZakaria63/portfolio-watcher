@@ -14,16 +14,18 @@ package dev.daniza.portfoliowatcher.local
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import dev.daniza.portfoliowatcher.local.dao.InstrumentSmallDao
+import dev.daniza.portfoliowatcher.local.dao.SmallStockDao
 import dev.daniza.portfoliowatcher.local.dao.NewsDao
-import dev.daniza.portfoliowatcher.local.entity.InstrumentSmall
+import dev.daniza.portfoliowatcher.local.dao.StockDao
+import dev.daniza.portfoliowatcher.local.entity.SmallStockEntity
 import dev.daniza.portfoliowatcher.local.entity.NewsEntity
 import dev.daniza.portfoliowatcher.local.entity.StockEntity
 
 public const val PORTFOLIO_DATABASE_NAME = "theportfolio"
 
-@Database(entities = [InstrumentSmall::class, NewsEntity::class, StockEntity::class], version = 2, exportSchema = false)
+@Database(entities = [SmallStockEntity::class, NewsEntity::class, StockEntity::class], version = 5, exportSchema = false)
 abstract class PortfolioDatabase : RoomDatabase() {
-    abstract fun instrumentSmallDao(): InstrumentSmallDao
+    abstract fun smallStockDao(): SmallStockDao
     abstract fun newsDao(): NewsDao
+    abstract fun stockDao(): StockDao
 }

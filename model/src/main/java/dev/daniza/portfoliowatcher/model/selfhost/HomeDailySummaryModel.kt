@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 data class HomeDailySummaryModel(
     @SerializedName("candles")
-    val candles: List<HomeDailySummaryCandleModel>? = null,
+    val candles: List<Double>? = null,
 
     @SerializedName("name")
     val name: String? = null,
@@ -20,9 +20,4 @@ data class HomeDailySummaryModel(
 
     @SerializedName("current_price")
     val currentPrice: Double? = null,
-) {
-    data class HomeDailySummaryCandleModel(
-        @SerializedName("close_price")
-        val closePrice: Double? = null,
-    )
-}
+)

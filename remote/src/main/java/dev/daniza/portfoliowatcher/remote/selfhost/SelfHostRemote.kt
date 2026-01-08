@@ -10,7 +10,6 @@ interface SelfHostRemote {
     suspend fun checkTokenUserSession(token: String) : SelfHostResponse<UserSession>
 
     suspend fun getHomeDailySummaryData(
-        token: String,
         symbols: List<String>
     ) : SelfHostResponse<List<HomeDailySummaryModel>>
 
