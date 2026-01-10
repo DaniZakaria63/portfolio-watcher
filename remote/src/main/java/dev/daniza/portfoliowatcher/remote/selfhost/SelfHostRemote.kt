@@ -3,6 +3,7 @@ package dev.daniza.portfoliowatcher.remote.selfhost
 import dev.daniza.portfoliowatcher.model.selfhost.HomeDailyChartModel
 import dev.daniza.portfoliowatcher.model.selfhost.HomeDailySummaryModel
 import dev.daniza.portfoliowatcher.model.selfhost.HomeRecommendation
+import dev.daniza.portfoliowatcher.model.selfhost.MarketPopularModel
 import dev.daniza.portfoliowatcher.model.session.UserSession
 import dev.daniza.portfoliowatcher.remote.parser.SelfHostResponse
 
@@ -19,4 +20,6 @@ interface SelfHostRemote {
     ) : SelfHostResponse<HomeDailyChartModel>
 
     suspend fun getHomeRecommendation(): HomeRecommendation
+
+    suspend fun getMarketPopular(): SelfHostResponse<MarketPopularModel>
 }

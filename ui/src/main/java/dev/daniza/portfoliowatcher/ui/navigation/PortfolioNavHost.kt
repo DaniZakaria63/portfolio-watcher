@@ -18,14 +18,10 @@ import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.paging.PagingData
-import androidx.paging.compose.collectAsLazyPagingItems
-import dev.daniza.portfoliowatcher.model.tokenmetrics.TokenSearchModel
 import dev.daniza.portfoliowatcher.ui.detail.DetailScreen
 import dev.daniza.portfoliowatcher.ui.home.HomeScreen
-import dev.daniza.portfoliowatcher.ui.news.NewsScreen
 import dev.daniza.portfoliowatcher.ui.market.MarketScreen
-import kotlinx.coroutines.flow.flowOf
+import dev.daniza.portfoliowatcher.ui.news.NewsScreen
 
 @Composable
 fun PortfolioNavHost(
@@ -46,8 +42,7 @@ fun PortfolioNavHost(
             NewsScreen()
         }
         composable(route = SearchDestination.route){
-            val emptyTokenItems = flowOf(PagingData.empty<TokenSearchModel>())
-            MarketScreen(emptyTokenItems.collectAsLazyPagingItems())
+            MarketScreen()
         }
         composable(
             route = DetailDestination.routeWithArgs,

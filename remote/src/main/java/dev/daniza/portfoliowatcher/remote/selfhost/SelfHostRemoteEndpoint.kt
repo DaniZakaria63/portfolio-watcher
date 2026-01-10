@@ -3,6 +3,7 @@ package dev.daniza.portfoliowatcher.remote.selfhost
 import dev.daniza.portfoliowatcher.model.selfhost.HomeDailyChartModel
 import dev.daniza.portfoliowatcher.model.selfhost.HomeDailySummaryModel
 import dev.daniza.portfoliowatcher.model.selfhost.HomeRecommendation
+import dev.daniza.portfoliowatcher.model.selfhost.MarketPopularModel
 import dev.daniza.portfoliowatcher.model.session.UserSession
 import dev.daniza.portfoliowatcher.remote.parser.SelfHostResponse
 import okhttp3.RequestBody
@@ -26,6 +27,9 @@ interface SelfHostRemoteEndpoint {
     suspend fun getHomeDailyChartData(
         @Body body: RequestBody
     ) : SelfHostResponse<HomeDailyChartModel>
+
+    @POST("/finance/market/popular")
+    suspend fun getMarketPopularData() : SelfHostResponse<MarketPopularModel>
 
     @GET("/finance/recommendation")
     suspend fun getHomeRecommendation() : HomeRecommendation
