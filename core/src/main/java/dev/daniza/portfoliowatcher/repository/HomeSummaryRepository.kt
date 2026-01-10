@@ -2,6 +2,7 @@ package dev.daniza.portfoliowatcher.repository
 
 import dev.daniza.portfoliowatcher.local.dao.SmallStockDao
 import dev.daniza.portfoliowatcher.local.entity.SmallStockEntity
+import dev.daniza.portfoliowatcher.model.exception.NoDataException
 import dev.daniza.portfoliowatcher.model.selfhost.HomeDailyChartModel
 import dev.daniza.portfoliowatcher.model.selfhost.HomeDailySummaryModel
 import dev.daniza.portfoliowatcher.model.selfhost.HomeRecommendation
@@ -22,7 +23,7 @@ interface HomeSummaryRepository {
         range: String
     ) : Result<HomeDailyChartModel>
 
-    suspend fun getHomeRecommendation(): Result<HomeRecommendation>
+    suspend fun getHomeRecommendation(isUseChart: Boolean): Result<HomeRecommendation>
 
     suspend fun getMarketRecommendation(): Result<MarketPopularModel>
 
@@ -67,22 +68,14 @@ class HomeSummaryRepositoryImpl @Inject constructor(
         return response.map { it.data ?: throw Exception("No data received from server")}
     }
 
-    override suspend fun getHomeRecommendation(): Result<HomeRecommendation> {
-        val response = withContext(Dispatchers.IO){
-            Result.runCatching {
-                selfHostRemote.getHomeRecommendation()
+    override suspend fun getHomeRecommendation(isUseChart: Boolean): Result<HomeRecommendation> {
+        return runCatching {
+            withContext(Dispatchers.IO){
+                selfHostRemote.getHomeRecommendation(isUseChart)
             }
+        }.mapCatching { response ->
+            response.data ?: throw NoDataException()
         }
-
-        if (response.isFailure) return Result.failure(
-            response.exceptionOrNull() ?: Exception("Failed to get home daily chart data from server")
-        )
-
-        if(response.getOrNull()==null){
-            return Result.failure(Exception("No data received from server"))
-        }
-
-        return response
     }
 
     override suspend fun processTheStock(action: Int, data: SmallStockEntity?): Result<List<SmallStockEntity>?> {

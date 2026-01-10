@@ -100,15 +100,6 @@ fun HomeScreen(
     val coroutineScope = rememberCoroutineScope()
     val dailySummaryChart by viewModel.currentDailySummaryState.collectAsStateWithLifecycle()
     var showSearchDialog by remember { mutableStateOf(false) }
-    val sampleSelectedChartData = remember {
-        FavoriteHomeUIModel(
-            id = "sample",
-            name = "Sample",
-            price = "$1000",
-            changePercent = "+5%",
-            fullChartData = listOf(30.0, 100.0, 148.0, 155.0, 74.0, 120.0, 74.0, 50.0, 10.0, 40.0)
-        )
-    }
     val currentDailyDailyGainLoseState by viewModel.currentDailyDailyGainLoseState.collectAsStateWithLifecycle()
     val currentDailyChartData by viewModel.currentDailyChartState.collectAsStateWithLifecycle()
 

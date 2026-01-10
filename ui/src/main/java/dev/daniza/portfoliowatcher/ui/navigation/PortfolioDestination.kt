@@ -40,11 +40,11 @@ object NewsDestination : BaseDestination {
 
 }
 
-object ListDestination: BaseDestination {
+object MarketDestination: BaseDestination {
     override val icon: ImageVector
         get() = Icons.AutoMirrored.Filled.List
     override val route: String
-        get() = NavigationTarget.LIST.label
+        get() = NavigationTarget.MARKET.label
 }
 
 object SearchDestination: BaseDestination {

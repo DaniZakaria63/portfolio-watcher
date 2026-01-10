@@ -6,5 +6,5 @@ import javax.inject.Inject
 class GetHomeRecommendationInteractor @Inject constructor(
     private val homeSummaryRepository: HomeSummaryRepository
 ) {
-    suspend operator fun invoke() = homeSummaryRepository.getHomeRecommendation()
+    suspend operator fun invoke(isUseChart: Boolean = false) = homeSummaryRepository.getHomeRecommendation(isUseChart)
 }

@@ -83,7 +83,7 @@ class MarketViewModel @Inject constructor(
 
     fun getCurrentMarketRecommendation(){
         viewModelScope.launch {
-            getHomeRecommendationInteractor()
+            getHomeRecommendationInteractor(isUseChart = true)
                 .onSuccess {
                     _currentMarketRecommendation.emit(StateUI.Data(it))
                 }.onFailure {

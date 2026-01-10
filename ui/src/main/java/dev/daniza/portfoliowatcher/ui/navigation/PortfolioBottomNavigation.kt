@@ -12,8 +12,9 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 
 val navigationItems = listOf<BaseDestination>(
     HomeDestination,
+    MarketDestination,
     NewsDestination,
-    ListDestination,
+    MarketDestination,
 )
 
 @Composable

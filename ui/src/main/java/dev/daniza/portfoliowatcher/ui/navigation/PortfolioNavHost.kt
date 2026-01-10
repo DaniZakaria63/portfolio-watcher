@@ -38,11 +38,11 @@ fun PortfolioNavHost(
                 navController.navigateToDetail(tokenId)
             })
         }
+        composable(route = MarketDestination.route){
+            MarketScreen()
+        }
         composable(route = NewsDestination.route) {
             NewsScreen()
-        }
-        composable(route = SearchDestination.route){
-            MarketScreen()
         }
         composable(
             route = DetailDestination.routeWithArgs,

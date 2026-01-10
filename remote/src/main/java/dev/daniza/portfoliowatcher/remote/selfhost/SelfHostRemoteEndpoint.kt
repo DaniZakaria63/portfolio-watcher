@@ -10,6 +10,7 @@ import okhttp3.RequestBody
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Query
 
 interface SelfHostRemoteEndpoint {
 
@@ -28,9 +29,11 @@ interface SelfHostRemoteEndpoint {
         @Body body: RequestBody
     ) : SelfHostResponse<HomeDailyChartModel>
 
-    @POST("/finance/market/popular")
+    @GET("/finance/market/popular")
     suspend fun getMarketPopularData() : SelfHostResponse<MarketPopularModel>
 
     @GET("/finance/recommendation")
-    suspend fun getHomeRecommendation() : HomeRecommendation
+    suspend fun getHomeRecommendation(
+        @Query("include_chart") isUseChart: Boolean
+    ) : SelfHostResponse<HomeRecommendation>
 }

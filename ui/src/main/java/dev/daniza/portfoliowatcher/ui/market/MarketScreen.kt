@@ -28,9 +28,10 @@ fun MarketScreen(
     LazyColumn(
         state = rememberLazyState
     ){
-        when(marketPopular){
+
+        when(marketRecommendation){
             is StateUI.Data -> {
-                val currentData = (marketPopular as StateUI.Data<List<MarketPopularModel.SmallQuote>>).value
+                val currentData = (marketRecommendation as StateUI.Data<List<Recommendation.Quotes>>).value
                 items(count = currentData.size){
 
                 }
@@ -41,9 +42,9 @@ fun MarketScreen(
             is StateUI.Loading-> {}
         }
 
-        when(marketRecommendation){
+        when(marketPopular){
             is StateUI.Data -> {
-                val currentData = (marketRecommendation as StateUI.Data<List<Recommendation.Quotes>>).value
+                val currentData = (marketPopular as StateUI.Data<List<MarketPopularModel.SmallQuote>>).value
                 items(count = currentData.size){
 
                 }

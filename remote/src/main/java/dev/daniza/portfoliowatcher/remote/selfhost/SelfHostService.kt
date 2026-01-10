@@ -38,8 +38,8 @@ class SelfHostService(
         return selfHostRemoteEndpoint.getHomeDailyChartData(body.toRequestBody())
     }
 
-    override suspend fun getHomeRecommendation(): HomeRecommendation {
-        return selfHostRemoteEndpoint.getHomeRecommendation()
+    override suspend fun getHomeRecommendation(isUseChart: Boolean): SelfHostResponse<HomeRecommendation> {
+        return selfHostRemoteEndpoint.getHomeRecommendation(isUseChart)
     }
 
     override suspend fun getMarketPopular(): SelfHostResponse<MarketPopularModel> {
