@@ -30,6 +30,7 @@ datastore = "1.1.7"
 truth = "1.4.5"
 ui-text = "1.9.4"
 foundation = "1.9.5"
+core-splashscreen = "1.2.0"
 
 [libraries]
 
@@ -60,6 +61,7 @@ material-icons-core = { group = "androidx.compose.material", name="material-icon
 material-icons-extended = { group = "androidx.compose.material", name="material-icons-extended" }
 ui-foundation = { group = "androidx.compose.foundation", name = "foundation", version.ref = "foundation" }
 androidx-ui-text = { group = "androidx.compose.ui", name = "ui-text", version.ref = "ui-text" }
+androidx-core-splashscreen = { module = "androidx.core:core-splashscreen", version.ref = "core-splashscreen" }
 androidx-ui-text-google-fonts = { group = "androidx.compose.ui", name = "ui-text-google-fonts", version.ref = "ui-text-google-fonts" }
 
 #KOTLIN COROUTINES
