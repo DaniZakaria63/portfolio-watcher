@@ -22,4 +22,6 @@ interface SelfHostRemote {
     suspend fun getHomeRecommendation(isUseChart: Boolean): SelfHostResponse<HomeRecommendation>
 
     suspend fun getMarketPopular(): SelfHostResponse<MarketPopularModel>
+
+    suspend fun getSearchStock(query: String): SelfHostResponse<List<MarketPopularModel.SmallQuote>>
 }

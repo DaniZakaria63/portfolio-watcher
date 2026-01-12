@@ -45,4 +45,8 @@ class SelfHostService(
     override suspend fun getMarketPopular(): SelfHostResponse<MarketPopularModel> {
         return selfHostRemoteEndpoint.getMarketPopularData()
     }
+
+    override suspend fun getSearchStock(query: String): SelfHostResponse<List<MarketPopularModel.SmallQuote>> {
+        return selfHostRemoteEndpoint.getSearchStock(query)
+    }
 }

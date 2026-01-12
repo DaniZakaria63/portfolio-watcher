@@ -28,6 +28,8 @@ interface HomeSummaryRepository {
     suspend fun getMarketRecommendation(): Result<MarketPopularModel>
 
     suspend fun processTheStock(action: Int = 0, data: SmallStockEntity?): Result<List<SmallStockEntity>?>
+
+    suspend fun getSearchStock(query: String): Result<List<MarketPopularModel.SmallQuote>>
 }
 
 class HomeSummaryRepositoryImpl @Inject constructor(
@@ -36,8 +38,8 @@ class HomeSummaryRepositoryImpl @Inject constructor(
 ) : HomeSummaryRepository {
 
     override suspend fun getHomeDailySummaryData(token: String, symbols: List<String>): Result<List<HomeDailySummaryModel>> {
-        val response = withContext(Dispatchers.IO) {
-            Result.runCatching {
+        val response = Result.runCatching {
+            withContext(Dispatchers.IO) {
                 selfHostRemote.getHomeDailySummaryData(symbols)
             }
         }
@@ -53,8 +55,8 @@ class HomeSummaryRepositoryImpl @Inject constructor(
         symbol: String,
         range: String
     ): Result<HomeDailyChartModel> {
-        val response = withContext(Dispatchers.IO){
-            Result.runCatching {
+        val response = Result.runCatching {
+            withContext(Dispatchers.IO){
                 selfHostRemote.getHomeDailyChartData(symbol, range)
             }
         }
@@ -105,16 +107,26 @@ class HomeSummaryRepositoryImpl @Inject constructor(
     }
 
     override suspend fun getMarketRecommendation(): Result<MarketPopularModel> {
-        val response = withContext(Dispatchers.IO){
-            Result.runCatching {
+        val response = Result.runCatching {
+            withContext(Dispatchers.IO){
                 selfHostRemote.getMarketPopular()
+                }
             }
-        }
 
         if (response.isFailure) return Result.failure(
             response.exceptionOrNull() ?: Exception("Failed to get home daily chart data from server")
         )
 
         return response.mapCatching{ it.data?:throw Exception("No data received from server") }
+    }
+
+    override suspend fun getSearchStock(query: String): Result<List<MarketPopularModel.SmallQuote>> {
+        return runCatching {
+            withContext(Dispatchers.IO){
+                selfHostRemote.getSearchStock(query)
+            }
+        }.mapCatching {
+            it.data ?: throw NoDataException()
+        }
     }
 }

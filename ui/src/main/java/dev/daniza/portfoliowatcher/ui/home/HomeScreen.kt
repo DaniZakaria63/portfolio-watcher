@@ -95,11 +95,11 @@ import kotlinx.coroutines.launch
 @Composable
 fun HomeScreen(
     viewModel: HomeViewModel = hiltViewModel(),
+    onNavigationToMarket: () -> Unit,
     onNavigateToDetail: (String) -> Unit,
 ) {
     val coroutineScope = rememberCoroutineScope()
     val dailySummaryChart by viewModel.currentDailySummaryState.collectAsStateWithLifecycle()
-    var showSearchDialog by remember { mutableStateOf(false) }
     val currentDailyDailyGainLoseState by viewModel.currentDailyDailyGainLoseState.collectAsStateWithLifecycle()
     val currentDailyChartData by viewModel.currentDailyChartState.collectAsStateWithLifecycle()
 
@@ -111,7 +111,7 @@ fun HomeScreen(
     ) {
         item {
             TopAppBar(
-                onSearchClick = { showSearchDialog = true},
+                onSearchClick = onNavigationToMarket,
                 activeInstrument = "GOLD",
             )
         }
@@ -203,22 +203,6 @@ fun HomeScreen(
             }
         }
 
-    }
-
-    if(showSearchDialog) {
-        SearchDialog(
-            onDismiss = { showSearchDialog = false },
-            onInstrumentSelected = { _ ->
-                // Handle selection, e.g., update active instrument
-            },
-            initialInstruments = listOf(
-                Instrument("CRWD", "CrowdStrike Holdings", "Equity", 390.16, 1.94),
-                Instrument("BBY", "Best Buy Co.", "Equity", 75.20, -13.30),
-                Instrument("ES=F", "E-Mini S&P 500 Mar 25", "Futures", 5829.25, 0.69),
-                Instrument("CRDO", "Ceridian HCM Holding", "Equity", 54.32, 7.74),
-                Instrument("MSTR", "MicroStrategy Inc.", "Equity", 275.15, 9.66)
-            )
-        )
     }
 }
 

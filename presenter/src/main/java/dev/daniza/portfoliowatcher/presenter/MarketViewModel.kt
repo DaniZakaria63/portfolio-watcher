@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dev.daniza.portfoliowatcher.interactor.get_home_recommendation.GetHomeRecommendationInteractor
 import dev.daniza.portfoliowatcher.interactor.get_market_recommendation.GetMarketRecommendationInteractor
+import dev.daniza.portfoliowatcher.interactor.get_market_search.GetMarketSearchInteractor
 import dev.daniza.portfoliowatcher.model.selfhost.HomeRecommendation
 import dev.daniza.portfoliowatcher.model.selfhost.MarketPopularModel
 import dev.daniza.portfoliowatcher.model.selfhost.Recommendation
@@ -23,6 +24,7 @@ import javax.inject.Inject
 class MarketViewModel @Inject constructor(
     private val getMarketRecommendationInteractor: GetMarketRecommendationInteractor,
     private val getHomeRecommendationInteractor: GetHomeRecommendationInteractor,
+    private val getMarketSearchInteractor: GetMarketSearchInteractor,
 ) : ViewModel(){
     private val popCategories = listOf("Trending", "Big Capital", "Small Capital", "Most Active")
     val currentPopMarketSelectable: MutableStateFlow<String> = MutableStateFlow(popCategories[0])

@@ -36,4 +36,9 @@ interface SelfHostRemoteEndpoint {
     suspend fun getHomeRecommendation(
         @Query("include_chart") isUseChart: Boolean
     ) : SelfHostResponse<HomeRecommendation>
+
+    @POST("")
+    suspend fun getSearchStock(
+        @Query("q") query: String
+    ): SelfHostResponse<List<MarketPopularModel.SmallQuote>>
 }

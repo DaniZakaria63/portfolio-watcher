@@ -18,6 +18,7 @@ import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import dev.daniza.portfoliowatcher.model.orDash
 import dev.daniza.portfoliowatcher.ui.detail.DetailScreen
 import dev.daniza.portfoliowatcher.ui.home.HomeScreen
 import dev.daniza.portfoliowatcher.ui.market.MarketScreen
@@ -34,12 +35,18 @@ fun PortfolioNavHost(
         modifier = modifier,
     ){
         composable(route = HomeDestination.route){
-            HomeScreen(onNavigateToDetail = { tokenId ->
+            HomeScreen(onNavigationToMarket = {
+                navController.navigateSingleTopTo(MarketDestination.routeWithArgs)
+            }, onNavigateToDetail = { tokenId ->
                 navController.navigateToDetail(tokenId)
             })
         }
-        composable(route = MarketDestination.route){
-            MarketScreen()
+        composable(
+            route = MarketDestination.routeWithArgs,
+            arguments = MarketDestination.arguments
+        ){ navBackStackEntry ->
+            val argType = navBackStackEntry.arguments?.getString(MarketDestination.activationArgs).orDash()
+            MarketScreen(isActivation = argType == MarketDestination.activationArgs)
         }
         composable(route = NewsDestination.route) {
             NewsScreen()
@@ -48,8 +55,8 @@ fun PortfolioNavHost(
             route = DetailDestination.routeWithArgs,
             arguments = DetailDestination.arguments,
         ){ navBackStackEntry: NavBackStackEntry ->
-            val tokenId = navBackStackEntry.arguments?.getString(DetailDestination.detailIdArgs)
-            DetailScreen()
+            val stockSymbol = navBackStackEntry.arguments?.getString(DetailDestination.detailIdArgs)
+            DetailScreen(stockSymbol = stockSymbol.orDash())
         }
     }
 }
