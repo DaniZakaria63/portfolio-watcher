@@ -50,13 +50,13 @@ import androidx.compose.ui.window.DialogProperties
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import dev.daniza.portfoliowatcher.model.parser.isTrue
 import dev.daniza.portfoliowatcher.model.state.StateUI
-import dev.daniza.portfoliowatcher.presenter.SplashViewModel
+import dev.daniza.portfoliowatcher.presenter.MainViewModel
 import dev.daniza.portfoliowatcher.ui.R
 import kotlinx.coroutines.launch
 
 @Composable
 fun SplashScreen(
-    viewModel: SplashViewModel = hiltViewModel(),
+    viewModel: MainViewModel = hiltViewModel(),
     onNavigateToHome: () -> Unit
 ) {
     val coroutineScope = rememberCoroutineScope()
@@ -134,7 +134,7 @@ fun SplashScreen(
             }
 
             tokenStateUI is StateUI.Data && (tokenStateUI as StateUI.Data).value.isTrue() -> {
-                WelcomeScreen(onContinue = { onNavigateToHome() })
+                WelcomeScreen(onContinue = onNavigateToHome)
             }
 
             else -> {

@@ -22,6 +22,7 @@ import dev.daniza.portfoliowatcher.interactor.validate_session_token.ValidateSes
 import dev.daniza.portfoliowatcher.model.state.StateUI
 import dev.daniza.portfoliowatcher.network.ConnectivityObserver
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.SharingStarted
@@ -33,7 +34,7 @@ import javax.inject.Inject
 
 
 @HiltViewModel
-class SplashViewModel @Inject constructor(
+class MainViewModel @Inject constructor(
     private val getSessionTokenInteractor: GetSessionTokenInteractor,
     private val validateSessionTokenInteractor: ValidateSessionTokenInteractor,
     private val setSessionTokenInteractor: SetSessionTokenInteractor,
@@ -53,6 +54,10 @@ class SplashViewModel @Inject constructor(
      */
     val tokenState: SharedFlow<StateUI<Boolean>> = _tokenState
         .shareIn(viewModelScope, started = SharingStarted.WhileSubscribed())
+
+    init {
+        this.getCurrentSession()
+    }
 
     /**
      * Retrieves the current session token.
@@ -96,6 +101,12 @@ class SplashViewModel @Inject constructor(
                 _tokenState.emit(StateUI.Data(value = true))
             }
 
+        }
+    }
+
+    fun updateTokenValue(state: Boolean) {
+        viewModelScope.launch {
+            _tokenState.emit(StateUI.Data(state))
         }
     }
 }
