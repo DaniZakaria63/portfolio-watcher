@@ -2,4 +2,11 @@
 <resources>
 
     <style name="Theme.PortfolioWatcher" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <style name="Theme.PortfolioWatcher.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@android:color/white</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/img_app</item>
+        <item name="windowSplashScreenAnimationDuration">1000</item>
+        <item name="postSplashScreenTheme">@style/Theme.PortfolioWatcher</item>
+    </style>
 </resources>

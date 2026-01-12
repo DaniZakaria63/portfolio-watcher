@@ -61,6 +61,7 @@ dependencies {
 
     implementation(libs.coroutines.android)
     implementation(libs.coroutines.core)
+    implementation(libs.androidx.core.splashscreen)
 
     implementation(libs.core.ktx)
     implementation(libs.activity.compose)
