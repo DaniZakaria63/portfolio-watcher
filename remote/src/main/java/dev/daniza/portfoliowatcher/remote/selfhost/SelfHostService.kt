@@ -3,6 +3,7 @@ package dev.daniza.portfoliowatcher.remote.selfhost
 import dev.daniza.portfoliowatcher.model.selfhost.HomeDailyChartModel
 import dev.daniza.portfoliowatcher.model.selfhost.HomeDailySummaryModel
 import dev.daniza.portfoliowatcher.model.selfhost.HomeRecommendation
+import dev.daniza.portfoliowatcher.model.selfhost.MarketPopularModel
 import dev.daniza.portfoliowatcher.model.session.UserSession
 import dev.daniza.portfoliowatcher.remote.parser.SelfHostResponse
 import okhttp3.RequestBody.Companion.toRequestBody
@@ -37,7 +38,15 @@ class SelfHostService(
         return selfHostRemoteEndpoint.getHomeDailyChartData(body.toRequestBody())
     }
 
-    override suspend fun getHomeRecommendation(): HomeRecommendation {
-        return selfHostRemoteEndpoint.getHomeRecommendation()
+    override suspend fun getHomeRecommendation(isUseChart: Boolean): SelfHostResponse<HomeRecommendation> {
+        return selfHostRemoteEndpoint.getHomeRecommendation(isUseChart)
+    }
+
+    override suspend fun getMarketPopular(): SelfHostResponse<MarketPopularModel> {
+        return selfHostRemoteEndpoint.getMarketPopularData()
+    }
+
+    override suspend fun getSearchStock(query: String): SelfHostResponse<List<MarketPopularModel.SmallQuote>> {
+        return selfHostRemoteEndpoint.getSearchStock(query)
     }
 }

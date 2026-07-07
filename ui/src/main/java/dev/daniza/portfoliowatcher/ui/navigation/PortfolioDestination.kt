@@ -10,6 +10,7 @@ import androidx.navigation.NavType
 import androidx.navigation.navArgument
 import androidx.navigation.navDeepLink
 import dev.daniza.portfoliowatcher.model.navigation.NavigationTarget
+import dev.daniza.portfoliowatcher.ui.navigation.DetailDestination.detailIdArgs
 
 interface BaseDestination {
     val icon: ImageVector
@@ -40,11 +41,21 @@ object NewsDestination : BaseDestination {
 
 }
 
-object ListDestination: BaseDestination {
+object MarketDestination: BaseDestination {
     override val icon: ImageVector
         get() = Icons.AutoMirrored.Filled.List
     override val route: String
-        get() = NavigationTarget.LIST.label
+        get() = "$defaultRoute/{$activationArgs}"
+
+    const val activationArgs = "activation"
+    val defaultRoute = NavigationTarget.MARKET.label
+
+    val arguments = listOf(
+        navArgument(detailIdArgs) {
+            type = NavType.StringType
+            defaultValue = ""
+        }
+    )
 }
 
 object SearchDestination: BaseDestination {
@@ -60,7 +71,7 @@ object DetailDestination: BaseDestination {
     override val route: String
         get() = NavigationTarget.DETAIL.label
 
-    val detailIdArgs = "token_id"
+    const val detailIdArgs = "token_id"
     val routeWithArgs ="$route/{$detailIdArgs}"
 
     val arguments = listOf(

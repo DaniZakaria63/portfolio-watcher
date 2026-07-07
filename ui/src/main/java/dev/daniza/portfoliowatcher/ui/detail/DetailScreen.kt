@@ -15,7 +15,9 @@ import dev.daniza.portfoliowatcher.ui.component.LineChartCompose
 import dev.daniza.portfoliowatcher.ui.theme.PortfolioWatcherTheme
 
 @Composable
-fun DetailScreen() {
+fun DetailScreen(
+    stockSymbol: String,
+) {
 
 }
 

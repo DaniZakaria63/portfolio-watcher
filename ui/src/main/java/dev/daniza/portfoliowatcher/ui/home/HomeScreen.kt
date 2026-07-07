@@ -72,6 +72,7 @@ import dev.daniza.portfoliowatcher.model.state.StateUI
 import dev.daniza.portfoliowatcher.presenter.HomeViewModel
 import dev.daniza.portfoliowatcher.presenter.state.HomeDailyChartDataState
 import dev.daniza.portfoliowatcher.ui.component.AvatarCircle
+import dev.daniza.portfoliowatcher.ui.component.FilterButton
 import dev.daniza.portfoliowatcher.ui.component.GoldLabel
 import dev.daniza.portfoliowatcher.ui.component.Instrument
 import dev.daniza.portfoliowatcher.ui.component.InstrumentListItem
@@ -95,20 +96,11 @@ import kotlinx.coroutines.launch
 @Composable
 fun HomeScreen(
     viewModel: HomeViewModel = hiltViewModel(),
+    onNavigationToMarket: () -> Unit,
     onNavigateToDetail: (String) -> Unit,
 ) {
     val coroutineScope = rememberCoroutineScope()
     val dailySummaryChart by viewModel.currentDailySummaryState.collectAsStateWithLifecycle()
-    var showSearchDialog by remember { mutableStateOf(false) }
-    val sampleSelectedChartData = remember {
-        FavoriteHomeUIModel(
-            id = "sample",
-            name = "Sample",
-            price = "$1000",
-            changePercent = "+5%",
-            fullChartData = listOf(30.0, 100.0, 148.0, 155.0, 74.0, 120.0, 74.0, 50.0, 10.0, 40.0)
-        )
-    }
     val currentDailyDailyGainLoseState by viewModel.currentDailyDailyGainLoseState.collectAsStateWithLifecycle()
     val currentDailyChartData by viewModel.currentDailyChartState.collectAsStateWithLifecycle()
 
@@ -120,7 +112,7 @@ fun HomeScreen(
     ) {
         item {
             TopAppBar(
-                onSearchClick = { showSearchDialog = true},
+                onSearchClick = onNavigationToMarket,
                 activeInstrument = "GOLD",
             )
         }
@@ -212,22 +204,6 @@ fun HomeScreen(
             }
         }
 
-    }
-
-    if(showSearchDialog) {
-        SearchDialog(
-            onDismiss = { showSearchDialog = false },
-            onInstrumentSelected = { _ ->
-                // Handle selection, e.g., update active instrument
-            },
-            initialInstruments = listOf(
-                Instrument("CRWD", "CrowdStrike Holdings", "Equity", 390.16, 1.94),
-                Instrument("BBY", "Best Buy Co.", "Equity", 75.20, -13.30),
-                Instrument("ES=F", "E-Mini S&P 500 Mar 25", "Futures", 5829.25, 0.69),
-                Instrument("CRDO", "Ceridian HCM Holding", "Equity", 54.32, 7.74),
-                Instrument("MSTR", "MicroStrategy Inc.", "Equity", 275.15, 9.66)
-            )
-        )
     }
 }
 
@@ -370,33 +346,6 @@ fun PortfolioSummary(
     }
 }
 
-@Composable
-private fun FilterButton(
-    text: String,
-    isSelected: Boolean,
-    onClick: () -> Unit
-) {
-    val shape = RoundedCornerShape(20.dp)
-    val backgroundColor = if (isSelected) Color.Black else Color.White
-    val textColor = if (isSelected) Color.White else Color.Black
-    val border = if (isSelected) BorderStroke(0.dp, Color.Transparent) else BorderStroke(1.dp, Color.LightGray)
-
-    Button(
-        onClick = onClick,
-        shape = shape,
-        colors = ButtonDefaults.buttonColors(containerColor = backgroundColor),
-        border = border,
-        contentPadding = PaddingValues(horizontal = 12.dp, vertical = 4.dp),
-        modifier = Modifier.wrapContentSize(Alignment.Center)
-    ) {
-        Text(
-            text = text,
-            color = textColor,
-            style = MaterialTheme.typography.bodyMedium,
-            fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Normal
-        )
-    }
-}
 
 @Composable
 fun FinancialListItem(

@@ -1,6 +1,9 @@
 package dev.daniza.portfoliowatcher.model.selfhost
 
 import com.google.gson.annotations.SerializedName
+import dev.daniza.portfoliowatcher.model.formatPercent
+import dev.daniza.portfoliowatcher.model.orDash
+import dev.daniza.portfoliowatcher.model.parser.orZero
 
 data class HomeRecommendation(
     @SerializedName("top_gainers" ) var topGainers : Recommendation? = Recommendation(),
@@ -100,6 +103,16 @@ data class Recommendation (
         fun setFavorite(isFavorite: Boolean){
             this.isFavorite = isFavorite
         }
+
+        fun asHomeDailySummary(): HomeDailySummaryModel =
+            HomeDailySummaryModel(
+                name = shortName,
+                symbol = symbol.orDash(),
+                priceOpening = regularMarketPreviousClose,
+                gain = regularMarketChangePercent.orZero().toFloat(),
+                currentPrice = regularMarketPrice,
+                candles = emptyList()
+            )
 
         data class CorporateActions(
             @SerializedName("header"  ) var header  : String? = null,

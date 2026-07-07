@@ -18,14 +18,11 @@ import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.paging.PagingData
-import androidx.paging.compose.collectAsLazyPagingItems
-import dev.daniza.portfoliowatcher.model.tokenmetrics.TokenSearchModel
+import dev.daniza.portfoliowatcher.model.orDash
 import dev.daniza.portfoliowatcher.ui.detail.DetailScreen
 import dev.daniza.portfoliowatcher.ui.home.HomeScreen
-import dev.daniza.portfoliowatcher.ui.news.NewsScreen
 import dev.daniza.portfoliowatcher.ui.market.MarketScreen
-import kotlinx.coroutines.flow.flowOf
+import dev.daniza.portfoliowatcher.ui.news.NewsScreen
 
 @Composable
 fun PortfolioNavHost(
@@ -34,27 +31,36 @@ fun PortfolioNavHost(
 ) {
     NavHost(
         navController = navController,
-        startDestination = HomeDestination.route,
+        startDestination = MarketDestination.route,
         modifier = modifier,
     ){
         composable(route = HomeDestination.route){
-            HomeScreen(onNavigateToDetail = { tokenId ->
+            HomeScreen(onNavigationToMarket = {
+                navController.navigateSingleTopTo(
+                    route = "${MarketDestination.defaultRoute}/${MarketDestination.activationArgs}"
+                )
+            }, onNavigateToDetail = { tokenId ->
                 navController.navigateToDetail(tokenId)
             })
         }
+        composable(
+            route = MarketDestination.route,
+            arguments = MarketDestination.arguments
+        ){ navBackStackEntry ->
+            val argType = navBackStackEntry.arguments?.getString(MarketDestination.activationArgs).orDash()
+            MarketScreen(isActivation = argType == MarketDestination.activationArgs){
+
+            }
+        }
         composable(route = NewsDestination.route) {
             NewsScreen()
-        }
-        composable(route = SearchDestination.route){
-            val emptyTokenItems = flowOf(PagingData.empty<TokenSearchModel>())
-            MarketScreen(emptyTokenItems.collectAsLazyPagingItems())
         }
         composable(
             route = DetailDestination.routeWithArgs,
             arguments = DetailDestination.arguments,
         ){ navBackStackEntry: NavBackStackEntry ->
-            val tokenId = navBackStackEntry.arguments?.getString(DetailDestination.detailIdArgs)
-            DetailScreen()
+            val stockSymbol = navBackStackEntry.arguments?.getString(DetailDestination.detailIdArgs)
+            DetailScreen(stockSymbol = stockSymbol.orDash())
         }
     }
 }

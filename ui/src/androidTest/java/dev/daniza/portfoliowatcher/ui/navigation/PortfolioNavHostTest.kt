@@ -42,7 +42,7 @@ class PortfolioNavHostTest {
         composeTestRule.onNodeWithContentDescription("Navigate to List")
             .performClick()
 
-        assertEquals(ListDestination.route, navController.currentBackStackEntry?.destination?.route)
+        assertEquals(MarketDestination.route, navController.currentBackStackEntry?.destination?.route)
     }
 
     @Test
