@@ -26,7 +26,7 @@ class MarketViewModel @Inject constructor(
     private val getHomeRecommendationInteractor: GetHomeRecommendationInteractor,
     private val getMarketSearchInteractor: GetMarketSearchInteractor,
 ) : ViewModel(){
-    private val popCategories = listOf("Trending", "Big Capital", "Small Capital", "Most Active")
+    val popCategories = listOf("Trending", "Big Capital", "Small Capital", "Most Active")
     val currentPopMarketSelectable: MutableStateFlow<String> = MutableStateFlow(popCategories[0])
     private val _currentMarketPopuler: MutableStateFlow<StateUI<MarketPopularModel>> =
         MutableStateFlow(StateUI.Loading)
@@ -38,10 +38,10 @@ class MarketViewModel @Inject constructor(
             when(state){
                 is StateUI.Data -> {
                     val filteredData = when(filter){
-                        recomCategories[0] -> state.value.trending
-                        recomCategories[1] -> state.value.largeCap
-                        recomCategories[2] -> state.value.smallCap
-                        recomCategories[3] -> state.value.mostActive
+                        popCategories[0] -> state.value.trending
+                        popCategories[1] -> state.value.largeCap
+                        popCategories[2] -> state.value.smallCap
+                        popCategories[3] -> state.value.mostActive
                         else -> emptyList<MarketPopularModel.SmallQuote>()
                     }
                     StateUI.Data(filteredData)
@@ -78,11 +78,6 @@ class MarketViewModel @Inject constructor(
             }
         }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(), StateUI.Loading)
 
-    init {
-        this.getCurrentMarketRecommendation()
-        this.getCurrentMarketPopular()
-    }
-
     fun getCurrentMarketRecommendation(){
         viewModelScope.launch {
             getHomeRecommendationInteractor(isUseChart = true)
@@ -104,6 +99,12 @@ class MarketViewModel @Inject constructor(
                     _currentMarketPopuler.emit(StateUI.Error(it))
                     Log.e(TAG, "getCurrentMarketPopular: ", it)
                 }
+        }
+    }
+
+    fun selectMarketPop(index: Int){
+        viewModelScope.launch {
+            currentMarketSelectable.emit(popCategories[index])
         }
     }
 }

@@ -1,5 +1,6 @@
 package dev.daniza.portfoliowatcher.ui.component
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -7,6 +8,8 @@ import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.VerticalDivider
@@ -48,6 +51,34 @@ fun DotHorizontalLine(
             pathEffect = PathEffect.dashPathEffect(
                 intervals = floatArrayOf(0f, 8.dp.toPx())
             )
+        )
+    }
+}
+
+@Composable
+fun FilterButton(
+    text: String,
+    isSelected: Boolean,
+    onClick: () -> Unit
+) {
+    val shape = RoundedCornerShape(20.dp)
+    val backgroundColor = if (isSelected) Color.Black else Color.White
+    val textColor = if (isSelected) Color.White else Color.Black
+    val border = if (isSelected) BorderStroke(0.dp, Color.Transparent) else BorderStroke(1.dp, Color.LightGray)
+
+    Button(
+        onClick = onClick,
+        shape = shape,
+        colors = ButtonDefaults.buttonColors(containerColor = backgroundColor),
+        border = border,
+        contentPadding = PaddingValues(horizontal = 12.dp, vertical = 4.dp),
+        modifier = Modifier.wrapContentSize(Alignment.Center)
+    ) {
+        Text(
+            text = text,
+            color = textColor,
+            style = MaterialTheme.typography.bodyMedium,
+            fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Normal
         )
     }
 }

@@ -72,6 +72,7 @@ import dev.daniza.portfoliowatcher.model.state.StateUI
 import dev.daniza.portfoliowatcher.presenter.HomeViewModel
 import dev.daniza.portfoliowatcher.presenter.state.HomeDailyChartDataState
 import dev.daniza.portfoliowatcher.ui.component.AvatarCircle
+import dev.daniza.portfoliowatcher.ui.component.FilterButton
 import dev.daniza.portfoliowatcher.ui.component.GoldLabel
 import dev.daniza.portfoliowatcher.ui.component.Instrument
 import dev.daniza.portfoliowatcher.ui.component.InstrumentListItem
@@ -345,33 +346,6 @@ fun PortfolioSummary(
     }
 }
 
-@Composable
-private fun FilterButton(
-    text: String,
-    isSelected: Boolean,
-    onClick: () -> Unit
-) {
-    val shape = RoundedCornerShape(20.dp)
-    val backgroundColor = if (isSelected) Color.Black else Color.White
-    val textColor = if (isSelected) Color.White else Color.Black
-    val border = if (isSelected) BorderStroke(0.dp, Color.Transparent) else BorderStroke(1.dp, Color.LightGray)
-
-    Button(
-        onClick = onClick,
-        shape = shape,
-        colors = ButtonDefaults.buttonColors(containerColor = backgroundColor),
-        border = border,
-        contentPadding = PaddingValues(horizontal = 12.dp, vertical = 4.dp),
-        modifier = Modifier.wrapContentSize(Alignment.Center)
-    ) {
-        Text(
-            text = text,
-            color = textColor,
-            style = MaterialTheme.typography.bodyMedium,
-            fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Normal
-        )
-    }
-}
 
 @Composable
 fun FinancialListItem(
