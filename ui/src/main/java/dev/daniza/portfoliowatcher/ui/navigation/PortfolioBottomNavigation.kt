@@ -14,7 +14,6 @@ val navigationItems = listOf<BaseDestination>(
     HomeDestination,
     MarketDestination,
     NewsDestination,
-    MarketDestination,
 )
 
 @Composable

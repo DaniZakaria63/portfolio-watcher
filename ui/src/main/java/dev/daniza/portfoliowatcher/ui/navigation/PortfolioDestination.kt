@@ -45,10 +45,10 @@ object MarketDestination: BaseDestination {
     override val icon: ImageVector
         get() = Icons.AutoMirrored.Filled.List
     override val route: String
-        get() = NavigationTarget.MARKET.label
+        get() = "$defaultRoute/{$activationArgs}"
 
-    val activationArgs = "activation"
-    val routeWithArgs = "$route/{$activationArgs}"
+    const val activationArgs = "activation"
+    val defaultRoute = NavigationTarget.MARKET.label
 
     val arguments = listOf(
         navArgument(detailIdArgs) {
@@ -71,7 +71,7 @@ object DetailDestination: BaseDestination {
     override val route: String
         get() = NavigationTarget.DETAIL.label
 
-    val detailIdArgs = "token_id"
+    const val detailIdArgs = "token_id"
     val routeWithArgs ="$route/{$detailIdArgs}"
 
     val arguments = listOf(

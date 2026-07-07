@@ -31,22 +31,26 @@ fun PortfolioNavHost(
 ) {
     NavHost(
         navController = navController,
-        startDestination = HomeDestination.route,
+        startDestination = MarketDestination.route,
         modifier = modifier,
     ){
         composable(route = HomeDestination.route){
             HomeScreen(onNavigationToMarket = {
-                navController.navigateSingleTopTo(MarketDestination.routeWithArgs)
+                navController.navigateSingleTopTo(
+                    route = "${MarketDestination.defaultRoute}/${MarketDestination.activationArgs}"
+                )
             }, onNavigateToDetail = { tokenId ->
                 navController.navigateToDetail(tokenId)
             })
         }
         composable(
-            route = MarketDestination.routeWithArgs,
+            route = MarketDestination.route,
             arguments = MarketDestination.arguments
         ){ navBackStackEntry ->
             val argType = navBackStackEntry.arguments?.getString(MarketDestination.activationArgs).orDash()
-            MarketScreen(isActivation = argType == MarketDestination.activationArgs)
+            MarketScreen(isActivation = argType == MarketDestination.activationArgs){
+
+            }
         }
         composable(route = NewsDestination.route) {
             NewsScreen()
